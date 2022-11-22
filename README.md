@@ -14,7 +14,7 @@ open up the github folder "Project-Y/project-y" and run in the terminal
 ```
 npm install
 npm run serve
-``
+```
 
 This will create a development enviornment for you to view your work at the link
 
