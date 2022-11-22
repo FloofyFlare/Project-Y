@@ -16,7 +16,9 @@ npm install
 npm run serve
 ```
 
-This will create a development enviornment for you to view your work at the link
+This will create a development enviornment for you to start working 
+
+If you need help dont hesitate to ask questions. We are a team!
 
 
 
