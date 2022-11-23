@@ -46,5 +46,11 @@ const handleSubmit = () => {
   border-radius: 30px;
   border-style: none;
   padding: 10px;
+  &:hover {
+    background-color: rgb(117, 135, 218);
+  }
+  &:active {
+    background-color: rgb(80, 91, 141);
+  }
 }
 </style>
