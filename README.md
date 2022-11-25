@@ -22,3 +22,8 @@ If you need help dont hesitate to ask questions. We are a team!
 
 
 
+
+---Organization ---
+
+Please only make commits to main if their is functionality without errors
+
