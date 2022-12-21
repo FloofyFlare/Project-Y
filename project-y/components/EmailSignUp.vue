@@ -9,7 +9,7 @@
         type="email"
         class="email-box"
       />
-      <button type="submit" class="submit-button">Join the Future</button>
+      <b-button type="submit" class="submit-button">Join the Future</b-button>
     </form>
   </div>
 </template>
