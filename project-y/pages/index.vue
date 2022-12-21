@@ -5,20 +5,21 @@
       <NuxtLink to="/about">About</NuxtLink>
     </nav>
     <EmailSignUp />
+    <body>
+    </body>
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue'
 import EmailSignUp from '~/components/EmailSignUp.vue';
 
-export default Vue.extend({
+export default {
     name: "IndexPage",
     components: { EmailSignUp }
-})
+}
 </script>
 
 <style scoped lang="scss">
-@import "styles/appStyles.scss";
+@import "assets/scss/appStyles.scss";
 </style>
 
 
