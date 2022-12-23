@@ -1,0 +1,6 @@
+Djoser is for email password token gerneration
+
+sudo -e /etc/wsl.conf
+
+sudo netstat -plunt |grep postgres   
+//check ports
