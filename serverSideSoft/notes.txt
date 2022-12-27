@@ -4,3 +4,8 @@ sudo -e /etc/wsl.conf
 
 sudo netstat -plunt |grep postgres   
 //check ports
+
+join postman team 
+https://app.getpostman.com/join-team?invite_code=6f6c9366e05de5618a657add991a0716
+
+source venv/bin/activate
