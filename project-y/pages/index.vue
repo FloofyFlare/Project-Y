@@ -1,11 +1,11 @@
 <template>
   <div>
     <nav>
-      <NuxtLink to="/">Home</NuxtLink> |
-      <NuxtLink to="/about">About</NuxtLink>
+      <NuxtLink to="about.vue">About</NuxtLink>
     </nav>
     <EmailSignUp />
     <body>
+       v
     </body>
   </div>
 </template>
