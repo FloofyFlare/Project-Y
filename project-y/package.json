@@ -29,7 +29,8 @@
     "nuxt-buefy": "^0.4.24",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
