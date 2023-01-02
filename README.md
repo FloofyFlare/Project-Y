@@ -18,6 +18,10 @@ npm run dev
 
 This will create a development enviornment for you to start working 
 
+linting (cleaning up your code)
+yarn lint
+yarn lintfix
+
 If you need help dont hesitate to ask questions. We are a team!
 
 
