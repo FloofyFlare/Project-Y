@@ -4,25 +4,27 @@
     <form id="signup-form" @submit.prevent="handleSubmit">
       <input
         v-model="signUpEmail"
-        @keyup.enter="handleSubmit"
-        placeholder="email"
+        placeholder="example@company.com"
         type="email"
         class="email-box"
+        @keyup.enter="handleSubmit"
       />
-      <b-button type="submit" class="submit-button">Join the Future</b-button>
+      <button type="submit" class="submit-button" @click="handleSubmit">
+        Join the Future
+      </button>
     </form>
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from "vue";
+<script>
+import { ref } from 'vue'
 
-const signUpEmail = ref("example@company.com");
+const signUpEmail = ref('example@company.com')
 
 const handleSubmit = () => {
-  console.log(signUpEmail.value);
-  alert("processing");
-};
+  console.log(signUpEmail.value)
+  alert('processing')
+}
 </script>
 
 <style scoped lang="scss">
