@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/scss/appStyles.scss'],
 
-  //I cant mess with the Nuxt tailwindwidnd:{} file Oof or daisy will not work
+  //I cant mess with the Nuxt tailwindwidnd:{} file Oof. or daisy will not work
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 
@@ -14,7 +14,8 @@ export default defineNuxtConfig({
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@pinia/nuxt',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/content'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

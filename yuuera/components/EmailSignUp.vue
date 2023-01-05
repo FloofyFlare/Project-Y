@@ -9,7 +9,7 @@
         class="email-box"
         @keyup.enter="handleSubmit"
       />
-      <button type="submit" class="submit-button" @click="handleSubmit">
+      <button type="submit" class="btn btn-primary" @click="handleSubmit">
         Join the Future
       </button>
     </form>
