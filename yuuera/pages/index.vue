@@ -5,9 +5,8 @@
         <NuxtLink to="/">Home</NuxtLink> |
         <NuxtLink to="/aboutPage">About</NuxtLink>
       </nav>
-      <EmailSignUp />
     </header>
-    <body></body>
+    <body><EmailSignUp /></body>
   </div>
 </template>
 <script>
