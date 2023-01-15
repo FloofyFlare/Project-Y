@@ -1,4 +1,4 @@
-<<template>
+<template>
   <head>
     <title> Yuuera </title>
   </head>
