@@ -12,7 +12,7 @@ copy the group git hub repository
 
 open up the github folder "Project-Y/project-y" and run in the terminal
 ```
-yarn install
+yarn install 
 yarn dev
 ```
 
