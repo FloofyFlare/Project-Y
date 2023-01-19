@@ -306,11 +306,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@headlessui/vue@^1.0.0":
-  version "1.7.7"
-  resolved "https://registry.npmjs.org/@headlessui/vue/-/vue-1.7.7.tgz"
-  integrity sha512-dkdNhJkxyT9rXW5fHx/MkKaM3U13P3duYuwoGTRmDGjE7xAsvcWOSJRJpw1AmCQTvjZF44bh2wSlySLaHW+WuQ==
-
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.8.tgz"
@@ -4903,15 +4898,6 @@ nuxi@3.0.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt-headlessui@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/nuxt-headlessui/-/nuxt-headlessui-1.0.4.tgz"
-  integrity sha512-DvmfZqDInDyvBnldf54XIShZVOmKA7SFtIxWQNOORwghDijQxqxkDLw+2BCw/otXf/xE815/7su895edeVsSeA==
-  dependencies:
-    "@headlessui/vue" "^1.0.0"
-    "@nuxt/kit" "^3.0.0"
-    pathe "^1.0.0"
-
 nuxt@3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/nuxt/-/nuxt-3.0.0.tgz"
@@ -7159,6 +7145,11 @@ yargs@^17.2.1, yargs@^17.5.1:
     string-width "^4.2.3"
     y18n "^5.0.5"
     yargs-parser "^21.1.1"
+
+yarn@^1.22.19:
+  version "1.22.19"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
 
 ylru@^1.2.0:
   version "1.3.2"
