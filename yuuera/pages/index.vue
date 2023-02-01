@@ -10,12 +10,6 @@
   </div>
 </template>
 <script>
-import EmailSignUp from '~/components/EmailSignUp.vue'
-
-export default {
-  name: 'IndexPage',
-  components: { EmailSignUp },
-}
 </script>
 
 <style scoped lang="scss">
