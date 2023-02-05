@@ -5,11 +5,11 @@
       <div class="input-group flex justify-center pt-6">
         <form id="signup-form" @submit.prevent="handleSubmit">
           <input
-            placeholder="example@company.com"
             v-model="signUpEmail"
-            type="text"
+            placeholder="example@email.com"
+            type="email"
             class="input input-bordered"
-            onkeyup.enter="handleSubmit()"
+            @keyup.enter="handleSubmit"
           />
           <button type="submit" class="btn" @click="handleSubmit">
             Join the Future
@@ -20,14 +20,15 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
-const signUpEmail = ref()
 
-async function handleSubmits() {
+const signUpEmail = ref('')
+
+async function handleSubmit() {
   console.log(signUpEmail.value)
   alert('processing')
-  var data = {email : signUpEmail}
+  var data = {"email" : signUpEmail.value}
   await $fetch( '127.0.0.1:8000/newsletter/', {
     method: 'POST',
     headers: {
@@ -36,7 +37,6 @@ async function handleSubmits() {
     body: JSON.stringify(data)
   });
 }
-
 </script>
 
 <style scoped lang="scss">
