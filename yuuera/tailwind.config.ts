@@ -8,8 +8,35 @@ module.exports = {
     "./nuxt.config.{js,ts}",
     "./app.vue",
   ],
-  theme: {
-    extend: {},
+  daisyui: {
+  themes: [
+    {
+      mytheme: {
+          
+         
+      "primary": "#F17720",
+          
+      "secondary": "#F17720",
+          
+      "accent": "#00a7e1",
+          
+      "neutral": "#F17720",
+          
+      "base-100": "#ebebeb",
+          
+      "info": "#00a7e1",
+
+      "success": "#F17720",
+          
+      "warning": "#F17720",
+          
+      "error": "#F17720",
+      },
+    },
+  ],
+  
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require('daisyui')
+  ],
 }
