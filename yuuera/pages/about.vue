@@ -34,22 +34,28 @@
 
 
         <div>
-            <h3>Person 1</h3>
+          <h3 class="text-info font-bold text-xl">Person 1</h3>
+          <button class="btn btn-wide btn-disabled text-base-100">  
             <p>
                 
             </p>
+          </button>
         </div>
         <div>
-            <h3>Person 2</h3>
+          <h3 class="text-info font-bold text-xl">Person 2</h3>
+          <button class="btn btn-wide btn-disabled text-base-100">  
             <p>
                 
             </p>
+          </button>
         </div>
         <div>
-            <h3>Person 3</h3>
+          <h3 class="text-info font-bold text-xl">Person 3</h3>
+          <button class="btn btn-wide btn-disabled text-base-100">  
             <p>
                 
             </p>
+          </button>
         </div>
         </body>
         <footer class="footer footer-center p-10 bg-neutral text-accent rounded">
