@@ -1,6 +1,6 @@
 
 <template>
-  <div class="bg-base-100">
+  <div class="bg-accent">
   <head>
     <title class="text-secondary"> Yuuera </title>
   </head>
@@ -11,7 +11,7 @@
       </div>
       
     </header>
-  <body class="text-accent mb-96 bg-base-100">
+  <body class="text-accent mb-96 bg-accent">
     <EmailSignUp/>
 
     
@@ -38,8 +38,7 @@
           </div>
         </footer>
       </div>
-
-</div>
+  </div>
 </template>
 <script lang="ts">
 import EmailSignUp from '~/components/EmailSignUp.vue';

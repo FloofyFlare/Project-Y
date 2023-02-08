@@ -7,10 +7,11 @@
           <div class="navbar flex-1">
             <NuxtLink class="btn btn-ghost normal-case text-xl text-neutral" to="/">Yuuera</NuxtLink>
           </div>
-          <hr class="h-px my-8 bg-neutral border-0 dark:bg-gray-700">
+          <hr class="h-px my-8 bg-neutral border-0 dark:bg-grey-200">
       </header>
-    <body>
-        <h3 class="text-primary font-bold text-2xl">About US</h3>
+    <body class="bg-accent">
+      <div class="bg-accent">
+        <h3 class="bg-accent text-primary font-bold text-2xl">About US</h3>
         <div class="bg-info mb-16 rounded-3xl">
         <h1 class="text-neutral font-bold text-xl">Mission Statement</h1>
         <p class="text-neutral">Providing utility for the future of web 3.0</p>
@@ -89,8 +90,9 @@
               </div>
             </div>
           </div>
+        </div>
     </body>
-
+    <div class="bg-accent">
       <div class="bg-orange-600">
         <footer class="footer footer-center p-10  text-neutral rounded">
           <div class="grid grid-flow-col gap-4">
@@ -112,6 +114,7 @@
           </div>
         </footer>
       </div>
+    </div>
     </template>
     <script lang="ts">
     import EmailSignUp from '~/components/EmailSignUp.vue'
