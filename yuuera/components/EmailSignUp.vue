@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 class="text-base-100">The sign up button</h1>
+    <h1 class="text-primary font-bold text-2xl">The sign up button</h1>
     <form id="signup-form" @submit.prevent="handleSubmit">
       <input
         v-model="signUpEmail"
