@@ -33,8 +33,10 @@
 
         <div class="mb-16 flex justify-start">
           <div class="bg-info w-2/3 rounded-3xl h-40 shadow-lg">
-            <h3 class="text-neutral font-bold text-xl p-4">Person 1</h3>
-            <p class="text-neutral"></p>
+            <h3 class="text-neutral font-bold text-xl p-2">Person 1</h3>
+            <p class="text-neutral">
+                
+            </p>
           </div>
 
           <div class="avatar">
@@ -54,7 +56,7 @@
           </div>
 
           <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
-            <h3 class="text-neutral font-bold text-xl p-4 ">Person 2</h3>  
+            <h3 class="text-neutral font-bold text-xl p-2">Person 2</h3>  
             <p class="text-neutral">
                 
             </p>
@@ -70,7 +72,7 @@
           </div>
 
           <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
-            <h3 class="text-neutral font-bold text-xl p-4 ">Person 3</h3>  
+            <h3 class="text-neutral font-bold text-xl p-2">Person 3</h3>  
             <p class="text-neutral">
                 
             </p>
