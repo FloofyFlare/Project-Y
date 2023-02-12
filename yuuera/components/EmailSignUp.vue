@@ -11,7 +11,7 @@
             class="input input-bordered"
             @keyup.enter="handleSubmit"
           />
-          <button type="submit" class="btn" @click="handleSubmit">
+          <button type="submit" class="btn">
             Join the Future
           </button>
         </form>
@@ -29,7 +29,7 @@ async function handleSubmit() {
   console.log(signUpEmail.value)
   alert('processing')
   var data = {"email" : signUpEmail.value}
-  await $fetch( '127.0.0.1:8000/newsletter/', {
+  await $fetch('http://127.0.0.1:8000/newsletter/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
