@@ -10,88 +10,105 @@
           <hr class="h-px my-8 bg-neutral border-0 dark:bg-grey-200">
       </header>
     <body class="bg-accent">
+      <div class="">
+        <div class="avatar">
+          <div class=" w-48 rounded">
+            <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
+          </div>
+        </div>
+      </div>
+      <div class="mb-16 flex justify-center">
+        <div class=" bg-info h-40 w-1/2 rounded-3xl shadow-lg">
+          <h3 class="text-neutral font-bold text-xl p-2">Community</h3>  
+          <p class="text-neutral">
+              
+          </p>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="avatar">
+          <div class=" w-48 rounded">
+            <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
+          </div>
+        </div>
+        </div>
+
+
       <div class="bg-accent">
-        <h3 class="bg-accent text-primary font-bold text-2xl">About US</h3>
-        <div class="bg-info mb-16 rounded-3xl">
-        <h1 class="text-neutral font-bold text-xl">Mission Statement</h1>
-        <p class="text-neutral">Providing utility for the future of web 3.0</p>
-        
-        <h1 class="text-neutral font-bold text-xl">About us</h1>
-        <p class="text-neutral">
-            Hello, welcome to the Yuuera team we are excited to have you here. Our
-            goal is to utilize the power of blockchain and cryptocurrency to create
-            a better future for the internet together. We value the decentralization
-            of the internet as key to creating a more vibrant, efficient, and
-            community based tech scene. Our mission is to give control back to the
-            community when shopping online and beyond by using blockchain
-            technology, instead of relying on centralized big tech. Individuals'
-            actions, creations, and perspectives are what we stand for. The internet
-            was not made by one person. Let's keep it that way. We would be honored
-            to have you join us in our journey to change the future of the internet
-            bringing the power back to the community.
-        </p>
-        </div>
-
-        <div class="mb-16 flex justify-start">
-          <div class="bg-info w-2/3 rounded-3xl h-40 shadow-lg">
-            <h3 class="text-neutral font-bold text-xl p-2">Person 1</h3>
-            <p class="text-neutral">
-                
-            </p>
-          </div>
-
-          <div class="avatar">
-            <div class="w-48 rounded-full">
-              <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-            </div>
-          </div>
-
-        </div>
-
-        <div class="mb-16 flex justify-end">
-          
-          <div class="avatar">
-            <div class="w-48 rounded-full">
-              <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-            </div>
-          </div>
-
-          <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
-            <h3 class="text-neutral font-bold text-xl p-2">Person 2</h3>  
-            <p class="text-neutral">
-                
-            </p>
-          </div>
-        </div>
-
-        <div class="mb-16 flex justify-end">
-
-          <div class="avatar">
-            <div class="w-48 rounded-full">
-              <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-            </div>
-          </div>
-
-          <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
-            <h3 class="text-neutral font-bold text-xl p-2">Person 3</h3>  
-            <p class="text-neutral">
-                
-            </p>
-          </div>
-        </div>
-
-        <div class="mb-16">
-          <h3 class="text-primary font-bold text-2xl">Our Vision</h3>
-            <div class="mb-16 flex justify-center">
-              <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
-                <p class="text-neutral">
-                  Something something programming technology blockchain pogchamp lizard men overwatch 2 sucks dksflasdjfklt6r7sghjdsfastghjudfgashjIDfguyihzsXfcgouisdgvfiuysdviyufesdr
-                </p>
+        <div class="mt-16 mb-16">
+            <h3 class="text-primary font-bold text-2xl">Our Vision</h3>
+              <div class="mb-16 flex justify-center">
+                <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
+                  <p class="text-neutral">
+                    Something something programming technology blockchain pogchamp lizard men overwatch 2 sucks dksflasdjfklt6r7sghjdsfastghjudfgashjIDfguyihzsXfcgouisdgvfiuysdviyufesdr
+                  </p>
+                </div>
               </div>
+        </div>
+        <div class="mb-16">
+            <h3 class="text-primary font-bold text-2xl">Meet the Team</h3>
+
+        </div>
+          <div class="avatar flex flex-col">
+            <div class="w-48 rounded">
+              <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
             </div>
           </div>
+          <p class="flex justify-start">
+            Ray
+          </p>
+          <div class="avatar flex flex-col">
+            <div class="flex justify-center w-48 rounded">
+              <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
+            </div>
+            <p class="flex justify-center">
+            Caleb
+          </p>
+          </div>
+
+          <div class="avatar">
+            <div class="flex justify-end w-48 rounded">
+              <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
+            </div>
+          </div>
+          <p class="flex justify-end">
+            Darius
+          </p>
+        <div class="mt-16 mb-16 flex justify-center">
+          <div class="bg-info w-2/3 rounded-3xl h-40 shadow-lg">
+            <h3 class="text-neutral font-bold text-xl p-2"> Privacy policy</h3>
+            <p class="text-neutral">
+                
+            </p>
+          </div>
         </div>
-    </body>
+
+        <div class="mb-16 flex justify-center">
+          <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
+            <h3 class="text-neutral font-bold text-xl p-2">Consumer thing</h3>  
+            <p class="text-neutral">
+                
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-16 flex justify-center">
+
+          <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
+            <h3 class="text-neutral font-bold text-xl p-2">Community</h3>  
+            <p class="text-neutral">
+                
+            </p>
+          </div>
+        </div>
+
+        </div>
+        <div>
+          <EmailSignUp/>
+        </div>
+      
+      </body>
     <div class="bg-accent">
       <div class="bg-orange-600">
         <footer class="footer footer-center p-10  text-neutral rounded">
