@@ -10,23 +10,15 @@
           <hr class="h-px my-8 bg-neutral border-0 dark:bg-grey-200">
       </header>
     <body class="bg-accent">
-      <div class="">
+      
+      <div class="space-x-96 mb-64">
+
         <div class="avatar">
           <div class=" w-48 rounded">
             <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
           </div>
         </div>
-      </div>
-      <div class="mb-16 flex justify-center">
-        <div class=" bg-info h-40 w-1/2 rounded-3xl shadow-lg">
-          <h3 class="text-neutral font-bold text-xl p-2">Community</h3>  
-          <p class="text-neutral">
-              
-          </p>
-        </div>
-      </div>
 
-      <div class="">
         <div class="avatar">
           <div class=" w-48 rounded">
             <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
@@ -46,25 +38,22 @@
                 </div>
               </div>
         </div>
-        <div class="mb-16">
+        
+        <div class="mt-64 mb-16">
             <h3 class="text-primary font-bold text-2xl">Meet the Team</h3>
-
         </div>
-          <div class="avatar flex flex-col">
+
+        <div class=" space-x-24">
+          <div class="avatar">
             <div class="w-48 rounded">
               <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
             </div>
           </div>
-          <p class="flex justify-start">
-            Ray
-          </p>
-          <div class="avatar flex flex-col">
+          
+          <div class="avatar">
             <div class="flex justify-center w-48 rounded">
               <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
             </div>
-            <p class="flex justify-center">
-            Caleb
-          </p>
           </div>
 
           <div class="avatar">
@@ -72,9 +61,11 @@
               <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
             </div>
           </div>
-          <p class="flex justify-end">
-            Darius
-          </p>
+        </div>
+        
+        <div class="mt-64 mb-16">
+            <h3 class="text-primary font-bold text-2xl">Values</h3>
+        </div>
         <div class="mt-16 mb-16 flex justify-center">
           <div class="bg-info w-2/3 rounded-3xl h-40 shadow-lg">
             <h3 class="text-neutral font-bold text-xl p-2"> Privacy policy</h3>
