@@ -10,29 +10,21 @@
     </header>
   <body class="pt-24 bg-accent">
     
-    <div class="space-x-52 mb-64">
+    <div class="space-x-24 mb-80 mt-36">
 
+     
       <div class="avatar">
-        <div class=" w-48 rounded">
-          <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-        </div>
+        <h1 class="text-primary text-7xl font-semibold ">Putting Yuu back in the equation</h1>
       </div>
-      <div class="avatar">
-        <h1 class="text-5xl ">Putting Yuu back in the equation</h1>
-      </div>
-      <div class="avatar">
-        <div class=" w-48 rounded">
-          <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-        </div>
-      </div>
+      
     </div>
 
 
-    <div class="bg-accent">
+    <div class="bg-accent pt-52">
       <div class="mt-16 mb-16">
-          <h3 class="text-primary font-bold text-2xl">Our Vision</h3>
+          <h3 class="text-primary font-bold text-6xl">Our Vision</h3>
             <div class="mb-16 flex justify-center">
-              <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
+              <div class=" bg-info h-adjustment w-2/3 rounded-3xl shadow-lg">
                 <p class="text-neutral">
                   Something something programming technology blockchain pogchamp lizard men overwatch 2 sucks dksflasdjfklt6r7sghjdsfastghjudfgashjIDfguyihzsXfcgouisdgvfiuysdviyufesdr
                 </p>
@@ -41,10 +33,10 @@
       </div>
       
       <div class="mt-64 mb-16">
-          <h3 class="text-primary font-bold text-2xl">Meet the Team</h3>
+          <h3 class="text-primary font-bold text-6xl">Meet the Team</h3>
       </div>
 
-      <div class=" space-x-24">
+      <div class="h-adjustment space-x-24">
         <div class="avatar">
           <div class="w-48 rounded">
             <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
@@ -65,7 +57,7 @@
       </div>
       
       <div class="mt-64 mb-16">
-          <h3 class="text-primary font-bold text-2xl">Values</h3>
+          <h3 class="text-primary font-bold text-6xl">Values</h3>
       </div>
       <div class="mt-16 mb-16 flex justify-center">
         <div class="bg-info w-2/3 rounded-3xl h-40 shadow-lg">
@@ -94,12 +86,10 @@
           </p>
         </div>
       </div>
-    </div>
-    <ClientOnly>
-      <div class="p-24">
-        <EmailSignUp/>
+      <div class="mt-60 Spt-24 h-adjustment">
+        <ClientOnly><EmailSignUp/></ClientOnly>
       </div>
-    </ClientOnly>
+    </div>
   </body>
 
   <footer class="bg-accent">

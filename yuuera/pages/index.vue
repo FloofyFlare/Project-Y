@@ -6,7 +6,7 @@
         <NuxtLink to="/aboutPage">About</NuxtLink>
       </nav>
     </header>
-    <body><EmailSignUp /></body>
+      <body><EmailSignUp/></body>
   </div>
 </template>
 <script>

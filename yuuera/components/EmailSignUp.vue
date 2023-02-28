@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
-    <h1>The sign up button</h1>
+    <h1 class="text-primary text-6xl font-semibold">Join the Movement</h1>
+    <h2 class="text-primary text-4xl font-semibold">sign up for news updates</h2>
     <div class="form-control ">
-      <div class="input-group flex justify-center pt-6">
+      <div class="input-group flex justify-center pt-24">
         <form id="signup-form" @submit.prevent="handleSubmit">
           <input
             v-model="signUpEmail"
@@ -12,7 +13,7 @@
             @keyup.enter="handleSubmit"
           />
           <button type="submit" class="btn">
-            Join the Future
+            Sign up
           </button>
         </form>
       </div>
