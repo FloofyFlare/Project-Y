@@ -12,15 +12,13 @@ export default defineNuxtConfig({
   components: true,
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@pinia/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/content'
-  ],
+  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/content'],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   // Content module configuration: https://go.nuxtjs.dev/config-content
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-});
+
+  ssr:process.env.NODE_ENV !== "development"
+})

@@ -3,15 +3,15 @@
   <head>
     <title class="text-base-100">Project-Y</title>
   </head>
-    <header class="bg-orange-600 text-base-200">
-        <div class="navbar flex-1">
-          <NuxtLink class="btn btn-ghost normal-case text-xl text-neutral" to="/">Yuuera</NuxtLink>
-        </div>
-    </header>
-  <body class="pt-24 bg-accent">
+  <header class="bg-orange-600 text-base-200 ">
+    <div class="navbar flex-1">
+      <NuxtLink class="btn btn-ghost normal-case text-xl text-neutral" to="/">Yuuera</NuxtLink>
+    </div>
+  </header>
+  <body class="bg-accent">
     
-    <div class="space-x-24 mb-80 mt-36">
-
+    <div class="space-x-24 pt-72">
+    
      
       <div class="avatar">
         <h1 class="text-primary text-7xl font-semibold ">Putting Yuu back in the equation</h1>
@@ -22,11 +22,18 @@
 
     <div class="bg-accent pt-52">
       <div class="mt-16 mb-16">
-          <h3 class="text-primary font-bold text-6xl">Our Vision</h3>
+          <h3 class="text-primary font-bold text-6xl">Our Mission</h3>
             <div class="mb-16 flex justify-center">
-              <div class=" bg-info h-adjustment w-2/3 rounded-3xl shadow-lg">
-                <p class="text-neutral">
-                  Something something programming technology blockchain pogchamp lizard men overwatch 2 sucks dksflasdjfklt6r7sghjdsfastghjudfgashjIDfguyihzsXfcgouisdgvfiuysdviyufesdr
+              <div class="mt-4 bg-info h-adjustment w-2/3 rounded-3xl shadow-lg">
+                <p class="pt-24 text-neutral leading-loose text-2xl">
+                  Hello, welcome to the Yuuera team we are excited to have you here. 
+                  Our goal is to utilize the power of blockchain and cryptocurrency to
+                  create a better future for the internet together. We value the decentralization
+                  of the internet as key to creating a more vibrant, efficient, and Community
+                  based tech scene. Our mission is to give control of the internet back to the 
+                  people in shopping and beyond. The internet was not made by one person. Let's keep it that way. 
+                  We would be honored to have you join us in our journey to change the futureof the internet brining 
+                  the power to the people. 
                 </p>
               </div>
             </div>
@@ -34,6 +41,10 @@
       
       <div class="mt-64 mb-16">
           <h3 class="text-primary font-bold text-6xl">Meet the Team</h3>
+          <h2 class="text-primary text-4xl font-semibold">
+            Based in the midwest region of the United states we are proud to be one of the few blockhchain companies
+            in the area trailblazing for future blockchain growth.
+          </h2>
       </div>
 
       <div class="h-adjustment space-x-24">
@@ -60,34 +71,43 @@
           <h3 class="text-primary font-bold text-6xl">Values</h3>
       </div>
       <div class="mt-16 mb-16 flex justify-center">
-        <div class="bg-info w-2/3 rounded-3xl h-40 shadow-lg">
-          <h3 class="text-neutral font-bold text-xl p-2"> Privacy policy</h3>
-          <p class="text-neutral">
-              
+        <div class="bg-info w-2/3 rounded-3xl h-48 shadow-lg">
+          <h3 class="text-neutral font-bold text-xl p-2">Consumer Focused: </h3>
+          <p class="text-neutral leading-loose text-2xl">
+              First and foremost we care about consumers like you.
+              If you aren't happy, we ain't eating. Providing great products and services 
+              is one thing. Creating products that you value is success.
           </p>
         </div>
       </div>
 
       <div class="mb-16 flex justify-center">
-        <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
-          <h3 class="text-neutral font-bold text-xl p-2">Consumer thing</h3>  
-          <p class="text-neutral">
-              
+        <div class=" bg-info h-48 w-2/3 rounded-3xl shadow-lg">
+          <h3 class="text-neutral font-bold text-xl p-2">Privacy: </h3>  
+          <p class="text-neutral leading-loose text-2xl">
+              We utilizing the security of the Cardano blockchain and its research
+              first development to bring secure peer to peer transacitons without
+              reliance on third part organizations or entities.
           </p>
         </div>
       </div>
 
       <div class="mb-16 flex justify-center">
 
-        <div class=" bg-info h-40 w-2/3 rounded-3xl shadow-lg">
-          <h3 class="text-neutral font-bold text-xl p-2">Community</h3>  
-          <p class="text-neutral">
-              
+        <div class=" bg-info h-48 w-2/3 rounded-3xl shadow-lg">
+          <h3 class="text-neutral font-bold text-xl p-2">Community: </h3>  
+          <p class="text-neutral leading-loose text-2xl">
+              We strongly believe in the power of blockchain and its ability 
+              to empower us to take back the control of the internet from 
+              the select few. Blockchain is internet freedom for us, providing
+              the space for more creativity, innovation, and experiences.
           </p>
         </div>
       </div>
       <div class="mt-60 Spt-24 h-adjustment">
-        <ClientOnly><EmailSignUp/></ClientOnly>
+        <ClientOnly>
+          <EmailSignUp></EmailSignUp>
+        </ClientOnly>
       </div>
     </div>
   </body>
@@ -116,7 +136,7 @@
     </div>
   </footer>
   </template>
-  <script>
+  <script s>
 
   </script>
   

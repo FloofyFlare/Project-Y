@@ -1,8 +1,12 @@
 <template>
   <div class="hello">
-    <h1 class="text-primary text-6xl font-semibold">Join the Movement</h1>
-    <h2 class="text-primary text-4xl font-semibold">sign up for news updates</h2>
-    <div class="form-control ">
+    <h1 class="text-primary text-6xl font-semibold">
+      Ready for a new internet?
+    </h1>
+    <h2 class="text-primary text-4xl font-semibold">
+      sign up for news updates
+    </h2>
+    <div class="form-control">
       <div class="input-group flex justify-center pt-24">
         <form id="signup-form" @submit.prevent="handleSubmit">
           <input
@@ -12,9 +16,7 @@
             class="input input-bordered"
             @keyup.enter="handleSubmit"
           />
-          <button type="submit" class="btn">
-            Sign up
-          </button>
+          <button type="submit" class="btn">Sign up</button>
         </form>
       </div>
     </div>
@@ -29,14 +31,14 @@ const signUpEmail = ref('')
 async function handleSubmit() {
   console.log(signUpEmail.value)
   alert('processing')
-  var data = {"email" : signUpEmail.value}
+  var data = { email: signUpEmail.value }
   await $fetch('http://127.0.0.1:8000/newsletter/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data)
-  });
+    body: JSON.stringify(data),
+  })
 }
 </script>
 
