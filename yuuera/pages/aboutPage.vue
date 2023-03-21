@@ -30,7 +30,7 @@
               <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
                 <p class="pt-24 text-neutral leading-loose text-3xl  text-block">
                   Hello, welcome to the Yuuera team we are excited to have you here. 
-                  Our goal is to utilize the power of blockchain and cryptocurrency to
+                  Our goal is to utilize the power of blockchain to
                   create a better future for the internet together. We value the decentralization
                   of the internet as key to creating a more vibrant, efficient, and Community
                   based tech scene. Our mission is to give control of the internet back to the 
@@ -43,7 +43,7 @@
       </div>
     </section>
       
-    <section class="bg-secondary mb-16 flex">
+    <section class="bg-secondary mt-16 flex">
       <div>
 
       
@@ -52,79 +52,94 @@
               <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
           </svg>
       </div>
-      <div class="mb-16 flex justify-center">
-              <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
-                <h1 class="text-accent font-bold text-6xl pt-24">Meet the Team</h1>
-                <h2 class="pt-24 text-neutral leading-loose text-3xl  text-block text-accent text-4xl font-semibold">
-                  Hello, welcome to the Yuuera team we are excited to have you here. 
-                  Our goal is to utilize the power of blockchain and cryptocurrency to
-                  create a better future for the internet together. We value the decentralization
-                  of the internet as key to creating a more vibrant, efficient, and Community
-                  based tech scene. Our mission is to give control of the internet back to the 
-                  people in shopping and beyond. The internet was not made by one person. Let's keep it that way. 
-                  We would be honored to have you join us in our journey to change the future of the internet brining 
-                  the power to the people. 
-                </h2>
+      
+      <div class=" h-screen pl-24">
+        <div class="flex flex-row justify-center space-x-24 mt-44  ...">
+          <div>
+            <div class="flex rounded-3xl bg-accent p-4  team-member flex-col ...">
+              <div class="flex w-48 rounded">
+                <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
+              </div>
+              <div>
+                <p class="font-medium p-8 text-2xl">Darrius </p>
+                <p class="font-medium text-lg">Chief Marketing Officer</p>
               </div>
             </div>
-      <div class="h-screen  space-x-24">
-        <div class="avatar">
-          <div class="w-48 rounded">
-            <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
           </div>
-
+          <div>
+            <div class="flex rounded-3xl bg-accent p-4  team-member flex-col ...">
+              <div class="flex w-48 rounded">
+                <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
+              </div>
+              <p class="font-medium p-8 text-2xl">Raymond </p>
+                <p class="font-medium text-lg">Cheif Executive Officer</p>
+            </div>
+          </div>
+          <div>
+            <div class="flex rounded-3xl bg-accent p-4 team-member flex-col ...">
+              <div class="flex w-48 rounded">
+                <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
+              </div>
+              <p class="font-medium p-8 text-2xl">Caleb </p>
+                <p class="font-medium text-lg">Cheif Technology Officer</p>
+            </div>
+          </div>
         </div>
-        
-        <div class="avatar">
-          <div class="flex justify-center w-48 rounded">
-            <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-          </div>
-        </div>
-
-        <div class="avatar">
-          <div class="flex justify-end w-48 rounded">
-            <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-          </div>
         </div>
       </div>
-    </div>
+      <div class="mb-16 flex justify-center">
+        <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
+          <h1 class="text-accent font-bold text-6xl pt-24">Meet the Team</h1>
+          <h2 class="pt-24 text-neutral leading-loose text-2xl  text-block text-accent font-semibold">
+            Hello, welcome to the Yuuera team we are excited to have you here. 
+            Our goal is to utilize the power of blockchain and cryptocurrency to
+            create a better future for the internet together. We value the decentralization
+            of the internet as key to creating a more vibrant, efficient, and Community
+            based tech scene. Our mission is to give control of the internet back to the 
+            people in shopping and beyond. The internet was not made by one person. Let's keep it that way. 
+            We would be honored to have you join us in our journey to change the future of the internet brining 
+            the power to the people. 
+          </h2>
+        </div>
+      </div>
     </section>
 
     <section>
-      <div class="mt-64 mb-16">
-          <h3 class="text-primary font-bold text-6xl">Values</h3>
+      
+      <div class="mt-24 mb-16">
+          <h3 class="text-primary font-bold text-6xl">Built for <span class="text-info">Yuu</span></h3>
       </div>
-      <div class="mt-16 mb-16 flex justify-center">
-        <div class="bg-info w-2/3 rounded-3xl h-48 shadow-lg">
+      
+      <div class="mt-10 mb-10 flex justify-center">
+        <div class="flex flex-row bg-info w-2/3 rounded-3xl h-48 shadow-lg">
+          <img class="h-48 rounded-3xl" src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
           <h3 class="text-neutral font-bold text-xl p-2">Consumer Focused: </h3>
           <p class="text-neutral leading-loose text-2xl">
-              First and foremost we care about consumers like you.
-              If you aren't happy, we ain't eating. Providing great products and services 
+              Providing great products and services 
               is one thing. Creating products that you value is success.
           </p>
         </div>
       </div>
 
-      <div class="mb-16 flex justify-center">
-        <div class=" bg-info h-48 w-2/3 rounded-3xl shadow-lg">
+      <div class="mb-10 flex justify-center">
+        <div class="flex flex-row bg-info w-2/3 rounded-3xl h-48 shadow-lg">
           <h3 class="text-neutral font-bold text-xl p-2">Privacy: </h3>  
           <p class="text-neutral leading-loose text-2xl">
-              We utilizing the security of the Cardano blockchain and its research
-              first development to bring secure peer to peer transacitons without
-              reliance on third part organizations or entities.
+              Secure peer to peer transacitons on without
+              reliance on third part organizations or entities. EVEN US!
           </p>
+          <img class="h-48 rounded-3xl" src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
         </div>
       </div>
 
       <div class="mb-16 flex justify-center">
 
-        <div class=" bg-info h-48 w-2/3 rounded-3xl shadow-lg">
+        <div class=" flex flex-row bg-info w-2/3 rounded-3xl h-48 shadow-lg">
+          <img class="h-48 rounded-3xl" src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
           <h3 class="text-neutral font-bold text-xl p-2">Community: </h3>  
           <p class="text-neutral leading-loose text-2xl">
-              We strongly believe in the power of blockchain and its ability 
-              to empower us to take back the control of the internet from 
-              the select few. Blockchain is internet freedom for us, providing
-              the space for more creativity, innovation, and experiences.
+              Blockchain is internet freedom for us, providing
+              the space for tomorrows creativity, innovation, and experiences.
           </p>
         </div>
       </div>
