@@ -3,55 +3,76 @@
   <head>
     <title class="text-base-100">Project-Y</title>
   </head>
-  <header class="bg-orange-600 text-base-200 ">
+  <header class="bg-primary text-base-200 ">
     <div class="navbar flex-1">
       <NuxtLink class="btn btn-ghost normal-case text-xl text-neutral" to="/">Yuuera</NuxtLink>
     </div>
   </header>
   <body class="bg-accent">
     
-    <div class="space-x-24 pt-72">
-    
-     
-      <div class="avatar">
-        <h1 class="text-primary text-7xl font-semibold ">Putting Yuu back in the equation</h1>
+    <div>
+      <div class=" hero aboutCityImage shadow-2xl ">
+        <div class="w-full h-full flex justify-center items-center backdrop-blur-sm hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-4xl">
+            <h1 class=" text-primary text-9xl font-semibold  ">Putting <span class="text-info">Yuu</span> back in the equation</h1>
+            
+          </div>
+        </div>
       </div>
-      
     </div>
 
 
-    <div class="bg-accent pt-52">
+    <section class="bg-accents pt-24">
       <div class="mt-16 mb-16">
-          <h3 class="text-primary font-bold text-6xl">Our Mission</h3>
+          <h3 class="text-primary font-bold text-7xl">The Internet Powered by <span class="text-info">Yuu</span></h3>
             <div class="mb-16 flex justify-center">
-              <div class="mt-4 bg-info h-adjustment w-2/3 rounded-3xl shadow-lg">
-                <p class="pt-24 text-neutral leading-loose text-2xl">
+              <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
+                <p class="pt-24 text-neutral leading-loose text-3xl  text-block">
                   Hello, welcome to the Yuuera team we are excited to have you here. 
                   Our goal is to utilize the power of blockchain and cryptocurrency to
                   create a better future for the internet together. We value the decentralization
                   of the internet as key to creating a more vibrant, efficient, and Community
                   based tech scene. Our mission is to give control of the internet back to the 
                   people in shopping and beyond. The internet was not made by one person. Let's keep it that way. 
-                  We would be honored to have you join us in our journey to change the futureof the internet brining 
+                  We would be honored to have you join us in our journey to change the future of the internet brining 
                   the power to the people. 
                 </p>
               </div>
             </div>
       </div>
+    </section>
       
-      <div class="mt-64 mb-16">
-          <h3 class="text-primary font-bold text-6xl">Meet the Team</h3>
-          <h2 class="text-primary text-4xl font-semibold">
-            Based in the midwest region of the United states we are proud to be one of the few blockhchain companies
-            in the area trailblazing for future blockchain growth.
-          </h2>
-      </div>
+    <section class="bg-secondary mb-16 flex">
+      <div>
 
-      <div class="h-adjustment space-x-24">
+      
+      <div class="triangle-divider ">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
+          </svg>
+      </div>
+      <div class="mb-16 flex justify-center">
+              <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
+                <h1 class="text-accent font-bold text-6xl pt-24">Meet the Team</h1>
+                <h2 class="pt-24 text-neutral leading-loose text-3xl  text-block text-accent text-4xl font-semibold">
+                  Hello, welcome to the Yuuera team we are excited to have you here. 
+                  Our goal is to utilize the power of blockchain and cryptocurrency to
+                  create a better future for the internet together. We value the decentralization
+                  of the internet as key to creating a more vibrant, efficient, and Community
+                  based tech scene. Our mission is to give control of the internet back to the 
+                  people in shopping and beyond. The internet was not made by one person. Let's keep it that way. 
+                  We would be honored to have you join us in our journey to change the future of the internet brining 
+                  the power to the people. 
+                </h2>
+              </div>
+            </div>
+      <div class="h-screen  space-x-24">
         <div class="avatar">
           <div class="w-48 rounded">
             <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
           </div>
+
         </div>
         
         <div class="avatar">
@@ -66,7 +87,10 @@
           </div>
         </div>
       </div>
-      
+    </div>
+    </section>
+
+    <section>
       <div class="mt-64 mb-16">
           <h3 class="text-primary font-bold text-6xl">Values</h3>
       </div>
@@ -104,12 +128,13 @@
           </p>
         </div>
       </div>
+    </section>
+    
       <div class="mt-60 Spt-24 h-adjustment">
         <ClientOnly>
           <EmailSignUp></EmailSignUp>
         </ClientOnly>
       </div>
-    </div>
   </body>
 
   <footer class="bg-accent">

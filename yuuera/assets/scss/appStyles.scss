@@ -18,5 +18,34 @@ nav {
   }
 }
 .h-adjustment{
-  height: 60vh;
+  height: 70vh;
+}
+.aboutCityImage{
+  min-height: 80vh;
+  background-image: url(/assets/images/pexels-gratisography-2255.jpg);
+}
+section{
+  position:relative;
+} 
+
+
+.triangle-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.triangle-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 78px;
+}
+
+.triangle-divider .shape-fill {
+  fill: #EBEBEB;
 }
