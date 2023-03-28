@@ -32,6 +32,7 @@ async function handleSubmit() {
   console.log(signUpEmail.value)
   alert('processing')
   var data = { email: signUpEmail.value }
+  //change to yuuera for production
   await $fetch('http://127.0.0.1:8000/newsletter/', {
     method: 'POST',
     headers: {
