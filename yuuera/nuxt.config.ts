@@ -21,4 +21,5 @@ export default defineNuxtConfig({
   build: {},
 
   ssr:process.env.NODE_ENV !== "development"
+
 })
