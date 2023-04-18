@@ -1,0 +1,15 @@
+from /Project-Y run
+
+docker compose build 
+docker compose up
+
+"run from the root"
+export GPG_TTY=$(tty)
+"then login from the root before using sudo for the rest of your actions"
+
+/var/www/dockerize-nuxt/yuuera/.output/server/index.mjs
+
+.docker folder 
+switch the credsStore to secretservice
+
+Switch context to rootless
