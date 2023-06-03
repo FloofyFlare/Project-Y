@@ -16,11 +16,11 @@ module.exports = {
          
       "primary": "#F17720",
           
-      "secondary": "#F17720",
+      "secondary": "#47b9ff",
           
-      "accent": "#ebebeb",
+      "accent": "#3782fb",
           
-      "neutral": "#000000",
+      "neutral": "#ebebeb",
           
       "base-100": "#808080",
           
