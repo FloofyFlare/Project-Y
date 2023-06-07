@@ -11,12 +11,20 @@
   <body class="bg-accent">
     
     <div>
-      <div class=" hero aboutCityImage shadow-2xl">
+      <div class=" hero min-h-screen shadow-2xl" style="background-image: url(https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png);">
         <div class="w-full h-full flex justify-center items-center backdrop-blur-sm hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="max-w-4xl sm:text-left">
-            <h1 class=" text-primary text-6xl md:text-9xl font-semibold  ">Putting <span class="text-info">Yuu</span> back in the equation</h1>
+            <h1 class=" text-primary text-6xl md:text-9xl font-semibold  ">An ecommerce platform built for <span class="text-secondary">Yuu</span></h1>
             
+            <div class="mt-16 flex justify-center">
+              <div class="w-2/3 rounded-3xl h-48">  
+                <p class=" text-left leading-loose tracking-widest text-xl lg:text-2xl">
+                  LEARN MORE
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -24,81 +32,121 @@
 
 
     <section class="bg-accents pt-24">
-      <div class="mt-16 mb-16">
-          <h3 class="text-primary font-bold text-4xl md:text-7xl">The Internet Powered by <span class="text-info">Yuu</span></h3>
-            <div class="md:flex">
-            <div class="mb-16 flex justify-center">
-              <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
-                <p class="pt-24 text-neutral leading-loose text-xl md:text-3xl text-block">
-                  Hello, welcome to the Yuuera team we are excited to have you here. 
-                  Our goal is to utilize the power of blockchain to
-                  create a better future for the internet together. We value the decentralization
-                  of the internet as key to creating a more vibrant, efficient, and Community
-                  based tech scene. Our mission is to give control of the internet back to the 
-                  people in shopping and beyond. The internet was not made by one person. Let's keep it that way. 
-                  We would be honored to have you join us in our journey to change the future of the internet brining 
-                  the power to the people. 
-                </p>
+      <div class="flex">
+        <div class="h-screen ">
+          <div class="flex flex-row justify-center space-x-24 mt-44">
+          <div class="mt-16 mb-16">
+          
+          <h3 class="flex text-primary font-bold text-4xl md:text-7xl">Buy & Sell Cardano</h3>
+          <div class="">
+                <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
+                  <p class="pt-24 text-neutral leading-loose text-xl md:text-3xl text-block">
+                    On our groundbreaking crypto e-commerce platform you can buy and sell items across the world using stable coins as payment  
+                  </p>
+                </div>
+          </div>
+        </div>
+        
+          <img class="h-46 w-64 rounded-3xl md:w-96 lg:w-96" src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
+            <div class="flex">
+              <div class="mt-60 Spt-24 h-adjustment">
+                <ClientOnly>
+                  <EmailSignUp></EmailSignUp>
+                </ClientOnly>
               </div>
             </div>
-          </div>
+        </div>
       </div>
-    </section>
-      
-    <section class="bg-secondary mt-16 flex">
-      <div class="flex ">
+      </div>
 
-      
+    
+    </section>
+
+    <section class="text-left">
       <div class="triangle-divider">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
               <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
           </svg>
       </div>
       
-      <div class="h-screen pl-24">
-        <div class="flex flex-row justify-center space-x-24 mt-44  ...">
-          <div>
-            <div class="flex rounded-3xl bg-accent p-4  team-member flex-col ...">
-              <div class="flex w-48 rounded">
-                <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-              </div>
-              <p class="font-medium p-8 text-2xl">Raymond </p>
-                <p class="font-medium text-lg">Cheif Executive Officer</p>
-            </div>
-          </div>
-          <div class="">
-            <div class="flex rounded-3xl bg-accent p-4 team-member flex-col ...">
-              <div class="flex w-48 rounded">
-                <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-              </div>
-              <p class="font-medium p-8 text-2xl">Caleb </p>
-                <p class="font-medium text-lg">Cheif Technology Officer</p>
-            </div>
-          </div>
-        </div>
+    <div class="h-screen">
+      <div class="mt-10 mb-10 flex justify-left">
+        <h3 class="text-primary font-bold text-4xl md:text-6x1">Secure </h3>
+      </div>
+      <div class="mt-10 mb-10 flex justify-left">
+        <div class="flex flex-row bg-accet w-2/3 rounded-3xl h-48">
+          <p class="text-neutral text-left leading-loose tracking-widest text-l lg:text-2xl">
+            Using the cardano blockchain and intesive cryptographic methods we eliminate the need to hold your personaly identifiable information in our databases.
+          </p>
         </div>
       </div>
-      <div class="mb-16 md:flex justify-center">
-        <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
-          <h1 class="text-accent font-bold text-6xl pt-24 text-right sm:text-left">Meet the Team</h1>
-          <h2 class="pt-24 text-neutral leading-loose text-l md:text-2xl  text-block text-accent font-semibold">
-            Hello, welcome to the Yuuera team we are excited to have you here. 
-            Our goal is to utilize the power of blockchain and cryptocurrency to
-            create a better future for the internet together. We value the decentralization
-            of the internet as key to creating a more vibrant, efficient, and Community
-            based tech scene. Our mission is to give control of the internet back to the 
-            people in shopping and beyond. The internet was not made by one person. Let's keep it that way. 
-            We would be honored to have you join us in our journey to change the future of the internet brining 
-            the power to the people. 
-          </h2>
+
+      
+      <div class="mt-10 mb-10 flex justify-left">
+        <h3 class="text-primary font-bold text-4xl md:text-6x1">Inclusive </h3>
+      </div>
+      <div class="mb-10 mb-10 flex justify-left">
+        <div class="flex flex-row bg-accent w-2/3 rounded-3xl h-48">  
+          <p class="text-neutral text-left leading-loose tracking-widest text-l lg:text-2xl">
+            An e-commerce platform without borders. We strive to provide ecommerce opportunites to all expanding the global economy
+          </p>
         </div>
       </div>
+      
+      <div class="mt-10 mb-10 flex justify-left">
+        <h3 class="text-primary font-bold text-4xl md:text-6x1">Secure </h3>
+      </div>
+
+      <div class="mb-16 flex justify-left">
+        <div class=" flex flex-row bg-accent w-2/3 rounded-3xl h-48">  
+          <p class="text-neutral text-left leading-loose tracking-widest text-l lg:text-2xl">
+            We pledge to give back __ percent of our profits towards providing technology and educational benefits to those who lack them.
+          </p>
+        </div>
+      </div>
+    </div>
     </section>
 
     <section>
       
+      <div class="triangle-divider">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
+          </svg>
+      </div>
+
+      <div class="h-screen">
+      <div class="max-w-4xl">
+            <h3 class="text-primary text-6xl md:text-9xl font-semibold"> Lower tees = More prodids for you</h3>
+            
+            <div class="mt-16 flex justify-center">
+              <div class="w-2/3 rounded-3xl h-48">  
+                <p class="text-center text-neutral leading-loose tracking-widest text-xl lg:text-2xl">
+                  All transactions are handeld through smart contracts cutting costs when compared to traditioanl e-commerce websites  
+                </p>
+              </div>
+            </div>
+
+          <div class="mt-60 Spt-24 h-adjustment">
+            <ClientOnly>
+              <EmailSignUp></EmailSignUp>
+            </ClientOnly>
+          </div>
+          
+          </div>
+        </div>
+    </section>
+
+
+    <section>
+      <div class="triangle-divider">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
+          </svg>
+      </div>
+    <div class="h-screen">
       <div class="mt-24 mb-16">
-          <h3 class="text-primary font-bold text-4xl md:text-6xl">Built for <span class="text-info">Yuu</span></h3>
+          <h3 class="text-primary font-bold text-4xl md:text-6xl">FAQ</h3>
       </div>
       
       <div class="mt-10 mb-10 flex justify-center">
@@ -134,17 +182,24 @@
           </p>
         </div>
       </div>
+    </div>
     </section>
-    
+    <section class="bg-secondary">
+      <div class="triangle-divider">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
+          </svg>
+      </div>
       <div class="mt-60 Spt-24 h-adjustment">
         <ClientOnly>
           <EmailSignUp></EmailSignUp>
         </ClientOnly>
       </div>
+    </section>
   </body>
 
   <footer class="bg-accent">
-    <div class="bg-orange-600">
+    <div class="bg-secondary">
       <div class="footer footer-center p-10  text-neutral rounded">
         <div class="grid grid-flow-col gap-4">
           <p class="font-bold text-2xl">Contact Us</p>
@@ -158,7 +213,7 @@
         <div class="md:place-self-center md:justify-self-end">
           <div class="grid grid-flow-col gap-4 text-neutral">
             <p>Companyemail.com (plus logo)</p>
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
+            <image class="w-24 h-4"  src="Yuuera_Logo.jpg" />
           </div>
         </div>
       </div>

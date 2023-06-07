@@ -1,25 +1,29 @@
 <template>
   <div class="hello">
     <h1 class="text-primary font-bold text-2xl">Join the Movement Here</h1>
-    <form id="signup-form" @submit.prevent="handleSubmit">
-      <input
-        v-model="signUpEmail"
-        placeholder="example@company.com"
-        type="email"
-        class="email-box"
-        @keyup.enter="handleSubmit"
-      />
-      <button type="submit" class="submit-button" @click="handleSubmit">
-        Join the Future
-      </button>
-    </form>
+    <div class="form-control ">
+      <div class="text-input-button input-group flex justify-center pt-6">
+        <form id="signup-form" @submit.prevent="handleSubmit">
+          <input
+            v-model="signUpEmail"
+            placeholder="example@company.com"
+            type="text"
+            class="input input-bordered"
+            @keyup.enter="handleSubmit"
+          />
+          <button type="submit" class="btn button no-animation" @click="handleSubmit">
+            Join the Future
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 
-const signUpEmail = ref('example@company.com')
+const signUpEmail = ref()
 
 const handleSubmit = () => {
   console.log(signUpEmail.value)
