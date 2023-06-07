@@ -17,7 +17,7 @@
           <div class="max-w-4xl sm:text-left">
             <h1 class=" text-primary text-6xl md:text-9xl font-semibold  ">An ecommerce platform built for <span class="text-secondary">Yuu</span></h1>
             
-            <div class="mt-16 flex justify-center">
+            <div class="mt-16 flex  justify-center">
               <div class="w-2/3 rounded-3xl h-48">  
                 <p class=" text-left leading-loose tracking-widest text-xl lg:text-2xl">
                   LEARN MORE
@@ -184,23 +184,32 @@
       </div>
     </div>
     </section>
-    <section class="bg-secondary">
-      <div class="triangle-divider">
+    <section class="bg-secondary h-screen">
+      <div class="triangle-dividsser">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
               <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
           </svg>
       </div>
-      <div class="mt-60 Spt-24 h-adjustment">
+
+      <div class="mt-16 flex justify-">
+          <div class="w-2/3 rounded-3xl h-48">  
+              <p class=" text-left text-neutral leading-loose tracking-widest text-xl lg:text-2xl">
+                  Join the Newsletter for updates
+              </p>
+          </div>
+        </div>
+
+      <div class="Spt-24 h-adjustment">
         <ClientOnly>
           <EmailSignUp></EmailSignUp>
         </ClientOnly>
       </div>
     </section>
-  </body>
+  
 
   <footer class="bg-accent">
     <div class="bg-secondary">
-      <div class="footer footer-center p-10  text-neutral rounded">
+      <div class="footer footer-center p-24  text-neutral rounded">
         <div class="grid grid-flow-col gap-4">
           <p class="font-bold text-2xl">Contact Us</p>
         </div> 
@@ -219,6 +228,7 @@
       </div>
     </div>
   </footer>
+</body>
   </template>
   <script s>
   </script>
