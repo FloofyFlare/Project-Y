@@ -40,12 +40,12 @@
       </div>
 
 
-    <div class="bg-">
-      <div class="mt-10 mb-10 flex justify-center">
+    <div class="bg-accent">
+      <div class=" mt-10 mb-10 flex justify-center">
         <h1 class="text-primary font-bold text-4xl md:text-7xl">Our Story </h1>
       </div>
-      <div class="mt-10 mb-12 flex justify-center bg-accent">
-        <div class=" w-2/3 rounded-3xl h-48">
+      <div class="mt-10 mb-12 flex justify-center">
+        <div class=" w-2/3 rounded-3xl h-96">
           <p class="text-neutral text-xl text-center leading-loose tracking-widest text-l lg:text-2xl">
             Sample Text.
           </p>
