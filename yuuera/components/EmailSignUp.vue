@@ -2,7 +2,7 @@
   <div class="hello">
     <h1 class="text-primary font-bold text-2xl">Join the Movement Here</h1>
     <div class="form-control ">
-      <div class="text-input-button input-group flex justify-center pt-6">
+      <div class="text-input-button input-group  flex justify-center pt-6">
         <form id="signup-form" @submit.prevent="handleSubmit">
           <input
             v-model="signUpEmail"
@@ -11,7 +11,7 @@
             class="input input-bordered"
             @keyup.enter="handleSubmit"
           />
-          <button type="submit" class="btn button no-animation" @click="handleSubmit">
+          <button type="submit" class="btn button no-animation bg-primary" @click="handleSubmit">
             Join the Future
           </button>
         </form>
