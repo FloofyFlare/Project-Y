@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss'
   ],
-
+  ssr:false,
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   // Content module configuration: https://go.nuxtjs.dev/config-content
 
