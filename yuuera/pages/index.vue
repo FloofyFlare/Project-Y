@@ -67,10 +67,10 @@
                 <ClientOnly>
                   <EmailSignUp></EmailSignUp>
                 </ClientOnly>
-    <section class="bg-base-100 rounded-md">
+    <section class="bg-info rounded-md">
       <div class="mt-24">
           <div class=" carousel rounded-box">
-            <div class="carousel-item bg-neutral w-screen flex flex-col justify-center">
+            <div class="carousel-item w-screen flex flex-col justify-center">
               <div class="w-screen flex justify-center">
                 <img src="@/assets/images/lockstock.png"  class="rounded-box w-1/2 h-auto" />
               </div>
@@ -78,14 +78,14 @@
               <p class="p-4">Leveraging the Cardano blockchain and robust cryptography, our platform prioritizes security by minimizing personal data stored by traditional e-commerce companies.</p>
             </div> 
             
-            <div class="carousel-item bg-neutral justify-center w-screen flex-col">
+            <div class="carousel-item justify-center w-screen flex-col">
               <div class="w-screen flex justify-center">
                 <img src="@/assets/images/handstock.png" class="rounded-box w-1/2 h-auto " />
               </div>
               <h1 class="font-semibold text-3xl p-4">Inclusivity</h1>
               <p class="p-4">Borderless e-commerce for a global economy. Join us and expand your access to markets around the world.</p>
             </div> 
-            <div class="carousel-item bg-neutral justify-center  w-screen flex-col">
+            <div class="carousel-item justify-center  w-screen flex-col">
               <div class="w-screen flex justify-center">
                 <img src="@/assets/images/bookstock.png"
                 class="rounded-box w-1/2 h-auto " />

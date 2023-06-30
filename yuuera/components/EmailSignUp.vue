@@ -23,13 +23,18 @@
 <script setup>
 import { ref } from 'vue'
 
-const signUpEmail = ref()
+const signUpEmail = ref('')
 
-const handleSubmit = () => {
+async function handleSubmit() {
   console.log(signUpEmail.value)
-  alert('processing')
+  var data = { email: signUpEmail.value }
+  //change to yuuera for production
+  await $fetch('http://0.0.0.0:8000/newsletter/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
 }
 </script>
-
-<style scoped lang="scss">
-</style>

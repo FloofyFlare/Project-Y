@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  nuxt-app:
+    build: ./yuuera
+    container_name: yuueraContainer
+    restart: always
+    ports:
+      - "3000:3000"
+    command: "node .output/server/index.mjs"
+    networks:
+      - nuxt-network
+  web-server:
+    build: ./nginx
+    ports:
+      - 8080:80
+    networks:
+      - nuxt-network
+    depends_on:
+      - nuxt-app
+networks:
+  nuxt-network:
+    driver: bridge
