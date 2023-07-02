@@ -13,6 +13,7 @@
     </div>
   </div>
   </header>
+
   <body class="pt-10 bg-base-100">
    
   <section class="rounded-md">
@@ -42,8 +43,7 @@
   <section id="next" class="bg-base-100 h-screen rounded-lg">
 
               <div class=" mt-4 avatar">
-                    <img src="@/assets/images/cardano-logo.png" class="absolute z-0 w-24 fill-current"/>
-                    <img src="@/assets/images/laptopstock.png" class="z-10"/>
+                    <img src="@/assets/images/shopping cart.png" class="z-10"/>
               </div> 
 
               <div class=" flex justify-center">
@@ -72,22 +72,22 @@
           <div class=" carousel rounded-box">
             <div class="carousel-item w-screen flex flex-col justify-center">
               <div class="w-screen flex justify-center">
-                <img src="@/assets/images/lockstock.png"  class="rounded-box w-1/2 h-auto" />
+                <img src="@/assets/images/cardano-logo.png"  class="rounded-box w-1/2 h-auto" />
               </div>
               <h1 class="font-semibold text-3xl p-4">End to end security</h1>
-              <p class="p-4">Leveraging the Cardano blockchain and robust cryptography, our platform prioritizes security by minimizing personal data stored by traditional e-commerce companies.</p>
+              <p class="p-4">Leveraging the Cardano blockchain our transactions are done via smart contracts on Cardano, this minimizes the amount of user data we store significantly when compared to traditional e-commerce marketplaces.</p>
             </div> 
             
             <div class="carousel-item justify-center w-screen flex-col">
               <div class="w-screen flex justify-center">
-                <img src="@/assets/images/handstock.png" class="rounded-box w-1/2 h-auto " />
+                <img src="@/assets/images/handshake.png" class="rounded-box w-1/2 h-auto " />
               </div>
-              <h1 class="font-semibold text-3xl p-4">Inclusivity</h1>
-              <p class="p-4">Borderless e-commerce for a global economy. Join us and expand your access to markets around the world.</p>
+              <h1 class="font-semibold text-3xl p-4">Borderless payments</h1>
+              <p class="p-4">Borderless e-commerce for a global economy. Lets us help you expand your access to markets around the world. No more cross border fees affecting the price of your purchases</p>
             </div> 
             <div class="carousel-item justify-center  w-screen flex-col">
               <div class="w-screen flex justify-center">
-                <img src="@/assets/images/bookstock.png"
+                <img src="@/assets/images/books.png"
                 class="rounded-box w-1/2 h-auto " />
               </div>
               
@@ -159,7 +159,7 @@
 </footer>
 </body>
   </template>
-  <script s>
+  <script>
   </script>
   
   <style scoped lang="scss">
