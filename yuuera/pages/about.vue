@@ -3,7 +3,7 @@
     <div class="navbar w-screen">
       <div class="flex-1">
         <NuxtLink to="/" class="absolute w-28">
-          <img src="@/assets/images/logo.png" class=" w-28 fill-current" />
+          <nuxt-img alt="Yuuera logo" src="@/assets/images/logo.png" class=" w-28 fill-current" />
         </NuxtLink>
       </div>
       <div class="flex-none">
@@ -15,7 +15,7 @@
   </header>
   <body class="bg-base-100">
     <section class=" h-2/3 pt-24">
-      <img src="@/assets/images/twitter base trans.png" class="absolute top-7 opacity-10 z-0 lowest-el"/>
+      <nuxt-img src="@/assets/images/twitter base trans.png" class="absolute top-7 opacity-10 z-0 lowest-el"/>
     <div>
   
         <div class="flex justify-center items-center">
@@ -34,7 +34,7 @@
         <h1 class=" text-primary p-4 font-bold text-4xl md:text-7xl">Vision</h1>
       </div>
       <div class="flex justify-center">
-        <div class=" p-4 md:w-2/3 rounded-3xl h-96">
+        <div class=" p-4 md:w-2/3 rounded-3xl ">
           <p class="text-xl text-center leading-loose tracking-widest text-l lg:text-2xl">
             At Yuuera we empower people with the ability to fully control their decisions online using blockchain and crypto currency, cutting out unessacry third parties and contributing to making the world a better place.
           </p>
@@ -45,7 +45,7 @@
 
     <section>
       <div class="avatar">
-            <img src="@/assets/images/laptopstock.png" />
+            <nuxt-img src="@/assets/images/laptopstock.png" />
       </div> 
       <div class="flex justify-center items-center mb-12">
         <div class="hero-content text-center text-neutral-content">
@@ -78,7 +78,7 @@
       </div>
           <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col">
             <div class="flex justify-center">
-              <img src="@/assets/images/padlock.png" class="margin-left-24px justify-contents" />
+              <nuxt-img src="@/assets/images/padlock.png" class="margin-left-24px justify-contents" />
             </div>
                   <div>
                     <p class="font-medium p-8 text-2xl">Security:</p>
@@ -88,7 +88,7 @@
 
           <div class="flex rounded-3xl bg-info p-4 mb-12 h team-member flex-col">
               <div class="flex rounded">
-                <img src="@/assets/images/internet-image.png" />
+                <nuxt-img src="@/assets/images/internet-image.png" />
               </div>
               <div>
                 <p class="font-medium p-8 text-2xl">Community:</p>
@@ -98,7 +98,7 @@
             
             <div class="flex rounded-3xl bg-info p-4 team-member flex-col">
               <div class="flex  rounded">
-                <img src="@/assets/images/chatbubbles.png" />
+                <nuxt-img src="@/assets/images/chatbubbles.png" />
               </div>
               <div>
                 <p class="font-medium p-8 text-2xl">Consumer Focused:</p>
@@ -126,7 +126,14 @@
 </body>
   </template>
 
-  <script>
+  <script setup lang="ts">
+  useHead({
+    title: 'Yuuera | About us',
+    meta: [
+      { name: 'description', content: 'Hello we are Yuuera a Web 3.0 company built for YUU' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ],
+  })
   </script>
   
   <style scoped lang="scss">

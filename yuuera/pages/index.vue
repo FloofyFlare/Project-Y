@@ -1,9 +1,10 @@
 <template>
+   
   <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
     <div class="navbar w-screen">
       <div class="flex-1">
         <NuxtLink to="/" class="absolute w-28">
-          <img src="@/assets/images/logo.png" class=" w-28 fill-current" />
+          <nuxt-img alt="Yuuera logo" src="@/assets/images/logo.png" class=" w-28 fill-current" />
         </NuxtLink>
       </div>
       <div class="flex-none">
@@ -25,14 +26,14 @@
             <h1 class=" text-primary text-6xl md:text-9xl font-semibold  ">Buy and sell anything with Crypto as payment</h1>
             
             <div class="mt-16 flex  justify-center">
-              <div class="w-2/3 rounded-3xl h-48">  
+              <div class="w-2/3 rounded-3xl ">  
                 <p class=" text-left leading-loose tracking-widest text-xl lg:text-2xl">
                   Discover our cutting-edge crypto e-commerce platform, enabling cost-effective buying and selling with stable coins as payment.
                 </p>
               </div>
             </div>
           </div>
-          <a href="#next" class="mt-24 btn-outline btn btn-md md:btn-md lg:btn-lg" to="">Learn more</a>
+          <a href="#next" class="mt-24 mb-4 btn-outline btn btn-md md:btn-md lg:btn-lg" to="">Learn more</a>
         </div>
         
       </div>
@@ -40,10 +41,10 @@
     
   </section>
 
-  <section id="next" class="bg-base-100 h-screen rounded-lg">
+  <section id="next" class="bg-base-100  rounded-lg">
 
               <div class=" mt-4 avatar">
-                    <img src="@/assets/images/shopping cart.png" class="z-10"/>
+                    <nuxt-img alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart" src="@/assets/images/shopping cart.png" class="z-10"/>
               </div> 
 
               <div class=" flex justify-center">
@@ -56,7 +57,7 @@
 
               <div class=" mb-12 flex justify-center">
                 <div class="w-3/3 rounded-2xl">
-                  <p class="text-center leading-loose tracking-widest text-md lg:text-2xl">
+                  <p class="text-center leading-loose text-xl tracking-widest text-md lg:text-2xl">
                     Our marketplace is powered by the cardano blockchain helping you to take control of your transactions avoiding unnessacary fees and data collection.
 
                   </p>
@@ -70,29 +71,29 @@
     <section class="bg-info rounded-md">
       <div class="mt-24">
           <div class=" carousel rounded-box">
-            <div class="carousel-item w-screen flex flex-col justify-center">
+            <div id="item3" class="carousel-item w-screen flex flex-col justify-center">
               <div class="w-screen flex justify-center">
-                <img src="@/assets/images/cardano-logo.png"  class="rounded-box w-1/2 h-auto" />
+                <nuxt-img alt="Cardano logo" src="@/assets/images/cardano-logo.png"  class="rounded-box w-1/2 h-auto" />
               </div>
               <h1 class="font-semibold text-3xl p-4">End to end security</h1>
-              <p class="p-4">Leveraging the Cardano blockchain our transactions are done via smart contracts on Cardano, this minimizes the amount of user data we store significantly when compared to traditional e-commerce marketplaces.</p>
+              <p class="p-4 text-xl tracking-widest text-md">Leveraging the Cardano blockchain our transactions are done via smart contracts on Cardano, this minimizes the amount of user data we store significantly when compared to traditional e-commerce marketplaces.</p>
             </div> 
             
-            <div class="carousel-item justify-center w-screen flex-col">
+            <div id="item2" class="carousel-item justify-center w-screen flex-col">
               <div class="w-screen flex justify-center">
-                <img src="@/assets/images/handshake.png" class="rounded-box w-1/2 h-auto " />
+                <nuxt-img alt="an image of 2 hands shaking showing agrement" src="@/assets/images/handshake.png" class="rounded-box w-1/2 h-auto " />
               </div>
               <h1 class="font-semibold text-3xl p-4">Borderless payments</h1>
-              <p class="p-4">Borderless e-commerce for a global economy. Lets us help you expand your access to markets around the world. No more cross border fees affecting the price of your purchases</p>
+              <p class="p-4 text-xl tracking-widest text-md">Borderless e-commerce for a global economy. Lets us help you expand your access to markets around the world. No more cross border fees affecting the price of your purchases</p>
             </div> 
-            <div class="carousel-item justify-center  w-screen flex-col">
+            <div id="item3" class="carousel-item justify-center  w-screen flex-col">
               <div class="w-screen flex justify-center">
-                <img src="@/assets/images/books.png"
+                <nuxt-img alt="A stack of books" src="@/assets/images/books.png"
                 class="rounded-box w-1/2 h-auto " />
               </div>
               
               <h1 class="font-semibold text-3xl p-4">Serving communities for the greater good</h1>
-              <p class="p-4">We are committed to making a positive impact by giving 10 percent of our profits to provide technology and educational benefits to underserved communities.</p>
+              <p class="p-4 text-xl tracking-widest text-md">We are committed to making a positive impact by giving 10 percent of our profits to provide technology and educational benefits to underserved communities.</p>
             </div> 
           </div>
           <div class="flex justify-center w-full  py-2 gap-6">
@@ -159,7 +160,15 @@
 </footer>
 </body>
   </template>
-  <script>
+
+  <script setup lang="ts">
+  useHead({
+    title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
+    meta: [
+      { name: 'description', content: ' Discover our cutting-edge crypto e-commerce platform, enabling cost-effective buying and selling with stable coins as payment.' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ],
+  })
   </script>
   
   <style scoped lang="scss">
