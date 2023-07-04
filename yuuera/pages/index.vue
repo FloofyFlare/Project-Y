@@ -1,5 +1,4 @@
 <template>
-   
   <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
     <div class="navbar w-screen">
       <div class="flex-1">

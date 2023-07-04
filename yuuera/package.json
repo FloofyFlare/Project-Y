@@ -1,5 +1,4 @@
 {
-  "name": "nuxt-app",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -12,7 +11,11 @@
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.0.0-rc.1",
     "@types/node": "^18",
-    "nuxt": "^3.6.1"
+    "daisyui": "^3.1.7",
+    "nuxt": "^3.6.1",
+    "sass": "^1.63.6",
+    "sass-loader": "10.1.1",
+    "typescript": "^4.9.4"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0"
