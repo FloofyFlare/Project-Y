@@ -1,11 +1,12 @@
 <template>
+  <client-only>
   <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
     <div class="navbar w-screen">
       <div class="flex-1">
         <NuxtLink to="/" class="absolute w-28">
           <nuxt-img
             alt="Yuuera logo"
-            src="@/assets/images/logo.png"
+            src="/images/logo.png"
             class="w-28 fill-current"
           />
         </NuxtLink>
@@ -60,7 +61,7 @@
       <div class="mt-4 avatar">
         <nuxt-img
           alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-          src="@/assets/images/shopping cart.png"
+          src="/images/shopping cart.png"
           class="z-10"
         />
       </div>
@@ -98,7 +99,7 @@
             <div class="w-screen flex justify-center">
               <nuxt-img
                 alt="Cardano logo"
-                src="@/assets/images/cardano-logo.png"
+                src="/images/cardano-logo.png"
                 class="rounded-box w-1/2 h-auto"
               />
             </div>
@@ -118,7 +119,7 @@
             <div class="w-screen flex justify-center">
               <nuxt-img
                 alt="an image of 2 hands shaking showing agrement"
-                src="@/assets/images/handshake.png"
+                src="/images/handshake.png"
                 class="rounded-box w-1/2 h-auto"
               />
             </div>
@@ -136,7 +137,7 @@
             <div class="w-screen flex justify-center">
               <nuxt-img
                 alt="A stack of books"
-                src="@/assets/images/books.png"
+                src="/images/books.png"
                 class="rounded-box w-1/2 h-auto"
               />
             </div>
@@ -232,6 +233,7 @@
       </div>
     </footer>
   </body>
+</client-only>
 </template>
 
 <script setup lang="ts">
@@ -245,6 +247,9 @@ useHead({
     },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
+  link: [
+  {hid: 'favicon', rel: 'icon', type:'image/x-icon', href:'favicon.ico'}
+  ]
 })
 </script>
 

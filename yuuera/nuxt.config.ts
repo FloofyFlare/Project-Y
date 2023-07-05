@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   ssr: true,
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   // Content module configuration: https://go.nuxtjs.dev/config-content
-
+  
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 })

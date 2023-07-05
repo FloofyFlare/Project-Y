@@ -5,7 +5,7 @@
         <NuxtLink to="/" class="absolute w-28">
           <nuxt-img
             alt="Yuuera logo"
-            src="@/assets/images/logo.png"
+            src="/images/logo.png"
             class="w-28 fill-current"
           />
         </NuxtLink>
@@ -24,7 +24,7 @@
   <body class="bg-base-100">
     <section class="h-2/3 pt-24">
       <nuxt-img
-        src="@/assets/images/twitter base trans.png"
+        src="/images/twitter base trans.png"
         class="absolute top-7 opacity-10 z-0 lowest-el"
       />
       <div>
@@ -62,7 +62,7 @@
 
     <section>
       <div class="avatar">
-        <nuxt-img src="@/assets/images/laptopstock.png" />
+        <nuxt-img src="/images/laptopstock.png" />
       </div>
       <div class="flex justify-center items-center mb-12">
         <div class="hero-content text-center text-neutral-content">
@@ -104,7 +104,7 @@
         <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col">
           <div class="flex justify-center">
             <nuxt-img
-              src="@/assets/images/padlock.png"
+              src="/images/padlock.png"
               class="margin-left-24px justify-contents"
             />
           </div>
@@ -120,11 +120,11 @@
         </div>
 
         <div class="flex rounded-3xl bg-info p-4 mb-12 h team-member flex-col">
-          <div class="flex rounded">
-            <nuxt-img src="@/assets/images/internet-image.png" />
+          <div class="flex justify-center">
+            <nuxt-img src="/images/internet-image.png" />
           </div>
           <div>
-            <p class="font-medium p-8 text-2xl">Community:</p>
+            <p class="font-medium p-8 text-2xl">Inovation:</p>
             <p class="font-medium text-lg">
               Blockchain is internet freedom for us, providing the space for
               tomorrows creativity, innovation, and experiences. We work to make
@@ -134,8 +134,8 @@
         </div>
 
         <div class="flex rounded-3xl bg-info p-4 team-member flex-col">
-          <div class="flex rounded">
-            <nuxt-img src="@/assets/images/chatbubbles.png" />
+          <div class="flex justify-center">
+            <nuxt-img src="/images/chatbubbles.png" />
           </div>
           <div>
             <p class="font-medium p-8 text-2xl">Consumer Focused:</p>
@@ -186,6 +186,9 @@ useHead({
     },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
+  link: [
+  {hid: 'favicon', rel: 'icon', type:'image/x-icon', href:'favicon.ico'}
+  ]
 })
 </script>
 
