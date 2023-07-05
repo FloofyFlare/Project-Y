@@ -75,7 +75,7 @@
         </div>
       </div>
     </div>
-    <div class= "hidden md:block h-96">
+    <div class= "invisible md:visible h-96">
     <div class="avatar">
             <img src="@/assets/images/laptopstock.png" />
       </div>
