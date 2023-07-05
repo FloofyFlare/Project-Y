@@ -8,6 +8,7 @@
             alt="Yuuera logo"
             src="/images/logo.png"
             class="w-28 fill-current"
+            format="webp"
           />
         </NuxtLink>
       </div>
@@ -63,6 +64,7 @@
           alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
           src="/images/shopping cart.png"
           class="z-10"
+          format="webp"
         />
       </div>
 
@@ -91,7 +93,7 @@
       <EmailSignUp></EmailSignUp>
     <section class="bg-info rounded-md">
       <div class="mt-24">
-        <div class="carousel rounded-box">
+        <div class="w-full carousel rounded-box">
           <div
             id="item3"
             class="carousel-item w-screen flex flex-col justify-center"
@@ -101,6 +103,7 @@
                 alt="Cardano logo"
                 src="/images/cardano-logo.png"
                 class="rounded-box w-1/2 h-auto"
+                format="webp"
               />
             </div>
             <h1 class="font-semibold text-3xl p-4">End to end security</h1>
@@ -121,6 +124,7 @@
                 alt="an image of 2 hands shaking showing agrement"
                 src="/images/handshake.png"
                 class="rounded-box w-1/2 h-auto"
+                format="webp"
               />
             </div>
             <h1 class="font-semibold text-3xl p-4">Borderless payments</h1>
@@ -139,6 +143,7 @@
                 alt="A stack of books"
                 src="/images/books.png"
                 class="rounded-box w-1/2 h-auto"
+                format="webp"
               />
             </div>
 
@@ -162,16 +167,16 @@
     <section class="rounded-lg">
       <div class="h-screen">
         <div class="mt-24 mb-6">
-          <h3 class="text-primary font-bold text-4xl md:text-6xl">FAQ</h3>
+          <h1 class="text-primary font-bold text-4xl md:text-6xl">FAQ</h1>
         </div>
 
         <div class="mt-10 mb-10 flex justify-center pl-4 pr-4">
           <div
             class="flex flex-row bg-neutral w-3/3 rounded-3xl h-48 shadow-lg"
           >
-            <h3 class="text-primary font-bold text-l lg:text-xl p-2">
+            <h1 class="text-primary font-bold text-l lg:text-xl p-2">
               Consumer Focused:
-            </h3>
+            </h1>
             <p class="text-info leading-loose text-l lg:text-2xl">
               Providing great products and services is one thing. Creating
               products that you value is success.
@@ -183,9 +188,9 @@
           <div
             class="flex flex-row bg-neutral w-3/3 rounded-3xl h-48 shadow-lg"
           >
-            <h3 class="text-primary font-bold text-l lg:text-xl p-2">
+            <h1 class="text-primary font-bold text-l lg:text-xl p-2">
               Privacy:
-            </h3>
+            </h1>
             <p class="text-info leading-loose text-l lg:text-2xl">
               Secure peer to peer transacitons on without reliance on third part
               organizations or entities. EVEN US!
@@ -197,9 +202,9 @@
           <div
             class="flex flex-row bg-neutral w-3/3 rounded-3xl h-48 shadow-lg"
           >
-            <h3 class="text-primary font-bold text-l lg:text-xl p-2">
+            <h1 class="text-primary font-bold text-l lg:text-xl p-2">
               Community:
-            </h3>
+            </h1>
             <p class="text-info leading-loose text-l lg:text-2xl">
               Blockchain is internet freedom for us, providing the space for
               tomorrows creativity, innovation, and experiences.

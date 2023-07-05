@@ -7,6 +7,7 @@
             alt="Yuuera logo"
             src="/images/logo.png"
             class="w-28 fill-current"
+            format="webp"
           />
         </NuxtLink>
       </div>
@@ -26,6 +27,7 @@
       <nuxt-img
         src="/images/twitter base trans.png"
         class="absolute top-7 opacity-10 z-0 lowest-el"
+        format="webp"
       />
       <div>
         <div class="flex justify-center items-center">
@@ -62,7 +64,10 @@
 
     <section>
       <div class="avatar">
-        <nuxt-img src="/images/laptopstock.png" />
+        <nuxt-img 
+        format="webp"
+        src="/images/laptopstock.png"
+         />
       </div>
       <div class="flex justify-center items-center mb-12">
         <div class="hero-content text-center text-neutral-content">
@@ -104,6 +109,7 @@
         <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col">
           <div class="flex justify-center">
             <nuxt-img
+              format="webp"
               src="/images/padlock.png"
               class="margin-left-24px justify-contents"
             />
@@ -121,7 +127,10 @@
 
         <div class="flex rounded-3xl bg-info p-4 mb-12 h team-member flex-col">
           <div class="flex justify-center">
-            <nuxt-img src="/images/internet-image.png" />
+            <nuxt-img
+              format="webp"
+              src="/images/internet-image.png"
+            />
           </div>
           <div>
             <p class="font-medium p-8 text-2xl">Inovation:</p>
@@ -135,7 +144,7 @@
 
         <div class="flex rounded-3xl bg-info p-4 team-member flex-col">
           <div class="flex justify-center">
-            <nuxt-img src="/images/chatbubbles.png" />
+            <nuxt-img format="webp" src="/images/chatbubbles.png" />
           </div>
           <div>
             <p class="font-medium p-8 text-2xl">Consumer Focused:</p>
