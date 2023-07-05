@@ -19,20 +19,21 @@
   <section class="rounded-md">
     <div class="bg-info">
       <div class=" hero min-h-screen shadow-2xl">
-        <div class="w-full h-full flex justify-center items-center  hero-overlap bg-opacity-60"></div>
-        <div class="hero-conte nt text-center text-neutral-content">
-          <div class="max-w-4xl sm:text-left">
-            <h1 class=" text-primary text-6xl md:text-9xl font-semibold  ">Buy and sell anything with Crypto as payment</h1>
+        <div class="w-full h-full flex justify-center items-center md:justify-start md:items-left  hero-overlap bg-opacity-60"></div>
+        <div class="hero-conte nt text-center md:text-start text-neutral-content">
+          <div class="max-w-4xl md:text-left">
+            <h1 class="text-primary text-6xl md:text-9xl font-semibold md:text-left">Buy and sell anything with Crypto as payment</h1>
             
-            <div class="mt-16 flex  justify-center md:justify-start">
+            
+            <div class="mt-16 flex justify-center md:justify-start">
               <div class="w-2/3 rounded-3xl h-48">  
-                <p class=" text-left leading-loose tracking-widest text-xl lg:text-2xl">
+                <p class=" text-left md:text-left leading-loose tracking-wide text-xl lg:text-2xl">
                   Discover our cutting-edge crypto e-commerce platform, enabling cost-effective buying and selling with stable coins as payment.
                 </p>
               </div>
             </div>
           </div>
-          <a href="#next" class="mt-24 btn-outline btn btn-md md:btn-md lg:btn-lg" to="">Learn more</a>
+          <a href="#next" class="mt-24 md:invisible btn-outline btn btn-md md:btn-md lg:btn-lg" to="">Learn more</a>
         </div>
         
       </div>
@@ -67,8 +68,27 @@
                 <ClientOnly>
                   <EmailSignUp></EmailSignUp>
                 </ClientOnly>
-    <section class="bg-info rounded-md">
-      <div class="mt-24">
+    <section class="bg-info rounded-md">  
+      <div class="md:pt-24 md:mt-36 invisible md:visible">
+        <div class=" mt-10">
+            <h1 class=" text-primary text-right p-4 font-bold text-4xl md:text-7xl">Header</h1>
+        </div>
+        <div class="w-screen flex justify-start">
+            <img src="@/assets/images/cardano-logo.png"  class="rounded-box w-1/2 h-auto" />
+        <div class="flex justify-center">
+
+        
+
+        <div class=" p-4 md:w-2/3 rounded-3xl h-96">
+          <p class="text-xl text-center leading-loose tracking-widest text-l lg:text-2xl">
+            At Yuuera we empower people with the ability to fully control their decisions online using blockchain and crypto currency, cutting out unessacry third parties and contributing to making the world a better place.
+          </p>
+        </div>
+      </div>
+        </div>
+
+      </div>
+      <div class="mt-2 pb-24 md:invisible ">
           <div class=" carousel rounded-box">
             <div class="carousel-item w-screen flex flex-col justify-center">
               <div class="w-screen flex justify-center">
@@ -101,10 +121,12 @@
             <a href="#item3" class="btn btn-xs"></a>
           </div>
       </div>
+
+    
     </section>
     <section class="rounded-lg">
     <div class="h-screen ">
-      <div class="mt-24 mb-6">
+      <div class="mt-12 mb-6">
           <h3 class="text-primary font-bold text-4xl md:text-6xl">FAQ</h3>
       </div>
       

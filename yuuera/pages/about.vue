@@ -118,9 +118,6 @@
 
 
       <div class="md:">
-        <div class="hidden md:collapse flex justify-left">
-              <img src="@/assets/images/padlock.png" class="margin-left-24px justify-contents" />
-        </div>
       
           <div class="md:flex"></div>
           <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row">
@@ -141,7 +138,7 @@
                 <p class="font-medium p-8 text-2xl">Community:</p>
                 <p class="font-medium text-lg">Blockchain is internet freedom for us, providing the space for tomorrows creativity, innovation, and experiences. We work to make sure it stays that way for all of us.</p>
               </div>
-              <div class="flex rounded invisible md:visible md:hover:invisible">
+              <div class="flex rounded invisible md:visible">
                 <img src="@/assets/images/internet-image.png" />
               </div>
             </div>
