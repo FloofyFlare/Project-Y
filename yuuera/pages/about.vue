@@ -28,10 +28,44 @@
       </div>
     </div>
 
-
-    <div class="rounded-3xl bg-info z-40">
+    <div class="md:flex">
+    <div class="rounded-3xl bg-info z-40 md:rounded-xl md:mr- md:ml-16 md:w-2/3 md:pb-8">
       <div class=" mt-10 flex justify-center">
         <h1 class=" text-primary p-4 font-bold text-4xl md:text-7xl">Vision</h1>
+      </div>
+      <div class="flex justify-center">
+        <div class=" p-4  rounded-3xl h-96">
+          <p class="text-xl text-center leading-loose tracking-widest text-l md:text-2xl">
+            At Yuuera we empower people with the ability to fully control their decisions online using blockchain and crypto currency, cutting out unessacry third parties and contributing to making the world a better place.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class= "hidden md:block h-96">
+    <div class="avatar">
+            <img src="@/assets/images/laptopstock.png" />
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+  <section class="hidden md:block mt-40">
+    <div>
+  
+        <div class="flex justify-center items-center">
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-4xl sm:text-left">
+            <h1 class=" text-primary text-6xl md:text-9xl font-semibold"> Header</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:flex">
+    <div class="rounded-3xl bg-info z-40">
+      <div class=" mt-10 flex justify-center">
+        <h1 class=" text-primary p-4 font-bold text-4xl md:text-7xl">AHA</h1>
       </div>
       <div class="flex justify-center">
         <div class=" p-4 md:w-2/3 rounded-3xl h-96">
@@ -41,25 +75,30 @@
         </div>
       </div>
     </div>
-    </section>
+    <div class= "hidden md:block h-96">
+    <div class="avatar">
+            <img src="@/assets/images/laptopstock.png" />
+      </div>
+    </div>
+  </div>
+  </section>
 
     <section>
-      <div class="avatar">
-            <img src="@/assets/images/laptopstock.png" />
-      </div> 
-      <div class="flex justify-center items-center mb-12">
+      <div class="flex justify-center items-center mt-60 md:mt-40 md:mb-12">
         <div class="hero-content text-center text-neutral-content">
           <div class="max-w-4xl sm:text-left">
             <h1 class="text-primary font-bold text-4xl md:text-7xl">Company Story</h1>
-
+              <div class="avatar md:hidden">
+                <img src="@/assets/images/laptopstock.png" />
+              </div>
           </div>
         </div>
       </div>
      
       
 
-      <div class="mt-10 mb-12 flex justify-center">
-        <div class=" p-4 md:w-2/3 rounded-3xl ">
+      <div class=" mb-24 flex justify-center">
+        <div class=" md:p-12 md:w-2/3 rounded-3xl ">
           <p class="text-xl text-center leading-loose tracking-widest text-l lg:text-2xl">
             At Yuuera, we transform ideas into cutting-edge software. Since the 2019 crypto craze, we've been pioneers in the crypto space, turning it from a fad into a reality. Through ideation, problem-solving, and legal work, we bring the dream of crypto to life. Join us as we shape the future of technology, one innovative line of code at a time.
           </p>
@@ -76,7 +115,15 @@
           </div>
         </div>
       </div>
-          <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col">
+
+
+      <div class="md:">
+        <div class="hidden md:collapse flex justify-left">
+              <img src="@/assets/images/padlock.png" class="margin-left-24px justify-contents" />
+        </div>
+      
+          <div class="md:flex"></div>
+          <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row">
             <div class="flex justify-center">
               <img src="@/assets/images/padlock.png" class="margin-left-24px justify-contents" />
             </div>
@@ -86,17 +133,20 @@
                   </div>
           </div>
 
-          <div class="flex rounded-3xl bg-info p-4 mb-12 h team-member flex-col">
-              <div class="flex rounded">
+          <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row">
+              <div class="flex rounded md:hidden">
                 <img src="@/assets/images/internet-image.png" />
               </div>
               <div>
                 <p class="font-medium p-8 text-2xl">Community:</p>
                 <p class="font-medium text-lg">Blockchain is internet freedom for us, providing the space for tomorrows creativity, innovation, and experiences. We work to make sure it stays that way for all of us.</p>
               </div>
+              <div class="flex rounded invisible md:visible md:hover:invisible">
+                <img src="@/assets/images/internet-image.png" />
+              </div>
             </div>
             
-            <div class="flex rounded-3xl bg-info p-4 team-member flex-col">
+          <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row">
               <div class="flex  rounded">
                 <img src="@/assets/images/chatbubbles.png" />
               </div>
@@ -106,6 +156,7 @@
               </div>
             </div>
         </div>
+      </div>
     </section>
     <EmailSignUp class="pt-4 pb-4"></EmailSignUp>
     

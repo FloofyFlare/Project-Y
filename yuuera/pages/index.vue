@@ -24,7 +24,7 @@
           <div class="max-w-4xl sm:text-left">
             <h1 class=" text-primary text-6xl md:text-9xl font-semibold  ">Buy and sell anything with Crypto as payment</h1>
             
-            <div class="mt-16 flex  justify-center">
+            <div class="mt-16 flex  justify-center md:justify-start">
               <div class="w-2/3 rounded-3xl h-48">  
                 <p class=" text-left leading-loose tracking-widest text-xl lg:text-2xl">
                   Discover our cutting-edge crypto e-commerce platform, enabling cost-effective buying and selling with stable coins as payment.
@@ -128,9 +128,8 @@
         </div>
       </div>
 
-      <div class="mb-16 flex justify-center pl-4 pr-4
-      ">
-        <div class=" flex flex-row bg-neutral w-3/3 rounded-3xl h-48 shadow-lg">
+      <div class="mb-16 flex justify-center pl-4 pr-4">
+        <div class="flex flex-row bg-neutral w-3/3 rounded-3xl h-48 shadow-lg">
           <h3 class="text-primary font-bold text-l lg:text-xl p-2">Community: </h3>  
           <p class="text-info leading-loose text-l lg:text-2xl">
               Blockchain is internet freedom for us, providing
