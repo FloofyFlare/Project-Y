@@ -34,7 +34,7 @@
         <h1 class=" text-primary p-4 font-bold text-4xl md:text-7xl">Vision</h1>
       </div>
       <div class="flex justify-center">
-        <div class=" p-4  rounded-3xl h-96">
+        <div class=" p-  rounded-3xl h-96">
           <p class="text-xl text-center leading-loose tracking-widest text-l md:text-2xl">
             At Yuuera we empower people with the ability to fully control their decisions online using blockchain and crypto currency, cutting out unessacry third parties and contributing to making the world a better place.
           </p>
