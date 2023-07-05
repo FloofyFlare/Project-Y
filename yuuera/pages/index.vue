@@ -22,18 +22,23 @@
         <div class="w-full h-full flex justify-center items-center md:justify-start md:items-left  hero-overlap bg-opacity-60"></div>
         <div class="hero-conte nt text-center md:text-start text-neutral-content">
           <div class="max-w-4xl md:text-left">
-            <h1 class="text-primary text-6xl md:text-9xl font-semibold md:text-left">Buy and sell anything with Crypto as payment</h1>
+            <h1 class="text-primary text-6xl md:text-9xl font-semibold md:text-left md:justify-start">Buy and sell anything with Crypto as payment</h1>
             
-            
-            <div class="mt-16 flex justify-center md:justify-start">
-              <div class="w-2/3 rounded-3xl h-48">  
+            <div class="md:flex">
+            <div class="mt-12 flex justify-center md:justify-start">
+              <div class="w-2/3 rounded-3xl h-24">  
                 <p class=" text-left md:text-left leading-loose tracking-wide text-xl lg:text-2xl">
                   Discover our cutting-edge crypto e-commerce platform, enabling cost-effective buying and selling with stable coins as payment.
                 </p>
               </div>
             </div>
+
+            <div class="  avatar invisible md:visible">
+                    <img src="@/assets/images/shopping cart.png" class="z-10"/>
+              </div>
           </div>
-          <a href="#next" class="mt-24 md:invisible btn-outline btn btn-md md:btn-md lg:btn-lg" to="">Learn more</a>
+          </div>
+          <a href="#next" class="mt- md:invisible btn-outline btn btn-md md:btn-md lg:btn-lg" to="">Learn more</a>
         </div>
         
       </div>
@@ -57,7 +62,7 @@
 
               <div class=" mb-12 flex justify-center">
                 <div class="w-3/3 rounded-2xl">
-                  <p class="text-center leading-loose tracking-widest text-md lg:text-2xl">
+                  <p class="text-center md:pt-12 leading-loose tracking-widest text-md lg:text-2xl">
                     Our marketplace is powered by the cardano blockchain helping you to take control of your transactions avoiding unnessacary fees and data collection.
 
                   </p>
@@ -69,7 +74,7 @@
                   <EmailSignUp></EmailSignUp>
                 </ClientOnly>
     <section class="bg-info rounded-md">  
-      <div class="md:pt-24 md:mt-36 invisible md:visible">
+      <div class="md:pt-24 md:mt-80 invisible md:visible">
         <div class=" mt-10">
             <h1 class=" text-primary text-right p-4 font-bold text-4xl md:text-7xl">Header</h1>
         </div>
@@ -88,7 +93,7 @@
         </div>
 
       </div>
-      <div class="mt-2 pb-24 md:invisible ">
+      <div class="mt-2 pb-24 md:hidden ">
           <div class=" carousel rounded-box">
             <div class="carousel-item w-screen flex flex-col justify-center">
               <div class="w-screen flex justify-center">
