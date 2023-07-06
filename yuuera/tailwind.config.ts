@@ -14,19 +14,19 @@ module.exports = {
         mytheme: {
           primary: '#F17720',
 
-          secondary: '#47b9ff',
+          secondary: '#4C4C4C',
 
-          accent: '#3782fb',
+          accent: '#202040',
 
-          neutral: '#d3d3d3',
+          neutral: '#333333',
 
-          'base-100': '#F7F7F7',
+          'base-100': '#4C4C4C',
 
-          info: '#FFFFFF',
+          info: '#ffffff',
 
-          success: '#F17720',
+          success: '#4C4C4C ',
 
-          warning: '#F17720',
+          warning: '#002E6D',
 
           error: '#F17720',
         },
