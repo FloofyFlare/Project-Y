@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  web:
+    image: floof99/project-y-nuxt-app:latest
+    restart: always
+    ports:
+      - "3000:3000"
+    command: "node .output/server/index.mjs"
+    networks:
+      - nuxt-network
+  web-server:
+    image: floof99/project-y-web-server
+    ports:
+      - 8080:80
+    networks:
+      - nuxt-network
+    depends_on:
+      - web
+networks:
+  nuxt-network:
+    driver: bridge

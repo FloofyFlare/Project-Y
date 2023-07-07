@@ -4,7 +4,7 @@
       Stay Informed!
     </h1>
     <h2 v-show="showButton" class="w-full pr-12 pl-12 text-info">
-      Provide your email to stay updated on any future developments.
+      Provide your email to stay updated on future developments.
     </h2>
     <div class="form-control">
       <div
@@ -37,7 +37,7 @@
           <h2 class="w-full pr-12 pl-12">
             Join our
             <a
-              class="text-secondary text-bold text-lg"
+              class="text-error text-bold text-lg"
               href="https://twitter.com/YuueraOfficial"
               >twitter</a
             >

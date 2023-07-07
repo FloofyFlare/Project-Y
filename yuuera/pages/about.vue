@@ -33,8 +33,8 @@
         <div class="flex justify-center items-center">
           <div class="hero-content text-center text-neutral-content">
             <div class="max-w-4xl sm:text-left">
-              <h1 class="text-primary text-6xl md:text-9xl font-semibold">
-                Who we are
+              <h1 class="text-primary pb-12 text-6xl md:text-9xl font-semibold">
+                About Us
               </h1>
             </div>
           </div>
@@ -45,7 +45,7 @@
       <div class="flex justify-center items-center md:w-2/3 md:mt-40 md:mb-12">
         <div class="rounded-3xl bg-secondary z-40">
           <div class="mt-10 flex justify-center">
-            <h1 class="text-primary p-4 font-bold text-4xl md:text-7xl">
+            <h1 class="text-primary p-4 pt-0 font-bold text-4xl md:text-7xl">
               Vision
             </h1>
           </div>
@@ -54,10 +54,7 @@
               <p
                 class="text-xl text-info text-center leading-loose pb-4 md:pb-0tracking-widest text-l lg:text-2xl"
               >
-                At Yuuera we empower people with the ability to fully control
-                their decisions online using blockchain and crypto currency,
-                cutting out unessacry third parties and contributing to making
-                the world a better place.
+              At Yuuera, we empower individuals with complete control over their online decisions using blockchain technology and cryptocurrency. By eliminating unnecessary third parties, we contribute to creating a better, more efficient world.
               </p>
             </div>
           </div>
@@ -65,13 +62,13 @@
       </div>
     </section>
 
-    <section>
+    <section class="lg:w-screen lg:flex lg:justify-center">
       <div class="avatar">
-        <nuxt-img format="webp" src="/images/laptopstock.png" class="md:hidden"/>
+        <nuxt-img format="webp" src="/images/laptopstock.png" class="lg:hidden"/>
       </div>
-      <div class="md:flex md:justify-center md:ml-8 md:mr-8  md:rounded-3xl md:bg-secondary ">
-        <div class="md:w-3/4">
-          <div class="flex md:w-2/3  justify-center items-center">
+      <div class="lg:w-2/3 lg:flex lg:justify-center lg:ml-8 lg:mr-8  lg:rounded-3xl">
+        <div class="">
+          <div class="flex  justify-center items-center">
             <div class="hero-content text-center text-neutral-content">
               <div class="max-w-4xl sm:text-left">
                 <h1 class="text-primary font-bold text-4xl md:text-7xl">
@@ -80,10 +77,10 @@
               </div>
             </div>
           </div>
-          <div class="mb-24 flex md:w-2/3 md:bg-secondary flex justify-center">
+          <div class="mb-24 flex justify-center">
             <div class="md:p-12 p-4  rounded-3xl">
               <p
-                class="text-xl text-neutral md:text-info text-center leading-loose tracking-widest text-l lg:text-2xl"
+                class="text-xl text-neutral text-center leading-loose tracking-widest text-l lg:text-2xl"
               >
                 We transform ideas into cutting-edge software. Since the 2019 crypto
                 craze, we've been pioneers in the crypto space, turning it from a
@@ -160,7 +157,7 @@
               <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Consumer Focused:</p>
               <p class="font-medium text-neutral text-lg md:text-2xl">
                 Providing great products and services is one thing. Creating
-                products that you value is success. Were commited to getting
+                products that you value is success. Were committed to getting
                 feedback from our customers and using cutting edge technology to
                 create software for the game changers of the world.
               </p>
@@ -173,7 +170,7 @@
 
     <footer class="footer footer-center p-4 bg-primary text-primary-content">
       <div>
-        <p class="font-bold">Yuuera LLC <br /></p>
+        <p class="font-bold">Yuuera, LLC <br /></p>
         <p>YuueraOffical@gmail.com</p>
       </div>
       <div>

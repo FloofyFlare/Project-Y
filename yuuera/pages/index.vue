@@ -1,7 +1,7 @@
 <template>
   <client-only>
     <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
-      <div class="navbar w-screen">
+      <div class="border-b-2 border-slate-600 navbar w-screen">
         <div class="flex-1">
           <NuxtLink to="/" class="absolute w-28">
             <nuxt-img
@@ -26,69 +26,68 @@
 
     <body class="bg-base-100 md:w-screen">
       <section class="rounded-md">
-        <div class="bg-info">
-          <div class="hero min-h-screen shadow-2xl">
-            <div
-              class="w-full h-full flex justify-center items-center md:justify-start md:items-left hero-overlap bg-opacity-60"
-            ></div>
-            <div class="text-center md:text-start text-neutral-content">
+        <div class="bg-info ">
+          <div class="hero min-h-screen ">
+            <div class="lg:flex text-center items-center md:text-start text-neutral-content">
               <div class="max-w-4xl md:text-left">
                 <h1
-                  class="pt-20 text-primary text-6xl md:text-9xl flex font-semibold md:text-left md:justify-start"
+                  class="pt-20 lg:pl-2 text-primary text-6xl lg:text-8xl flex font-semibold md:text-left md:justify-start"
                 >
-                  Buy and sell anything with Crypto as payment
+                  Buy and sell with Crypto as payment
                 </h1>
 
-                <div class="md:flex">
-                  <div class="mt-12 flex justify-center md:justify-start">
+                <div>
+                  <div class="mt-12 flex justify-center md:justify-center">
                     <div class="w-2/3 rounded-3xl md:h-24">
                       <p
                         class="text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-2xl text-info"
                       >
                         Discover our cutting-edge crypto e-commerce platform,
-                        enabling cost-effective buying and selling with stable
-                        coins as payment.
+                        enabling cost-effective buying and selling of products using stablecoins as a seamless mode of payment.
                       </p>
                     </div>
                   </div>
-
-                  <div class="avatar hidden md:inline">
+                </div>
+                <a
+                  href="#next"
+                  
+                  class=" mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
+                  to=""
+                  >Learn more</a
+                >
+              </div>
+              <div class="flex h-screen w-full hidden lg:inline">
                     <nuxt-img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
                       src="/images/shopping cart.png"
-                      class="z-10"
+                      class="z-10 mt-24"
                       format="webp"
                     />
-                  </div>
-                </div>
               </div>
-              <a
-                href="#next"
-                class="mt-24 mb-4 text-info bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
-                to=""
-                >Learn more</a
-              >
             </div>
           </div>
-        </div>
+          
+      </div>
       </section>
 
-      <section id="next" class="bg-secondary rounded-xl">
-        <div class="mt-4 md:hidden avatar">
+      <section class="bg-secondary rounded-xl">
+        <span id="next"></span>
+        <div class="mt-4 lg:hidden avatar">
           <nuxt-img
+          
             alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
             src="/images/shopping cart.png"
-            class="z-10"
+            class="z-10 bg-info m-12 rounded-3xl"
             format="webp"
           />
         </div>
 
-        <div class="flex justify-center">
-          <div class="pt-6 rounded-2xl">
+        <div  class="flex justify-center">
+          <div class="lg:pt-24 rounded-2xl">
             <p
-              class="text-primary text-center leading-loose tracking-widest text-3xl md:text-4xl p-4 pt-0 font-semibold"
+             class="text-primary text-center leading-loose tracking-widest text-4xl md:text-4xl p-4 pt-0 font-semibold"
             >
-              Goodbye unnessacary Fees. Hello lower prices
+              Goodbye unnecessary Fees, Hello lower prices
             </p>
           </div>
         </div>
@@ -96,11 +95,9 @@
         <div class="mb-12 flex justify-center">
           <div class="flex justify-center rounded-2xl">
             <p
-              class="text-center md:w-2/3 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
+              class="text-center m-4 md:w-2/3 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
             >
-              Our marketplace is powered by the cardano blockchain helping you
-              to take control of your transactions avoiding unnessacary fees and
-              data collection.
+            Embrace our marketplace, powered by the Cardano blockchain, empowering you to reclaim sovereignty over your transactions while avoiding unnecessary fees and intrusive data collection practices.
             </p>
           </div>
         </div>
@@ -108,36 +105,39 @@
       <EmailSignUp></EmailSignUp>
       <section class="bg-info pt-4 rounded-md">
         <div class="mt-2 pb-24 ">
-          <div class="w-full md:w-2/5 carousel rounded-box">
+          <div class="w-full carousel rounded-box">
             <div
               id="item1"
-              class="carousel-item w-full flex flex-col justify-center"
+              class="carousel-item w-full flex  justify-center"
             >
-              <div class="w-full flex justify-center">
-                <nuxt-img
-                  alt="Cardano logo"
-                  src="/images/cardano-logo.png"
-                  class="rounded-box w-1/2 md:w-96 h-auto"
-                  format="webp"
-                />
-              </div>
-              <h1 class="font-semibold text-primary text-3xl p-4">End to end security</h1>
-              <p class="p-4 text-xl text-neutral tracking-widest text-md">
-                Leveraging the Cardano blockchain our transactions are done via
-                smart contracts on Cardano, this minimizes the amount of user
-                data we store significantly when compared to traditional
-                e-commerce marketplaces.
-              </p>
-              <div class="flex p-4">
-                <a href="#item3" class="m-4 btn btn-circle">❮</a> 
-                <a href="#item2" class="m-4 btn btn-circle">❯</a>
+              <div class="md:w-2/5 pt-24">
+                <div class="w-full flex justify-center">
+                  <nuxt-img
+                    alt="Cardano logo"
+                    src="/images/cardano-logo.png"
+                    class="rounded-box w-1/2 md:w-96 h-auto"
+                    format="webp"
+                  />
+                </div>
+                <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">End to end security</h1>
+                <p class="p-4 text-xl md:text-2xl text-neutral tracking-widest ">
+                  Leveraging the Cardano blockchain our transactions operate seamlessly through
+                  smart contracts on Cardano, this minimizes the amount of user
+                  data we store significantly when compared to traditional
+                  e-commerce marketplaces.
+                </p>
+                <div class="flex p-4">
+                  <a href="#item3" class="m-4 btn btn-circle">❮</a> 
+                  <a href="#item2" class="m-4 btn btn-circle">❯</a>
+                </div>
               </div>
             </div>
 
             <div
               id="item2"
-              class="carousel-item justify-center w-full flex-col"
+              class="carousel-item flex justify-center w-full "
             >
+            <div class="md:w-2/5 pt-4">
               <div class="w-full  flex justify-center">
                 <nuxt-img
                   alt="an image of 2 hands shaking showing agrement"
@@ -146,22 +146,23 @@
                   format="webp"
                 />
               </div>
-              <h1 class="font-semibold text-primary text-3xl p-4">Borderless payments</h1>
-              <p class="p-4 text-xl text-neutral tracking-widest text-md">
-                Borderless e-commerce for a global economy. Lets us help you
-                expand your access to markets around the world. No more cross
-                border fees affecting the price of your purchases
+              <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">Borderless payments</h1>
+              <p class="p-4 text-xl text-neutral md:text-2xl tracking-widest">
+                Unlock the realm of borderless e-commerce, tailored for a thriving global economy.  Allow us to be your trusted companion,
+                allowing you to discover new markets across nations. Say goodbye to
+                cross-border fees affecting the price of your purchases, as we pave the way for seamless and cost-effective international transactions.
               </p>
               <div class="flex p-4">
-                <a href="#item2" class="m-4 btn btn-circle">❮</a> 
+                <a href="#item1" class="m-4 btn btn-circle">❮</a> 
                 <a href="#item3" class="m-4 btn btn-circle">❯</a>
               </div>
-              
+            </div>
             </div>
             <div
               id="item3"
-              class="carousel-item justify-center w-full flex-col"
+              class="carousel-item flex justify-center w-full "
             >
+            <div class="md:w-2/5 pt-4">
               <div class="w-full flex justify-center">
                 <nuxt-img
                   alt="A stack of books"
@@ -171,13 +172,12 @@
                 />
               </div>
 
-              <h1 class="font-semibold text-primary text-3xl p-4">
-                Serving communities for the greater good
+              <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">
+                Serving communities
               </h1>
-              <p class="p-4 text-xl text-neutral tracking-widest text-md">
-                We are committed to making a positive impact by giving 10
-                percent of our profits to provide technology and educational
-                benefits to underserved communities.
+              <p class="p-4 text-xl md:text-2xl text-neutral tracking-widest">
+                We are dedicated to creating a positive impact by directing 10 percent of the fees generated from your purchases towards empowering underserved communities. This initiative aims to provide access to technology and educational opportunities, 
+                enabling others to enhance their lives and opportunities for growth.
               </p>
               <div class="flex p-4">
                 <a href="#item2" class="m-4 btn btn-circle">❮</a> 
@@ -185,10 +185,11 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
       </section>
       <section class="rounded-lg">
-        <div class="h-screen">
+        <div >
           <div class="mt-12 mb-6">
             <h1 class="text-primary font-bold text-4xl md:text-6xl">FAQ</h1>
           </div>
@@ -214,7 +215,7 @@
                 How is my information kept?:
               </h1>
               <p class="text-info leading-loose text-l lg:text-2xl">
-                All your information will be kept in annoymous fashion only attached to you on our database by your wallet information no Personally Identifiable informaiton needed.
+                Your information will be securely stored in an anonymous manner within our database. No unnecessary Personally Identifiable Information found on other e-commerce platforms is required or stored.
               </p>
             </div>
           </div>
@@ -237,7 +238,7 @@
 
       <footer class="footer footer-center p-10 bg-primary text-primary-content">
         <div class="">
-          <p class="font-bold">Yuuera LLC <br /></p>
+          <p class="font-bold">Yuuera, LLC <br /></p>
           <p>YuueraOffical@gmail.com</p>
         </div>
         <div>
