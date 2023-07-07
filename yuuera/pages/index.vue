@@ -1,5 +1,5 @@
 <template>
-  <client-only>
+  
     <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
       <div class="border-b-2 border-slate-600 navbar w-screen">
         <div class="flex-1">
@@ -23,8 +23,9 @@
         </div>
       </div>
     </header>
-
+    
     <body class="bg-base-100 md:w-screen">
+      <main>
       <section class="rounded-md">
         <div class="bg-info ">
           <div class="hero min-h-screen ">
@@ -69,7 +70,7 @@
           
       </div>
       </section>
-
+      
       <section class="bg-secondary rounded-xl">
         <span id="next"></span>
         <div class="mt-4 lg:hidden avatar">
@@ -102,7 +103,9 @@
           </div>
         </div>
       </section>
+      
       <EmailSignUp></EmailSignUp>
+      
       <section class="bg-info pt-4 rounded-md">
         <div class="mt-2 pb-24 ">
           <div class="w-full carousel rounded-box">
@@ -188,6 +191,7 @@
           </div>
         </div>
       </section>
+    
       <section class="rounded-lg">
         <div >
           <div class="mt-12 mb-6">
@@ -235,7 +239,8 @@
         </div>
         <EmailSignUp></EmailSignUp>
       </section>
-
+    </main>
+    <client-only>
       <footer class="footer footer-center p-10 bg-primary text-primary-content">
         <div class="">
           <p class="font-bold">Yuuera, LLC <br /></p>
@@ -258,8 +263,8 @@
           </div>
         </div>
       </footer>
+    </client-only>
     </body>
-  </client-only>
 </template>
 
 <script setup lang="ts">

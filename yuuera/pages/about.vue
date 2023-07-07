@@ -1,4 +1,5 @@
 <template>
+  
   <header class=" fixed opacity-[.98] bg-info text-base-200 z-50">
     <div class="border-b-2 border-slate-600 navbar w-screen">
       <div class="flex-1">
@@ -23,6 +24,7 @@
     </div>
   </header>
   <body class="bg-info">
+    <main>
     <section class="h-2/3 pt-24">
       <nuxt-img
         src="/images/twitter base trans.png"
@@ -41,6 +43,7 @@
         </div>
       </div>
     </section>
+    
     <section class="flex justify-center">
       <div class="flex justify-center items-center md:w-2/3 md:mt-40 md:mb-12">
         <div class="rounded-3xl bg-secondary z-40">
@@ -61,7 +64,8 @@
         </div>
       </div>
     </section>
-
+ 
+    
     <section class="lg:w-screen lg:flex lg:justify-center">
       <div class="avatar">
         <nuxt-img format="webp" src="/images/laptopstock.png" class="lg:hidden"/>
@@ -72,7 +76,7 @@
             <div class="hero-content text-center text-neutral-content">
               <div class="max-w-4xl sm:text-left">
                 <h1 class="text-primary font-bold text-4xl md:text-7xl">
-                  Company Story
+                  Who We Are
                 </h1>
               </div>
             </div>
@@ -91,10 +95,9 @@
             </div>
           </div>
         </div>
-        <nuxt-img format="webp" src="/images/laptopstock.png" class="hidden w-96 mt-12 h-96 mr-4 bg-info rounded-3xl flex  md:inline"/>
+        <nuxt-img format="webp" src="/images/laptopstock.png" class="hidden w-96 mt-12 h-96 mr-4 bg-info rounded-3xl flex  lg:inline"/>
       </div>
     </section>
-
     <section class="flex justify-center">
       <div class="w-2/3">
         <div class="flex justify-center items-center mb-12">
@@ -114,7 +117,7 @@
               <nuxt-img
                 format="webp"
                 src="/images/padlock.png"
-                class="margin-left-24px justify-contents"
+                class="margin-left-24px w-full h-auto justify-contents"
               />
             </div>
             <div>
@@ -166,8 +169,9 @@
         </div>
       </div>
     </section>
-    <EmailSignUp class="pt-4 pb-4"></EmailSignUp>
-
+  </main>
+  <client-only>
+      <EmailSignUp class="pt-4 pb-4"></EmailSignUp>
     <footer class="footer footer-center p-4 bg-primary text-primary-content">
       <div>
         <p class="font-bold">Yuuera, LLC <br /></p>
@@ -190,7 +194,9 @@
         </div>
       </div>
     </footer>
+  </client-only>
   </body>
+
 </template>
 
 <script setup lang="ts">
