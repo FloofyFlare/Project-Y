@@ -1,9 +1,16 @@
 <template>
   <div class="bg-accent pt-4 pb-4">
-    <h1 v-show="showButton" class="text-primary font-bold text-2xl">Stay Informed!</h1>
-    <h2 v-show="showButton" class="w-full pr-12 pl-12 text-info">Provide your email to stay updated on any future developments.</h2>
+    <h1 v-show="showButton" class="text-primary font-bold text-2xl">
+      Stay Informed!
+    </h1>
+    <h2 v-show="showButton" class="w-full pr-12 pl-12 text-info">
+      Provide your email to stay updated on any future developments.
+    </h2>
     <div class="form-control">
-      <div v-show="showButton" class="text-input-button input-group flex justify-center pt-6">
+      <div
+        v-show="showButton"
+        class="text-input-button input-group flex justify-center pt-6"
+      >
         <form @submit.prevent="handleSubmit">
           <input
             v-model="signUpEmail"
@@ -22,10 +29,20 @@
           </button>
         </form>
       </div>
-      <div v-show="showThanks" class=" w-full flex justify-center">
+      <div v-show="showThanks" class="w-full flex justify-center">
         <div>
-          <h1 class="text-primary font-bold text-xl">Thank you for your interest 🎉 </h1>
-          <h2 class="w-full pr-12 pl-12">Join our <a class="text-secondary text-bold text-lg" href="https://twitter.com/YuueraOfficial">twitter</a> for the latests updates and developments in Yuuera</h2>
+          <h1 class="text-primary font-bold text-xl">
+            Thank you for your interest 🎉
+          </h1>
+          <h2 class="w-full pr-12 pl-12">
+            Join our
+            <a
+              class="text-secondary text-bold text-lg"
+              href="https://twitter.com/YuueraOfficial"
+              >twitter</a
+            >
+            for the latests updates and developments in Yuuera
+          </h2>
         </div>
       </div>
     </div>
@@ -39,18 +56,18 @@ const signUpEmail = ref('')
 const showButton = ref(true)
 const showThanks = ref(false)
 function handleSubmit() {
-  if(validateEmail(signUpEmail.value)){
-    handleSend();
+  if (validateEmail(signUpEmail.value)) {
+    handleSend()
   }
 }
 async function handleSend() {
-    showButton.value = false;
-    showThanks.value = true;
-    console.log(signUpEmail.value)
+  showButton.value = false
+  showThanks.value = true
+  console.log(signUpEmail.value)
 
-    const data = { email: signUpEmail.value }
+  const data = { email: signUpEmail.value }
 
-    try {
+  try {
     // Change the URL to your production server
     await fetch('http://0.0.0.0:8000/newsletter/', {
       method: 'POST',
@@ -69,6 +86,6 @@ const validateEmail = (email) => {
     .toLowerCase()
     .match(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
+    )
+}
 </script>

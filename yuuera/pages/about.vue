@@ -1,6 +1,6 @@
 <template>
-  <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
-    <div class="navbar w-screen">
+  <header class=" fixed opacity-[.98] bg-info text-base-200 z-50">
+    <div class="border-b-2 border-slate-600 navbar w-screen">
       <div class="flex-1">
         <NuxtLink to="/" class="absolute w-28">
           <nuxt-img
@@ -14,7 +14,7 @@
       <div class="flex-none">
         <div class="pr-4 mt-2">
           <NuxtLink to="/about"
-            ><span class="btn bg-success text-info text-lg font-semibold"
+            ><span class="btn bg-primary text-info text-lg font-semibold"
               >About</span
             ></NuxtLink
           >
@@ -22,7 +22,7 @@
       </div>
     </div>
   </header>
-  <body class="bg-base-100">
+  <body class="bg-info">
     <section class="h-2/3 pt-24">
       <nuxt-img
         src="/images/twitter base trans.png"
@@ -40,67 +40,66 @@
           </div>
         </div>
       </div>
-    
     </section>
-    <section>
-      <div class="flex justify-center items-center md:mt-40 md:mb-12">
-
-      <div class="rounded-3xl bg-info z-40">
-        <div class="mt-10 flex justify-center">
-          <h1 class="text-primary p-4 font-bold text-4xl md:text-7xl">
-            Vision
-          </h1>
-        </div>
-        <div class="flex justify-center">
-          <div class="p-4 md:w-2/3 rounded-3xl">
-            <p
-              class="text-xl text-center leading-loose tracking-widest text-l lg:text-2xl"
-            >
-              At Yuuera we empower people with the ability to fully control
-              their decisions online using blockchain and crypto currency,
-              cutting out unessacry third parties and contributing to making the
-              world a better place.
-            </p>
+    <section class="flex justify-center">
+      <div class="flex justify-center items-center md:w-2/3 md:mt-40 md:mb-12">
+        <div class="rounded-3xl bg-secondary z-40">
+          <div class="mt-10 flex justify-center">
+            <h1 class="text-primary p-4 font-bold text-4xl md:text-7xl">
+              Vision
+            </h1>
+          </div>
+          <div class="flex justify-center">
+            <div class="p-4 md:pb-24 md:w-2/3 rounded-3xl">
+              <p
+                class="text-xl text-info text-center leading-loose pb-4 md:pb-0tracking-widest text-l lg:text-2xl"
+              >
+                At Yuuera we empower people with the ability to fully control
+                their decisions online using blockchain and crypto currency,
+                cutting out unessacry third parties and contributing to making
+                the world a better place.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
 
     <section>
       <div class="avatar">
-        <nuxt-img 
-        format="webp"
-        src="/images/laptopstock.png"
-         />
+        <nuxt-img format="webp" src="/images/laptopstock.png" class="md:hidden"/>
       </div>
-      <div class="flex justify-center items-center mb-12">
-        <div class="hero-content text-center text-neutral-content">
-          <div class="max-w-4xl sm:text-left">
-            <h1 class="text-primary font-bold text-4xl md:text-7xl">Company Story</h1>
-              
+      <div class="md:flex md:justify-center md:ml-8 md:mr-8  md:rounded-3xl md:bg-secondary ">
+        <div class="md:w-3/4">
+          <div class="flex md:w-2/3  justify-center items-center">
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-4xl sm:text-left">
+                <h1 class="text-primary font-bold text-4xl md:text-7xl">
+                  Company Story
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="mb-24 flex md:w-2/3 md:bg-secondary flex justify-center">
+            <div class="md:p-12 p-4  rounded-3xl">
+              <p
+                class="text-xl text-neutral md:text-info text-center leading-loose tracking-widest text-l lg:text-2xl"
+              >
+                We transform ideas into cutting-edge software. Since the 2019 crypto
+                craze, we've been pioneers in the crypto space, turning it from a
+                fad into a reality. Through ideation, problem-solving, and legal
+                work, we bring the dream of crypto to life. Join us as we shape the
+                future of technology, one innovative line of code at a time.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class=" mb-24 flex justify-center">
-        <div class="md:p-12 p-4 md:w-2/3 rounded-3xl">
-          <p
-            class="text-xl text-center leading-loose tracking-widest text-l lg:text-2xl"
-          >
-            At Yuuera, we transform ideas into cutting-edge software. Since the
-            2019 crypto craze, we've been pioneers in the crypto space, turning
-            it from a fad into a reality. Through ideation, problem-solving, and
-            legal work, we bring the dream of crypto to life. Join us as we
-            shape the future of technology, one innovative line of code at a
-            time.
-          </p>
-        </div>
+        <nuxt-img format="webp" src="/images/laptopstock.png" class="hidden w-96 mt-12 h-96 mr-4 bg-info rounded-3xl flex  md:inline"/>
       </div>
     </section>
 
-    <section>
-      <div>
+    <section class="flex justify-center">
+      <div class="w-2/3">
         <div class="flex justify-center items-center mb-12">
           <div class="hero-content text-center text-neutral-content">
             <div class="max-w-4xl sm:text-left">
@@ -110,58 +109,63 @@
             </div>
           </div>
         </div>
-
-
-      <div class="md:">
-      
-          <div class="md:flex"></div>
-        <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row">
-          <div class="flex justify-center">
-            <nuxt-img
-              format="webp"
-              src="/images/padlock.png"
-              class="margin-left-24px justify-contents"
-            />
-          </div>
-          <div>
-            <p class="font-medium p-8 text-2xl">Security:</p>
-            <p class="font-medium text-lg">
-              We are devoted to the security of your transactions and handling
-              your information with respect using blockchain software and
-              cryptography to keep your information away from prying eyes and
-              keeping it in your hands.
-            </p>
-          </div>
-        </div>
-
-          <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row">
-              <div class="flex rounded md:hidden">
-                <nuxt-img
-                  format="webp"
-                  src="/images/internet-image.png" 
-                />
-              </div>
-              <div>
-                <p class="font-medium p-8 text-2xl">Innovation:</p>
-                <p class="font-medium text-lg">Blockchain is internet freedom for us, providing the space for tomorrows creativity, innovation, and experiences. We work to make sure it stays that way for all of us.</p>
-              </div>
-              <div class="flex rounded hidden md:inline">
-                <nuxt-img
-                  format="webp"
-                  src="/images/internet-image.png"
-                />
-              </div>
+        <div>
+          <div
+            class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
+          >
+            <div class="flex justify-center">
+              <nuxt-img
+                format="webp"
+                src="/images/padlock.png"
+                class="margin-left-24px justify-contents"
+              />
             </div>
-            
-          <div class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row">
-              <div class="flex  rounded">
-                <nuxt-img format="webp" src="/images/chatbubbles.png" />
-              </div>
-              <div>
-                <p class="font-medium p-8 text-2xl">Consumer Focused:</p>
-                <p class="font-medium text-lg">Providing great products and services is one thing. Creating products that you value is success. Were commited to getting feedback from our customers and using cutting edge technology to create software for the game changers of the world.</p>
-              </div>
+            <div>
+              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Security:</p>
+              <p class="font-medium text-neutral text-lg md:text-2xl">
+                We are devoted to the security of your transactions and handling
+                your information with respect using blockchain software and
+                cryptography to keep your information away from prying eyes and
+                keeping it in your hands.
+              </p>
             </div>
+          </div>
+
+          <div
+            class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
+          >
+            <div class="flex rounded md:hidden">
+              <nuxt-img format="webp" src="/images/internet-image.png" />
+            </div>
+            <div>
+              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Innovation:</p>
+              <p class="font-medium text-neutral text-lg md:text-2xl">
+                Blockchain is internet freedom for us, providing the space for
+                tomorrows creativity, innovation, and experiences. We work to
+                make sure it stays that way for all of us.
+              </p>
+            </div>
+            <div class="flex rounded hidden md:inline">
+              <nuxt-img format="webp" src="/images/internet-image.png" />
+            </div>
+          </div>
+
+          <div
+            class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
+          >
+            <div class="flex rounded">
+              <nuxt-img format="webp" src="/images/chatbubbles.png" />
+            </div>
+            <div>
+              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Consumer Focused:</p>
+              <p class="font-medium text-neutral text-lg md:text-2xl">
+                Providing great products and services is one thing. Creating
+                products that you value is success. Were commited to getting
+                feedback from our customers and using cutting edge technology to
+                create software for the game changers of the world.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -203,8 +207,8 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
   link: [
-  {hid: 'favicon', rel: 'icon', type:'image/x-icon', href:'favicon.ico'}
-  ]
+    { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
+  ],
 })
 </script>
 
