@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  web:
+  nuxt-app:
     image: floof99/project-y-nuxt-app:latest
     restart: always
     ports:
@@ -16,7 +16,7 @@ services:
     networks:
       - nuxt-network
     depends_on:
-      - web
+      - nuxt-app
 networks:
   nuxt-network:
     driver: bridge
