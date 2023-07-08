@@ -7,16 +7,11 @@ services:
     ports:
       - "3000:3000"
     command: "node .output/server/index.mjs"
-    networks:
-      - nuxt-network
   web-server:
     image: floof99/project-y-web-server
     ports:
       - 8080:80
-    networks:
-      - nuxt-network
     depends_on:
       - nuxt-app
-networks:
-  nuxt-network:
-    driver: bridge
+
+
