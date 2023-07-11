@@ -58,7 +58,7 @@
               <p
                 class="text-xl text-info text-center leading-loose pb-4 md:pb-0tracking-widest text-l lg:text-2xl"
               >
-              At Yuuera, we empower individuals with complete control over their online decisions using blockchain technology and cryptocurrency. By eliminating unnecessary third parties, we contribute to creating a better, more efficient world.
+              At Yuuera, we empower individuals with complete control over their online decisions using blockchain technology and cryptocurrency. By eliminating unnecessary third parties we contribute to creating a better, more efficient world.
               </p>
             </div>
           </div>
@@ -89,14 +89,15 @@
                 class="text-xl pb-4 text-neutral text-center leading-loose tracking-widest text-l lg:text-2xl"
               >
                 We transform ideas into cutting-edge software. Through ideation, problem-solving, and hard work, we bring the dream of crypto to life. Join us as we shape the
-                future of technology, one line of code at a time.
+                future of technology one line of code at a time.
               </p>
               <div class="flex w-full">
                 <div class="flex-col w-1/2 p-2">
                   <nuxt-img class="grayscale rounded-full" alt="Picture of Caleb Hunt" src="/images/Caleb.jpg"/>
                   <div class="flex justify-center ">
                     <h1 class="md:text-lg text-neutral pr-4">Caleb Hunt: CTO</h1>
-                      <a href="https://twitter.com/"
+                      <a href="https://twitter.com/Serried_3
+"
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -166,10 +167,10 @@
             <div>
               <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Security:</p>
               <p class="font-medium text-neutral text-lg md:text-2xl">
-                We are devoted to the security of your transactions and handling
+                We are devoted to the security of your transactions. Treating
                 your information with respect using blockchain software and
-                cryptography to keep your information away from prying eyes and
-                keeping it in your hands.
+                cryptography. This keeps your information away from prying eyes and
+                puts it in your hands.
               </p>
             </div>
           </div>
@@ -185,7 +186,7 @@
               <p class="font-medium text-neutral text-lg md:text-2xl">
                 Blockchain is internet freedom for us, providing the space for
                 tomorrows creativity, innovation, and experiences. We work to
-                make sure it stays that way for all of us.
+                make sure it stays that way for all.
               </p>
             </div>
             <div class="flex rounded hidden md:inline">
@@ -203,7 +204,7 @@
               <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Consumer Focused:</p>
               <p class="font-medium text-neutral text-lg md:text-2xl">
                 Providing great products and services is one thing. Creating
-                products that you value is success. Were committed to getting
+                products that you value is success. We're committed to getting
                 feedback from our customers and using cutting edge technology to
                 create software for the game changers of the world.
               </p>

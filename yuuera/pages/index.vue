@@ -88,7 +88,7 @@
             <p
              class="text-primary text-center leading-loose tracking-widest text-4xl md:text-4xl p-4 pt-0 font-semibold"
             >
-              Goodbye unnecessary Fees, Hello lower prices
+              Goodbye unnecessary fees. Hello lower prices.
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@
             <p
               class="text-center m-4 md:w-2/3 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
             >
-            Embrace our marketplace, powered by the Cardano blockchain, empowering you to reclaim sovereignty over your transactions while avoiding unnecessary fees and intrusive data collection practices.
+            Embrace our marketplace powered by the Cardano blockchain, empowering you to reclaim _____ over your transactions while avoiding unnecessary fees and intrusive data collection practices.
             </p>
           </div>
         </div>
@@ -125,7 +125,7 @@
                 <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">End to end security</h1>
                 <p class="p-4 text-xl md:text-2xl text-neutral tracking-widest ">
                   Leveraging the Cardano blockchain our transactions operate seamlessly through
-                  smart contracts on Cardano, this minimizes the amount of user
+                  smart contracts on Cardano. This minimizes the amount of user
                   data we store significantly when compared to traditional
                   e-commerce marketplaces.
                 </p>
@@ -151,9 +151,9 @@
               </div>
               <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">Borderless payments</h1>
               <p class="p-4 text-xl text-neutral md:text-2xl tracking-widest">
-                Unlock the realm of borderless e-commerce, tailored for a thriving global economy.  Allow us to be your trusted companion,
-                allowing you to discover new markets across nations. Say goodbye to
-                cross-border fees affecting the price of your purchases, as we pave the way for seamless and cost-effective international transactions.
+                Unlock the realm of borderless e-commerce tailored for a thriving global economy.  Allow us to be your trusted companion
+                guiding you to new markets across nations. Say goodbye to
+                cross-border fees affecting the price of your purchases as we pave the way for seamless and cost-effective international transactions.
               </p>
               <div class="flex p-4">
                 <a href="#item1" class="m-4 btn btn-circle">❮</a> 
@@ -179,8 +179,8 @@
                 Serving communities
               </h1>
               <p class="p-4 text-xl md:text-2xl text-neutral tracking-widest">
-                We are dedicated to creating a positive impact by directing 10 percent of the fees generated from your purchases towards empowering underserved communities. This initiative aims to provide access to technology and educational opportunities, 
-                enabling others to enhance their lives and opportunities for growth.
+                We are dedicated to creating a positive impact by directing 10 percent of the fees generated from your purchases towards empowering underserved communities. This initiative aims to provide access to technology and educational opportunities
+                and enables others to enhance their lives and opportunities for growth.
               </p>
               <div class="flex p-4">
                 <a href="#item2" class="m-4 btn btn-circle">❮</a> 
