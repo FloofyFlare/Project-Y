@@ -24,7 +24,7 @@
       </div>
     </header>
     
-    <body class="bg-base-100 md:w-screen">
+    <body class="bg-base-100 md:w-full">
       <main>
       <section class="rounded-md">
         <div class="bg-info ">
@@ -34,14 +34,14 @@
                 <h1
                   class="pt-20 lg:pl-2 text-primary text-6xl lg:text-8xl flex font-semibold md:text-left md:justify-start"
                 >
-                  Buy and sell with Crypto as payment
+                  Buy and sell with crypto as payment
                 </h1>
 
                 <div>
                   <div class="mt-12 flex justify-center md:justify-center">
                     <div class="w-2/3 rounded-3xl md:h-24">
                       <p
-                        class="text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-2xl text-info"
+                        class="shadow-xl text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-2xl text-info"
                       >
                         Discover our cutting-edge crypto e-commerce platform,
                         enabling cost-effective buying and selling of products using stablecoins as a seamless mode of payment.
@@ -52,7 +52,7 @@
                 <a
                   href="#next"
                   
-                  class=" mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
+                  class="shadow-xl shadow-orange-200 mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
                   to=""
                   >Learn more</a
                 >
@@ -73,12 +73,12 @@
       
       <section class="bg-secondary rounded-xl">
         <span id="next"></span>
-        <div class="mt-4 lg:hidden avatar">
+        <div class="mt-4 m-12 max-w-xl lg:hidden avatar">
           <nuxt-img
           
             alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
             src="/images/shopping cart.png"
-            class="z-10 bg-info m-12 rounded-3xl"
+            class="shadow-xl z-10 bg-info mt-12 rounded-3xl"
             format="webp"
           />
         </div>
@@ -98,7 +98,7 @@
             <p
               class="text-center m-4 md:w-2/3 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
             >
-            Embrace our marketplace powered by the Cardano blockchain, empowering you to reclaim _____ over your transactions while avoiding unnecessary fees and intrusive data collection practices.
+            Embrace our marketplace powered by the Cardano blockchain, empowering you to reclaim control over your transactions while avoiding unnecessary fees and intrusive data collection practices.
             </p>
           </div>
         </div>
@@ -124,7 +124,7 @@
                 </div>
                 <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">End to end security</h1>
                 <p class="p-4 text-xl md:text-2xl text-neutral tracking-widest ">
-                  Leveraging the Cardano blockchain our transactions operate seamlessly through
+                  Leveraging the Cardano blockchain, our transactions operate seamlessly through
                   smart contracts on Cardano. This minimizes the amount of user
                   data we store significantly when compared to traditional
                   e-commerce marketplaces.
@@ -219,7 +219,7 @@
                 How is my information kept?:
               </h1>
               <p class="text-info leading-loose text-l lg:text-2xl">
-                Your information will be securely stored in an anonymous manner within our database. No unnecessary Personally Identifiable Information found on other e-commerce platforms is required or stored.
+                Your information will be securely stored in an anonymous manner within our database. No unnecessary personally identifiable information found on other e-commerce platforms is required or stored.
               </p>
             </div>
           </div>
@@ -232,7 +232,7 @@
                 What stablecoins will be supported?:
               </h3>
               <p class="text-info leading-loose text-l lg:text-2xl">
-                This is still in progress but we plan to focus on fiat backed stable oins including $USDM and $USDA
+                This is still in progress but we plan to focus on fiat backed stablecoins including $USDM and $USDA
               </p>
             </div>
           </div>

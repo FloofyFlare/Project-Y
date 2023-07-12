@@ -47,7 +47,7 @@
    
     <section class="flex justify-center">
       <div class="flex justify-center items-center md:w-2/3 md:mt-40 md:mb-12">
-        <div class="rounded-3xl bg-secondary z-40">
+        <div class="rounded-3xl w-screen bg-secondary shadow-xl z-40">
           <div class="mt-10 flex justify-center">
             <h1 class="text-primary p-4 pt-0 font-bold text-4xl md:text-7xl">
               Vision
@@ -58,7 +58,7 @@
               <p
                 class="text-xl text-info text-center leading-loose pb-4 md:pb-0tracking-widest text-l lg:text-2xl"
               >
-              At Yuuera, we empower individuals with complete control over their online decisions using blockchain technology and cryptocurrency. By eliminating unnecessary third parties we contribute to creating a better, more efficient world.
+              At Yuuera, we empower individuals with complete control over their online decisions using blockchain technology and cryptocurrency. By eliminating unnecessary third parties, we contribute to creating a better, more efficient world.
               </p>
             </div>
           </div>
@@ -67,7 +67,7 @@
     </section>
  
     
-    <section class="lg:w-screen lg:flex lg:justify-center">
+    <section class="lg:w-full lg:flex lg:justify-center">
       <div class="avatar">
         <nuxt-img format="webp" src="/images/laptopstock.png" class="lg:hidden"/>
       </div>
@@ -96,8 +96,7 @@
                   <nuxt-img class="grayscale rounded-full" alt="Picture of Caleb Hunt" src="/images/Caleb.jpg"/>
                   <div class="flex justify-center ">
                     <h1 class="md:text-lg text-neutral pr-4">Caleb Hunt: CTO</h1>
-                      <a href="https://twitter.com/Serried_3
-"
+                      <a href="https://twitter.com/Serried_3"
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -155,7 +154,7 @@
         </div>
         <div>
           <div
-            class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
+            class="shadow-xl flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
           >
             <div class="flex justify-center">
               <nuxt-img
@@ -167,7 +166,7 @@
             <div>
               <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Security:</p>
               <p class="font-medium text-neutral text-lg md:text-2xl">
-                We are devoted to the security of your transactions. Treating
+                We are devoted to the security of your transactions. We strive to treat
                 your information with respect using blockchain software and
                 cryptography. This keeps your information away from prying eyes and
                 puts it in your hands.
@@ -176,7 +175,7 @@
           </div>
 
           <div
-            class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
+            class="shadow-xl flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
           >
             <div class="flex rounded md:hidden">
               <nuxt-img format="webp" src="/images/internet-image.png" />
@@ -195,7 +194,7 @@
           </div>
 
           <div
-            class="flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
+            class="shadow-xl flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
           >
             <div class="flex rounded">
               <nuxt-img format="webp" src="/images/chatbubbles.png" />
@@ -203,7 +202,7 @@
             <div>
               <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Consumer Focused:</p>
               <p class="font-medium text-neutral text-lg md:text-2xl">
-                Providing great products and services is one thing. Creating
+                Providing great products and services is one thing; creating
                 products that you value is success. We're committed to getting
                 feedback from our customers and using cutting edge technology to
                 create software for the game changers of the world.
