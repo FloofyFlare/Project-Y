@@ -219,6 +219,7 @@
       <div>
         <p class="font-bold">Yuuera, LLC <br /></p>
         <p>YuueraOffical@gmail.com</p>
+        <p><NuxtLink to="/privacy">Privacy Policy</NuxtLink></p>
       </div>
       <div>
         <div class="grid grid-flow-col gap-4">

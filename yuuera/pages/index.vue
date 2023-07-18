@@ -52,12 +52,12 @@
                 <a
                   href="#next"
                   
-                  class="shadow-xl shadow-orange-200 mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
+                  class="shadow-lg shadow-orange-200 mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
                   to=""
                   >Learn more</a
                 >
               </div>
-              <div class="flex h-screen w-full hidden lg:inline">
+              <div class="flex h-full w-full hidden lg:inline">
                     <nuxt-img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
                       src="/images/shopping cart.png"
@@ -103,7 +103,40 @@
           </div>
         </div>
       </section>
-      
+
+      <section class="bg-info">
+        <span id="next"></span>
+        <div class="mt-4 m-8 max-w-md avatar">
+          <nuxt-img
+          
+            alt="a representation of a smart contract"
+            src="/images/contract_v1.png"
+            class="shadow-xl z-10 bg-accent mt-12 rounded-3xl"
+            format="webp"
+          />
+        </div>
+
+        <div  class="flex justify-center">
+          <div class="lg:pt-12 rounded-2xl">
+            <p
+             class="text-primary text-center leading-loose tracking-widest text-4xl md:text-4xl p-4 pt-0 font-semibold"
+            >
+              Pay with ADA and stablecoins securely through smart contracts.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <div class="flex justify-center rounded-2xl">
+            <p
+              class="text-center m-4 md:w-2/3 md:pt-12 leading-loose text-xl tracking-widest text-neutral text-md lg:text-2xl"
+            >
+            Harness the power of next-generation payment solutions on Cardano. Our platform allows you to make on-chain payments with ADA or stablecoins to buy the products you love. Spend your hard-earned crypto using smart contracts and avoid the headache of unfamiliar crypto wallets and confusing payment solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <EmailSignUp></EmailSignUp>
       
       <section class="bg-info pt-4 rounded-md">
@@ -219,7 +252,7 @@
                 How is my information kept?:
               </h1>
               <p class="text-info leading-loose text-l lg:text-2xl">
-                Your information will be securely stored in an anonymous manner within our database. No unnecessary personally identifiable information found on other e-commerce platforms is required or stored.
+                Your information will be securely stored in an anonymous manner within our database. No unnecessary personally identifiable information will ever be asked for, required, or stored.
               </p>
             </div>
           </div>
@@ -245,6 +278,7 @@
         <div class="">
           <p class="font-bold">Yuuera, LLC <br /></p>
           <p>YuueraOffical@gmail.com</p>
+          <p><NuxtLink to="/privacy">Privacy Policy</NuxtLink></p>
         </div>
         <div>
           <div class="grid grid-flow-col gap-4">
