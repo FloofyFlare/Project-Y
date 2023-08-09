@@ -25,7 +25,7 @@
       </div>
     </header>
     
-    <body class="bg-base-100 md:w-screen">
+    <body class="bg-base-100 md:w-full">
       <main>
       <section class="rounded-md">
         <div class="bg-info ">
@@ -35,14 +35,14 @@
                 <h1
                   class="pt-20 lg:pl-2 text-primary text-6xl lg:text-8xl flex font-semibold md:text-left md:justify-start"
                 >
-                  Buy and sell with Crypto as payment
+                  Buy and sell with crypto as payment
                 </h1>
 
                 <div>
                   <div class="mt-12 flex justify-center md:justify-center">
                     <div class="w-2/3 rounded-3xl md:h-24">
                       <p
-                        class="text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-2xl text-info"
+                        class="shadow-xl text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-2xl text-info"
                       >
                         Discover our cutting-edge crypto e-commerce platform,
                         enabling cost-effective buying and selling of products using stablecoins as a seamless mode of payment.
@@ -53,12 +53,12 @@
                 <a
                   href="#next"
                   
-                  class=" mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
+                  class="shadow-lg shadow-orange-200 mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
                   to=""
                   >Learn more</a
                 >
               </div>
-              <div class="flex h-screen w-full hidden lg:inline">
+              <div class="flex h-full w-full hidden lg:inline">
                     <nuxt-img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
                       src="/images/shopping cart.png"
@@ -74,12 +74,12 @@
       
       <section class="bg-secondary rounded-xl">
         <span id="next"></span>
-        <div class="mt-4 lg:hidden avatar">
+        <div class="mt-4 m-12 max-w-xl lg:hidden avatar">
           <nuxt-img
           
             alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
             src="/images/shopping cart.png"
-            class="z-10 bg-info m-12 rounded-3xl"
+            class="shadow-xl z-10 bg-info mt-12 rounded-3xl"
             format="webp"
           />
         </div>
@@ -89,7 +89,7 @@
             <p
              class="text-primary text-center leading-loose tracking-widest text-4xl md:text-4xl p-4 pt-0 font-semibold"
             >
-              Goodbye unnecessary Fees, Hello lower prices
+              Goodbye unnecessary fees. Hello lower prices.
             </p>
           </div>
         </div>
@@ -99,12 +99,45 @@
             <p
               class="text-center m-4 md:w-2/3 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
             >
-            Embrace our marketplace, powered by the Cardano blockchain, empowering you to reclaim sovereignty over your transactions while avoiding unnecessary fees and intrusive data collection practices.
+            Embrace our marketplace powered by the Cardano blockchain, empowering you to reclaim control over your transactions while avoiding unnecessary fees and intrusive data collection practices.
             </p>
           </div>
         </div>
       </section>
-      
+
+      <section class="bg-info">
+        <span id="next"></span>
+        <div class="mt-4 m-8 max-w-md avatar">
+          <nuxt-img
+          
+            alt="a representation of a smart contract"
+            src="/images/contract_v1.png"
+            class="shadow-xl z-10 bg-accent mt-12 rounded-3xl"
+            format="webp"
+          />
+        </div>
+
+        <div  class="flex justify-center">
+          <div class="lg:pt-12 rounded-2xl">
+            <p
+             class="text-primary text-center leading-loose tracking-widest text-4xl md:text-4xl p-4 pt-0 font-semibold"
+            >
+              Pay with ADA and stablecoins securely through smart contracts.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <div class="flex justify-center rounded-2xl">
+            <p
+              class="text-center m-4 md:w-2/3 md:pt-12 leading-loose text-xl tracking-widest text-neutral text-md lg:text-2xl"
+            >
+            Harness the power of next-generation payment solutions on Cardano. Our platform allows you to make on-chain payments with ADA or stablecoins to buy the products you love. Spend your hard-earned crypto using smart contracts and avoid the headache of unfamiliar crypto wallets and confusing payment solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <EmailSignUp></EmailSignUp>
       
       <section class="bg-info pt-4 rounded-md">
@@ -125,8 +158,8 @@
                 </div>
                 <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">End to end security</h1>
                 <p class="p-4 text-xl md:text-2xl text-neutral tracking-widest ">
-                  Leveraging the Cardano blockchain our transactions operate seamlessly through
-                  smart contracts on Cardano, this minimizes the amount of user
+                  Leveraging the Cardano blockchain, our transactions operate seamlessly through
+                  smart contracts on Cardano. This minimizes the amount of user
                   data we store significantly when compared to traditional
                   e-commerce marketplaces.
                 </p>
@@ -152,9 +185,9 @@
               </div>
               <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">Borderless payments</h1>
               <p class="p-4 text-xl text-neutral md:text-2xl tracking-widest">
-                Unlock the realm of borderless e-commerce, tailored for a thriving global economy.  Allow us to be your trusted companion,
-                allowing you to discover new markets across nations. Say goodbye to
-                cross-border fees affecting the price of your purchases, as we pave the way for seamless and cost-effective international transactions.
+                Unlock the realm of borderless e-commerce tailored for a thriving global economy.  Allow us to be your trusted companion
+                guiding you to new markets across nations. Say goodbye to
+                cross-border fees affecting the price of your purchases as we pave the way for seamless and cost-effective international transactions.
               </p>
               <div class="flex p-4">
                 <a href="#item1" class="m-4 btn btn-circle">❮</a> 
@@ -180,8 +213,8 @@
                 Serving communities
               </h1>
               <p class="p-4 text-xl md:text-2xl text-neutral tracking-widest">
-                We are dedicated to creating a positive impact by directing 10 percent of the fees generated from your purchases towards empowering underserved communities. This initiative aims to provide access to technology and educational opportunities, 
-                enabling others to enhance their lives and opportunities for growth.
+                We are dedicated to creating a positive impact by directing 10 percent of the fees generated from your purchases towards empowering underserved communities. This initiative aims to provide access to technology and educational opportunities
+                and enables others to enhance their lives and opportunities for growth.
               </p>
               <div class="flex p-4">
                 <a href="#item2" class="m-4 btn btn-circle">❮</a> 
@@ -216,7 +249,7 @@
                 How is my information kept?:
               </h1>
               <p class="text-info leading-loose text-l lg:text-2xl">
-                Your information will be securely stored in an anonymous manner within our database. No unnecessary Personally Identifiable Information found on other e-commerce platforms is required or stored.
+                Your information will be securely stored in an anonymous manner within our database. No unnecessary personally identifiable information will ever be asked for, required, or stored.
               </p>
             </div>
           </div>
@@ -229,7 +262,7 @@
                 What stablecoins will be supported?:
               </h3>
               <p class="text-info leading-loose text-l lg:text-2xl">
-                This is still in progress but we plan to focus on fiat backed stable oins including $USDM and $USDA
+                This is still in progress but we plan to focus on fiat backed stablecoins including $USDM and $USDA
               </p>
             </div>
           </div>
@@ -242,6 +275,7 @@
         <div class="">
           <p class="font-bold">Yuuera, LLC <br /></p>
           <p>YuueraOffical@gmail.com</p>
+          <p><NuxtLink to="/privacy">Privacy Policy</NuxtLink></p>
         </div>
         <div>
           <div class="grid grid-flow-col gap-4">

@@ -60,24 +60,25 @@ function handleSubmit() {
     handleSend()
   }
 }
-async function handleSend() {
-  showButton.value = false
-  showThanks.value = true
-  console.log(signUpEmail.value)
 
-  const data = { email: signUpEmail.value }
+async function handleSend() {
+  showButton.value = false;
+  showThanks.value = true;
+  console.log(signUpEmail.value);
+
+  const data = { email: signUpEmail.value };
 
   try {
     // Change the URL to your production server
-    await fetch('http://0.0.0.0:8000/newsletter/', {
+    await fetch('https://api.yuuera.com/newsletter/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    })
+    });
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 }
 
