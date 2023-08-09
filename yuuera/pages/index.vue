@@ -15,9 +15,10 @@
         <div class="flex-none">
           <div class="pr-4 mt-2">
             <NuxtLink to="/about">
-              <span class="btn bg-primary text-info text-xl font-semibold"
-                >About</span
-              >
+              <span class="btn bg-primary text-info text-xl font-semibold">About</span>
+            </NuxtLink>
+            <NuxtLink to="/Homepage">
+              <span class="btn bg-primary text-info text-xl font-semibold">extra</span>
             </NuxtLink>
           </div>
         </div>
@@ -198,16 +199,12 @@
             <h1 class="text-primary font-bold text-4xl md:text-6xl">FAQ</h1>
           </div>
 
-          <div class="mt-10 mb-10 flex justify-center pl-4 pr-4">
-            <div
-              class="flex flex-row bg-secondary w-3/3 rounded-3xl shadow-lg"
-            >
-              <h1 class="text-primary font-bold text-l lg:text-xl p-2">
-                Why Cardano?:
-              </h1>
-              <p class="text-info leading-loose text-l lg:text-2xl">
-                We found cardano to be the solution that would scale fastest as cryptocurrency gains adoption while also having the security of UTXO transactions.
-              </p>
+          <div class="dropdown mt-10 mb-10 flex justify-center pl-4 pr-4">
+            <div class="flex flex-row bg-secondary w-3/3 rounded-3xl shadow-lg">
+              <label tabindex="0" class="dropdown-content btn m-1 z-[1] menu text-secondary font-bold text-l lg:text-xl p-2">Why Cardio:</label>
+              <ul class="text-info leading-loose text-l lg:text-2xl">
+                <li>We found cardano to be the solution that would scale fastest as cryptocurrency gains adoption while also having the security of UTXO transactions.</li>
+              </ul>
             </div>
           </div>
 
