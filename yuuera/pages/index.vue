@@ -271,7 +271,7 @@
                 What stablecoins will be supported?:
               </h3>
               <p class="text-info leading-loose text-l lg:text-2xl">
-                This is still in progress but we plan to focus on fiat backed stablecoins including $USDM and $USDA
+                This is still in progress but we plan to focus on fiat backed stablecoins including $USDM and $USDA.
               </p>
             </div>
           </div>
@@ -309,7 +309,7 @@
 
 <script setup lang="ts">
 useHead({
-  title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
+  title: 'Yuuera | Buy and sell goods online with cryptocurrency!',
   meta: [
     {
       name: 'description',
