@@ -24,14 +24,46 @@
     
     <body class="bg-base-100 md:w-screen">
         <main>
+
+          
         <section class="rounded-md bg-info">
             <div class="flex h-screen w-full bf-info">
-                    <nuxt-img
-                      alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                      src="/images/shopping cart.png"
-                      class="z-10 mt-24"
-                      format="webp"
-                    />
+              <div>
+                <div>
+                        <NuxtLink to="/sellersinfo"
+                          
+                          class="shadow-lg shadow-orange-200 mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
+                          >If you intend to sell Please click this link to sign up for being a seller</NuxtLink>
+                      </div>
+
+                  <div class="mt-36 flex justify-center md:justify-center">
+                    <div class="w-2/3 rounded-3xl md:h-24">
+                      <p
+                        class="shadow-xl text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-2xl text-info"
+                      >
+                          Your Cart is empty.
+                          Fill it with groceries, clothing, household supplies, electronics, and more.
+                          Continue shopping on the Yuuera.com homepage, and learn more about awasome deals.
+                      </p>
+                      <div  class="justify center mt-12">
+                        <div class="lg:pt-24 rounded-2xl">
+                        <p class="text-secondary leading-loose tracking-widest text-4xl md:text-4xl p-4 pt-0 font-semibold">
+                          Your Items:
+                        </p>
+                        </div>
+                      </div>
+                      <div class="bg-secondary ">
+                        <a href="#"
+                          
+                          class="shadow-lg shadow-orange-200 mb-4 text-info mt-6 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
+                          to=""
+                          >Please connect Your Wallet so you can start shopping</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+               
             </div>
         </section>
 
