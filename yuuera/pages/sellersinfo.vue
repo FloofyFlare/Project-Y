@@ -60,13 +60,6 @@
                         </label>
                         <input type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
                         </div>
-                        
-                        <div class="form-control mt-12 w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text text-primary">*What is the name of your owning beneficiaries/CEO?</span>
-                        </label>
-                        <input type="text" placeholder="ExampleLLC" class="input input-bordered w-full max-w-xs" />
-                        </div>
 
                         <div class="form-control mt-12 w-full max-w-xs">
                         <label class="label">
@@ -80,6 +73,16 @@
                             <span class="label-text text-primary">Phone number</span>
                         </label>
                         <input type="text" placeholder="012-345-6789" class="input input-bordered w-full max-w-xs" />
+                        </div>
+
+                        <div class="dropdown form-control mt-12 mb-12 w-full max-w-xs">
+                          <label tabindex="0" class="btn m-1">Zone you live in</label>
+                          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>NorthWest Ohio</a></li>
+                            <li><a>NorthEast Ohio</a></li>
+                            <li><a>SouthWest Ohio</a></li>
+                            <li><a>SouthEast Ohio</a></li>
+                          </ul>
                         </div>
 
                         </div>
