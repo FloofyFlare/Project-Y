@@ -3,8 +3,7 @@ export default defineNuxtConfig({
   // Global page headers: https://go.nuxtjs.dev/config-head
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/scss/appStyles.scss'],
-
-  //I cant mess with the Nuxt tailwindwidnd:{} file Oof. or daisy will not work
+  //I cant mess with the Nuxt tailwindwidnd:{} file Oof or daisy will not work
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 
@@ -12,14 +11,11 @@ export default defineNuxtConfig({
   components: true,
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/content'],
-
+  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxtjs/robots'],
+  ssr: true,
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   // Content module configuration: https://go.nuxtjs.dev/config-content
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-
-  ssr:process.env.NODE_ENV !== "development"
-
 })

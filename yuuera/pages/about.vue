@@ -1,185 +1,259 @@
 <template>
   
-  <head>
-    <title class="text-base-100">Project-Y</title>
-  </head>
-  <header class="bg-primary text-base-200 ">
-    <div class="navbar flex-1">
-      <NuxtLink class="btn btn-ghost normal-case text-xl text-neutral" to="/">Yuuera</NuxtLink>
+  <header class=" fixed opacity-[.98] bg-info text-base-200 z-50">
+    <div class="border-b-2 border-slate-600 navbar w-screen">
+      <div class="flex-1">
+        <NuxtLink to="/" class="absolute w-28">
+          <nuxt-img
+            alt="Yuuera logo"
+            src="/images/logo.png"
+            class="w-28 fill-current"
+            format="webp"
+          />
+        </NuxtLink>
+      </div>
+      <div class="flex-none">
+        <div class="pr-4 mt-2">
+          <NuxtLink to="/accountsettings"
+            ><div class="avatar">
+                <div class="w-20 rounded">
+                <img src="data:image/jpeg;base64,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" alt="Account settings/Orders" />
+              </div>
+             </div>
+            </NuxtLink
+          >
+        </div>
+      </div>
     </div>
   </header>
-  <body class="bg-accent">
-    
-    <div>
-      <div class=" hero aboutCityImage shadow-2xl ">
-        <div class="w-full h-full flex justify-center items-center backdrop-blur-sm hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center text-neutral-content">
-          <div class="max-w-4xl">
-            <h1 class=" text-primary text-9xl font-semibold  ">Putting <span class="text-info">Yuu</span> back in the equation</h1>
-            
-          </div>
-        </div>
-      </div>
-    </div>
 
-
-    <section class="bg-accents pt-24">
-      <div class="mt-16 mb-16">
-          <h3 class="text-primary font-bold text-7xl">The Internet Powered by <span class="text-info">Yuu</span></h3>
-            <div class="mb-16 flex justify-center">
-              <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
-                <p class="pt-24 text-neutral leading-loose text-3xl  text-block">
-                  Hello, welcome to the Yuuera team we are excited to have you here. 
-                  Our goal is to utilize the power of blockchain to
-                  create a better future for the internet together. We value the decentralization
-                  of the internet as key to creating a more vibrant, efficient, and Community
-                  based tech scene. Our mission is to give control of the internet back to the 
-                  people in shopping and beyond. The internet was not made by one person. Let's keep it that way. 
-                  We would be honored to have you join us in our journey to change the future of the internet brining 
-                  the power to the people. 
-                </p>
-              </div>
-            </div>
-      </div>
-    </section>
-      
-    <section class="bg-secondary mt-16 flex">
+  <body class="bg-info">
+    <main>
+    <section class="h-2/3 pt-24">
+      <nuxt-img
+        src="/images/twitter base trans.png"
+        class="absolute top-7 opacity-10 z-0 lowest-el"
+        format="webp"
+      />
       <div>
-
-      
-      <div class="triangle-divider ">
-          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
-          </svg>
-      </div>
-      
-      <div class=" h-screen pl-24">
-        <div class="flex flex-row justify-center space-x-24 mt-44  ...">
-          <div>
-            <div class="flex rounded-3xl bg-accent p-4  team-member flex-col ...">
-              <div class="flex w-48 rounded">
-                <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-              </div>
-              <div>
-                <p class="font-medium p-8 text-2xl">Darrius </p>
-                <p class="font-medium text-lg">Chief Marketing Officer</p>
-              </div>
+        <div class="flex justify-center items-center">
+          <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-4xl sm:text-left">
+              <h1 class="text-primary pb-12 text-6xl md:text-9xl font-semibold">
+                About Us
+              </h1>
             </div>
           </div>
-          <div>
-            <div class="flex rounded-3xl bg-accent p-4  team-member flex-col ...">
-              <div class="flex w-48 rounded">
-                <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-              </div>
-              <p class="font-medium p-8 text-2xl">Raymond </p>
-                <p class="font-medium text-lg">Cheif Executive Officer</p>
-            </div>
-          </div>
-          <div>
-            <div class="flex rounded-3xl bg-accent p-4 team-member flex-col ...">
-              <div class="flex w-48 rounded">
-                <img src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-              </div>
-              <p class="font-medium p-8 text-2xl">Caleb </p>
-                <p class="font-medium text-lg">Cheif Technology Officer</p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-      <div class="mb-16 flex justify-center">
-        <div class="mt-4 h-adjustment w-2/3 rounded-3xl">
-          <h1 class="text-accent font-bold text-6xl pt-24">Meet the Team</h1>
-          <h2 class="pt-24 text-neutral leading-loose text-2xl  text-block text-accent font-semibold">
-            Hello, welcome to the Yuuera team we are excited to have you here. 
-            Our goal is to utilize the power of blockchain and cryptocurrency to
-            create a better future for the internet together. We value the decentralization
-            of the internet as key to creating a more vibrant, efficient, and Community
-            based tech scene. Our mission is to give control of the internet back to the 
-            people in shopping and beyond. The internet was not made by one person. Let's keep it that way. 
-            We would be honored to have you join us in our journey to change the future of the internet brining 
-            the power to the people. 
-          </h2>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      
-      <div class="mt-24 mb-16">
-          <h3 class="text-primary font-bold text-6xl">Built for <span class="text-info">Yuu</span></h3>
-      </div>
-      
-      <div class="mt-10 mb-10 flex justify-center">
-        <div class="flex flex-row bg-info w-2/3 rounded-3xl h-48 shadow-lg">
-          <img class="h-48 rounded-3xl" src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-          <h3 class="text-neutral font-bold text-xl p-2">Consumer Focused: </h3>
-          <p class="text-neutral leading-loose text-2xl">
-              Providing great products and services 
-              is one thing. Creating products that you value is success.
-          </p>
-        </div>
-      </div>
-
-      <div class="mb-10 flex justify-center">
-        <div class="flex flex-row bg-info w-2/3 rounded-3xl h-48 shadow-lg">
-          <h3 class="text-neutral font-bold text-xl p-2">Privacy: </h3>  
-          <p class="text-neutral leading-loose text-2xl">
-              Secure peer to peer transacitons on without
-              reliance on third part organizations or entities. EVEN US!
-          </p>
-          <img class="h-48 rounded-3xl" src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-        </div>
-      </div>
-
-      <div class="mb-16 flex justify-center">
-
-        <div class=" flex flex-row bg-info w-2/3 rounded-3xl h-48 shadow-lg">
-          <img class="h-48 rounded-3xl" src="https://assets.eflorist.com/site/EF-12844/Homepage/Thank%20You%20to%20cust_5.png" />
-          <h3 class="text-neutral font-bold text-xl p-2">Community: </h3>  
-          <p class="text-neutral leading-loose text-2xl">
-              Blockchain is internet freedom for us, providing
-              the space for tomorrows creativity, innovation, and experiences.
-          </p>
         </div>
       </div>
     </section>
     
-      <div class="mt-60 Spt-24 h-adjustment">
-        <ClientOnly>
-          <EmailSignUp></EmailSignUp>
-        </ClientOnly>
+   
+    <section class="flex justify-center">
+      <div class="flex justify-center items-center md:w-2/3 md:mt-40 md:mb-12">
+        <div class="rounded-3xl w-screen bg-secondary shadow-xl z-40">
+          <div class="mt-10 flex justify-center">
+            <h1 class="text-primary p-4 pt-0 font-bold text-4xl md:text-7xl">
+              Vision
+            </h1>
+          </div>
+          <div class="flex justify-center">
+            <div class="p-4 md:pb-24 md:w-2/3 rounded-3xl">
+              <p
+                class="text-xl text-info text-center leading-loose pb-4 md:pb-0tracking-widest text-l lg:text-2xl"
+              >
+              At Yuuera, we empower individuals with complete control over their online decisions using blockchain technology and cryptocurrency. By eliminating unnecessary third parties, we contribute to creating a better, more efficient world.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+ 
+    
+    <section class="lg:w-full lg:flex lg:justify-center">
+      <div class="avatar">
+        <nuxt-img format="webp" src="/images/laptopstock.png" class="lg:hidden"/>
+      </div>
+      <div class="lg:w-2/3 lg:flex lg:justify-center lg:ml-8 lg:mr-8  lg:rounded-3xl">
+        <div class="">
+          <div class="flex  justify-center items-center">
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-4xl sm:text-left">
+                <h1 class="flex text-primary font-bold text-4xl md:text-7xl">
+                  Who We Are
+                  
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="mb-24 flex justify-center">
+            <div class="md:p-12 p-4  rounded-3xl">
+              <p
+                class="text-xl pb-4 text-neutral text-center leading-loose tracking-widest text-l lg:text-2xl"
+              >
+                We transform ideas into cutting-edge software. Through ideation, problem-solving, and hard work, we bring the dream of crypto to life. Join us as we shape the
+                future of technology one line of code at a time.
+              </p>
+              <div class="flex w-full">
+                <div class="flex-col w-1/2 p-2">
+                  <nuxt-img class="grayscale rounded-full" alt="Picture of Caleb Hunt" src="/images/Caleb.jpg"/>
+                  <div class="flex justify-center ">
+                    <h1 class="md:text-lg text-neutral pr-4">Caleb Hunt: CTO & Web development specialist</h1>
+                      <a href="https://www.linkedin.com/in/caleb-hunt-580374284/">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fill-current" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                      </a>
+                  </div>
+                </div>
+                <div class="flex-col w-1/2 p-2">
+                  <nuxt-img class="grayscale rounded-full" src="/images/Raymond.jpg"/>
+                  <div class="flex justify-center ">
+                    <h1 class="md:text-lg text-neutral pr-4">Raymond Flowers: CEO & Blockchain specialist</h1>
+                      <a href="https://twitter.com/rev_cardano"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          class="fill-current"
+                        >
+                        <path
+                          d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                        ></path></svg>
+                      </a>
+                      <a href="https://www.linkedin.com/in/raymond-flowers-4b7aa521b/">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fill-current" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                      </a>
+                  </div>
+                </div>
+                <p></p>
+              </div>
+             
+              
+            </div>
+          </div>
+        </div>
+        <nuxt-img format="webp" src="/images/laptopstock.png" class="hidden w-96 mt-12 h-96 mr-4 bg-info rounded-3xl flex  lg:inline"/>
+      </div>
+    </section>
+    <section class="flex justify-center">
+      <div class="w-2/3">
+        <div class="flex justify-center items-center mb-12">
+          <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-4xl sm:text-left">
+              <h1 class="text-primary font-bold text-4xl md:text-7xl">
+                Our Values
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="shadow-xl flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
+          >
+            <div class="flex justify-center">
+              <nuxt-img
+                format="webp"
+                src="/images/padlock.png"
+                class="margin-left-24px w-full h-auto justify-contents"
+              />
+            </div>
+            <div>
+              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Security:</p>
+              <p class="font-medium text-neutral text-lg md:text-2xl">
+                We are devoted to the security of your transactions. We strive to treat
+                your information with respect using blockchain software and
+                cryptography. This keeps your information away from prying eyes and
+                puts it in your hands.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="shadow-xl flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
+          >
+            <div class="flex rounded md:hidden">
+              <nuxt-img format="webp" src="/images/internet-image.png" />
+            </div>
+            <div>
+              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Innovation:</p>
+              <p class="font-medium text-neutral text-lg md:text-2xl">
+                Blockchain is internet freedom for us, providing the space for
+                tomorrows creativity, innovation, and experiences. We work to
+                make sure it stays that way for all.
+              </p>
+            </div>
+            <div class="flex rounded hidden md:inline">
+              <nuxt-img format="webp" src="/images/internet-image.png" />
+            </div>
+          </div>
+
+          <div
+            class="shadow-xl flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
+          >
+            <div class="flex rounded">
+              <nuxt-img format="webp" src="/images/chatbubbles.png" />
+            </div>
+            <div>
+              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Consumer Focused:</p>
+              <p class="font-medium text-neutral text-lg md:text-2xl">
+                Providing great products and services is one thing; creating
+                products that you value is success. We're committed to getting
+                feedback from our customers and using cutting edge technology to
+                create software for the game changers of the world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <client-only>
+      <EmailSignUp class="pt-4 pb-4"></EmailSignUp>
+    <footer class="footer footer-center p-4 bg-primary text-primary-content">
+      <div>
+        <p class="font-bold">Yuuera, LLC <br /></p>
+        <p>YuueraOffical@gmail.com</p>
+        <p><NuxtLink to="/privacy">Privacy Policy</NuxtLink></p>
+      </div>
+      <div>
+        <div class="grid grid-flow-col gap-4">
+          <a href="https://twitter.com/YuueraOfficial"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              ></path></svg
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </client-only>
   </body>
 
-  <footer class="bg-accent">
-    <div class="bg-orange-600">
-      <div class="footer footer-center p-10  text-neutral rounded">
-        <div class="grid grid-flow-col gap-4">
-          <p class="font-bold text-2xl">Contact Us</p>
-        </div> 
-      </div>
+</template>
 
-      <div class="footer px-10 py-4  bg-natural text-base-content ">
-        <div class="items-center grid-flow-col text-neutral">
-            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a> 
-            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
-            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
-        </div> 
-        <div class="md:place-self-center md:justify-self-end">
-          <div class="grid grid-flow-col gap-4 text-neutral">
-            <p>Companyemail.com (plus logo)</p>
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  </template>
-  <script s>
+<script setup lang="ts">
+useHead({
+  title: 'Yuuera | About us',
+  meta: [
+    {
+      name: 'description',
+      content: 'Hello we are Yuuera a web 3.0 company built for YUU',
+    },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+  ],
+  link: [
+    { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
+  ],
+})
+</script>
 
-  </script>
-  
-  <style scoped lang="scss">
-  @import 'assets/scss/appStyles.scss';
-  </style>
+<style scoped lang="scss">
+@import 'assets/scss/appStyles.scss';
+</style>

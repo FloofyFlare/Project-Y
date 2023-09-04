@@ -1,0 +1,59 @@
+---
+version: "2.0"
+
+services:
+  nuxt-app:
+    image: floof99/project-y-nuxt-app:0.0.1
+    command: "node .output/server/index.mjs"
+    expose:
+      - port: 3000
+        as: 3000
+        to:
+          - service: web-server
+  web-server:
+    image: floof99/project-y-web-server
+    depends_on:
+      - nuxt-app
+    expose:
+      - port: 8080
+        as: 80
+        to:
+          - global: true
+
+profiles:
+  compute:
+    web-server:
+      resources:
+        cpu: 
+          units: 0.9
+        memory: 
+          size: 512Mi
+        storage: 
+          size: 512Mi
+    nuxt-app:
+      resources:
+        cpu: 
+          units: 0.9
+        memory: 
+          size: 300Mi
+        storage: 
+          size: 300Mi
+  placement:
+    eastcoast:
+      pricing:
+        nuxt-app: 
+          denom: uakt
+          amount: 3
+        web-server:
+          denom: uakt
+          amount: 3
+
+deployment:
+  nuxt-app:
+    eastcoast:
+      profile: nuxt-app
+      count: 1
+  web-server:
+    eastcoast:
+      profile: web-server
+      count: 1

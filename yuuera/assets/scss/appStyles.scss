@@ -9,53 +9,36 @@
   text-align: center;
 }
 nav {
-  padding: 30px;
-
   a {
     font-weight: bold;
     color: #42b983;
   
   }
 }
-.h-adjustment{
-  height: 70vh;
+.margin-left-24px{
+  margin-left: 24px;
 }
-.aboutCityImage{
-  min-height: 80vh;
-  background-image: url(/assets/images/pexels-gratisography-2255.jpg);
-}
-section{
-  position:relative;
-} 
-
-
-.triangle-divider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.triangle-divider svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 78px;
-}
-
-.triangle-divider .shape-fill {
-  fill: #EBEBEB;
-}
-.team-member {
-  height: 50vh;
-  width: 30vh;
-  align-content: center;
-  img{
-
-    height: 30vh;
-    width: auto;
+.text-input-button {
+  input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
+  button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-top: 1px;
+  }
+}
+.lowest-el {
+  z-index: -1;
+}
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h3, p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
