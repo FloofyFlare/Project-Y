@@ -81,25 +81,38 @@
             format="webp"
           />
         </div>
-        <div>
-          <div  class="flex justify-center">
-            <div class="lg:pt-24 rounded-2xl">
-              <p
-              class="text-info text-center leading-loose tracking-widest text-4xl md:text-5xl p-4 pt-0 font-semibold"
-              >
-                Buy and sell anything with Cardano!
-              </p>
+        <div class="lg:flex lg:justify-center lg:p-4 lg:w-full ">
+          <div class="lg:w-2/3 lg:flex">
+            <div class="hidden lg:inline">
+              <nuxt-img
+            
+                alt="A mockup of a purchase on yuueras website"
+                src="/images/shopping cart.png"
+                class="shadow-xl z-10 bg-info mt-12 rounded-3xl"
+                format="webp"
+              />
             </div>
-          </div>
+            <div>
+              <div  class="flex justify-center">
+                <div class="lg:pt-24 rounded-2xl">
+                  <p
+                  class="text-info text-center leading-loose tracking-widest text-4xl md:text-5xl p-4 pt-0 font-semibold"
+                  >
+                    Buy and sell anything with Cardano!
+                  </p>
+                </div>
+              </div>
 
-          <div class="pb-12 flex justify-center">
-            <div class="flex justify-center rounded-2xl">
-              <p
-                class="text-center m-4 md:w-3/4 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
-              >
-                Discover our cutting-edge crypto e-commerce platform,
-                enabling cost-effective buying and selling of products using stablecoins and ADA as a seamless mode of payment.
-              </p>
+              <div class="pb-12 flex justify-center">
+                <div class="flex justify-center rounded-2xl">
+                  <p
+                    class="text-center m-4 md:w-3/4 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
+                  >
+                    Discover our cutting-edge crypto e-commerce platform,
+                    enabling cost-effective buying and selling of products using stablecoins and ADA as a seamless mode of payment.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
