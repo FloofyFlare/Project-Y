@@ -244,7 +244,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Hello we are Yuuera a web 3.0 company built for YUU',
+      content: 'We are Yuuera a web 3.0 company built for YUU',
     },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
