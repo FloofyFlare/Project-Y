@@ -39,7 +39,7 @@
                   <div class="mt-12 flex justify-center md:justify-center">
                     <div class="w-2/3 rounded-3xl md:h-24 ">
                       <p
-                        class="shadow-xl text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-2xl text-info"
+                        class="shadow-xl text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-3xl text-info"
                       >
                       Experience a peer-to-peer marketplace powered by YUU, where trust, transparency, and security converge to transform online commerce.
                       </p>
@@ -105,7 +105,7 @@
               <div class="pb-12 flex justify-center">
                 <div class="flex justify-center rounded-2xl">
                   <p
-                    class="text-center m-4 md:w-3/4 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
+                    class="text-center m-4 md:w-3/4 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-3xl"
                   >
                     Discover peer-to-peer e-commerce,
                     enabling cost-effective commerce for all.
@@ -142,7 +142,7 @@
         <div class="flex justify-center pb-24 ">
           <div class="flex justify-center rounded-2xl">
             <p
-              class="text-center m-4  md:w-1/2 md:pt-12 leading-loose text-xl tracking-widest text-neutral text-md lg:text-2xl"
+              class="text-center m-4  md:w-1/2 md:pt-12 leading-loose text-xl tracking-widest text-neutral text-md lg:text-3xl"
             >
             Harness the power of next-generation payment solutions on Cardano. Our platform supports making payments with ADA and stablecoins to buy the products you love.
             </p>
@@ -166,7 +166,7 @@
             <div class="pb-12 flex justify-center">
               <div class="flex justify-center rounded-2xl">
                 <p
-                  class="text-center m-4 md:w-3/4 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
+                  class="text-center m-4 md:w-3/4 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-3xl"
                 >
                   Join a community of forward-thinkers and experience the future of commerce. 
                   Your journey to a new era of online trading starts here.
@@ -178,14 +178,15 @@
       </section>
       <EmailSignUp></EmailSignUp>
       
-      <section class="bg-info pt-4 rounded-md">
+      <section class="bg-accent pt-4 rounded-md">
+        <div class="divider"></div>
         <div class="mt-2 pb-24 ">
           <div class="w-full carousel rounded-box">
             <div
               id="item1"
-              class="carousel-item w-full flex  justify-center"
+              class="carousel-item w-full flex justify-center"
             >
-              <div class="md:w-2/5 pt-24">
+              <div class="lg:w-2/5 max-h-full bg-info border-8 rounded-xl pt-12">
                 <div class="w-full flex justify-center">
                   <nuxt-img
                     alt="Cardano logo"
@@ -194,14 +195,14 @@
                     format="webp"
                   />
                 </div>
-                <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">End to end security</h1>
-                <p class="p-4 text-xl md:text-2xl text-neutral tracking-widest ">
+                <h1 class="font-semibold text-primary text-3xl lg:text-4xl p-4">End to end security</h1>
+                <p class="p-4 text-xl lg:text-3xl text-neutral tracking-widest ">
                   Leveraging the Cardano blockchain, our transactions operate seamlessly through
                   smart contracts on Cardano. This minimizes the amount of user
                   data we store significantly when compared to traditional
                   e-commerce marketplaces.
                 </p>
-                <div class="flex p-4">
+                <div class="flex p-4 pb-0">
                   <a href="#item3" class="m-4 btn btn-circle">❮</a> 
                   <a href="#item2" class="m-4 btn btn-circle">❯</a>
                 </div>
@@ -212,7 +213,7 @@
               id="item2"
               class="carousel-item flex justify-center w-full "
             >
-            <div class="md:w-2/5 pt-4">
+            <div class="lg:w-2/5 max-h-full bg-info border-8 rounded-xl pt-4">
               <div class="w-full  flex justify-center">
                 <nuxt-img
                   alt="an image of 2 hands shaking showing agrement"
@@ -222,7 +223,7 @@
                 />
               </div>
               <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">Borderless commerce</h1>
-              <p class="p-4 text-xl text-neutral md:text-2xl tracking-widest">
+              <p class="p-4 text-xl text-neutral md:text-3xl tracking-widest">
                 Unlock the realm of borderless e-commerce tailored for a thriving global economy.  Allow us to be your trusted companion
                 in the realm of peer-to-peer commerce. Say goodbye to
                 extravagant fees affecting the price of commerce as we pave the way for seamless and cost-effective peer-to-peer transactions.
@@ -237,7 +238,7 @@
               id="item3"
               class="carousel-item flex justify-center w-full "
             >
-            <div class="md:w-2/5 pt-4">
+            <div class="lg:w-2/5 max-h-full bg-info border-8 rounded-xl pt-4">
               <div class="w-full flex justify-center">
                 <nuxt-img
                   alt="A stack of books"
@@ -250,7 +251,7 @@
               <h1 class="font-semibold text-primary text-3xl md:text-4xl p-4">
                 Serving communities
               </h1>
-              <p class="p-4 text-xl md:text-2xl text-neutral tracking-widest">
+              <p class="p-4 text-xl md:text-3xl text-neutral tracking-widest">
                 We are dedicated to creating a positive impact by directing 10 percent of the fees collected on our platform towards empowering underserved communities. This initiative aims to provide access to technology and educational opportunities
                 and enables others to enhance their lives and opportunities for growth.
               </p>
@@ -268,16 +269,16 @@
         <div class="w-full lg:flex lg:justify-center">
           <div class="lg:w-2/3 ">
             <div class="mt-12 mb-6">
-              <h1 class="text-primary font-bold text-4xl md:text-6xl">FAQ</h1>
+              <h1 class="text-info font-bold text-4xl md:text-6xl">FAQ</h1>
             </div>
             <div class="mb-10 flex justify-center pl-4 pr-4">
               <div
-                class="flex flex-row bg-secondary w-3/3 rounded-3xl shadow-lg"
+                class="flex p-4 flex-row bg-accent w-3/3 rounded-3xl shadow-lg"
               >
-                <h1 class="text-primary font-bold text-l lg:text-xl p-2">
+                <h1 class="text-info font-bold text-l lg:text-3xl p-2">
                   How is my information kept?:
                 </h1>
-                <p class="text-info leading-loose text-l lg:text-2xl">
+                <p class="text-info leading-loose text-l lg:text-3xl">
                   Your information will be securely stored in an anonymous manner within our database. No unnecessary personally identifiable information will ever be asked for, required, or stored.
                 </p>
               </div>
@@ -285,26 +286,26 @@
 
             <div class="mb-10 flex justify-center pl-4 pr-4">
               <div
-                class="flex flex-row bg-secondary w-3/3 rounded-3xl shadow-lg"
+                class="flex p-4 flex-row bg-primary w-3/3 rounded-3xl shadow-lg"
               >
-                <h1 class="text-primary font-bold text-l lg:text-xl p-2">
+                <h1 class="text-warning font-bold text-l lg:text-3xl p-2">
                   Why Cardano?:
                 </h1>
-                <p class="text-info leading-loose text-l lg:text-2xl">
-                  We found cardano to be the solution that would scale fastest as our platform increases in compexity and size. Cardano also has the high levels of security and speed needed for fueling the next generation of commerce.
+                <p class="text-warning leading-loose text-l lg:text-3xl">
+                  We found cardano to be the solution that would scale fastest as our platform increases in compexity and size. Cardano has the high levels of security and speed needed for fueling the next generation of commerce.
                 </p>
               </div>
             </div>
 
             <div class="mb-16 flex justify-center pl-4 pr-4">
               <div
-                class="flex flex-row bg-secondary w-3/3 rounded-3xl shadow-lg"
+                class="flex p-4 flex-row bg-accent w-3/3 rounded-3xl shadow-lg"
               >
-                <h3 class="text-primary font-bold text-l lg:text-xl p-2">
-                  What stablecoins will be supported?:
+                <h3 class="text-info font-bold text-l lg:text-3xl p-2">
+                  Supported Currencies?:
                 </h3>
-                <p class="text-info leading-loose text-l lg:text-2xl">
-                  This is still in progress but we plan to focus on fiat backed stablecoins including $USDM and $USDA.
+                <p class="text-info leading-loose text-l lg:text-3xl">
+                  This is still in progress but we plan to focus on $ADA and stablecoins including $DJED and $USDA.
                 </p>
               </div>
             </div>
