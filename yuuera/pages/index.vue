@@ -24,10 +24,10 @@
     
     <body class="bg-base-100 md:w-full">
       <main>
-      <section class="rounded-md">
+      <section class=" min-w-screen rounded-md">
         <div class="bg-info">
           <div class="hero min-h-screen ">
-            <div class="lg:flex text-center items-center md:text-start text-neutral-content">
+            <div class="w-full lg:flex text-center items-center md:text-start text-neutral-content">
               <div class="max-w-4xl md:text-left">
                 <h1
                   class="pt-20 lg:pl-2 text-primary text-5xl lg:text-8xl flex font-semibold md:text-left md:justify-start"
@@ -41,8 +41,7 @@
                       <p
                         class="shadow-xl text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-2xl text-info"
                       >
-                      Experience a peer-to-peer marketplace powered by YUU, 
-                      where trust, transparency, and security converge to transform online commerce.
+                      Experience a peer-to-peer marketplace powered by YUU, where trust, transparency, and security converge to transform online commerce.
                       </p>
                     </div>
                   </div>
@@ -60,7 +59,7 @@
                     <nuxt-img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
                       src="/images/shopping cart.png"
-                      class="z-10 mt-24"
+                      class="z-10 mt-24 w-full"
                       format="webp"
                     />
               </div>
@@ -82,13 +81,13 @@
           />
         </div>
         <div class="lg:flex lg:justify-center lg:p-4 lg:w-full ">
-          <div class="lg:w-2/3 lg:flex">
-            <div class="hidden lg:inline">
+          <div class="lg:w-1/2 lg:flex">
+            <div class="hidden h-full flex align-center w-full lg:inline">
               <nuxt-img
-            
                 alt="A mockup of a purchase on yuueras website"
-                src="/images/shopping cart.png"
-                class="shadow-xl z-10 bg-info mt-12 rounded-3xl"
+                src="/images/hatsale.png"
+                width="50vw"
+                class="sel f-centershadow-xl z-10 bg-info mt-32 lg:mt-18 rounded-3xl"
                 format="webp"
               />
             </div>
@@ -108,8 +107,8 @@
                   <p
                     class="text-center m-4 md:w-3/4 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
                   >
-                    Discover our cutting-edge crypto e-commerce platform,
-                    enabling cost-effective buying and selling of products using stablecoins and ADA as a seamless mode of payment.
+                    Discover peer-to-peer e-commerce,
+                    enabling cost-effective commerce for all.
                   </p>
                 </div>
               </div>
@@ -122,8 +121,7 @@
       <section class="bg-info">
         <span id="next"></span>
         <div class="mt-4 m-8 max-w-md avatar">
-          <nuxt-img
-          
+          <img
             alt="a representation of a smart contract"
             src="/images/contract_v1.png"
             class="shadow-xl z-10 bg-accent mt-12 rounded-3xl"
@@ -153,24 +151,28 @@
       </section>
 
       <section class="bg-accent">
-        <div  class="flex justify-center">
-          <div class="lg:pt-12 rounded-2xl">
-            <p
-             class="text-info text-center leading-loose tracking-widest text-4xl md:text-5xl p-4 pt-0 font-semibold"
-            >
-              Commerce <span class="text-primary">Unleashed</span>
-            </p>
-          </div>
-        </div>
+        <div class="lg:flex lg:justify-center lg:p-4 lg:w-full ">
+          <div class="lg:w-1/2">
+            <div  class="flex justify-center">
+              <div class="lg:pt-12 rounded-2xl">
+                <p
+                class="text-info text-center leading-loose tracking-widest text-4xl md:text-5xl p-4 pt-0 font-semibold"
+                >
+                  Commerce <span class="text-primary">Unleashed</span>
+                </p>
+              </div>
+            </div>
 
-        <div class="pb-12 flex justify-center">
-          <div class="flex justify-center rounded-2xl">
-            <p
-              class="text-center m-4 md:w-3/4 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
-            >
-              Join a community of forward-thinkers and experience the future of commerce. 
-              Your journey to a new era of online trading starts here.
-            </p>
+            <div class="pb-12 flex justify-center">
+              <div class="flex justify-center rounded-2xl">
+                <p
+                  class="text-center m-4 md:w-3/4 md:pt-12 leading-loose text-xl tracking-widest text-info text-md lg:text-2xl"
+                >
+                  Join a community of forward-thinkers and experience the future of commerce. 
+                  Your journey to a new era of online trading starts here.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

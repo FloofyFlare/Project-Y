@@ -1,4 +1,4 @@
-FROM node:18.15.0-alpine
+FROM node:18.16.1-alpine
 
 RUN mkdir -p /var/www/dockerize-nuxt/yuuera
 WORKDIR /var/www/dockerize-nuxt/yuuera
