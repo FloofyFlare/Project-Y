@@ -24,13 +24,13 @@
     
     <body class="bg-base-100 md:w-full">
       <main>
-      <section class=" min-w-screen rounded-md">
+      <section class=" min-w-screen max-h-screen rounded-md">
         <div class="bg-info">
           <div class="hero min-h-screen ">
             <div class="w-full lg:flex text-center items-center md:text-start text-neutral-content">
-              <div class="max-w-4xl md:text-left">
+              <div class="max-w-4xl xl:max-w-8xl md:text-left">
                 <h1
-                  class="pt-20 lg:pl-2 text-primary text-5xl lg:text-8xl flex font-semibold md:text-left md:justify-start"
+                  class="pt-20 lg:pl-2 text-primary text-5xl lg:text-8xl 3xl:text-9xl flex font-semibold md:text-left md:justify-start"
                 >
                   Peer-to-peer commerce powered by crypto
                 </h1>
@@ -39,7 +39,7 @@
                   <div class="mt-12 flex justify-center md:justify-center">
                     <div class="w-2/3 rounded-3xl md:h-24 ">
                       <p
-                        class="shadow-xl text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-3xl text-info"
+                        class="shadow-xl text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-3xl 3xl:text-4xl text-info"
                       >
                       Experience a peer-to-peer marketplace powered by YUU, where trust, transparency, and security converge to transform online commerce.
                       </p>
@@ -48,18 +48,18 @@
                   <a
                         href="#next"
                         
-                        class="shadow-lg shadow-orange-200 mb-4 text-info mt-12 md:mt-32  bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
+                        class="shadow-lg shadow-orange-200 mb-4 text-info mt-12 md:mt-32 3xl:mt-48 3xl:p-4  bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
                         to=""
                         >Learn more
                       </a>
                 </div>
                 
               </div>
-              <div class="flex h-full w-full hidden lg:inline">
+              <div class="flex h-full justify-end w-full hidden lg:inline">
                     <nuxt-img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
                       src="/images/shopping cart.png"
-                      class="z-10 mt-24 w-full"
+                      class="z-10 mt-24 max-w-screen-2xl w-full"
                       format="webp"
                     />
               </div>

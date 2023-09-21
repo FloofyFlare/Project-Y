@@ -8,6 +8,13 @@ module.exports = {
     './nuxt.config.{js,ts}',
     './app.vue',
   ],
+  theme: {
+    extend: {
+      screens: {
+        '3xl': '3840px',
+      },
+    },
+  },
   daisyui: {
     themes: [
       {
