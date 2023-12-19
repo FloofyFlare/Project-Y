@@ -3,7 +3,7 @@
     <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
       <div class="border-b-2 border-slate-600 navbar w-screen">
         <div class="flex-1">
-          <NuxtLink to="/" class="absolute w-28">
+          <NuxtLink to="/Homepage" class="absolute w-28">
             <nuxt-img
               alt="Yuuera logo"
               src="/images/logo.png"
