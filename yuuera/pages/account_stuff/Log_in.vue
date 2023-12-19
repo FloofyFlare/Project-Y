@@ -18,7 +18,18 @@
     <body class="bg-base-100 md:w-full">
       <main>
       <section class="rounded-md">
-        
+        <label class="form-control w-full max-w-xs">
+            <div class="label">
+                <span class="label-text">Please enter your email</span>
+            </div>
+            <input type="text" placeholder="123abc@gmail.com" class="input input-bordered w-full max-w-xs" />
+        </label>
+                <label class="form-control w-full max-w-xs">
+                <div class="label">
+                    <span class="label-text">Please enter your password</span>
+                </div>
+                <input type="text" placeholder="123456" class="input input-bordered w-full max-w-xs" />
+                </label>
       </section>
     </main>
     <client-only>
