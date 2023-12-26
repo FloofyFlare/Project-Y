@@ -30,7 +30,7 @@
             <div class="flex h-screen w-full bf-info">
               <div>
                 <div>
-                        <NuxtLink to="/sellersinfo"
+                        <NuxtLink to="/Login"
                           
                           class="shadow-lg shadow-orange-200 mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
                           >If you intend to sell Please click this link to sign up for being a seller</NuxtLink>
