@@ -70,6 +70,8 @@
     
     </main>
     <client-only>
+      <WalletLogin>
+      </WalletLogin>
       <footer class="footer footer-center p-10 bg-primary text-primary-content">
         <div class="">
           <p class="font-bold">Yuuera, LLC <br /></p>
@@ -92,6 +94,7 @@
           </div>
         </div>
       </footer>
+      
     </client-only>
     </body>
 </template>
