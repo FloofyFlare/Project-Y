@@ -45,6 +45,7 @@
                 <input type="text" placeholder="Password" class="input w-full " />
               </div>
             </div>
+<<<<<<< HEAD
             <div class="flex-1">
           <NuxtLink to="/results" class="absolute w-28">
             <nuxt-img
@@ -57,6 +58,11 @@
         </div>
             <button class="btn btn-wide ">Sign in</button>
 
+=======
+              <NuxtLink to="/account/sellersinfo" class="absolute w-28">
+                <button class="btn btn-wide ">Sign in</button>
+              </NuxtLink>
+>>>>>>> 681b4164e0365fc63c0935ace10abd438f0b2012
               </div>
             </form>
           </div>
@@ -135,6 +141,9 @@ async function handleSend() {
 }
 
 const validateEmail = (email) => {
+  if (typeof email !== 'string') {
+    throw new TypeError('Email must be a string');
+  }
   return String(email)
     .toLowerCase()
     .match(
