@@ -17,7 +17,7 @@
     
     <body class="bg-base-100 md:w-full h-screen ">
       <main class="h-full">
-        <<section class="flex justify-left">
+        <section class="flex justify-left">
       <div class="w-2/3">
         <div class="flex justify-center items-center mb-12">
           <div class="hero-content text-center text-neutral-content">
