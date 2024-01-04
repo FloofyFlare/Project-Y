@@ -12,9 +12,14 @@
           />
         </NuxtLink>
       </div>
-      <div class="flex-1 w-full hidden sm:flex ">
-        <div class="form-control w-full">
-          <input type="text" placeholder="Search" class="input input-bordered bg-info border-black w-full" />
+      <div class="flex-1  w-full hidden sm:flex ">
+        <div class="flex w-full">
+          <input type="text" placeholder="Search" class="input input-bordered bg-info border-black w-full rounded-r-none" />
+          <button class="btn btn-square btn-outline rounded-l-none border-black">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </button>
         </div>
       </div>
       <div class="flex-1 justify-end">
@@ -47,9 +52,12 @@
           <div class="flex flex-wrap justify-center">
             <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
-                <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                <nuxt-img
+                  format="webp"
+                  src="/images/apple.jpeg"
+                />
               </figure>
-              <div class="card-body items-center text-center">
+              <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Apple</h2>
                 <div class="card-actions">
                   <button class="btn btn-primary">Buy Now</button>
@@ -58,9 +66,12 @@
             </div>
             <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
-                <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                <nuxt-img
+                  format="webp"
+                  src="/images/samsung.jpeg"
+                />
               </figure>
-              <div class="card-body items-center text-center">
+              <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Samsung</h2>
                 <div class="card-actions">
                   <button class="btn btn-primary">Buy Now</button>
@@ -69,9 +80,12 @@
             </div>
             <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
-                <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                <nuxt-img
+                  format="webp"
+                  src="/images/google.jpeg"
+                />
               </figure>
-              <div class="card-body items-center text-center">
+              <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Google</h2>
                 <div class="card-actions">
                   <button class="btn btn-primary">Buy Now</button>
@@ -80,9 +94,12 @@
             </div>
             <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
-                <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                <nuxt-img
+                  format="webp"
+                  src="/images/motorola.jpeg"
+                />
               </figure>
-              <div class="card-body items-center text-center">
+              <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Motorola</h2>
                 <div class="card-actions">
                   <button class="btn btn-primary">Buy Now</button>
@@ -91,9 +108,12 @@
             </div>
             <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
-                <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                <nuxt-img
+                  format="webp"
+                  src="/images/oneplus.jpg"
+                />
               </figure>
-              <div class="card-body items-center text-center">
+              <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">OnePlus</h2>
                 <div class="card-actions">
                   <button class="btn btn-primary">Buy Now</button>
@@ -102,9 +122,12 @@
             </div>
             <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
-                <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                <nuxt-img
+                  format="webp"
+                  src="/images/otherPhones.jpeg"
+                />
               </figure>
-              <div class="card-body items-center text-center">
+              <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Rising Brands</h2>
                 <div class="card-actions">
                   <button class="btn btn-primary">Buy Now</button>
