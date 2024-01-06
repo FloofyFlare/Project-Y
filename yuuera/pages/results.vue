@@ -1,7 +1,7 @@
 <template>
   
     <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
-      <div class="border-b-2 border-slate-600 navbar w-screen">
+      <div class="border-b-2 border-slate-600 navbar w-screen ">
         <div class="flex-1">
           <NuxtLink to="/" class="absolute w-28">
             <nuxt-img
@@ -12,80 +12,81 @@
             />
           </NuxtLink>
         </div>
+        <div class="flex-none justify-center items-center gap-2 mr-96">
+          <div class="form-control">
+            <input type="text" placeholder="Search Yuuera" class="input input-bordered justify-center text-base-100 bg-info w-24 md:w-auto"/>
+          </div>
+          </div>
         </div>
     </header>
     
-    <body class="bg-base-100 md:w-full h-screen ">
-      <main class="h-full">
-        <<section class="flex justify-left">
-      <div class="w-2/3">
-        <div class="flex justify-center items-center mb-12">
-          <div class="hero-content text-center text-neutral-content">
-            <div class="max-w-4xl sm:text-left">
-              <h1 class="text-primary font-bold text-4xl md:text-7xl">
-                Product
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            class="shadow-xl flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
-          >
-            <div class="flex justify-center">
-              <nuxt-img
-                format="webp"
-                src="/images/padlock.png"
-                class="margin-left-24px w-full h-auto justify-contents"
-              />
-            </div>
-            <div>
-              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Product:</p>
-              <p class="font-medium text-neutral text-lg md:text-2xl">
-              Other info..
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="shadow-xl flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
-          >
-            <div class="flex rounded md:hidden">
-              <nuxt-img format="webp" src="/images/internet-image.png" />
-            </div>
-            <div>
-              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Innovation:</p>
-              <p class="font-medium text-neutral text-lg md:text-2xl">
-                Blockchain is internet freedom for us, providing the space for
-                tomorrows creativity, innovation, and experiences. We work to
-                make sure it stays that way for all.
-              </p>
-            </div>
-            <div class="flex rounded hidden md:inline">
-              <nuxt-img format="webp" src="/images/internet-image.png" />
-            </div>
-          </div>
-
-          <div
-            class="shadow-xl flex rounded-3xl bg-info p-4 mb-12 team-member flex-col md:flex-row border-2 border-slate-600"
-          >
-            <div class="flex rounded">
-              <nuxt-img format="webp" src="/images/chatbubbles.png" />
-            </div>
-            <div>
-              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Consumer Focused:</p>
-              <p class="font-medium text-neutral text-lg md:text-2xl">
-              
+    <body class="bg-info">
+      <main class="h-full flex">
+        <section class="flex mt-24">
+          <div class="border-soild rounded">
+          <div class="mb-10 flex justify-center pl-24 border-solid rounded-none">
+            <div class="flex w-1/3 shadow-lg">
+              <div class="flex justify-center">
+                    <img 
+                    src="https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg"
+                    class=" rounded-xl"
+                    />
+                  </div>
+                </div>
+              <div class="ml-12 mr-12 pr-12 w-5/5">
+              <p class="text-base-100 leading-loose text-2xl lg:text-2xl">
+                Info about product
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-            
+      </section>
       </main>
+      <main class="h-full flex">
+        <section class="flex mt-24">
+          <div class="border-soild rounded">
+          <div class="mb-10 flex justify-center pl-24 border-solid rounded-none">
+            <div class="flex w-1/3 shadow-lg">
+              <div class="flex justify-center">
+                    <img 
+                    src="https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg"
+                    class=" rounded-xl"
+                    />
+                  </div>
+                </div>
+              <div class="ml-12 mr-12 pr-12 w-5/5">
+              <p class="text-base-100 leading-loose text-2xl lg:text-2xl">
+                Info about product
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      </main>
+      <main class="h-full flex">
+        <section class="flex mt-24">
+          <div class="border-soild rounded">
+          <div class="mb-10 flex justify-center pl-24 border-solid rounded-none">
+            <div class="flex w-1/3 shadow-lg">
+              <div class="flex justify-center">
+                    <img 
+                    src="https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg"
+                    class=" rounded-xl"
+                    />
+                  </div>
+                </div>
+              <div class="ml-12 mr-12 pr-12 w-5/5">
+              <p class="text-base-100 leading-loose text-2xl lg:text-2xl">
+                Info about product
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      </main>
+
     <client-only>
-      <footer class="footer footer-center p-10 bg-primary text-primary-content">
+    <footer class="footer footer-center mt-72 p-10 bg-primary text-primary-content">
         <div class="">
           <p class="font-bold">Yuuera, LLC <br /></p>
           <p>YuueraOffical@gmail.com</p>
