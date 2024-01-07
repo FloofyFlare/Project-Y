@@ -52,6 +52,21 @@
                   </form>
                 </div>
               </div>
+            </div>
+            <div class="flex-1">
+          <NuxtLink to="/results" class="absolute w-28">
+            <nuxt-img
+              alt="Yuuera logo"
+              src="/images/logo.png"
+              class="w-28 fill-current"
+              format="webp"
+            />
+          </NuxtLink>
+        </div>
+            <button class="btn btn-wide ">Sign in</button>
+
+              </div>
+            </form>
             </div>   
           </div>
         </section>

@@ -252,8 +252,7 @@
 
           <div class="mb-10 flex justify-center pl-4 pr-4">
             <div
-              class="flex flex-row bg-secondary w-3/3 rounded-3xl shadow-lg"
-            >
+              class="flex flex-row bg-secondary w-3/3 rounded-3xl shadow-lg">
               <h1 class="text-primary font-bold text-l lg:text-xl p-2">
                 How is my information kept?:
               </h1>
