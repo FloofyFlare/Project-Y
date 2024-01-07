@@ -20,23 +20,16 @@
         </div>
     </header>
     
-    <body class="bg-info">
-      <main class="h-full flex">
-        <section class="flex mt-24">
-          <div class="border-soild rounded">
-          <div class="mb-10 flex justify-center pl-24 border-solid rounded-none">
-            <div class="flex w-1/3 shadow-lg">
-              <div class="flex justify-center">
-                    <img 
-                    src="https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg"
-                    class=" rounded-xl"
-                    />
-                  </div>
-                </div>
-              <div class="ml-12 mr-12 pr-12 w-5/5">
-              <p class="text-base-100 leading-loose text-2xl lg:text-2xl">
-                Info about product
-              </p>
+    <body class="bg-base-100 md:w-full h-screen ">
+      <main class="h-full">
+        <section class="flex justify-left">
+      <div class="w-2/3">
+        <div class="flex justify-center items-center mb-12">
+          <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-4xl sm:text-left">
+              <h1 class="text-primary font-bold text-4xl md:text-7xl">
+                Product
+              </h1>
             </div>
           </div>
         </div>
