@@ -33,6 +33,7 @@
             </div>
           </div>
         </div>
+      </div>
       </section>
       </main>
       <main class="h-full flex">
