@@ -36,6 +36,7 @@
           </NuxtLink>
         </li>
         <li><NuxtLink to="/accountsettings" >Settings</NuxtLink></li>
+        <li><NuxtLink to="/cart">Your Shopping Cart</NuxtLink></li>
       </ul>
     </div>
   </div>
