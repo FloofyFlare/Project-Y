@@ -123,6 +123,90 @@
           </div>
         </div>
       </section>
+      <section class="pb-10 hidden sm:flex justify-center bg-info">
+        <div class="flex justify-center "> 
+          <div class="">
+            <div class="mb-10 flex justify-end pl-4 pr-4 ">
+              <nuxt-img
+                        alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
+                        src="/images/house.png"
+                        class="w-60 flex"
+                        format="webp"
+                  />
+              <div class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-none border-4 border-sky-500">
+                <div>
+                  <p class="w-full text-neutral leading-loose mt-12 text-l md:text-3xl">
+                    More information about this product goes here.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pb-10 hidden sm:flex justify-center">
+        <div class="flex justify-center "> 
+          <div class="">
+            <div class="mb-10 flex justify-end pl-4 pr-4 ">
+              <nuxt-img
+                        alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
+                        src="/images/house.png"
+                        class="w-60 flex"
+                        format="webp"
+                  />
+              <div class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-none border-4 border-sky-500">
+                <div>
+                  <p class="w-full text-neutral leading-loose mt-12 text-l md:text-3xl">
+                    More information about this product goes here.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pb-10 hidden sm:flex justify-center">
+        <div class="flex justify-center "> 
+          <div class="">
+            <div class="mb-10 flex justify-end pl-4 pr-4 ">
+              <nuxt-img
+                        alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
+                        src="/images/house.png"
+                        class="w-60 flex"
+                        format="webp"
+                  />
+              <div class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-none border-4 border-sky-500">
+                <div>
+                  <p class="w-full text-neutral leading-loose mt-12 text-l md:text-3xl">
+                    More information about this product goes here.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pb-10 hidden sm:flex justify-center">
+        <div class="flex justify-center "> 
+          <div class="">
+            <div class="mb-10 flex justify-end pl-4 pr-4 ">
+              <nuxt-img
+                        alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
+                        src="/images/house.png"
+                        class="w-60 flex"
+                        format="webp"
+                  />
+              <div class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-none border-4 border-sky-500">
+                <div>
+                  <p class="w-full text-neutral leading-loose mt-12 text-l md:text-3xl">
+                    More information about this product goes here.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
         </main>
     <client-only>
 
