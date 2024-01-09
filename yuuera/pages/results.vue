@@ -44,14 +44,18 @@
                 Filters:
               </h1>
               <div class="text-left justify left">
-              <p class="mt-7 text-3xl text-base-100">
+              <p class="mt-6 text-3xl text-base-100">
                 Brand: example brand
               </p>
-              <p class="mt-7 text-3xl text-base-100">
-                Used <button class="btn btn-sm bg-info text-base-100">Yes</button> <button class="btn btn-sm bg-info text-base-100">No</button>
+              <p class="mt-6 text-3xl text-base-100">
+                Price
               </p>
-              <p class="mt-7 text-3xl text-base-100">
-                Other Consumer Reviews
+              <input type="range" min="0" max="100" value="60" class="range range-md range-primary mt-4" /> 
+              <p class="mt-6 text-3xl text-base-100">
+                Allowed Used: <button class="btn btn-sm bg-info text-base-100">Yes</button> <button class="btn btn-sm bg-info text-base-100">No</button>
+              </p>
+              <p class="mt-6 text-3xl text-base-100">
+                Consumer Reviews:
               </p>
             </div>
             <div class="flex columns-4">
@@ -114,7 +118,7 @@
           </div>
         </div>
       </section>
-      <section class="pb-10 hidden sm:flex justify-center bg-info">
+      <section class="pb-10 bg-info hidden sm:flex justify-center bg-info">
         <div class="flex justify-center "> 
           <div class="">
             <div class="mb-10 flex justify-end pl-4 pr-4 ">
@@ -135,7 +139,7 @@
           </div>
         </div>
       </section>
-      <section class="pb-10 hidden sm:flex justify-center">
+      <section class="pb-10 bg-info hidden sm:flex justify-center">
         <div class="flex justify-center "> 
           <div class="">
             <div class="mb-10 flex justify-end pl-4 pr-4 ">
@@ -156,7 +160,7 @@
           </div>
         </div>
       </section>
-      <section class="pb-10 hidden sm:flex justify-center">
+      <section class="pb-10 bg-info hidden sm:flex justify-center">
         <div class="flex justify-center "> 
           <div class="">
             <div class="mb-10 flex justify-end pl-4 pr-4 ">
@@ -177,7 +181,7 @@
           </div>
         </div>
       </section>
-      <section class="pb-10 hidden sm:flex justify-center">
+      <section class="pb-10 hidden bg-info sm:flex justify-center">
         <div class="flex justify-center "> 
           <div class="">
             <div class="mb-10 flex justify-end pl-4 pr-4 ">
@@ -201,7 +205,7 @@
         </main>
     <client-only>
 
-      <footer class="footer footer-center p-10 bg-primary text-primary-content">
+    <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
       <p>YuueraOffical@gmail.com</p>
