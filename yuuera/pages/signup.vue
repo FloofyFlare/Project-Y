@@ -23,66 +23,60 @@
     </div>
     </div>
   </header>
-  <body class="bg-base-100 md:w-screen">
-      <main class="justify-center">
-        <section class="rounded-md bg-info">
-            <div class="flex h-screen w-full bf-info">
-                <div class="mx-auto mt-24 max-w-md">
-                      <div class="pt-16 flex-col justify-center rounded-2xl">
-                        <div class="form-control w-full max-w-xs">
-                          <p class="text-secondary leading-loose tracking-widest text-3xl md:text-3xl p-4 pt-0 font-semibold">
-                            Enter Your information Below
-                          </p>
-                          <label class="label">
-                              <span class="label-text text-primary">*What is your name (First, Last)?</span>
-                          </label>
-                          <input type="text" placeholder="First Last" class="input input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div class="form-control mt-12 w-full max-w-xs">
-                          <label class="label text-center">
-                              <span class="label-text text-primary text-center">*What is your Email address</span>
-                          </label>
-                          <input type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div class="form-control mt-12 w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text text-primary">*Your current Business Address?</span>
-                        </label>
-                        <input type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div class="form-control mt-12 mb-12 w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text text-primary">Phone number</span>
-                        </label>
-                        <input type="text" placeholder="012-345-6789" class="input input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div class="dropdown form-control mt-12 mb-12 w-full max-w-xs">
-                          <label tabindex="0" class="btn m-1">Zone you live in</label>
-                          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>NorthWest Ohio</a></li>
-                            <li><a>NorthEast Ohio</a></li>
-                            <li><a>SouthWest Ohio</a></li>
-                            <li><a>SouthEast Ohio</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                </div>
-
-                
-          </div>
-        </section>
-        <section class="bg-info">
-
-            <div class="max-w-4xl justify-center text-center md:text-left">
-                <NuxtLink to="/accountsettings">
-              <span class="btn bg-primary text-info text-xl font-semibold">Submit</span>
-            </NuxtLink>
+  <body class="bg-base-100">
+      <main>
+        <section class="bg-info w-full flex items-center justify-center">
+          <div class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs">
+            <div class="form-control w-full ">
+              <p class="text-secondary leading-loose tracking-widest text-3xl md:text-3xl p-4 pt-0 font-semibold">
+                Enter Your information Below
+              </p>
+              <label class="label">
+                  <span class="label-text text-primary">*What is your First Name?</span>
+              </label>
+              <input type="text" placeholder="First Last" class="input input-bordered w-full max-w-xs" />
             </div>
-                            
+
+            <div class="form-control mt-12 w-full max-w-xs">
+              <label class="label text-center">
+                  <span class="label-text text-primary text-center">*What is your Last Name</span>
+              </label>
+              <input type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+              <label class="label text-center">
+                  <span class="label-text text-primary text-center">*What is your Email address</span>
+              </label>
+              <input type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">*Address?</span>
+            </label>
+            <input type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 mb-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">Phone number</span>
+            </label>
+            <input type="text" placeholder="012-345-6789" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="dropdown form-control mt-12 mb-12 w-full max-w-xs">
+              <label tabindex="0" class="btn m-1">Country</label>
+              <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a>United States of America</a></li>
+              </ul>
+            </div>
+            <NuxtLink to="/accountsettings">
+              <div class="form-control mt-6">
+                <button class="btn btn-primary">Login</button>
+              </div>
+            </NuxtLink>
+          </div>
         </section>
       </main>
     <client-only>

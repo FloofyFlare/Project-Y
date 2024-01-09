@@ -25,7 +25,7 @@
                   <h1 class="text-neutral text-5xl font-bold">Login now!</h1>
                   <div class="flex-col justify-center">
                     
-                      <NuxtLink to="/results" class="btn mt-8 btn-primary ">Create an account?</NuxtLink>
+                      <NuxtLink to="/signup" class="btn mt-8 btn-primary ">Create an account?</NuxtLink>
                     
                   </div>
                 </div>
@@ -53,6 +53,7 @@
                 </div>
               </div>
             </div>
+          </div>
             <div class="flex-1">
           <NuxtLink to="/results" class="absolute w-28">
             <nuxt-img
@@ -65,7 +66,6 @@
         </div>
             <button class="btn btn-wide ">Sign in</button>
 
-              </div>
         </section>
       </main>
     <client-only>

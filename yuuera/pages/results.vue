@@ -105,6 +105,7 @@
             </div>
           </div>
         </div>
+      </div>
       </section>
       <section class="pb-10 hidden sm:flex justify-center">
         <div class="flex justify-center "> 
