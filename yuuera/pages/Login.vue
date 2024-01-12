@@ -12,7 +12,16 @@
             />
           </NuxtLink>
         </div>
+        <div class="flex-1 justify-end">
+          <div class="pr-4 ">
+            <div >
+                <NuxtLink class="m-4 mt-4 w-28 btn bg-primary" to="/Login">
+                  <span class=" text-info text-xl font-semibold">Log In</span>
+                </NuxtLink>
+            </div>
+          </div>
         </div>
+      </div>
     </header>
     
     <body class="bg-base-100 md:w-full h-screen ">

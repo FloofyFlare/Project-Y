@@ -1,7 +1,7 @@
 <template>
 
 
-  <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
+<header class="fixed opacity-[.98] bg-info text-base-200 z-50">
     <div class="border-b-2 border-slate-600 navbar w-screen">
       <div class="flex-1">
         <NuxtLink to="/" class="absolute w-28">
@@ -14,16 +14,20 @@
         </NuxtLink>
       </div>
       <div class="flex-1  w-full hidden sm:flex ">
-        <div class="flex w-full">
-          <input type="text" placeholder="Search" class="input input-bordered bg-info border-black w-full rounded-r-none"/>
-          <button class="btn btn-square btn-outline rounded-l-none border-black">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
-            </svg>
-          </button>
+        <div class="dropdown w-full">
+          <div tabindex="0" role="button" class="flex bg-info btn text-neutral m-1">Categories</div>
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
+            <li><NuxtLink to="/results" class="font-bold">Apple</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">Samsung</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">Google</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">Motorola</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">OnePlus</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">All Tech</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">Merch</NuxtLink></li>
+          </ul>
         </div>
       </div>
-      <div class="flex-1 justify-end">
+    <div class="flex-1 justify-end">
       <div class="pr-4 ">
         <div >
             <NuxtLink class="m-4 mt-4 w-28 btn bg-primary" to="/Login">
@@ -35,139 +39,66 @@
     </div>
   </header>
    
-    <body class="bg-info md:w-full h-screen">
-      <main class="h-full">
-        <section class="flex justify-left">
-        <div class="flex justify-center items-center mb-12">
-          <div class="hero-content text-center text-neutral-content">
-            <div class="max-w-4xl sm:text-left">
-              <h1 class="text-primary font-bold text-4xl md:text-7xl mt-24">
-                Filters:
-              </h1>
-              <div class="text-left justify left">
-              <p class="mt-6 text-3xl text-base-100">
-                By Brand
-              </p>
-              <input type="text" placeholder="Search" class="input input-bordered bg-info border-black w-full rounded-r-none"/>
-              <p class="mt-6 text-3xl text-base-100">
-                Price
-              </p>
-              <button class="btn btn-outline btn-primary btn-md text-">High to low</button> 
-              <button class="btn btn-outline btn-primary btn-md text-">Low to High</button>
-            </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-10 hidden sm:flex justify-center">
-        <div class="flex justify-center "> 
-          <div class="">
-            <div class="mb-10 flex justify-end pl-4 pr-4 ">
-              <nuxt-img
-                        alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                        src="/images/house.png"
-                        class="w-60 flex"
-                        format="webp"
-                  />
-              <div class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-none border-4 border-sky-500">
-                <div>
-                  <p class="w-full text-neutral leading-loose mt-12 text-l md:text-3xl">
-                    More information about this product goes here.
-                  </p>
+    <body class="bg-info md:w-full min-h-screen ">
+      <main>
+        <section class="justify-left h-full fixed hidden sm:block">
+          <div class="flex justify-center items-center mb-12">
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-4xl sm:text-left">
+                <h1 class="text-primary font-bold text-4xl md:text-4xl mt-24">
+                  Filters:
+                </h1>
+                <div class="text-left justify left">
+                <p class="mt-6 text-3xl text-base-100">
+                  By Brand
+                </p>
+                <div class="dropdown w-full">
+                  <div tabindex="0" role="button" class="flex bg-info btn text-neutral m-1">Categories</div>
+                  <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
+                    <li><NuxtLink to="/results" class="font-bold">Apple</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">Samsung</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">Google</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">Motorola</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">OnePlus</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">All Tech</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">Merch</NuxtLink></li>
+                  </ul>
                 </div>
+                <div >
+                  <button class="flex-1 btn btn-outline btn-primary btn-md text-">High to low</button> 
+                  <button class="flex-1 btn btn-outline btn-primary btn-md text-">Low to High</button>
+                </div>
+              </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="pb-10 bg-info hidden sm:flex justify-center bg-info">
-        <div class="flex justify-center "> 
-          <div class="">
-            <div class="mb-10 flex justify-end pl-4 pr-4 ">
-              <nuxt-img
-                        alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                        src="/images/house.png"
-                        class="w-60 flex"
-                        format="webp"
-                  />
-              <div class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-none border-4 border-sky-500">
-                <div>
-                  <p class="w-full text-neutral leading-loose mt-12 text-l md:text-3xl">
-                    More information about this product goes here.
-                  </p>
-                </div>
-              </div>
+        </section>
+        <section class="pt-24 h-full" id="products">
+          <div class="p-24">
+            <div v-for="item in items" :key="item.id" class="pb-10 hidden sm:flex w-full justify-center">
+                <NuxtLink class="card lg:card-side border-black border-2 bg-base-100 w-1/2 shadow-xl">
+                  <figure><nuxt-img
+                          :alt="`a prouct image`"
+                          :src="item.product_image"
+                          class="h-48 flex"
+                          format="webp"
+                        /></figure>
+                  <div class="card-body">
+                    <h2 class="card-title">{{ item.product_name }}</h2>
+                    <p>Click the button to listen on Spotiwhy app.</p>
+                    <div class="card-actions justify-end">
+                      <button class="btn btn-primary">{{ item.price }}</button>
+                    </div>
+                  </div>
+                </NuxtLink>
             </div>
+
           </div>
-        </div>
-      </section>
-      <section class="pb-10 bg-info hidden sm:flex justify-center">
-        <div class="flex justify-center "> 
-          <div class="">
-            <div class="mb-10 flex justify-end pl-4 pr-4 ">
-              <nuxt-img
-                        alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                        src="/images/house.png"
-                        class="w-60 flex"
-                        format="webp"
-                  />
-              <div class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-none border-4 border-sky-500">
-                <div>
-                  <p class="w-full text-neutral leading-loose mt-12 text-l md:text-3xl">
-                    More information about this product goes here.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-10 bg-info hidden sm:flex justify-center">
-        <div class="flex justify-center "> 
-          <div class="">
-            <div class="mb-10 flex justify-end pl-4 pr-4 ">
-              <nuxt-img
-                        alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                        src="/images/house.png"
-                        class="w-60 flex"
-                        format="webp"
-                  />
-              <div class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-none border-4 border-sky-500">
-                <div>
-                  <p class="w-full text-neutral leading-loose mt-12 text-l md:text-3xl">
-                    More information about this product goes here.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-10 hidden bg-info sm:flex justify-center">
-        <div class="flex justify-center "> 
-          <div class="">
-            <div class="mb-10 flex justify-end pl-4 pr-4 ">
-              <nuxt-img
-                        alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                        src="/images/house.png"
-                        class="w-60 flex"
-                        format="webp"
-                  />
-              <div class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-none border-4 border-sky-500">
-                <div>
-                  <p class="w-full text-neutral leading-loose mt-12 text-l md:text-3xl">
-                    More information about this product goes here.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-        </main>
+        </section>
+      </main>
     <client-only>
 
-    <footer class="footer footer-center p-10 bg-primary text-primary-content">
+      <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
       <p>YuueraOffical@gmail.com</p>
@@ -193,58 +124,37 @@
     </client-only>
     </body>
 </template>
-<script setup lang="ts">
 
+<script setup lang="js">
+import { ref } from 'vue';
 
-import { ref } from 'vue'
+const pass = ref('');
+const items = ref([]);
 
-const signUpEmail = ref('')
-const pass = ref('')
-function handleSubmit() {
-  if (validateEmail(signUpEmail.value)) {
-    handleSend()
+handleSubmit();
+
+async function handleSubmit() {
+  const data = await getItems();
+  items.value = data;
+  
+  console.log('Items:', items.value);
+}
+
+async function getItems() {
+  const response = await fetch('http://127.0.0.1:8000/api/get-items/', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    const responseData = await response.json();
+    console.log('Login successful');
+    return responseData;
+  } else {
+    console.error('Login failed:', response.statusText);
   }
 }
-
-async function handleSend() {
-  console.log(signUpEmail.value);
-
-  const data = { 
-    email: signUpEmail.value, 
-    password: pass.value
-  };
-
-  try {
-    // Change the URL to your production server
-    const response = await fetch('http://127.0.0.1:8000/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    if (response.ok) {
-      const responseData = await response.json();
-      console.log('Login successful:', responseData);
-      
-      // Do something with the responseData, such as updating the component state
-      return responseData;
-    } else {
-      // Handle errors for non-2xx status codes
-      console.error('Login failed:', response.statusText);
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-const validateEmail = (email) => {
-  return String(email)
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )
-}
-
 
 </script>

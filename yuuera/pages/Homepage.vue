@@ -13,13 +13,17 @@
         </NuxtLink>
       </div>
       <div class="flex-1  w-full hidden sm:flex ">
-        <div class="flex w-full">
-          <input type="text" placeholder="Search" class="input input-bordered bg-info border-black w-full rounded-r-none" />
-          <button class="btn btn-square btn-outline rounded-l-none border-black">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-            </svg>
-          </button>
+        <div class="dropdown w-full">
+          <div tabindex="0" role="button" class="flex bg-info btn text-neutral m-1">Categories</div>
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
+            <li><NuxtLink to="/results" class="font-bold">Apple</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">Samsung</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">Google</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">Motorola</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">OnePlus</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">All Tech</NuxtLink></li>
+            <li><NuxtLink to="/results" class="font-bold">Merch</NuxtLink></li>
+          </ul>
         </div>
       </div>
       <div class="flex-1 justify-end">
@@ -128,7 +132,7 @@
                 />
               </figure>
               <div class="card-body items-center text-center p-2">
-                <h2 class="card-title">Rising Brands</h2>
+                <h2 class="card-title">Merch</h2>
                 <div class="card-actions">
                   <button class="btn btn-primary">Buy Now</button>
                 </div>
@@ -348,7 +352,36 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>  <div class="flex justify-center items-center mb-12">
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-4xl sm:text-left">
+                <h1 class="text-primary font-bold text-4xl md:text-4xl mt-24">
+                  Filters:
+                </h1>
+                <div class="text-left justify left">
+                <p class="mt-6 text-3xl text-base-100">
+                  By Brand
+                </p>
+                <div class="dropdown w-full">
+                  <div tabindex="0" role="button" class="flex bg-info btn text-neutral m-1">Categories</div>
+                  <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
+                    <li><NuxtLink to="/results" class="font-bold">Apple</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">Samsung</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">Google</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">Motorola</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">OnePlus</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">All Tech</NuxtLink></li>
+                    <li><NuxtLink to="/results" class="font-bold">Merch</NuxtLink></li>
+                  </ul>
+                </div>
+                <div >
+                  <button class="flex-1 btn btn-outline btn-primary btn-md text-">High to low</button> 
+                  <button class="flex-1 btn btn-outline btn-primary btn-md text-">Low to High</button>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
         
       </div>
       
@@ -392,7 +425,7 @@ useHead({
     {
       name: 'description',
       content:
-        ' Discover our utting-edge crypto e-commerce platform, enabling cost-effective buying and selling with stable coins as payment.',
+        'Buy tech with stable coins as payment. Discover our utting-edge shopping experience, a convinent platform for buying tech with crypto. Built by holder for holders.',
     },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
