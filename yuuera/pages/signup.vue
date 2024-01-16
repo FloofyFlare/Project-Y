@@ -60,18 +60,25 @@
 
             <div class="form-control mt-12 mb-12 w-full max-w-xs">
             <label class="label">
-                <span class="label-text text-primary">Phone number</span>
+                <span class="label-text text-primary">*Phone number</span>
             </label>
             <input type="text" placeholder="012-345-6789" class="input input-bordered w-full max-w-xs" />
             </div>
 
-            <div class="dropdown form-control mt-12 mb-12 w-full max-w-xs">
-              <label tabindex="0" class="btn m-1">Country</label>
-              <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a>United States of America</a></li>
-              </ul>
+            <div class="dropdown form-control mt-4 mb-12 w-full max-w-xs">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text text-primary">*Country</span>
+                </label>
+                <label class="cursor-pointer label">
+                  <span class="label-text text-neutral">United States of America</span>
+                  <div>
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                  </div>
+                </label>
+              </div>
             </div>
-            <NuxtLink to="/accountsettings">
+            <NuxtLink to="/results">
               <div class="form-control mt-6">
                 <button class="btn btn-primary">Login</button>
               </div>
@@ -106,7 +113,7 @@
   </body>
 </template>
 
-<script setup lang="ts">
+<script setup>
 useHead({
   title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
   meta: [
@@ -121,6 +128,46 @@ useHead({
     { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
   ],
 })
+
+import { ref } from 'vue'
+
+const signUpEmail = ref('')
+const showButton = ref(true)
+const showThanks = ref(false)
+function handleSubmit() {
+  if (validateEmail(signUpEmail.value)) {
+    handleSend()
+  }
+}
+
+async function handleSend() {
+  showButton.value = false;
+  showThanks.value = true;
+  console.log(signUpEmail.value);
+
+  const data = { email: signUpEmail.value };
+
+  try {
+    // Change the URL to your production server
+    await fetch('https://api.yuuera.com/newsletter/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )
+}
 </script>
 
 <style scoped lang="scss">
