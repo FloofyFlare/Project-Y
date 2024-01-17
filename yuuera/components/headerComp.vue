@@ -28,7 +28,11 @@
       <div class="flex-1 justify-end">
       <div class="pr-4 ">
         <div >
-            <NuxtLink class="m-4 mt-4 w-28 btn bg-primary" to="/Login">
+            <button v-if="loggedIn" class="m-4 mt-4 w-32 btn bg-primary" @click="logOut()">
+              <span class=" text-info text-xl font-semibold">Log Out</span>
+            </button>
+            
+            <NuxtLink v-if="!loggedIn" class="m-4 mt-4 w-32 btn bg-primary" to="Login">
               <span class=" text-info text-xl font-semibold">Log In</span>
             </NuxtLink>
         </div>
@@ -40,8 +44,20 @@
 
 <script setup>
 
+const loggedIn = ref('');
+
 import { useAuthStore } from '~/store/LoginStore'
 const store = useAuthStore()
 store.refreshAccessToken();
+
+if (store.accessToken != null){
+    loggedIn.value = true
+}
+
+function logOut() {
+  store.clearTokens();
+  window.location.reload();
+}
+
 
 </script>

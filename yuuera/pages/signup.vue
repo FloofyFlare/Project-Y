@@ -1,28 +1,6 @@
 <template>
   
-  <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
-    <div class="border-b-2 border-slate-600 navbar w-screen">
-      <div class="flex-1">
-        <NuxtLink to="/" class="absolute w-28">
-          <nuxt-img
-            alt="Yuuera logo"
-            src="/images/logo.png"
-            class="w-28 fill-current"
-            format="webp"
-          />
-        </NuxtLink>
-      </div>
-      <div class="flex-1 justify-end">
-      <div class="pr-4 ">
-        <div >
-            <NuxtLink class="m-4 mt-4 w-28 btn bg-primary" to="/Login">
-              <span class=" text-info text-xl font-semibold">Log In</span>
-            </NuxtLink>
-        </div>
-      </div>
-    </div>
-    </div>
-  </header>
+  <HeaderComp/>
   <body class="bg-base-100">
       <main>
         <section class="bg-info w-full flex items-center justify-center">
@@ -53,22 +31,36 @@
 
             <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
-                <span class="label-text text-primary">*Address?</span>
+                <span class="label-text text-primary">*Street Address?</span>
             </label>
             <input type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
             </div>
 
-            <div class="form-control mt-12 mb-12 w-full max-w-xs">
+            <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
-                <span class="label-text text-primary">*Phone number</span>
+                <span class="label-text text-primary">*phone number?</span>
             </label>
-            <input type="text" placeholder="012-345-6789" class="input input-bordered w-full max-w-xs" />
+            <input type="text" placeholder="123-456-7890" class="input input-bordered w-full max-w-xs" />
+            </div>
+            
+            <div class="form-control mt-12 w-full max-w-xs"></div>
+            <label class="label">
+                <span class="label-text text-primary">*password?</span>
+            </label>
+            <input type="text" placeholder="pass" class="input input-bordered w-full max-w-xs" />
+            
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">*repeat password</span>
+            </label>
+            <input type="text" placeholder="pass" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="dropdown form-control mt-4 mb-12 w-full max-w-xs">
               <div class="form-control">
                 <label class="label">
-                  <span class="label-text text-primary">*Country</span>
+                  <span class="label-text text-primary">*Country (Shipping only avaliable in the USA temporarily)</span>
                 </label>
                 <label class="cursor-pointer label">
                   <span class="label-text text-neutral">United States of America</span>
@@ -78,6 +70,7 @@
                 </label>
               </div>
             </div>
+            
             <NuxtLink to="/results">
               <div class="form-control mt-6">
                 <button class="btn btn-primary">Login</button>
@@ -131,31 +124,36 @@ useHead({
 
 import { ref } from 'vue'
 
-const signUpEmail = ref('')
-const showButton = ref(true)
-const showThanks = ref(false)
+const password = ref('');
+const password2 = ref('');
+const phoneNumber = ref('');
+const firstName = ref('');
+const lastName = ref('');
+const email = ref('');
+const address = ref('');
+const country = ref('');
+
 function handleSubmit() {
-  if (validateEmail(signUpEmail.value)) {
+  if (validateEmail(email.value)) {
     handleSend()
   }
 }
 
 async function handleSend() {
-  showButton.value = false;
-  showThanks.value = true;
-  console.log(signUpEmail.value);
+  
 
-  const data = { email: signUpEmail.value };
+  const data = { email: this.email.value, password: password, password2: password2, phone_number: phoneNumber, first_name: firstName, last_name: lastName, address: address, country: country};
 
   try {
     // Change the URL to your production server
-    await fetch('https://api.yuuera.com/newsletter/', {
+    await fetch('http://127.0.0.1:8000/api/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
+    console.log("account created");
   } catch (error) {
     console.error(error);
   }

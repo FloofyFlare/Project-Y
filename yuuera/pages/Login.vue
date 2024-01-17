@@ -78,6 +78,14 @@ import { ref } from 'vue'
 import { useAuthStore } from '~/store/LoginStore'
 const store = useAuthStore()
 
+
+if(process.client){
+  store.refreshAccessToken();
+    if (store.accessToken != null){
+      window.location.replace('http://localhost:3001/Homepage')
+    }
+}
+
 const signUpEmail = ref('')
 const pass = ref('')
 const badInput = ref(false)
@@ -112,6 +120,7 @@ async function handleSend() {
       store.setTokens(tokens);
       console.log('Login successful:', store.accessToken);
       // Do something with the responseData, such as updating the component state
+      window.location.replace('http://localhost:3001/Homepage');
       return responseData;
     } else {
       // Handle errors for non-2xx status codes
@@ -124,7 +133,7 @@ async function handleSend() {
   }
 }
 
-const validateEmail = (email) => {
+const validateEmail = (email: String) => {
   if (typeof email !== 'string') {
     throw new TypeError('Email must be a string');
   }

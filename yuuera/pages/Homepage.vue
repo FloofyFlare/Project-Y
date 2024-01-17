@@ -6,7 +6,7 @@
       <main>
       <section class="rounded-md mbg-info">
         <div class="pt-20"></div>
-        <div class="hero max-h-[40vh] mt-4 h-screen" :style="backgroundStyle">
+        <div class="hero max-h-[45vh] mt-4 h-screen" :style="backgroundStyle">
         </div>
       </section>
 
@@ -316,40 +316,8 @@
               </div>
             </div>
           </div>
-        </div>  <div class="flex justify-center items-center mb-12">
-            <div class="hero-content text-center text-neutral-content">
-              <div class="max-w-4xl sm:text-left">
-                <h1 class="text-primary font-bold text-4xl md:text-4xl mt-24">
-                  Filters:
-                </h1>
-                <div class="text-left justify left">
-                <p class="mt-6 text-3xl text-base-100">
-                  By Brand
-                </p>
-                <div class="dropdown w-full">
-                  <div tabindex="0" role="button" class="flex bg-info btn text-neutral m-1">Categories</div>
-                  <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
-                    <li><NuxtLink to="/results" class="font-bold">Apple</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">Samsung</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">Google</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">Motorola</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">OnePlus</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">All Tech</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">Merch</NuxtLink></li>
-                  </ul>
-                </div>
-                <div >
-                  <button class="flex-1 btn btn-outline btn-primary btn-md text-">High to low</button> 
-                  <button class="flex-1 btn btn-outline btn-primary btn-md text-">Low to High</button>
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-        
+        </div>
       </div>
-      
-
     </div>
   </section>
   
