@@ -28,10 +28,14 @@
       <div class="flex-1 justify-end">
       <div class="pr-4 ">
         <div >
-            <button v-if="loggedIn" class="m-4 mt-4 w-32 btn bg-primary" @click="logOut()">
+          <div v-if="loggedIn">
+            <NuxtLink to="accountsettings" class="m-4 mt-4 btn bg-primary">
+              <span class=" text-info text-xl font-semibold">Settings</span>
+            </NuxtLink>
+            <button  class="m-4 mt-4 w-32 btn bg-neutral" @click="logOut()">
               <span class=" text-info text-xl font-semibold">Log Out</span>
             </button>
-            
+          </div>
             <NuxtLink v-if="!loggedIn" class="m-4 mt-4 w-32 btn bg-primary" to="Login">
               <span class=" text-info text-xl font-semibold">Log In</span>
             </NuxtLink>

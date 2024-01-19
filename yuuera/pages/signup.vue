@@ -23,10 +23,12 @@
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
+              <span class="text-error pt-8" v-show="badInputEmailWrong">Please check your Input</span>
+              <span class="text-error pt-8" v-show="badInputEmail">Please check your Input</span>
               <label class="label text-center">
                   <span class="label-text text-primary text-center">*What is your Email address</span>
               </label>
-              <input v-model="email" type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
+              <input v-model="email" type="email" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
@@ -51,6 +53,7 @@
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
+            <span class="text-error pt-8" v-show="badInputPhone">Please check your Input (10 characters)</span>
             <label class="label">
                 <span class="label-text text-primary">*phone number?</span>
             </label>
@@ -58,11 +61,19 @@
             </div>
             
             <div class="form-control mt-12 w-full max-w-xs"></div>
+            <span class="text-error pt-8" v-show="badInputPass">Please follow password guidlines</span>
             <label class="label">
+                
                 <span class="label-text text-primary">*password?</span>
             </label>
             <input v-model="password" type="password" placeholder="pass" class="input input-bordered w-full max-w-xs" />
-            
+            <span class="text-neutral pt-8" >Passwords need to be:</span>
+            <ul>
+              <li><span class="text-neutral" >- 8+ characters</span></li>
+              <li><span class="text-neutral" >- Has upper and lower case letters</span></li>
+              <li><span class="text-neutral" >- Has a number</span></li>
+              <li><span class="text-neutral" >- Has a special character</span></li>
+            </ul>
 
             <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
@@ -72,6 +83,7 @@
             </div>
 
             <div class="dropdown form-control mt-4 mb-12 w-full max-w-xs">
+              <span class="text-error pt-8" v-show="badInputCountry">Please fill out an option</span>
               <div class="form-control">
                 <label class="label">
                   <span class="label-text text-primary">*Country (Shipping only avaliable in the USA temporarily)</span>
@@ -154,13 +166,29 @@ const street = ref('');
 const state = ref('');
 const city = ref('');
 const countryIsUSA = ref('');
+const badInputPass = ref(false);
+const badInputEmail = ref(false);
+const badInputEmailWrong = ref(false);
+const badInputPhone = ref(false);
+const badInputCountry = ref(false);
 
 function handleSubmit() {
-  console.log(validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value))
-  console.log(countryIsUSA.value)
-  if (validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value) && countryIsUSA.value === true) {
-    handleSend()
+  if(!validateEmail(email.value)) {
+    badInputEmailWrong.value = true;
+  } else {
+    badInputEmailWrong.value = false;
   }
+  if(!countryIsUSA.value){
+    badInputCountry.value = true;
+  } else {
+    badInputCountry.value = false;
+  }
+  if (validatePassword(password.value, password2.value)){
+    if (validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value) && countryIsUSA.value === true) {
+      handleSend()
+    } 
+  }
+  
 }
 
 async function handleSend() {
@@ -178,12 +206,54 @@ async function handleSend() {
       body: JSON.stringify(data),
     });
     console.log("account created");
+    logIn();
   } catch (error) {
+    badInputEmail.value = false;
     console.error(error);
   }
 }
 
+async function logIn(){
+  console.log(email.value);
+
+  const data = { 
+    email: email.value, 
+    password: password.value
+  };
+
+  try {
+    // Change the URL to your production server
+    const response = await fetch('http://127.0.0.1:8000/api/auth/login/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    
+    if (response.ok) {
+      const responseData = await response.json();
+      const tokens = { accessToken: responseData.access, refreshToken: responseData.refresh };
+      store.setTokens(tokens);
+      console.log('Login successful:', store.accessToken);
+      // Do something with the responseData, such as updating the component state
+      window.location.replace('http://localhost:3001/Homepage');
+      return responseData;
+    } else {
+      // Handle errors for non-2xx status codes
+      console.error('Login failed:', response.statusText);
+      badInput.value = true
+    }
+  } catch (error) {
+    badInput.value = true
+    console.error(error);
+  }
+
+
+}
+
 function validatePassword(password, password2) {
+  console.log("pass")
   // Define validation criteria
   const minLength = 8;
   const hasUppercase = /[A-Z]/.test(password);
@@ -200,6 +270,12 @@ function validatePassword(password, password2) {
     hasSpecialChar &&
     password === password2;
 
+
+  if (!isValid) {
+    badInputPass.value = true;
+  } else {
+    badInputPass.value = false;
+  }
   return isValid;
 }
 
@@ -218,9 +294,11 @@ function validatePhoneNumber(phoneNumber) {
     // Check if the cleaned number is 10 digits long
     if (cleanedNumber.length === 10) {
         // It's a valid 10-digit phone number
+        badInputPhone.value = false;
         return true;
     } else {
         // It's not a valid phone number
+        badInputPhone.value = true;
         return false;
     }
 }

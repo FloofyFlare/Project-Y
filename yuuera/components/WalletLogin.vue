@@ -1,13 +1,13 @@
 <template>
-  <button @click="isWalletCheck">sup</button>
   <button @click="makeTx">run</button>
-  <div v-show="loggedIn" class="m-4 mt-4 w-28 btn bg-primary">
-    <span class=" text-info text-xl font-semibold">{{ balance }}</span>
-  </div>
+  <button  class="m-4 mt-4 btn bg-primary" @click="isWalletCheck">
+    <span class=" text-info text-xl font-semibold">Buy Now</span>
+    <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">Failed Try Again</span>
+  </button>
 </template>
 
 <script setup>
-
+  const txSuccuess = ref(true)
   const balance = ref('')
   const isWalletCheck = async () => {
     try {
@@ -16,6 +16,7 @@
       const isLaceEnabled = isLaceInstalled ? await window.cardano.lace.isEnabled() : false
       console.log(isLaceEnabled);
       console.log(cardano.lace.enable())
+      makeTx();
     }
     catch {
       console.log('error')
@@ -35,6 +36,7 @@
 
     }
     catch {
+      txSuccuess.value = false;
       console.log('error')
     }
   };

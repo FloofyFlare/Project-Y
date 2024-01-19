@@ -23,13 +23,6 @@
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
-              <label class="label text-center">
-                  <span class="label-text text-primary text-center">Email address</span>
-              </label>
-              <input v-model="email" type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
-            </div>
-
-            <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
                 <span class="label-text text-primary">Street Address</span>
             </label>
@@ -51,6 +44,7 @@
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
+              <span class="text-error pt-8" v-show="badInputPhone">Please check your Input (10 characters)</span>
             <label class="label">
                 <span class="label-text text-primary">Phone Number</span>
             </label>
@@ -59,22 +53,9 @@
             
             <div class="form-control mt-12 w-full max-w-xs"></div>
             <label class="label">
-                <span class="label-text text-lg text-neutral">Email yuueraOfficial@gmail.com for password changes. Include your email and phone number for a quick process.</span>
+                <span class="label-text text-lg text-neutral">Email yuueraOfficial@gmail.com for password or email changes. Include your accounts current email and phone number for a quick process.</span>
             </label> 
 
-            <div class="dropdown form-control mt-4 mb-12 w-full max-w-xs">
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text text-primary">*Country (Shipping only avaliable in the USA temporarily)</span>
-                </label>
-                <label class="cursor-pointer label">
-                  <span class="label-text text-neutral">United States of America</span>
-                  <div>
-                    <input v-model="countryIsUSA" type="checkbox" checked="checked" class="checkbox checkbox-error" />
-                  </div>
-                </label>
-              </div>
-            </div>
             <div class="form-control mt-6">
               <button type="submit" class="btn btn-primary">Update Settings</button>
             </div>
@@ -108,21 +89,7 @@
   </body>
 </template>
 
-<script setup>
-useHead({
-  title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
-  meta: [
-    {
-      name: 'description',
-      content:
-        ' Discover our utting-edge crypto e-commerce platform, enabling cost-effective buying and selling with stable coins as payment.',
-    },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-  ],
-  link: [
-    { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-  ],
-})
+<script setup lang="js">
 
 import { ref } from 'vue'
 import { useAuthStore } from '~/store/LoginStore'
@@ -130,26 +97,20 @@ const store = useAuthStore()
 
 if(process.client){
   store.refreshAccessToken();
-    if (store.accessToken != null){
+    if (store.accessToken === null){
       window.location.replace('http://localhost:3001/Homepage')
     }
 }
 
-const password = ref('');
-const password2 = ref('');
 const phoneNumber = ref('');
 const firstName = ref('');
 const lastName = ref('');
-const email = ref('');
 const street = ref('');
 const state = ref('');
 const city = ref('');
-const countryIsUSA = ref('');
-
+const badInputPhone = ref('');
 function handleSubmit() {
-  console.log(validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value))
-  console.log(countryIsUSA.value)
-  if (validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value) && countryIsUSA.value === true) {
+  if (validatePhoneNumber(phoneNumber.value)) {
     handleSend()
   }
 }
@@ -157,49 +118,35 @@ function handleSubmit() {
 async function handleSend() {
   
 
-  const data = { email: email.value, password: password.value, password2: password2.value, phone_number: phoneNumber.value, first_name: firstName.value, last_name: lastName.value, address: (street.value + ", " + city.value + ", " + state.value), country: "United States of America"};
+  const data = { phone_number: phoneNumber.value, first_name: firstName.value, last_name: lastName.value, address: (street.value + ", " + city.value + ", " + state.value) };
 
   try {
-    // Change the URL to your production server
-    await fetch('http://127.0.0.1:8000/api/auth/register/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    console.log("account created");
+  store.refreshAccessToken();
+  console.log(store.accessToken)
+  // Change the URL to your production server
+  await fetch('http://127.0.0.1:8000/api/auth/account-settings/', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${store.accessToken}`,
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    console.log("account updated");
+    // Clear tokens only if the fetch was successful
+    store.clearTokens();
+    window.location.replace('http://localhost:3001/Login');
+  })
+  .catch(error => {
+    console.error('Error during PUT request:', error);
+  });
   } catch (error) {
-    console.error(error);
+    console.error('Error before PUT request:', error);
   }
-}
-
-function validatePassword(password, password2) {
-  // Define validation criteria
-  const minLength = 8;
-  const hasUppercase = /[A-Z]/.test(password);
-  const hasLowercase = /[a-z]/.test(password);
-  const hasNumber = /\d/.test(password);
-  const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password);
-
-  // Check if all criteria are met
-  const isValid =
-    password.length >= minLength &&
-    hasUppercase &&
-    hasLowercase &&
-    hasNumber &&
-    hasSpecialChar &&
-    password === password2;
-
-  return isValid;
-}
-
-const validateEmail = (email) => {
-  return String(email)
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )
 }
 
 function validatePhoneNumber(phoneNumber) {
@@ -209,15 +156,16 @@ function validatePhoneNumber(phoneNumber) {
     // Check if the cleaned number is 10 digits long
     if (cleanedNumber.length === 10) {
         // It's a valid 10-digit phone number
+        badInputPhone.value = false;
         return true;
     } else {
         // It's not a valid phone number
+        badInputPhone.value = true;
         return false;
     }
 }
-
-
 </script>
+
 
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';
