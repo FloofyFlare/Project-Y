@@ -1,77 +1,87 @@
 <template>
   
-    <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
-      <div class="border-b-2 border-slate-600 navbar w-screen">
-        <div class="flex-1">
-          <NuxtLink to="/" class="absolute w-28">
-            <nuxt-img
-              alt="Yuuera logo"
-              src="/images/logo.png"
-              class="w-28 fill-current"
-              format="webp"
-            />
-          </NuxtLink>
-        </div>
-        <div class="flex-none">
-          <div class="pr-4 mt-2">
-            <NuxtLink to="/about">
-              <span class="btn bg-primary text-info text-xl font-semibold">About</span>
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-    </header>
-    
-    <body class="bg-base-100 md:w-screen">
-        <main>
-
-          
-        <section class="rounded-md bg-info">
-            <div class="flex h-screen w-full bf-info">
-              <div>
-                <div>
-                        <NuxtLink to="/Login"
-                          
-                          class="shadow-lg shadow-orange-200 mb-4 text-info mt-24 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
-                          >If you intend to sell Please click this link to sign up for being a seller</NuxtLink>
-                      </div>
-
-                  <div class="mt-36 flex justify-center md:justify-center">
-                    <div class="w-2/3 rounded-3xl md:h-24">
-                      <p
-                        class="shadow-xl text-left bg-neutral p-4 rounded-xl md:text-left leading-loose tracking-wide text-xl lg:text-2xl text-info"
-                      >
-                          Your Cart is empty.
-                          Fill it with groceries, clothing, household supplies, electronics, and more.
-                          Continue shopping on the Yuuera.com homepage, and learn more about awasome deals.
-                      </p>
-                      <div  class="justify center mt-12">
-                        <div class="lg:pt-24 rounded-2xl">
-                        <p class="text-secondary leading-loose tracking-widest text-4xl md:text-4xl p-4 pt-0 font-semibold">
-                          Your Items:
-                        </p>
-                        </div>
-                      </div>
-                      <div class="bg-secondary ">
-                        <a href="#"
-                          
-                          class="shadow-lg shadow-orange-200 mb-4 text-info mt-6 bg-primary btn-outline btn btn-md md:btn-md lg:btn-lg"
-                          to=""
-                          >Please connect Your Wallet so you can start shopping</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-               
+  <HeaderComp/>
+  <body class="bg-base-100">
+      <main>
+        <section class="bg-info w-full flex items-center justify-center">
+          <form @submit.prevent="handleSubmit" class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs">
+            <div class="form-control w-full ">
+              <p class="text-secondary leading-loose tracking-widest text-3xl md:text-3xl p-4 pt-0 font-semibold">
+                Account Settings
+              </p>
+              <label class="label">
+                  <span class="label-text text-primary">First Name</span>
+              </label>
+              <input v-model="firstName" type="text" placeholder="Ada" class="input input-bordered w-full max-w-xs" />
             </div>
-        </section>
 
-    
-    </main>
+            <div class="form-control mt-12 w-full max-w-xs">
+              <label class="label text-center">
+                  <span class="label-text text-primary text-center">Last Name</span>
+              </label>
+              <input v-model="lastName" type="text" placeholder="Lovelace" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+              <label class="label text-center">
+                  <span class="label-text text-primary text-center">Email address</span>
+              </label>
+              <input v-model="email" type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">Street Address</span>
+            </label>
+            <input v-model="street" type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">City</span>
+            </label>
+            <input v-model="city" type="text" placeholder="Chicago" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">State</span>
+            </label>
+            <input v-model="state" type="text" placeholder="Ohio" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">Phone Number</span>
+            </label>
+            <input v-model="phoneNumber" type="text" placeholder="123-456-7890" class="input input-bordered w-full max-w-xs" />
+            </div>
+            
+            <div class="form-control mt-12 w-full max-w-xs"></div>
+            <label class="label">
+                <span class="label-text text-lg text-neutral">Email yuueraOfficial@gmail.com for password changes. Include your email and phone number for a quick process.</span>
+            </label> 
+
+            <div class="dropdown form-control mt-4 mb-12 w-full max-w-xs">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text text-primary">*Country (Shipping only avaliable in the USA temporarily)</span>
+                </label>
+                <label class="cursor-pointer label">
+                  <span class="label-text text-neutral">United States of America</span>
+                  <div>
+                    <input v-model="countryIsUSA" type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="form-control mt-6">
+              <button type="submit" class="btn btn-primary">Update Settings</button>
+            </div>
+          </form>
+        </section>
+      </main>
     <client-only>
-      <WalletLogin>
-      </WalletLogin>
       <footer class="footer footer-center p-10 bg-primary text-primary-content">
         <div class="">
           <p class="font-bold">Yuuera, LLC <br /></p>
@@ -94,12 +104,11 @@
           </div>
         </div>
       </footer>
-      
     </client-only>
-    </body>
+  </body>
 </template>
 
-<script setup lang="ts">
+<script setup>
 useHead({
   title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
   meta: [
@@ -114,6 +123,100 @@ useHead({
     { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
   ],
 })
+
+import { ref } from 'vue'
+import { useAuthStore } from '~/store/LoginStore'
+const store = useAuthStore()
+
+if(process.client){
+  store.refreshAccessToken();
+    if (store.accessToken != null){
+      window.location.replace('http://localhost:3001/Homepage')
+    }
+}
+
+const password = ref('');
+const password2 = ref('');
+const phoneNumber = ref('');
+const firstName = ref('');
+const lastName = ref('');
+const email = ref('');
+const street = ref('');
+const state = ref('');
+const city = ref('');
+const countryIsUSA = ref('');
+
+function handleSubmit() {
+  console.log(validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value))
+  console.log(countryIsUSA.value)
+  if (validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value) && countryIsUSA.value === true) {
+    handleSend()
+  }
+}
+
+async function handleSend() {
+  
+
+  const data = { email: email.value, password: password.value, password2: password2.value, phone_number: phoneNumber.value, first_name: firstName.value, last_name: lastName.value, address: (street.value + ", " + city.value + ", " + state.value), country: "United States of America"};
+
+  try {
+    // Change the URL to your production server
+    await fetch('http://127.0.0.1:8000/api/auth/register/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    console.log("account created");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function validatePassword(password, password2) {
+  // Define validation criteria
+  const minLength = 8;
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasLowercase = /[a-z]/.test(password);
+  const hasNumber = /\d/.test(password);
+  const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password);
+
+  // Check if all criteria are met
+  const isValid =
+    password.length >= minLength &&
+    hasUppercase &&
+    hasLowercase &&
+    hasNumber &&
+    hasSpecialChar &&
+    password === password2;
+
+  return isValid;
+}
+
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )
+}
+
+function validatePhoneNumber(phoneNumber) {
+    // Remove any non-digit characters
+    const cleanedNumber = phoneNumber.replace(/\D/g, '');
+
+    // Check if the cleaned number is 10 digits long
+    if (cleanedNumber.length === 10) {
+        // It's a valid 10-digit phone number
+        return true;
+    } else {
+        // It's not a valid phone number
+        return false;
+    }
+}
+
+
 </script>
 
 <style scoped lang="scss">

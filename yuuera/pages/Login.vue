@@ -31,7 +31,7 @@
                       </label>
                       <input v-model="pass" type="password" placeholder="password" class="input input-bordered" required />
                       <label class="label">
-                        <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                        <NuxtLink href="forgot-password" class="label-text-alt link link-hover">Forgot password?</NuxtLink>
                       </label>
                     </div>
                     <div class="form-control mt-6">
