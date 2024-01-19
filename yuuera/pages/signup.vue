@@ -4,7 +4,7 @@
   <body class="bg-base-100">
       <main>
         <section class="bg-info w-full flex items-center justify-center">
-          <div class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs">
+          <form @submit.prevent="handleSubmit" class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs">
             <div class="form-control w-full ">
               <p class="text-secondary leading-loose tracking-widest text-3xl md:text-3xl p-4 pt-0 font-semibold">
                 Enter Your information Below
@@ -12,49 +12,63 @@
               <label class="label">
                   <span class="label-text text-primary">*What is your First Name?</span>
               </label>
-              <input type="text" placeholder="First Last" class="input input-bordered w-full max-w-xs" />
+              <input v-model="firstName" type="text" placeholder="Ada" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
               <label class="label text-center">
                   <span class="label-text text-primary text-center">*What is your Last Name</span>
               </label>
-              <input type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
+              <input v-model="lastName" type="text" placeholder="Lovelace" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
               <label class="label text-center">
                   <span class="label-text text-primary text-center">*What is your Email address</span>
               </label>
-              <input type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
+              <input v-model="email" type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
                 <span class="label-text text-primary">*Street Address?</span>
             </label>
-            <input type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
+            <input v-model="street" type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">*City?</span>
+            </label>
+            <input v-model="city" type="text" placeholder="Chicago" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">*State?</span>
+            </label>
+            <input v-model="state" type="text" placeholder="Ohio" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
                 <span class="label-text text-primary">*phone number?</span>
             </label>
-            <input type="text" placeholder="123-456-7890" class="input input-bordered w-full max-w-xs" />
+            <input v-model="phoneNumber" type="text" placeholder="123-456-7890" class="input input-bordered w-full max-w-xs" />
             </div>
             
             <div class="form-control mt-12 w-full max-w-xs"></div>
             <label class="label">
                 <span class="label-text text-primary">*password?</span>
             </label>
-            <input type="text" placeholder="pass" class="input input-bordered w-full max-w-xs" />
+            <input v-model="password" type="password" placeholder="pass" class="input input-bordered w-full max-w-xs" />
             
 
             <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
                 <span class="label-text text-primary">*repeat password</span>
             </label>
-            <input type="text" placeholder="pass" class="input input-bordered w-full max-w-xs" />
+            <input v-model="password2" type="password" placeholder="pass" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="dropdown form-control mt-4 mb-12 w-full max-w-xs">
@@ -65,18 +79,15 @@
                 <label class="cursor-pointer label">
                   <span class="label-text text-neutral">United States of America</span>
                   <div>
-                    <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                    <input v-model="countryIsUSA" type="checkbox" checked="checked" class="checkbox checkbox-error" />
                   </div>
                 </label>
               </div>
             </div>
-            
-            <NuxtLink to="/results">
-              <div class="form-control mt-6">
-                <button class="btn btn-primary">Login</button>
-              </div>
-            </NuxtLink>
-          </div>
+            <div class="form-control mt-6">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </form>
         </section>
       </main>
     <client-only>
@@ -123,6 +134,15 @@ useHead({
 })
 
 import { ref } from 'vue'
+import { useAuthStore } from '~/store/LoginStore'
+const store = useAuthStore()
+
+if(process.client){
+  store.refreshAccessToken();
+    if (store.accessToken != null){
+      window.location.replace('http://localhost:3001/Homepage')
+    }
+}
 
 const password = ref('');
 const password2 = ref('');
@@ -130,11 +150,15 @@ const phoneNumber = ref('');
 const firstName = ref('');
 const lastName = ref('');
 const email = ref('');
-const address = ref('');
-const country = ref('');
+const street = ref('');
+const state = ref('');
+const city = ref('');
+const countryIsUSA = ref('');
 
 function handleSubmit() {
-  if (validateEmail(email.value)) {
+  console.log(validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value))
+  console.log(countryIsUSA.value)
+  if (validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value) && countryIsUSA.value === true) {
     handleSend()
   }
 }
@@ -142,7 +166,7 @@ function handleSubmit() {
 async function handleSend() {
   
 
-  const data = { email: this.email.value, password: password, password2: password2, phone_number: phoneNumber, first_name: firstName, last_name: lastName, address: address, country: country};
+  const data = { email: email.value, password: password.value, password2: password2.value, phone_number: phoneNumber.value, first_name: firstName.value, last_name: lastName.value, address: (street.value + ", " + city.value + ", " + state.value), country: "United States of America"};
 
   try {
     // Change the URL to your production server
@@ -159,6 +183,26 @@ async function handleSend() {
   }
 }
 
+function validatePassword(password, password2) {
+  // Define validation criteria
+  const minLength = 8;
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasLowercase = /[a-z]/.test(password);
+  const hasNumber = /\d/.test(password);
+  const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password);
+
+  // Check if all criteria are met
+  const isValid =
+    password.length >= minLength &&
+    hasUppercase &&
+    hasLowercase &&
+    hasNumber &&
+    hasSpecialChar &&
+    password === password2;
+
+  return isValid;
+}
+
 const validateEmail = (email) => {
   return String(email)
     .toLowerCase()
@@ -166,6 +210,22 @@ const validateEmail = (email) => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     )
 }
+
+function validatePhoneNumber(phoneNumber) {
+    // Remove any non-digit characters
+    const cleanedNumber = phoneNumber.replace(/\D/g, '');
+
+    // Check if the cleaned number is 10 digits long
+    if (cleanedNumber.length === 10) {
+        // It's a valid 10-digit phone number
+        return true;
+    } else {
+        // It's not a valid phone number
+        return false;
+    }
+}
+
+
 </script>
 
 <style scoped lang="scss">
