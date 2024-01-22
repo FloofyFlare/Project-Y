@@ -15,13 +15,13 @@
         <div class="dropdown w-full">
           <div tabindex="0" role="button" class="flex bg-info btn text-neutral m-1">Categories</div>
           <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
-            <li><NuxtLink to="/results" class="font-bold">Apple</NuxtLink></li>
-            <li><NuxtLink to="/results" class="font-bold">Samsung</NuxtLink></li>
-            <li><NuxtLink to="/results" class="font-bold">Google</NuxtLink></li>
-            <li><NuxtLink to="/results" class="font-bold">Motorola</NuxtLink></li>
-            <li><NuxtLink to="/results" class="font-bold">OnePlus</NuxtLink></li>
-            <li><NuxtLink to="/results" class="font-bold">All Tech</NuxtLink></li>
-            <li><NuxtLink to="/results" class="font-bold">Merch</NuxtLink></li>
+            <li><a @click="setBrand('Apple')" class="font-bold">Apple</a></li>
+            <li><a @click="setBrand('Samsung')" class="font-bold">Samsung</a></li>
+            <li><a @click="setBrand('Google')" class="font-bold">Google</a></li>
+            <li><a @click="setBrand('Motorola')" class="font-bold">Motorola</a></li>
+            <li><a @click="setBrand('OnePlus')" class="font-bold">OnePlus</a></li>
+            <li><a @click="clearFilter(Null)" class="font-bold">All Tech</a></li>
+            <li><a @click="setBrand('Merch')" class="font-bold">Merch</a></li>
           </ul>
         </div>
       </div>
@@ -49,9 +49,10 @@
 <script setup>
 
 const loggedIn = ref('');
-
+import { useFilterStore } from '~/store/Filters'
 import { useAuthStore } from '~/store/LoginStore'
 const store = useAuthStore()
+const filter = useFilterStore()
 store.refreshAccessToken();
 
 if (store.accessToken != null){
@@ -63,5 +64,13 @@ function logOut() {
   window.location.reload();
 }
 
-
+function setBrand(brand){
+  console.log(brand);
+  filter.setBrand(brand);
+  window.location.replace('http://localhost:3001/results');
+}
+function clearFilter() {
+  filter.clearFilter();
+  window.location.replace('http://localhost:3001/results');
+}
 </script>

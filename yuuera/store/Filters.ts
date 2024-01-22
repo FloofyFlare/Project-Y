@@ -7,28 +7,31 @@ interface AuthState {
   sort_direction: string | null;
 }
 
-export const useAuthStore = defineStore('auth-store', {
+export const useFilterStore = defineStore('filter-store', {
   state: (): AuthState => ({
     brand: null,
     product_name: null,
-    sort_by_price: null,
+    sort_by_price: false,
     sort_direction: null,
   }),
   persist: true,
   actions: {
-    setTokens(filters: { brand: string; sortPrice: string, }) {
-      this.brand = filters.brand;   
-      this.sort_direction = filters.sortPrice;
-      if (filters.sortPrice) {
+    setBrand(brand: string) {
+      this.brand = brand;   
+    },
+
+    setPrice(sortPrice: string){
+      this.sort_direction = sortPrice;
+      if (sortPrice) {
         console.log("sorting by price");
         this.sort_by_price = true; 
       }
     },
 
-    clearTokens() {
+    clearFilter() {
         this.brand = null;
         this.product_name = null;
-        this.sort_by_price = null;
+        this.sort_by_price = false;
         this.sort_direction = null;
     },
 

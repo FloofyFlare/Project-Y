@@ -28,7 +28,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Apple</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Apple')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -42,7 +42,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Samsung</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Samsung')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Google</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Google')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -70,7 +70,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Motorola</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Motorola')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">OnePlus</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('OnePlus')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Merch</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Merch')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -350,7 +350,7 @@
   </body>
 </template>
 
-<script setup lang="ts">
+<script setup lang="js">
 useHead({
   title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
   meta: [
@@ -367,7 +367,7 @@ useHead({
 })
 </script>
 
-<script lang="ts">
+<script lang="js">
 export default {
   
   computed: {
@@ -382,7 +382,35 @@ export default {
     },
   },
 };
+
+
+import { ref } from 'vue';
+
+const items = ref([]);
+
+import { useFilterStore } from '~/store/Filters'
+const store = useFilterStore()
+
+
+handleSubmit();
+
+async function handleSubmit() {
+  const data = await getItems();
+  items.value = data;
+  
+  console.log('Items:', items.value);
+}
+
+function setBrand(brand){
+  console.log(brand);
+  store.clearFilter();
+  store.setBrand(brand);
+}
+
+
 </script>
+
+
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';
 </style>

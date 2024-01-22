@@ -17,18 +17,18 @@
                 <div class="dropdown w-full">
                   <div tabindex="0" role="button" class="flex bg-info btn text-neutral m-1">Categories</div>
                   <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
-                    <li><NuxtLink to="/results" class="font-bold">Apple</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">Samsung</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">Google</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">Motorola</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">OnePlus</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">All Tech</NuxtLink></li>
-                    <li><NuxtLink to="/results" class="font-bold">Merch</NuxtLink></li>
+                    <li><a @click.prevent="setBrand('Apple')" class="font-bold">Apple</a></li>
+                    <li><a @click="setBrand('Samsung')" class="font-bold">Samsung</a></li>
+                    <li><a @click="setBrand('Google')" class="font-bold">Google</a></li>
+                    <li><a @click="setBrand('Motorola')" class="font-bold">Motorola</a></li>
+                    <li><a @click="setBrand('OnePlus')" class="font-bold">OnePlus</a></li>
+                    <li><a @click="clearFilter(Null)" class="font-bold">All Tech</a></li>
+                    <li><a @click="setBrand('Merch')" class="font-bold">Merch</a></li>
                   </ul>
                 </div>
                 <div >
-                  <button class="flex-1 btn btn-outline btn-primary btn-md text-">High to low</button> 
-                  <button class="flex-1 btn btn-outline btn-primary btn-md text-">Low to High</button>
+                  <button @click="highLow('asc')" class="flex-1 btn btn-outline btn-primary btn-md ">Low to High</button> 
+                  <button @click="lowHigh('desc')" class="flex-1 btn btn-outline btn-primary btn-md ">High to Low</button>
                 </div>
               </div>
               </div>
@@ -37,6 +37,9 @@
         </section>
         <section class="pt-24 h-full" id="products">
           <div class="p-24">
+            <div v-if="items.length === 0">
+              <p class="text-neutral h-screen font-semibold text-xl">No items matching your request</p>
+            </div>
             <div v-for="item in items" :key="item.id" class="pb-10 hidden sm:flex w-full justify-center">
                 <NuxtLink class="card lg:card-side border-black border-2 bg-base-100 w-1/2 shadow-xl">
                   <figure><nuxt-img
@@ -47,7 +50,6 @@
                         /></figure>
                   <div class="card-body">
                     <h2 class="card-title">{{ item.product_name }}</h2>
-                    <p>Click the button to listen on Spotiwhy app.</p>
                     <div class="card-actions justify-end">
                       <button class="btn btn-primary">{{ item.price }}</button>
                     </div>
@@ -92,6 +94,10 @@ import { ref } from 'vue';
 
 const items = ref([]);
 
+import { useFilterStore } from '~/store/Filters'
+const store = useFilterStore()
+
+
 handleSubmit();
 
 async function handleSubmit() {
@@ -101,8 +107,36 @@ async function handleSubmit() {
   console.log('Items:', items.value);
 }
 
+function setBrand(brand){
+  console.log(brand);
+  store.setBrand(brand);
+  window.location.reload();
+}
+
+function lowHigh(price) {
+  console.log(`Selected brand: ${price}`);
+  store.setPrice(price)
+  window.location.reload();
+}
+
+function highLow(price) {
+  console.log(`Selected brand: ${price}`);
+  store.setPrice(price)
+  window.location.reload();
+}
+
+function clearFilter() {
+  store.clearFilter();
+  window.location.reload();
+}
+
 async function getItems() {
-  const response = await fetch('http://127.0.0.1:8000/api/get-items/', {
+  const url = new URL('http://127.0.0.1:8000/api/product-filter/');
+  url.searchParams.append('brand', store.brand);
+  url.searchParams.append('product_name', '');
+  url.searchParams.append('sort_direction', store.sort_direction);
+  url.searchParams.append('sort_by_price', store.sort_by_price);
+  const response = await fetch(url, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
