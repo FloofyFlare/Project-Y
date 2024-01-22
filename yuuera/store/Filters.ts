@@ -29,10 +29,10 @@ export const useFilterStore = defineStore('filter-store', {
     },
 
     clearFilter() {
-        this.brand = null;
-        this.product_name = null;
+        this.brand = '';
+        this.product_name = '';
         this.sort_by_price = false;
-        this.sort_direction = null;
+        this.sort_direction = '';
     },
 
     async filterSearch() {

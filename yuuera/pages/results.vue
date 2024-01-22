@@ -102,7 +102,6 @@ handleSubmit();
 
 async function handleSubmit() {
   const data = await getItems();
-  items.value = data;
   
   console.log('Items:', items.value);
 }
@@ -110,24 +109,24 @@ async function handleSubmit() {
 function setBrand(brand){
   console.log(brand);
   store.setBrand(brand);
-  window.location.reload();
+  getItems()
 }
 
 function lowHigh(price) {
   console.log(`Selected brand: ${price}`);
   store.setPrice(price)
-  window.location.reload();
+  getItems()
 }
 
 function highLow(price) {
   console.log(`Selected brand: ${price}`);
   store.setPrice(price)
-  window.location.reload();
+  getItems()
 }
 
 function clearFilter() {
   store.clearFilter();
-  window.location.reload();
+  getItems()
 }
 
 async function getItems() {
@@ -146,7 +145,7 @@ async function getItems() {
   if (response.ok) {
     const responseData = await response.json();
     console.log('Login successful');
-    return responseData;
+    items.value = responseData;
   } else {
     console.error('Login failed:', response.statusText);
   }
