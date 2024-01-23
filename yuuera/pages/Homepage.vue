@@ -351,6 +351,12 @@
 </template>
 
 <script setup lang="js">
+const imageUrl = '/images/banner.png';
+
+const backgroundStyle = {
+  backgroundImage: `url(${imageUrl})`,
+};
+
 useHead({
   title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
   meta: [
@@ -363,25 +369,9 @@ useHead({
   ],
   link: [
     { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-  ],
-})
-</script>
+  ], 
+});
 
-<script lang="js">
-export default {
-  
-  computed: {
-    backgroundStyle() {
-      // Use the require function to get the image path
-      const imageUrl = '/images/banner.png';
-      
-      // Return the background-image style
-      return {
-        backgroundImage: `url(${imageUrl})`,
-      };
-    },
-  },
-};
 
 
 import { ref } from 'vue';
