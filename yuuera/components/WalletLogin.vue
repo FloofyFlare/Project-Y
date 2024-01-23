@@ -6,7 +6,12 @@
   </button>
 </template>
 
+
 <script setup>
+
+  
+
+  import { Blockfrost, Lucid } from "lucid-cardano"; // NPM
   const txSuccuess = ref(true)
   const balance = ref('')
   const isWalletCheck = async () => {
@@ -30,6 +35,23 @@
       const isLaceEnabled = isLaceInstalled ? await window.cardano.lace.isEnabled() : false
       const walletAPI = await cardano.lace.enable();
       
+
+      const lucid = await Lucid.new(
+        new Blockfrost("https://cardano-mainnet.blockfrost.io/api/v0", "mainnetWCxt9vqB0GuFvyWqMV7rqu9vdR8XUqb6"),
+        "Mainnet",
+      );
+      // Assumes you are in a browser environment
+      lucid.selectWallet(walletAPI);
+
+      const tx = await lucid.newTx()
+        .payToAddress("addr...", { lovelace: 5000000n })
+        .complete();
+
+      const signedTx = await tx.sign().complete();
+
+      const txHash = await signedTx.submit();
+
+      console.log(txHash);
       
 
 

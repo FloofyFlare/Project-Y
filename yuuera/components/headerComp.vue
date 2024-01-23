@@ -32,6 +32,7 @@
             <NuxtLink to="accountsettings" class="m-4 mt-4 btn bg-primary">
               <span class=" text-info text-xl font-semibold">Settings</span>
             </NuxtLink>
+            <WalletLogin></WalletLogin>
             <button  class="m-4 mt-4 w-32 btn bg-neutral" @click="logOut()">
               <span class=" text-info text-xl font-semibold">Log Out</span>
             </button>

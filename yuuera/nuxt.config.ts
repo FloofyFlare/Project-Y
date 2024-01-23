@@ -19,8 +19,16 @@ export default defineNuxtConfig({
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-
-  
   // nuxt.config.js
   // ... other configurations
+  vite: {
+    esbuild: {
+      supported: {
+        'top-level-await': true //browsers can handle top-level-await features
+      },
+    }
+
+
+  }
+
 });

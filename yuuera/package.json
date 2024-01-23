@@ -34,6 +34,7 @@
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "@pinia/nuxt": "^0.5.1"
+    "@pinia/nuxt": "^0.5.1",
+    "lucid-cardano": "^0.10.7"
   }
 }
