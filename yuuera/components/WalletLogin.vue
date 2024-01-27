@@ -1,6 +1,5 @@
 <template>
-  <button @click="makeTx">run</button>
-  <button  class="m-4 mt-4 btn bg-primary" @click="isWalletCheck">
+  <button  class="m-4 mt-4 btn bg-primary" @click="getBalance">
     <span class=" text-info text-xl font-semibold">Buy Now</span>
     <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">Failed Try Again</span>
   </button>
@@ -8,61 +7,101 @@
 
 
 <script setup>
-
-  
-
-  import { Blockfrost, Lucid } from "lucid-cardano"; // NPM
+  var API = undefined;
   const txSuccuess = ref(true)
   const balance = ref('')
-  const isWalletCheck = async () => {
+  import { stringToHex } from '../helpers/streingToHex'
+  import { convertBalanceToAda } from '../helpers/convertBalanceToAda'
+  import Web3Token from 'web3-token-cardano/dist/browser'
+  async function getBalance() {
     try {
-      const isCardano = window && window.cardano
-      const isLaceInstalled = isCardano && window.cardano.lace
-      const isLaceEnabled = isLaceInstalled ? await window.cardano.lace.isEnabled() : false
-      console.log(isLaceEnabled);
-      console.log(cardano.lace.enable())
-      makeTx();
-    }
-    catch {
-      console.log('error')
-    }
-  };
+            // Try to get the wallet object that the user is selecting
+            //const walletObject = await (window.cardano && window.cardano.lace)
 
-  const makeTx = async () => {
+            // If it doesn't exist, we need to throw as error
+            //if (!walletObject)
+             //   throw {
+             //       info: 'You do not have this wallet installed as an extension.',
+              //  }
+
+            // Ask user to enable wallet
+            const enabledWallet = await window.cardano.eternl.enable();
+
+            // get address from which we will sign message
+            const address = await enabledWallet.getChangeAddress()
+
+/*            const token = await Web3Token.sign(() => {
+                return enabledWallet.signData(
+                    address,
+                    stringToHex(
+                        'Please sign this message to verify your identity.'
+                    )
+                )
+            }, '7d')
+
+            const response = await fetch(`api/authenticate`, {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ token }),
+            })
+
+            const result = await response.json()
+            if (response.status !== 200) throw { info: result.message }
+*/
+            const balance = await enabledWallet
+                .getBalance()
+                .then(convertBalanceToAda)
+
+            console.log(balance)
+
+
+            console.log('Successfully authenticated wallet.')
+        } catch (err) {
+            console.log(err);
+        }
+  }
+  
+
+  async function sendPayment(recipientAddress, amount, metadata = {}) {
+    console.log(recipientAddress)
+    // Check Lace API availability
+    if (!window.cardano || !window.cardano.lace) {
+      console.error("Cardano wallet extension not available.");
+      return;
+    }
+
     try {
-      const isCardano = window && window.cardano
-      const isLaceInstalled = isCardano && window.cardano.lace
-      const isLaceEnabled = isLaceInstalled ? await window.cardano.lace.isEnabled() : false
-      const walletAPI = await cardano.lace.enable();
-      
+      // Connect to the wallet and get API object
+      const api = await window.cardano.lace.enable();
+      console.log(api)
+      // Prepare transaction data
+      const transaction = {
+        recipient: recipientAddress,
+        amount: amount, // In Lovelace (units of ADA)
+        metaData: metadata, // Optional transaction metadata
+      };
 
-      const lucid = await Lucid.new(
-        new Blockfrost("https://cardano-mainnet.blockfrost.io/api/v0", "mainnetWCxt9vqB0GuFvyWqMV7rqu9vdR8XUqb6"),
-        "Mainnet",
-      );
-      // Assumes you are in a browser environment
-      lucid.selectWallet(walletAPI);
+      // Get a change address for the transaction
+      const changeAddress = await api.getChangeAddress();
+      transaction.changeAddress = changeAddress;
 
-      const tx = await lucid.newTx()
-        .payToAddress("addr...", { lovelace: 5000000n })
-        .complete();
+      // Get UTXOs (unspent transaction outputs) for funding the transaction
+      const utxos = await api.getUtxos(transaction);
 
-      const signedTx = await tx.sign().complete();
+      // Sign the transaction using the wallet
+      const signedTx = await api.signTx(transaction, utxos);
 
-      const txHash = await signedTx.submit();
+      // Submit the signed transaction to the blockchain
+      await api.submitTx(signedTx);
 
-      console.log(txHash);
-      
-
-
-
+      console.log(`Transaction submitted successfully! ID: ${signedTx.id}`);
+    } catch (err) {
+      console.error(`Error sending payment: ${err}`);
     }
-    catch {
-      txSuccuess.value = false;
-      console.log('error')
-    }
-  };
-
+  }
   const loggedIn = ref(false);
 
   import { useAuthStore } from '~/store/LoginStore'

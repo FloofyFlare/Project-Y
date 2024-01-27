@@ -397,6 +397,27 @@ function setBrand(brand){
   store.setBrand(brand);
 }
 
+async function getItems() {
+  const url = new URL('http://127.0.0.1:8000/api/product-filter/');
+  url.searchParams.append('brand', store.brand);
+  url.searchParams.append('product_name', '');
+  url.searchParams.append('sort_direction', store.sort_direction);
+  url.searchParams.append('sort_by_price', store.sort_by_price);
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    const responseData = await response.json();
+    console.log('Login successful');
+    items.value = responseData;
+  } else {
+    console.error('Login failed:', response.statusText);
+  }
+}
 
 </script>
 
