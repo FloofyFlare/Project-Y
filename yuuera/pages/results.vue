@@ -26,7 +26,7 @@
       <div class="flex-1 justify-end">
       <div class="pr-4 ">
         <div >
-            <NuxtLink class="m-4 mt-4 w-28 btn bg-primary" to="/Login">
+            <NuxtLink class="m-4 mt-4 w-28 btn bg-primary" to="/Product">
               <span class=" text-info text-xl font-semibold">Log In</span>
             </NuxtLink>
         </div>
