@@ -1,0 +1,77 @@
+<template>
+    <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
+    <div class="border-b-2 border-slate-600 navbar w-screen">
+      <div class="flex-1">
+        <NuxtLink to="/" class="absolute w-28">
+          <nuxt-img
+            alt="Yuuera logo"
+            src="/images/logo.png"
+            class="w-28 fill-current"
+            format="webp"
+          />
+        </NuxtLink>
+      </div>
+      <div class="flex-1  w-full hidden sm:flex ">
+        <div class="dropdown w-full">
+          <div tabindex="0" role="button" class="flex bg-info btn text-neutral m-1">Categories</div>
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
+            <li><a @click="setBrand('Apple')" class="font-bold">Apple</a></li>
+            <li><a @click="setBrand('Samsung')" class="font-bold">Samsung</a></li>
+            <li><a @click="setBrand('Google')" class="font-bold">Google</a></li>
+            <li><a @click="setBrand('Motorola')" class="font-bold">Motorola</a></li>
+            <li><a @click="setBrand('OnePlus')" class="font-bold">OnePlus</a></li>
+            <li><a @click="clearFilter(Null)" class="font-bold">All Tech</a></li>
+            <li><a @click="setBrand('Merch')" class="font-bold">Merch</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex-1 justify-end">
+      <div class="pr-4 ">
+        <div >
+          <div v-if="loggedIn">
+            <NuxtLink to="accountsettings" class="m-4 mt-4 btn bg-primary">
+              <span class=" text-info text-xl font-semibold">Settings</span>
+            </NuxtLink>
+            <WalletLogin></WalletLogin>
+            <button  class="m-4 mt-4 w-32 btn bg-neutral" @click="logOut()">
+              <span class=" text-info text-xl font-semibold">Log Out</span>
+            </button>
+          </div>
+            <NuxtLink v-if="!loggedIn" class="m-4 mt-4 w-32 btn bg-primary" to="Login">
+              <span class=" text-info text-xl font-semibold">Log In</span>
+            </NuxtLink>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+</template>
+
+<script setup>
+
+const loggedIn = ref('');
+import { useFilterStore } from '~/store/Filters'
+import { useAuthStore } from '~/store/LoginStore'
+const store = useAuthStore()
+const filter = useFilterStore()
+store.refreshAccessToken();
+
+if (store.accessToken != null){
+    loggedIn.value = true
+}
+
+function logOut() {
+  store.clearTokens();
+  window.location.reload();
+}
+
+function setBrand(brand){
+  console.log(brand);
+  filter.setBrand(brand);
+  window.location.replace('http://localhost:3001/results');
+}
+function clearFilter() {
+  filter.clearFilter();
+  window.location.replace('http://localhost:3001/results');
+}
+</script>

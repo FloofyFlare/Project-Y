@@ -1,44 +1,12 @@
 <template>
   
-  <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
-    <div class="border-b-2 border-slate-600 navbar w-screen">
-      <div class="flex-1">
-        <NuxtLink to="/" class="absolute w-28">
-          <nuxt-img
-            alt="Yuuera logo"
-            src="/images/logo.png"
-            class="w-28 fill-current"
-            format="webp"
-          />
-        </NuxtLink>
-      </div>
-      <div class="flex-1  w-full hidden sm:flex ">
-        <div class="flex w-full">
-          <input type="text" placeholder="Search" class="input input-bordered bg-info border-black w-full rounded-r-none" />
-          <button class="btn btn-square btn-outline rounded-l-none border-black">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div class="flex-1 justify-end">
-      <div class="pr-4 ">
-        <div >
-            <NuxtLink class="m-4 mt-4 w-28 btn bg-primary" to="/Login">
-              <span class=" text-info text-xl font-semibold">Log In</span>
-            </NuxtLink>
-        </div>
-      </div>
-    </div>
-    </div>
-  </header>
+  <HeaderComp></HeaderComp>
     
   <body class="bg-info md:w-full">
       <main>
       <section class="rounded-md mbg-info">
         <div class="pt-20"></div>
-        <div class="hero max-h-[40vh] mt-4 h-screen" :style="backgroundStyle">
+        <div class="hero max-h-[45vh] mt-4 h-screen" :style="backgroundStyle">
         </div>
       </section>
 
@@ -60,7 +28,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Apple</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Apple')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -74,7 +42,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Samsung</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Samsung')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -88,7 +56,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Google</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Google')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -102,7 +70,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Motorola</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Motorola')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -116,7 +84,7 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">OnePlus</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('OnePlus')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -128,9 +96,9 @@
                 />
               </figure>
               <div class="card-body items-center text-center p-2">
-                <h2 class="card-title">Rising Brands</h2>
+                <h2 class="card-title">Merch</h2>
                 <div class="card-actions">
-                  <button class="btn btn-primary">Buy Now</button>
+                  <NuxtLink to='/results'><button @click="setBrand('Merch')" class="btn btn-primary">Buy Now</button></NuxtLink>
                 </div>
               </div>
             </div>
@@ -349,10 +317,7 @@
             </div>
           </div>
         </div>
-        
       </div>
-      
-
     </div>
   </section>
   
@@ -385,39 +350,78 @@
   </body>
 </template>
 
-<script setup lang="ts">
+<script setup lang="js">
+const imageUrl = '/images/banner.png';
+
+const backgroundStyle = {
+  backgroundImage: `url(${imageUrl})`,
+};
+
 useHead({
   title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
   meta: [
     {
       name: 'description',
       content:
-        ' Discover our utting-edge crypto e-commerce platform, enabling cost-effective buying and selling with stable coins as payment.',
+        'Buy tech with stable coins as payment. Discover our utting-edge shopping experience, a convinent platform for buying tech with crypto. Built by holder for holders.',
     },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
   link: [
     { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-  ],
-})
+  ], 
+});
+
+
+
+import { ref } from 'vue';
+
+const items = ref([]);
+
+import { useFilterStore } from '~/store/Filters'
+const store = useFilterStore()
+
+
+handleSubmit();
+
+async function handleSubmit() {
+  const data = await getItems();
+  items.value = data;
+  
+  console.log('Items:', items.value);
+}
+
+function setBrand(brand){
+  console.log(brand);
+  store.clearFilter();
+  store.setBrand(brand);
+}
+
+async function getItems() {
+  const url = new URL('http://127.0.0.1:8000/api/product-filter/');
+  url.searchParams.append('brand', store.brand);
+  url.searchParams.append('product_name', '');
+  url.searchParams.append('sort_direction', store.sort_direction);
+  url.searchParams.append('sort_by_price', store.sort_by_price);
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    const responseData = await response.json();
+    console.log('Login successful');
+    items.value = responseData;
+  } else {
+    console.error('Login failed:', response.statusText);
+  }
+}
+
 </script>
 
-<script lang="ts">
-export default {
-  
-  computed: {
-    backgroundStyle() {
-      // Use the require function to get the image path
-      const imageUrl = '/images/banner.png';
-      
-      // Return the background-image style
-      return {
-        backgroundImage: `url(${imageUrl})`,
-      };
-    },
-  },
-};
-</script>
+
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';
 </style>

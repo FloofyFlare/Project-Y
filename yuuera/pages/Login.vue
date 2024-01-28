@@ -1,19 +1,6 @@
 <template>
   
-    <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
-      <div class="border-b-2 border-slate-600 navbar w-screen">
-        <div class="flex-1">
-          <NuxtLink to="/" class="absolute w-28">
-            <nuxt-img
-              alt="Yuuera logo"
-              src="/images/logo.png"
-              class="w-28 fill-current"
-              format="webp"
-            />
-          </NuxtLink>
-        </div>
-        </div>
-    </header>
+    <HeaderComp></HeaderComp>
     
     <body class="bg-base-100 md:w-full h-screen ">
       <main class="h-full">
@@ -25,47 +12,36 @@
                   <h1 class="text-neutral text-5xl font-bold">Login now!</h1>
                   <div class="flex-col justify-center">
                     
-                      <NuxtLink to="/results" class="btn mt-8 btn-primary ">Create an account?</NuxtLink>
+                      <NuxtLink to="/signup" class="btn mt-8 btn-primary ">Create an account?</NuxtLink>
                     
                   </div>
                 </div>
                 <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                   <form @submit.prevent="handleSubmit" class="card-body">
+                    <span class="text-error" v-show="badInput">Email and/or password is either missing or inccorect</span>
                     <div class="form-control">
                       <label class="label">
                         <span class="label-text">Email</span>
                       </label>
-                      <input type="email" placeholder="email" class="input input-bordered" required />
+                      <input v-model="signUpEmail" type="email" placeholder="email" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
                       <label class="label">
                         <span class="label-text">Password</span>
                       </label>
-                      <input type="password" placeholder="password" class="input input-bordered" required />
+                      <input v-model="pass" type="password" placeholder="password" class="input input-bordered" required />
                       <label class="label">
-                        <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                        <NuxtLink href="forgot-password" class="label-text-alt link link-hover">Forgot password?</NuxtLink>
                       </label>
                     </div>
                     <div class="form-control mt-6">
-                      <button class="btn btn-primary">Login</button>
+                      <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
-            <div class="flex-1">
-          <NuxtLink to="/results" class="absolute w-28">
-            <nuxt-img
-              alt="Yuuera logo"
-              src="/images/logo.png"
-              class="w-28 fill-current"
-              format="webp"
-            />
-          </NuxtLink>
-        </div>
-            <button class="btn btn-wide ">Sign in</button>
-
         </section>
       </main>
     <client-only>
@@ -99,14 +75,27 @@
 
 
 import { ref } from 'vue'
+import { useAuthStore } from '~/store/LoginStore'
+
+const store = useAuthStore()
+
+
+if(process.client){
+  store.refreshAccessToken();
+    if (store.accessToken != null){
+      window.location.replace('http://localhost:3001/Homepage')
+    }
+}
 
 const signUpEmail = ref('')
 const pass = ref('')
+const badInput = ref(false)
 function handleSubmit() {
   if (validateEmail(signUpEmail.value)) {
     handleSend()
-  }
+  } 
 }
+
 
 async function handleSend() {
   console.log(signUpEmail.value);
@@ -118,29 +107,34 @@ async function handleSend() {
 
   try {
     // Change the URL to your production server
-    const response = await fetch('http://127.0.0.1:8000/api/auth/login', {
+    const response = await fetch('http://127.0.0.1:8000/api/auth/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
+    
     if (response.ok) {
       const responseData = await response.json();
-      console.log('Login successful:', responseData);
-      
+      const tokens = { accessToken: responseData.access, refreshToken: responseData.refresh };
+      store.setTokens(tokens);
+      console.log('Login successful:', store.accessToken);
       // Do something with the responseData, such as updating the component state
+      window.location.replace('http://localhost:3001/Homepage');
       return responseData;
     } else {
       // Handle errors for non-2xx status codes
       console.error('Login failed:', response.statusText);
+      badInput.value = true
     }
   } catch (error) {
+    badInput.value = true
     console.error(error);
   }
 }
 
-const validateEmail = (email) => {
+const validateEmail = (email: String) => {
   if (typeof email !== 'string') {
     throw new TypeError('Email must be a string');
   }
@@ -150,6 +144,5 @@ const validateEmail = (email) => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     )
 }
-
 
 </script>

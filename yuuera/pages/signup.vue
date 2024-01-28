@@ -1,32 +1,10 @@
 <template>
   
-  <header class="fixed opacity-[.98] bg-info text-base-200 z-50">
-    <div class="border-b-2 border-slate-600 navbar w-screen">
-      <div class="flex-1">
-        <NuxtLink to="/" class="absolute w-28">
-          <nuxt-img
-            alt="Yuuera logo"
-            src="/images/logo.png"
-            class="w-28 fill-current"
-            format="webp"
-          />
-        </NuxtLink>
-      </div>
-      <div class="flex-1 justify-end">
-      <div class="pr-4 ">
-        <div >
-            <NuxtLink class="m-4 mt-4 w-28 btn bg-primary" to="/Login">
-              <span class=" text-info text-xl font-semibold">Log In</span>
-            </NuxtLink>
-        </div>
-      </div>
-    </div>
-    </div>
-  </header>
+  <HeaderComp/>
   <body class="bg-base-100">
       <main>
         <section class="bg-info w-full flex items-center justify-center">
-          <div class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs">
+          <form @submit.prevent="handleSubmit" class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs">
             <div class="form-control w-full ">
               <p class="text-secondary leading-loose tracking-widest text-3xl md:text-3xl p-4 pt-0 font-semibold">
                 Enter Your information Below
@@ -34,49 +12,94 @@
               <label class="label">
                   <span class="label-text text-primary">*What is your First Name?</span>
               </label>
-              <input type="text" placeholder="First Last" class="input input-bordered w-full max-w-xs" />
+              <input v-model="firstName" type="text" placeholder="Ada" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
               <label class="label text-center">
                   <span class="label-text text-primary text-center">*What is your Last Name</span>
               </label>
-              <input type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
+              <input v-model="lastName" type="text" placeholder="Lovelace" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
+              <span class="text-error pt-8" v-show="badInputEmailWrong">Please check your Input</span>
+              <span class="text-error pt-8" v-show="badInputEmail">Please check your Input</span>
               <label class="label text-center">
                   <span class="label-text text-primary text-center">*What is your Email address</span>
               </label>
-              <input type="text" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
+              <input v-model="email" type="email" placeholder="example@gmail.com" class="input input-bordered w-full max-w-xs" />
             </div>
 
             <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
-                <span class="label-text text-primary">*Address?</span>
+                <span class="label-text text-primary">*Street Address?</span>
             </label>
-            <input type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
+            <input v-model="street" type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
             </div>
 
-            <div class="form-control mt-12 mb-12 w-full max-w-xs">
+            <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
-                <span class="label-text text-primary">Phone number</span>
+                <span class="label-text text-primary">*City?</span>
             </label>
-            <input type="text" placeholder="012-345-6789" class="input input-bordered w-full max-w-xs" />
+            <input v-model="city" type="text" placeholder="Chicago" class="input input-bordered w-full max-w-xs" />
             </div>
 
-            <div class="dropdown form-control mt-12 mb-12 w-full max-w-xs">
-              <label tabindex="0" class="btn m-1">Country</label>
-              <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a>United States of America</a></li>
-              </ul>
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">*State?</span>
+            </label>
+            <input v-model="state" type="text" placeholder="Ohio" class="input input-bordered w-full max-w-xs" />
             </div>
-            <NuxtLink to="/accountsettings">
-              <div class="form-control mt-6">
-                <button class="btn btn-primary">Login</button>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <span class="text-error pt-8" v-show="badInputPhone">Please check your Input (10 characters)</span>
+            <label class="label">
+                <span class="label-text text-primary">*phone number?</span>
+            </label>
+            <input v-model="phoneNumber" type="text" placeholder="123-456-7890" class="input input-bordered w-full max-w-xs" />
+            </div>
+            
+            <div class="form-control mt-12 w-full max-w-xs"></div>
+            <span class="text-error pt-8" v-show="badInputPass">Please follow password guidlines</span>
+            <label class="label">
+                
+                <span class="label-text text-primary">*password?</span>
+            </label>
+            <input v-model="password" type="password" placeholder="pass" class="input input-bordered w-full max-w-xs" />
+            <span class="text-neutral pt-8" >Passwords need to be:</span>
+            <ul>
+              <li><span class="text-neutral" >- 8+ characters</span></li>
+              <li><span class="text-neutral" >- Has upper and lower case letters</span></li>
+              <li><span class="text-neutral" >- Has a number</span></li>
+              <li><span class="text-neutral" >- Has a special character</span></li>
+            </ul>
+
+            <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+                <span class="label-text text-primary">*repeat password</span>
+            </label>
+            <input v-model="password2" type="password" placeholder="pass" class="input input-bordered w-full max-w-xs" />
+            </div>
+
+            <div class="dropdown form-control mt-4 mb-12 w-full max-w-xs">
+              <span class="text-error pt-8" v-show="badInputCountry">Please fill out an option</span>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text text-primary">*Country (Shipping only avaliable in the USA temporarily)</span>
+                </label>
+                <label class="cursor-pointer label">
+                  <span class="label-text text-neutral">United States of America</span>
+                  <div>
+                    <input v-model="countryIsUSA" type="checkbox" checked="checked" class="checkbox checkbox-error" />
+                  </div>
+                </label>
               </div>
-            </NuxtLink>
-          </div>
+            </div>
+            <div class="form-control mt-6">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </form>
         </section>
       </main>
     <client-only>
@@ -106,7 +129,7 @@
   </body>
 </template>
 
-<script setup lang="ts">
+<script setup>
 useHead({
   title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
   meta: [
@@ -121,6 +144,166 @@ useHead({
     { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
   ],
 })
+
+import { ref } from 'vue'
+import { useAuthStore } from '~/store/LoginStore'
+const store = useAuthStore()
+
+if(process.client){
+  store.refreshAccessToken();
+    if (store.accessToken != null){
+      window.location.replace('http://localhost:3001/Homepage')
+    }
+}
+
+const password = ref('');
+const password2 = ref('');
+const phoneNumber = ref('');
+const firstName = ref('');
+const lastName = ref('');
+const email = ref('');
+const street = ref('');
+const state = ref('');
+const city = ref('');
+const countryIsUSA = ref('');
+const badInputPass = ref(false);
+const badInputEmail = ref(false);
+const badInputEmailWrong = ref(false);
+const badInputPhone = ref(false);
+const badInputCountry = ref(false);
+
+function handleSubmit() {
+  if(!validateEmail(email.value)) {
+    badInputEmailWrong.value = true;
+  } else {
+    badInputEmailWrong.value = false;
+  }
+  if(!countryIsUSA.value){
+    badInputCountry.value = true;
+  } else {
+    badInputCountry.value = false;
+  }
+  if (validatePassword(password.value, password2.value)){
+    if (validateEmail(email.value) && validatePhoneNumber(phoneNumber.value) && validatePassword(password.value, password2.value) && countryIsUSA.value === true) {
+      handleSend()
+    } 
+  }
+  
+}
+
+async function handleSend() {
+  
+
+  const data = { email: email.value, password: password.value, password2: password2.value, phone_number: phoneNumber.value, first_name: firstName.value, last_name: lastName.value, address: (street.value + ", " + city.value + ", " + state.value), country: "United States of America"};
+
+  try {
+    // Change the URL to your production server
+    await fetch('http://127.0.0.1:8000/api/auth/register/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    console.log("account created");
+    logIn();
+  } catch (error) {
+    badInputEmail.value = false;
+    console.error(error);
+  }
+}
+
+async function logIn(){
+  console.log(email.value);
+
+  const data = { 
+    email: email.value, 
+    password: password.value
+  };
+
+  try {
+    // Change the URL to your production server
+    const response = await fetch('http://127.0.0.1:8000/api/auth/login/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    
+    if (response.ok) {
+      const responseData = await response.json();
+      const tokens = { accessToken: responseData.access, refreshToken: responseData.refresh };
+      store.setTokens(tokens);
+      console.log('Login successful:', store.accessToken);
+      // Do something with the responseData, such as updating the component state
+      window.location.replace('http://localhost:3001/Homepage');
+      return responseData;
+    } else {
+      // Handle errors for non-2xx status codes
+      console.error('Login failed:', response.statusText);
+      badInput.value = true
+    }
+  } catch (error) {
+    badInput.value = true
+    console.error(error);
+  }
+
+
+}
+
+function validatePassword(password, password2) {
+  console.log("pass")
+  // Define validation criteria
+  const minLength = 8;
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasLowercase = /[a-z]/.test(password);
+  const hasNumber = /\d/.test(password);
+  const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password);
+
+  // Check if all criteria are met
+  const isValid =
+    password.length >= minLength &&
+    hasUppercase &&
+    hasLowercase &&
+    hasNumber &&
+    hasSpecialChar &&
+    password === password2;
+
+
+  if (!isValid) {
+    badInputPass.value = true;
+  } else {
+    badInputPass.value = false;
+  }
+  return isValid;
+}
+
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )
+}
+
+function validatePhoneNumber(phoneNumber) {
+    // Remove any non-digit characters
+    const cleanedNumber = phoneNumber.replace(/\D/g, '');
+
+    // Check if the cleaned number is 10 digits long
+    if (cleanedNumber.length === 10) {
+        // It's a valid 10-digit phone number
+        badInputPhone.value = false;
+        return true;
+    } else {
+        // It's not a valid phone number
+        badInputPhone.value = true;
+        return false;
+    }
+}
+
+
 </script>
 
 <style scoped lang="scss">
