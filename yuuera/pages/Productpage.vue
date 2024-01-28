@@ -82,7 +82,7 @@
             <p
               class="w-full text-neutral text-left leading-loose text-l md:text-2xl"
             >
-            More info about this product: 
+            More info about this product: XZ CBcaxsv bxacsxzdv frbhcxzasvd fbxcsdzEFWVR
             </p>
           </div>
         </div>
