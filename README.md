@@ -12,8 +12,8 @@ copy the group git hub repository
 
 open up the github folder "Project-Y/project-y" and run in the terminal
 ```
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 This will create a development enviornment for you to start working 

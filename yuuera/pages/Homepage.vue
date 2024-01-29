@@ -425,3 +425,8 @@ async function getItems() {
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';
 </style>
+
+
+<style scoped lang="scss">
+@import 'assets/scss/appStyles.scss';
+</style>
