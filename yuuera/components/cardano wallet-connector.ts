@@ -1274,7 +1274,7 @@ async function getWalletBalance() {
 
 
 
-
+    
     async function getWalletBalance() {
         try {
           // Try to get the wallet object that the user is selecting
@@ -1339,3 +1339,54 @@ async function getWalletBalance() {
           sendPayment("addr1qyppldq2cdfr79sv9tckfjvzye0h8f8rrxyhcm3lpfksy36w8w53yhygk2r4jtyakzmh3u47tsev6y9sv2nr9k3rlvxs4dtrw5",10000, {})
         
         };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // get address from which we will sign message
+            const address = await enabledWallet.getChangeAddress()
+            
+            const inputs = [
+              enabledWallet.getUtxos
+            ];
+            const outputs = [
+              { address: 'addr1qyppldq2cdfr79sv9tckfjvzye0h8f8rrxyhcm3lpfksy36w8w53yhygk2r4jtyakzmh3u47tsev6y9sv2nr9k3rlvxs4dtrw5', amount: utils.adaToLovelace(1000) },
+            ];
+            
+            const fee = utils.adaToLovelace(0.15);
+
+            const txBody = TransactionBody.new(inputs, outputs, fee);
+
+            const transaction = Transaction.new(txBody, witnesses);
+
+            const cborHex = transaction.to_hex();
+
+            enabledWallet.signTx(cborHex);
+            enabledWallet.submitTx(cborHex);
+
+            const result = await response.json()
+            if (response.status !== 200) throw { info: result.message }
+
+
+            console.log('Successfully authenticated wallet.')

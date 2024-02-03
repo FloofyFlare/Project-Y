@@ -1,19 +1,288 @@
 <template>
-  <button  class="m-4 mt-4 btn bg-primary" @click="getBalance">
+  <button  class="m-4 mt-4 btn bg-primary" @click="buyItem">
     <span class=" text-info text-xl font-semibold">Buy Now</span>
-    <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">Failed Try Again</span>
+    <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">failed, Try Again</span>
   </button>
 </template>
 
 
 <script setup>
-  var API = undefined;
   const txSuccuess = ref(true)
   const balance = ref('')
   import { stringToHex } from '../helpers/streingToHex'
   import { convertBalanceToAda } from '../helpers/convertBalanceToAda'
-  import Web3Token from 'web3-token-cardano/dist/browser'
-  async function getBalance() {
+  import { useAuthStore } from '~/store/LoginStore'
+  import {
+    Address,
+    BaseAddress,
+    MultiAsset,
+    Assets,
+    ScriptHash,
+    Costmdls,
+    Language,
+    CostModel,
+    AssetName,
+    TransactionUnspentOutput,
+    TransactionUnspentOutputs,
+    TransactionOutput,
+    Value,
+    TransactionBuilder,
+    TransactionBuilderConfigBuilder,
+    TransactionOutputBuilder,
+    LinearFee,
+    BigNum,
+    BigInt,
+    TransactionHash,
+    TransactionInputs,
+    TransactionInput,
+    TransactionWitnessSet,
+    Transaction,
+    PlutusData,
+    PlutusScripts,
+    PlutusScript,
+    PlutusList,
+    Redeemers,
+    Redeemer,
+    RedeemerTag,
+    Ed25519KeyHashes,
+    ConstrPlutusData,
+    ExUnits,
+    Int,
+    NetworkInfo,
+    EnterpriseAddress,
+    TransactionOutputs,
+    hash_transaction,
+    hash_script_data,
+    hash_plutus_data,
+    ScriptDataHash, Ed25519KeyHash, NativeScript, StakeCredential
+  } from '@emurgo/cardano-serialization-lib-browser';
+
+  const walletTransaction = {
+      selectedTabId: "1",
+      whichWalletSelected: undefined,
+      walletFound: false,
+      walletIsEnabled: false,
+      walletName: undefined,
+      walletIcon: undefined,
+      walletAPIVersion: undefined,
+      wallets: [],
+
+      networkId: undefined,
+      Utxos: undefined,
+      CollatUtxos: undefined,
+      balance: undefined,
+      changeAddress: undefined,
+      rewardAddress: undefined,
+      usedAddress: undefined,
+
+      txBody: undefined,
+      txBodyCborHex_unsigned: "",
+      txBodyCborHex_signed: "",
+      submittedTxHash: "",
+
+      addressBech32SendADA: "addr1qyppldq2cdfr79sv9tckfjvzye0h8f8rrxyhcm3lpfksy36w8w53yhygk2r4jtyakzmh3u47tsev6y9sv2nr9k3rlvxs4dtrw5",
+      lovelaceToSend: 3000000,
+      assetNameHex: "446a65644d6963726f555344",
+      assetPolicyIdHex: "8db269c3ec630e06ae29f74bc39edd1f87c819f1056206e879a1cd61",
+      assetAmountToSend: 2,
+      addressScriptBech32: "addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8",
+      datumStr: "12345678",
+      plutusScriptCborHex: "4e4d01000033222220051200120011",
+      transactionIdLocked: "",
+      transactionIndxLocked: 0,
+      lovelaceLocked: 3000000,
+      manualFee: 900000,
+
+  }
+
+  import { Buffer } from 'buffer';
+  const protocolParams = {
+    linearFee: {
+        minFeeA: "44",
+        minFeeB: "155381",
+    },
+    minUtxo: "34482",
+    poolDeposit: "500000000",
+    keyDeposit: "2000000",
+    maxValSize: 5000,
+    maxTxSize: 16384,
+    priceMem: 0.0577,
+    priceStep: 0.0000721,
+    coinsPerUtxoWord: "34482",
+  }
+  
+  var enabledWallet = undefined;
+  const loggedIn = ref(false);
+  const store = useAuthStore()
+  store.refreshAccessToken();
+
+  if (store.accessToken != null){
+      loggedIn.value = true
+  }
+  
+  async function getChangeAddress() {
+    try {
+        const raw = await enabledWallet.getChangeAddress();
+        const changeAddress = Address.from_bytes(Buffer.from(raw, "hex")).to_bech32()
+        walletTransaction.changeAddress = changeAddress;
+        console.log("finished");
+    } catch (err) {
+        console.log(err)
+    }
+  }
+  async function initTransactionBuilder() {
+    const txBuilder = TransactionBuilder.new(
+        TransactionBuilderConfigBuilder.new()
+            .fee_algo(LinearFee.new(BigNum.from_str(protocolParams.linearFee.minFeeA), BigNum.from_str(protocolParams.linearFee.minFeeB)))
+            .pool_deposit(BigNum.from_str(protocolParams.poolDeposit))
+            .key_deposit(BigNum.from_str(protocolParams.keyDeposit))
+            .coins_per_utxo_word(BigNum.from_str(protocolParams.coinsPerUtxoWord))
+            .max_value_size(protocolParams.maxValSize)
+            .max_tx_size(protocolParams.maxTxSize)
+            .prefer_pure_change(true)
+            .build()
+    );
+
+    return txBuilder
+  }
+  
+  async function getTxUnspentOutputs() {
+        let txOutputs = TransactionUnspentOutputs.new()
+        for (const utxo of walletTransaction.Utxos) {
+            txOutputs.add(utxo.TransactionUnspentOutput)
+        }
+        return txOutputs
+  }
+
+  async function getUtxos() {
+
+    let Utxos = [];
+
+    try {
+      const rawUtxos = await enabledWallet.getUtxos();
+
+      for (const rawUtxo of rawUtxos) {
+          const utxo = TransactionUnspentOutput.from_bytes(Buffer.from(rawUtxo, "hex"));
+          const input = utxo.input();
+          const txid = Buffer.from(input.transaction_id().to_bytes(), "utf8").toString("hex");
+          const txindx = input.index();
+          const output = utxo.output();
+          const amount = output.amount().coin().to_str(); // ADA amount in lovelace
+          const multiasset = output.amount().multiasset();
+          let multiAssetStr = "";
+
+          if (multiasset) {
+              const keys = multiasset.keys() // policy Ids of thee multiasset
+              const N = keys.len();
+              // console.log(`${N} Multiassets in the UTXO`)
+
+
+              for (let i = 0; i < N; i++){
+                  const policyId = keys.get(i);
+                  const policyIdHex = Buffer.from(policyId.to_bytes(), "utf8").toString("hex");
+                  // console.log(`policyId: ${policyIdHex}`)
+                  const assets = multiasset.get(policyId)
+                  const assetNames = assets.keys();
+                  const K = assetNames.len()
+                  // console.log(`${K} Assets in the Multiasset`)
+
+                  for (let j = 0; j < K; j++) {
+                      const assetName = assetNames.get(j);
+                      const assetNameString = Buffer.from(assetName.name(),"utf8").toString();
+                      const assetNameHex = Buffer.from(assetName.name(),"utf8").toString("hex")
+                      const multiassetAmt = multiasset.get_asset(policyId, assetName)
+                      multiAssetStr += `+ ${multiassetAmt.to_str()} + ${policyIdHex}.${assetNameHex} (${assetNameString})`
+                      // console.log(assetNameString)
+                      // console.log(`Asset Name: ${assetNameHex}`)
+                  }
+              }
+          }
+
+
+          const obj = {
+              txid: txid,
+              txindx: txindx,
+              amount: amount,
+              str: `${txid} #${txindx} = ${amount}`,
+              multiAssetStr: multiAssetStr,
+              TransactionUnspentOutput: utxo
+          }
+          Utxos.push(obj);
+          // console.log(`utxo: ${str}`)
+      }
+      walletTransaction.Utxos = Utxos;
+    } catch (err) {
+        console.log(err)
+    }
+  }
+
+  async function buildSendTokenTransaction(){
+    
+    const txBuilder = await initTransactionBuilder();
+    const shelleyOutputAddress = Address.from_bech32(walletTransaction.addressBech32SendADA);
+    const shelleyChangeAddress = Address.from_bech32(walletTransaction.changeAddress);
+    
+    let txOutputBuilder = TransactionOutputBuilder.new();
+    txOutputBuilder = txOutputBuilder.with_address(shelleyOutputAddress);
+    txOutputBuilder = txOutputBuilder.next();
+
+    let multiAsset = MultiAsset.new();
+    let assets = Assets.new()
+    assets.insert(
+        AssetName.new(Buffer.from(walletTransaction.assetNameHex, "hex")), // Asset Name
+        BigNum.from_str(walletTransaction.assetAmountToSend.toString()) // How much to send
+    );
+    multiAsset.insert(
+        ScriptHash.from_bytes(Buffer.from(walletTransaction.assetPolicyIdHex, "hex")), // PolicyID
+        assets
+    );
+    txOutputBuilder = txOutputBuilder.with_asset_and_min_required_coin(multiAsset, BigNum.from_str(protocolParams.coinsPerUtxoWord))
+    const txOutput = txOutputBuilder.build();
+    txBuilder.add_output(txOutput)
+    await getUtxos();
+    // Find the available UTXOs in the wallet and
+    // us them as Inputs
+    const txUnspentOutputs = await getTxUnspentOutputs();
+    console.log(walletTransaction)
+    txBuilder.add_inputs_from(txUnspentOutputs, 3)
+    console.log(walletTransaction)
+
+    // set the time to live - the absolute slot value before the tx becomes invalid
+    // txBuilder.set_ttl(51821456);
+
+    // calculate the min fee required and send any change to an address
+    console.log(txBuilder.add_change_if_needed(shelleyChangeAddress))
+    console.log(walletTransaction)
+    // once the transaction is ready, we build it to get the tx body without witnesses
+    const txBody = txBuilder.build();
+
+    // Tx witness
+    const transactionWitnessSet = TransactionWitnessSet.new();
+
+    const tx = Transaction.new(
+        txBody,
+        TransactionWitnessSet.from_bytes(transactionWitnessSet.to_bytes())
+    )
+
+    let txVkeyWitnesses = await enabledWallet.signTx(Buffer.from(tx.to_bytes(), "utf8").toString("hex"), true);
+    txVkeyWitnesses = TransactionWitnessSet.from_bytes(Buffer.from(txVkeyWitnesses, "hex"));
+
+    transactionWitnessSet.set_vkeys(txVkeyWitnesses.vkeys());
+    
+    const signedTx = Transaction.new(
+        tx.body(),
+        transactionWitnessSet
+    );
+    
+    const submittedTxHash = await enabledWallet.submitTx(Buffer.from(signedTx.to_bytes(), "utf8").toString("hex"));
+    console.log(submittedTxHash)
+    walletTransaction.submittedTxHash = submittedTxHash;
+
+    // const txBodyCborHex_unsigned = Buffer.from(txBody.to_bytes(), "utf8").toString("hex");
+    // this.setState({txBodyCborHex_unsigned, txBody})
+
+  }
+  async function buyItem() {
     try {
             // Try to get the wallet object that the user is selecting
             //const walletObject = await (window.cardano && window.cardano.lace)
@@ -25,91 +294,18 @@
               //  }
 
             // Ask user to enable wallet
-            const enabledWallet = await window.cardano.eternl.enable();
-
-            // get address from which we will sign message
-            const address = await enabledWallet.getChangeAddress()
-
-/*            const token = await Web3Token.sign(() => {
-                return enabledWallet.signData(
-                    address,
-                    stringToHex(
-                        'Please sign this message to verify your identity.'
-                    )
-                )
-            }, '7d')
-
-            const response = await fetch(`api/authenticate`, {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ token }),
-            })
-
-            const result = await response.json()
-            if (response.status !== 200) throw { info: result.message }
-*/
-            const balance = await enabledWallet
-                .getBalance()
-                .then(convertBalanceToAda)
-
-            console.log(balance)
-
-
-            console.log('Successfully authenticated wallet.')
+            enabledWallet = await window.cardano.eternl.enable();
+            await getChangeAddress();
+            
+            buildSendTokenTransaction();
         } catch (err) {
+            txSuccuess.value = false
             console.log(err);
         }
   }
+
+
+
   
 
-  async function sendPayment(recipientAddress, amount, metadata = {}) {
-    console.log(recipientAddress)
-    // Check Lace API availability
-    if (!window.cardano || !window.cardano.lace) {
-      console.error("Cardano wallet extension not available.");
-      return;
-    }
-
-    try {
-      // Connect to the wallet and get API object
-      const api = await window.cardano.lace.enable();
-      console.log(api)
-      // Prepare transaction data
-      const transaction = {
-        recipient: recipientAddress,
-        amount: amount, // In Lovelace (units of ADA)
-        metaData: metadata, // Optional transaction metadata
-      };
-
-      // Get a change address for the transaction
-      const changeAddress = await api.getChangeAddress();
-      transaction.changeAddress = changeAddress;
-
-      // Get UTXOs (unspent transaction outputs) for funding the transaction
-      const utxos = await api.getUtxos(transaction);
-
-      // Sign the transaction using the wallet
-      const signedTx = await api.signTx(transaction, utxos);
-
-      // Submit the signed transaction to the blockchain
-      await api.submitTx(signedTx);
-
-      console.log(`Transaction submitted successfully! ID: ${signedTx.id}`);
-    } catch (err) {
-      console.error(`Error sending payment: ${err}`);
-    }
-  }
-  const loggedIn = ref(false);
-
-  import { useAuthStore } from '~/store/LoginStore'
-  const store = useAuthStore()
-  store.refreshAccessToken();
-
-  if (store.accessToken != null){
-      loggedIn.value = true
-  }
-  
 </script>

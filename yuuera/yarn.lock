@@ -347,20 +347,20 @@
   resolved "https://registry.npmjs.org/@csstools/selector-specificity/-/selector-specificity-3.0.1.tgz"
   integrity sha512-NPljRHkq4a14YzZ3YD406uaxh7s0g6eAq3L9aLOWywoqe8PkYamAvtsh7KNX6c++ihDrJ0RiU+/z7rGnhlZ5ww==
 
-"@emurgo/cardano-serialization-lib-asmjs@11.5.0":
+"@emurgo/cardano-serialization-lib-asmjs@^11.5.0":
   version "11.5.0"
   resolved "https://registry.yarnpkg.com/@emurgo/cardano-serialization-lib-asmjs/-/cardano-serialization-lib-asmjs-11.5.0.tgz#0c71fc8fedce8ae8304180d40dfb5ca76f76e8f0"
   integrity sha512-QQkavjEug/EmBFg02bmSg0eLYiOaRa1lmRG8q6fGRkx3O9BX1iZQDZJmirPDBTkTO3CpNB0q9se8DQFFcjREIw==
 
-"@emurgo/cardano-serialization-lib-browser@^9.1.2":
-  version "9.1.4"
-  resolved "https://registry.yarnpkg.com/@emurgo/cardano-serialization-lib-browser/-/cardano-serialization-lib-browser-9.1.4.tgz#00aeeaac17de1a5b9b44d24794edc7a547883c6b"
-  integrity sha512-W+bdbPx2RTZilMYGi5Bo8LmMBgWlGfNggRqdVlMRgk7jQbMa61P88f4C0CO3GMdzOOTKH2K0yXg0hr/9cuh7tA==
+"@emurgo/cardano-serialization-lib-browser@^11.5.0":
+  version "11.5.0"
+  resolved "https://registry.yarnpkg.com/@emurgo/cardano-serialization-lib-browser/-/cardano-serialization-lib-browser-11.5.0.tgz#f2d15b538add436e0aa8b67a1d00ca654a680006"
+  integrity sha512-qchOJ9NYDUz10tzs5r5QhP9hK0p+ZOlRiBwPdTAxqAYLw/8emYBkQQLaS8T1DF6EkeudyrgS00ym5Trw1fo4iA==
 
-"@emurgo/cardano-serialization-lib-nodejs@^9.1.2":
-  version "9.1.4"
-  resolved "https://registry.yarnpkg.com/@emurgo/cardano-serialization-lib-nodejs/-/cardano-serialization-lib-nodejs-9.1.4.tgz#802396562ee35312003713e3a48f0dfef7ee1bd6"
-  integrity sha512-zDYQ4E5CAz89OuXCPV7k3v5kLWkwUS5Jg7QZ5m/4vPkeuZolOXyqo84p6AYf0qZ14xkgxnvHIRY+heJKNs7Ddw==
+"@emurgo/cardano-serialization-lib-nodejs@^11.5.0":
+  version "11.5.0"
+  resolved "https://registry.yarnpkg.com/@emurgo/cardano-serialization-lib-nodejs/-/cardano-serialization-lib-nodejs-11.5.0.tgz#0662e2a17d7d1e944f8cdb86396133c8edaec059"
+  integrity sha512-IlVABlRgo9XaTR1NunwZpWcxnfEv04ba2l1vkUz4S1W7Jt36F4CtffP+jPeqBZGnAe+fnUwo0XjIJC3ZTNToNQ==
 
 "@esbuild/aix-ppc64@0.19.11":
   version "0.19.11"
@@ -2054,11 +2054,6 @@ big.js@^5.2.2:
   resolved "https://registry.npmjs.org/big.js/-/big.js-5.2.2.tgz"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
-bignumber.js@^9.0.1:
-  version "9.1.2"
-  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.1.2.tgz#b7c4242259c008903b13707983b5f4bbd31eda0c"
-  integrity sha512-2/mKyZH9K85bzOEfhXDBFZTGd1CTs+5IHpeFQo9luiBG7hghdC851Pj2WAhb6E3R6b9tZj/XKhbg4fum+Kepug==
-
 binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
@@ -2146,14 +2141,6 @@ buffer@^5.5.0:
   dependencies:
     base64-js "^1.3.1"
     ieee754 "^1.1.13"
-
-buffer@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/buffer/-/buffer-6.0.3.tgz#2ace578459cc8fbe2a70aaa8f52ee63b6a74c6c6"
-  integrity sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==
-  dependencies:
-    base64-js "^1.3.1"
-    ieee754 "^1.2.1"
 
 builtin-modules@^3.3.0:
   version "3.3.0"
@@ -2929,16 +2916,6 @@ emojis-list@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/emojis-list/-/emojis-list-3.0.0.tgz"
   integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
-
-emurgo-message-signing-nodejs@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/emurgo-message-signing-nodejs/-/emurgo-message-signing-nodejs-0.1.0.tgz#8cf8f1f25d1a38ba0a22f376d8d8ffc25eacafca"
-  integrity sha512-A3FRwOHkLh3UAUR75XpzyEw6oJIxJxq5jpkuLUlzLExmv9IUZFTWsgyxER8suknxWERnOGWw5ghmxQZVCr8/hg==
-
-emurgo-message-signing@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/emurgo-message-signing/-/emurgo-message-signing-0.1.0.tgz#eea623aed17a6f9b1451e7c68ce1230935f0ead1"
-  integrity sha512-07n/mGCajMBx068K5XjWCChuJ3vL2aqB8qulGzPMcnXbJ8QzCBxGWcvrsTnNmD2iTQGeOU3oJHZusukdC8n71g==
 
 encodeurl@^1.0.2, encodeurl@~1.0.2:
   version "1.0.2"
@@ -4038,7 +4015,7 @@ iconv-lite@^0.6.2:
   dependencies:
     safer-buffer ">= 2.1.2 < 3.0.0"
 
-ieee754@^1.1.13, ieee754@^1.2.1:
+ieee754@^1.1.13:
   version "1.2.1"
   resolved "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz"
   integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
@@ -4468,11 +4445,6 @@ jiti@^1.19.1, jiti@^1.21.0:
   version "1.21.0"
   resolved "https://registry.npmjs.org/jiti/-/jiti-1.21.0.tgz"
   integrity sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==
-
-js-base64@^3.7.2:
-  version "3.7.6"
-  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-3.7.6.tgz#6ccb5d761b48381fd819f9ce04998866dbcbbc99"
-  integrity sha512-NPrWuHFxFUknr1KqJRDgUQPexQF0uIJWjeT+2KjEePhitQxQEx5EJBG1lVn5/hc8aLycTpXrDOgPQ6Zq+EDiTA==
 
 js-tokens@^4.0.0:
   version "4.0.0"
@@ -5061,7 +5033,7 @@ ms@2.1.2:
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-ms@2.1.3, ms@^2.1.1, ms@^2.1.3:
+ms@2.1.3, ms@^2.1.1:
   version "2.1.3"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
@@ -5669,11 +5641,6 @@ parse-git-config@^3.0.0:
   dependencies:
     git-config-path "^2.0.0"
     ini "^1.3.5"
-
-parse-headers@^2.0.4:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/parse-headers/-/parse-headers-2.0.5.tgz#069793f9356a54008571eb7f9761153e6c770da9"
-  integrity sha512-ft3iAoLOB/MlwbNXgzy43SWGP6sQki2jQvAyBg/zDFAgr9bfNWZIUj42Kw2eJIl8kEi4PbgE6U1Zau/HwI75HA==
 
 parse-path@^7.0.0:
   version "7.0.0"
@@ -7587,6 +7554,11 @@ vite-plugin-vue-inspector@^4.0.2:
     kolorist "^1.8.0"
     magic-string "^0.30.4"
 
+vite-plugin-wasm@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-wasm/-/vite-plugin-wasm-3.3.0.tgz#2908ef2529bf8f33f4e549c8c6fda26ad273ca15"
+  integrity sha512-tVhz6w+W9MVsOCHzxo6SSMSswCeIw4HTrXEi6qL3IRzATl83jl09JVO1djBqPSwfjgnpVHNLYcaMbaDX5WB/pg==
+
 vite@5.0.11, vite@^5.0.0:
   version "5.0.11"
   resolved "https://registry.npmjs.org/vite/-/vite-5.0.11.tgz"
@@ -7689,21 +7661,6 @@ vue@^3.4.14:
     "@vue/runtime-dom" "3.4.14"
     "@vue/server-renderer" "3.4.14"
     "@vue/shared" "3.4.14"
-
-web3-token-cardano@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/web3-token-cardano/-/web3-token-cardano-0.2.1.tgz#9d4a2021684b5630ec4d742c233499a5bc342577"
-  integrity sha512-ATX1dZOxyXEXkYowv8SvH35lzaJ7c4M+KSOHrLu6yeyxelBHYwQTJ00VhnVzl8rF5QrAxUY9W50vM1B0nFYYNw==
-  dependencies:
-    "@emurgo/cardano-serialization-lib-browser" "^9.1.2"
-    "@emurgo/cardano-serialization-lib-nodejs" "^9.1.2"
-    bignumber.js "^9.0.1"
-    buffer "^6.0.3"
-    emurgo-message-signing "^0.1.0"
-    emurgo-message-signing-nodejs "^0.1.0"
-    js-base64 "^3.7.2"
-    ms "^2.1.3"
-    parse-headers "^2.0.4"
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
