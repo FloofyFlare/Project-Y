@@ -1,8 +1,22 @@
 <template>
-  <button  class="m-4 mt-4 btn bg-primary" @click="buyItem">
-    <span class=" text-info text-xl font-semibold">Buy Now</span>
-    <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">failed, Try Again</span>
-  </button>
+  <div class="dropdown justify-left mt-6">
+    <div tabindex="0" role="button" class="btn m-1 bg-primary text-info justify-left">
+      <span class=" text-info text-xl font-semibold">Buy Now</span>
+      <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">failed, Try Again</span>
+    </div>
+    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow text-base-100 bg-info rounded-box w-52">
+      <li><button  class="m-4 mt-4 btn bg-primary" @click="buyItemNami">
+        <span class=" text-info text-xl font-semibold">Nami</span>
+      </button></li>
+      <li><button  class="m-4 mt-4 btn bg-primary" @click="buyItemEternl">
+        <span class=" text-info text-xl font-semibold">Eternl</span>
+      </button></li>
+      <li><button  class="m-4 mt-4 btn bg-primary" @click="buyItemLace">
+        <span class=" text-info text-xl font-semibold">Lace</span>
+      </button></li>
+    </ul>
+  </div>
+  
 </template>
 
 
@@ -84,7 +98,7 @@
       lovelaceToSend: 3000000,
       assetNameHex: "446a65644d6963726f555344",
       assetPolicyIdHex: "8db269c3ec630e06ae29f74bc39edd1f87c819f1056206e879a1cd61",
-      assetAmountToSend: 2,
+      assetAmountToSend: 2000000,
       addressScriptBech32: "addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8",
       datumStr: "12345678",
       plutusScriptCborHex: "4e4d01000033222220051200120011",
@@ -108,7 +122,7 @@
     maxTxSize: 16384,
     priceMem: 0.0577,
     priceStep: 0.0000721,
-    coinsPerUtxoWord: "34482",
+    coinsPerUtxoWord: "24050",
   }
   
   var enabledWallet = undefined;
@@ -217,7 +231,6 @@
   }
 
   async function buildSendTokenTransaction(){
-    
     const txBuilder = await initTransactionBuilder();
     const shelleyOutputAddress = Address.from_bech32(walletTransaction.addressBech32SendADA);
     const shelleyChangeAddress = Address.from_bech32(walletTransaction.changeAddress);
@@ -236,23 +249,25 @@
         ScriptHash.from_bytes(Buffer.from(walletTransaction.assetPolicyIdHex, "hex")), // PolicyID
         assets
     );
+
     txOutputBuilder = txOutputBuilder.with_asset_and_min_required_coin(multiAsset, BigNum.from_str(protocolParams.coinsPerUtxoWord))
     const txOutput = txOutputBuilder.build();
+
     txBuilder.add_output(txOutput)
-    await getUtxos();
+    
     // Find the available UTXOs in the wallet and
     // us them as Inputs
     const txUnspentOutputs = await getTxUnspentOutputs();
-    console.log(walletTransaction)
     txBuilder.add_inputs_from(txUnspentOutputs, 3)
-    console.log(walletTransaction)
+
+    
 
     // set the time to live - the absolute slot value before the tx becomes invalid
     // txBuilder.set_ttl(51821456);
 
     // calculate the min fee required and send any change to an address
-    console.log(txBuilder.add_change_if_needed(shelleyChangeAddress))
-    console.log(walletTransaction)
+    txBuilder.add_change_if_needed(shelleyChangeAddress)
+
     // once the transaction is ready, we build it to get the tx body without witnesses
     const txBody = txBuilder.build();
 
@@ -280,9 +295,30 @@
 
     // const txBodyCborHex_unsigned = Buffer.from(txBody.to_bytes(), "utf8").toString("hex");
     // this.setState({txBodyCborHex_unsigned, txBody})
-
   }
-  async function buyItem() {
+
+  async function buyItemNami() {
+    try {
+            // Try to get the wallet object that the user is selecting
+            //const walletObject = await (window.cardano && window.cardano.lace)
+
+            // If it doesn't exist, we need to throw as error
+            //if (!walletObject)
+             //   throw {
+             //       info: 'You do not have this wallet installed as an extension.',
+              //  }
+
+            // Ask user to enable wallet
+            enabledWallet = await window.cardano.nami.enable();
+            await getChangeAddress();
+            await getUtxos();
+            buildSendTokenTransaction();
+        } catch (err) {
+            txSuccuess.value = false
+            console.log(err);
+        }
+  }
+  async function buyItemEternl() {
     try {
             // Try to get the wallet object that the user is selecting
             //const walletObject = await (window.cardano && window.cardano.lace)
@@ -296,15 +332,34 @@
             // Ask user to enable wallet
             enabledWallet = await window.cardano.eternl.enable();
             await getChangeAddress();
-            
+            await getUtxos();
             buildSendTokenTransaction();
         } catch (err) {
             txSuccuess.value = false
             console.log(err);
         }
   }
+  async function buyItemLace() {
+    try {
+            // Try to get the wallet object that the user is selecting
+            //const walletObject = await (window.cardano && window.cardano.lace)
 
+            // If it doesn't exist, we need to throw as error
+            //if (!walletObject)
+             //   throw {
+             //       info: 'You do not have this wallet installed as an extension.',
+              //  }
 
+            // Ask user to enable wallet
+            enabledWallet = await window.cardano.lace.enable();
+            await getChangeAddress();
+            await getUtxos();
+            buildSendTokenTransaction();
+        } catch (err) {
+            txSuccuess.value = false
+            console.log(err);
+        }
+  }
 
   
 
