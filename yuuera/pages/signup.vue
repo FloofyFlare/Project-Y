@@ -244,6 +244,7 @@ async function logIn(){
       store.setTokens(tokens);
       console.log('Login successful:', store.accessToken);
       // Do something with the responseData, such as updating the component state
+      await store.getAccount();
       window.location.replace('http://localhost:3001/Homepage');
       return responseData;
     } else {

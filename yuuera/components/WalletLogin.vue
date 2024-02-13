@@ -23,9 +23,14 @@
 <script setup>
   const txSuccuess = ref(true)
   const balance = ref('')
+  const color = ref('black')
+  const size = ref('256')
+
   import { stringToHex } from '../helpers/streingToHex'
   import { convertBalanceToAda } from '../helpers/convertBalanceToAda'
   import { useAuthStore } from '~/store/LoginStore'
+  import { useProductStore } from '~/store/Product'
+  const productStore = useProductStore();
   import {
     Address,
     BaseAddress,
@@ -98,7 +103,7 @@
       lovelaceToSend: 3000000,
       assetNameHex: "446a65644d6963726f555344",
       assetPolicyIdHex: "8db269c3ec630e06ae29f74bc39edd1f87c819f1056206e879a1cd61",
-      assetAmountToSend: 2000000,
+      assetAmountToSend: 1000000,
       addressScriptBech32: "addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8",
       datumStr: "12345678",
       plutusScriptCborHex: "4e4d01000033222220051200120011",
@@ -110,6 +115,7 @@
   }
 
   import { Buffer } from 'buffer';
+import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asmjs';
   const protocolParams = {
     linearFee: {
         minFeeA: "44",
@@ -129,7 +135,7 @@
   const loggedIn = ref(false);
   const store = useAuthStore()
   store.refreshAccessToken();
-
+  console.log(store.account);
   if (store.accessToken != null){
       loggedIn.value = true
   }
@@ -229,8 +235,11 @@
         console.log(err)
     }
   }
-
+  makeOrder("hello");
   async function buildSendTokenTransaction(){
+    console.log(walletTransaction.assetAmountToSend)
+    const price = JSON.parse(productStore.product.price);
+    walletTransaction.assetAmountToSend = 1000000 * Number(price);
     const txBuilder = await initTransactionBuilder();
     const shelleyOutputAddress = Address.from_bech32(walletTransaction.addressBech32SendADA);
     const shelleyChangeAddress = Address.from_bech32(walletTransaction.changeAddress);
@@ -292,9 +301,37 @@
     const submittedTxHash = await enabledWallet.submitTx(Buffer.from(signedTx.to_bytes(), "utf8").toString("hex"));
     console.log(submittedTxHash)
     walletTransaction.submittedTxHash = submittedTxHash;
-
+    makeOrder(submittedTxHash);
+    
     // const txBodyCborHex_unsigned = Buffer.from(txBody.to_bytes(), "utf8").toString("hex");
     // this.setState({txBodyCborHex_unsigned, txBody})
+  }
+  async function makeOrder(txHash) {
+   console.log(store.account.user.address);
+    const data = { address: store.account.user.address, account: productStore.product.account, sale_price: productStore.product.price, transaction: txHash, color: color.value, name_of_item: (productStore.product.product_name + size.value), buyer: store.account.id, product: productStore.product.id };
+
+    try {
+      // Change the URL to your production server
+      await fetch('http://127.0.0.1:8000/api/auth/orders/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${store.accessToken}`,
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        console.log("Order placed");
+      })
+      .catch(error => {
+        console.error('Error during POST request:', error);
+      });
+      } catch (error) {
+        console.error('Error before POST request:', error);
+      }
   }
 
   async function buyItemNami() {
@@ -318,6 +355,7 @@
             console.log(err);
         }
   }
+
   async function buyItemEternl() {
     try {
             // Try to get the wallet object that the user is selecting
@@ -339,6 +377,7 @@
             console.log(err);
         }
   }
+
   async function buyItemLace() {
     try {
             // Try to get the wallet object that the user is selecting

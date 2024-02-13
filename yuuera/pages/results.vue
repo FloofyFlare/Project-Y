@@ -49,7 +49,7 @@
                 <div class="card-body">
                   <h2 class="card-title">{{ item.product_name }}</h2>
                   <div class="card-actions justify-end">
-                    <NuxtLink to="/product-page" class="btn btn-primary">{{ item.price }}</NuxtLink>
+                    <button @click="searchProduct(item)" class="btn btn-primary">{{ item.price }}</Button>
                   </div>
                 </div>
               </NuxtLink>
@@ -100,19 +100,24 @@ const items = ref([]);
 import { useFilterStore } from '~/store/Filters'
 const store = useFilterStore()
 
+import { useProductStore } from '~/store/Product'
+const storeProduct = useProductStore()
 
 handleSubmit();
 
 async function handleSubmit() {
 const data = await getItems();
-
-console.log('Items:', items.value);
 }
 
 function setBrand(brand){
 console.log(brand);
 store.setBrand(brand);
 getItems()
+}
+
+function searchProduct(object){
+  storeProduct.setProduct(object);
+  window.location.replace('http://localhost:3001/product-page')
 }
 
 function lowHigh(price) {

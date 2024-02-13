@@ -7,9 +7,9 @@
         <section class="rounded-xl">
         <span id="next"></span>
         <div class="mb-10 flex justify-end pl-4 pr-4 pt-24">
-            <nuxt-img
+            <img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                      src="/images/house.png"
+                      :src="product.product_image"
                       class="w-1/3 flex"
                       format="webp"
                 />
@@ -17,16 +17,44 @@
               class="h-1/6 w-2/3 h-60 mt-12 rounded-3xl ml-24"
             >
               <h1 class="text-primary text-left font-bold text-l md:text-5xl p-2">
-                Name of product:
+                {{ product.product_name }}
               </h1>
               <div>
                 <p class="w-full text-left pt-6 text-neutral leading-loose text-md md:text-2xl">
-                  Owned by: htershtre
+                  
                 </p>
               </div>
+            <div class="flex">
+              
+            <div
+                  class="flex bg-info  h-1/4 w-2/3 h-60 rounded-3xl"
+                >
+                  <h1 class="text-primary font-bold text-l md:text-5xl p-2 border-double">
+
+                  </h1>
+                  <div>
+                    <p class="w-full text-neutral text-left leading-loose text-3xl md:text-6xl">
+                    ${{ product.price }} DJED
+                    </p>
+                  </div>
+                  <div class="mt-12">
+                    
+                  </div>
+              </div>
+              <div class="flex justify-center rounded-2xl  h-24">
+              <div class="flex justify-center rounded-2xl w-full h-1/2">
+                <p
+                  class="w-2/3 text-neutral flex justify-start text-left leading-loose text-l md:text-2xl"
+                >
+                Description: {{ product.description }}
+                </p>
+              </div>
+            </div>
+            </div>
+            <div class="flex">
               <div class="justify-content-left">
-                <div class="dropdown justify-left mt-6">
-                    <div tabindex="0" role="button" class="btn m-1 bg-primary text-info left-0">Color for: fdsdsf</div>
+                <div class="dropdown justify-left mt-6 mr-4">
+                    <div tabindex="0" role="button" class="btn m- bg-primary text-info left-0 text-xl font-semibold">Colors</div>
                     <ul tabindex="0" class="dropdown-content z-[1] menu p-2 text-base-100 shadow bg-info rounded-box w-52">
                       <li><a>Red</a></li>
                       <li><a>White</a></li>
@@ -35,7 +63,7 @@
                     </ul>
                     </div>
                 <div class="dropdown justify-left mt-6">
-                <div tabindex="0" role="button" class="btn m-1 bg-primary text-info justify-left">Size for: fdsdsf</div>
+                <div tabindex="0" role="button" class="btn m-1 bg-primary text-info justify-left text-xl font-semibold">Storage</div>
                 <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow text-base-100 bg-info rounded-box w-52">
                   <li><a>Small</a></li>
                   <li><a>Medium</a></li>
@@ -44,33 +72,12 @@
                 </ul>
               </div>
             </div>
-            <div class="flex justify-center rounded-2xl  h-24">
-          <div class="flex justify-center rounded-2xl w-full h-1/2">
-            <p
-              class="w-full text-neutral text-left leading-loose text-l md:text-2xl"
-            >
-            More info about this product: XZ CBcaxsv bxacsxzdv frbhcxzasvd fbxcsdzEFWVR
-            </p>
-          </div>
-        </div>
-        <div
-              class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl"
-            >
-              <h1 class="text-primary font-bold text-l md:text-5xl p-2 border-double">
-
-              </h1>
-              <div>
-                <p class="w-full text-neutral text-left leading-loose text-3xl md:text-6xl">
-                 $120
-                </p>
-              </div>
-              <div class="mt-12">
-                <WalletLogin></WalletLogin>
-              </div>
+              <WalletLogin></WalletLogin>
             </div>
+            
            
             </div>
-            </div>
+      </div>
       </section>
         </main>
         <client-only>
@@ -111,53 +118,19 @@
 
 import { ref } from 'vue'
 
-const signUpEmail = ref('')
-const pass = ref('')
-function handleSubmit() {
-  if (validateEmail(signUpEmail.value)) {
-    handleSend()
+import { useProductStore } from '~/store/Product'
+const storeProduct = useProductStore()
+productCheck()
+async function productCheck() {
+  if (storeProduct.projectIsNULL()){
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    window.location.replace('http://localhost:3001/Homepage');
   }
 }
+console.log(storeProduct.product);
+const product = ref(storeProduct.product);
 
-async function handleSend() {
-  console.log(signUpEmail.value);
 
-  const data = { 
-    email: signUpEmail.value, 
-    password: pass.value
-  };
-
-  try {
-    // Change the URL to your production server
-    const response = await fetch('http://127.0.0.1:8000/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    if (response.ok) {
-      const responseData = await response.json();
-      console.log('Login successful:', responseData);
-      
-      // Do something with the responseData, such as updating the component state
-      return responseData;
-    } else {
-      // Handle errors for non-2xx status codes
-      console.error('Login failed:', response.statusText);
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-const validateEmail = (email : string) => {
-  return String(email)
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )
-}
 
 
 </script>
