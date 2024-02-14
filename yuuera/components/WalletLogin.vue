@@ -1,28 +1,29 @@
 <template>
-              <div class="justify-content-left bg-neutral rounded p-5 mr-5">
+              <div class="hidden justify-content-left bg-neutral rounded p-5 mr-5">
                 <h1>size</h1>
                 <div v-for="size in sizes" :key="size" class="form-control">
                 <label class="label cursor-pointer">
                   <span class="label-text text-info pr-3">{{size}}</span> 
-                  <input type="radio" name="radio-10" class="radio checked:bg-red-500"  />
+                  <input type="radio" v-model="finalSize" name="radio-10" class="radio checked:bg-red-500"  />
                 </label>
                 </div>
               </div>
 
 
-              <div class="justify-content-left bg-neutral rounded p-5">
+              <div class=" hidden justify-content-left bg-neutral rounded p-5 mr-5">
                 <h1>colors</h1>
                 <div v-for="color in colors" :key="color" class="form-control">
                 <label class="label cursor-pointer">
                   <span class="label-text text-info pr-3">{{color}}</span> 
-                  <input type="radio" name="radio-11" class="radio checked:bg-red-500"  />
+                  <input type="radio" v-model="finalColor" name="radio-11" class="radio checked:bg-red-500"  />
                 </label>
                 </div>
               </div>
   <div class="dropdown justify-left mt-6">
     <div tabindex="0" role="button" class="btn m-1 bg-primary text-info justify-left">
       <span class=" text-info text-xl font-semibold">Buy Now</span>
-      <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">failed, Try Again</span>
+      <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">failed, Is this wallet connected?</span>
+      <span v-if="!txFunds" class=" text-info text-xl font-semibold">failed, Not enough funds</span>
     </div>
     <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow text-base-100 bg-info rounded-box w-52">
       <li><button  class="m-4 mt-4 btn bg-primary" @click="buyItemNami">
@@ -42,6 +43,7 @@
 
 <script setup>
   const txSuccuess = ref(true)
+  const txFunds = ref(true)
   const balance = ref('')
   const colors = ref([])
   const sizes = ref([])
@@ -158,12 +160,14 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
   const loggedIn = ref(false);
   const store = useAuthStore()
   store.refreshAccessToken();
-  console.log(store.account);
+
   if (store.accessToken != null){
       loggedIn.value = true
   }
   
   async function getChangeAddress() {
+    //makes srue a transaction will be sent to server also
+    store.refreshAccessToken();
     try {
         const raw = await enabledWallet.getChangeAddress();
         const changeAddress = Address.from_bytes(Buffer.from(raw, "hex")).to_bech32()
@@ -258,9 +262,8 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
         console.log(err)
     }
   }
-  makeOrder("hello");
+  
   async function buildSendTokenTransaction(){
-    console.log(walletTransaction.assetAmountToSend)
     const price = JSON.parse(productStore.product.price);
     walletTransaction.assetAmountToSend = 1000000 * Number(price);
     const txBuilder = await initTransactionBuilder();
@@ -281,36 +284,48 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
         ScriptHash.from_bytes(Buffer.from(walletTransaction.assetPolicyIdHex, "hex")), // PolicyID
         assets
     );
+    try {
+      txOutputBuilder = txOutputBuilder.with_asset_and_min_required_coin(multiAsset, BigNum.from_str(protocolParams.coinsPerUtxoWord))
+      const txOutput = txOutputBuilder.build();
 
-    txOutputBuilder = txOutputBuilder.with_asset_and_min_required_coin(multiAsset, BigNum.from_str(protocolParams.coinsPerUtxoWord))
-    const txOutput = txOutputBuilder.build();
+      txBuilder.add_output(txOutput)
+      
+      // Find the available UTXOs in the wallet and
+      // us them as Inputs
+      const txUnspentOutputs = await getTxUnspentOutputs();
+      txBuilder.add_inputs_from(txUnspentOutputs, 3)
 
-    txBuilder.add_output(txOutput)
+      
+
+      // set the time to live - the absolute slot value before the tx becomes invalid
+      // txBuilder.set_ttl(51821456);
+
+      // calculate the min fee required and send any change to an address
+      txBuilder.add_change_if_needed(shelleyChangeAddress)
+    } catch (error){
+        if (error === 'UTxO Balance Insufficient') {
+        // Handle insufficient balance error gracefully
+        txFunds.value = false;
+        console.error("Error:", error);
+        // Show an error message to the user
+        // Redirect to a funding page
+      } else {
+        console.error("Unhandled error:", error);
+        // Handle other unforeseen errors
+      }
+    }
+      // once the transaction is ready, we build it to get the tx body without witnesses
+      const txBody = txBuilder.build();
+
+      // Tx witness
+      const transactionWitnessSet = TransactionWitnessSet.new();
     
-    // Find the available UTXOs in the wallet and
-    // us them as Inputs
-    const txUnspentOutputs = await getTxUnspentOutputs();
-    txBuilder.add_inputs_from(txUnspentOutputs, 3)
-
-    
-
-    // set the time to live - the absolute slot value before the tx becomes invalid
-    // txBuilder.set_ttl(51821456);
-
-    // calculate the min fee required and send any change to an address
-    txBuilder.add_change_if_needed(shelleyChangeAddress)
-
-    // once the transaction is ready, we build it to get the tx body without witnesses
-    const txBody = txBuilder.build();
-
-    // Tx witness
-    const transactionWitnessSet = TransactionWitnessSet.new();
 
     const tx = Transaction.new(
         txBody,
         TransactionWitnessSet.from_bytes(transactionWitnessSet.to_bytes())
     )
-
+    
     let txVkeyWitnesses = await enabledWallet.signTx(Buffer.from(tx.to_bytes(), "utf8").toString("hex"), true);
     txVkeyWitnesses = TransactionWitnessSet.from_bytes(Buffer.from(txVkeyWitnesses, "hex"));
 
@@ -331,7 +346,7 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
   }
   async function makeOrder(txHash) {
    console.log(store.account);
-    const data = { address: store.account.address, account: productStore.product.account, sale_price: productStore.product.price, transaction: txHash, color: finalColor.value, name_of_item: (productStore.product.product_name + finalSize.value), buyer: store.account.id, product: productStore.product.id };
+    const data = { address: store.account.address, account: productStore.product.account, sale_price: productStore.product.price, transaction: txHash, color: productStore.product.color, name_of_item: (productStore.product.product_name + productStore.product.size), buyer: store.account.id, product: productStore.product.id };
 
     try {
       // Change the URL to your production server
@@ -391,6 +406,7 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
               //  }
 
             // Ask user to enable wallet
+            
             enabledWallet = await window.cardano.eternl.enable();
             await getChangeAddress();
             await getUtxos();

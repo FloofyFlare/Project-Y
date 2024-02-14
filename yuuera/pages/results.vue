@@ -2,7 +2,7 @@
   <HeaderComp></HeaderComp>
  
   <body class="bg-info md:w-full min-h-screen ">
-    <main>
+    <main class="min-h-screen">
       <section class="justify-left h-full fixed hidden sm:block">
         <div class="flex justify-center items-center mb-12">
           <div class="hero-content text-center text-neutral-content">
@@ -49,7 +49,7 @@
                 <div class="card-body">
                   <h2 class="card-title">{{ item.product_name }}</h2>
                   <div class="card-actions justify-end">
-                    <button @click="searchProduct(item)" class="btn btn-primary">{{ item.price }}</Button>
+                    <button @click="searchProduct(item)" class="btn btn-primary">${{ item.price }} DJED</Button>
                   </div>
                 </div>
               </NuxtLink>

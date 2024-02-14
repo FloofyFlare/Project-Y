@@ -4,7 +4,7 @@
     <HeaderComp></HeaderComp>
     <body class="bg-info md:w-full h-screen">
       <main class="h-full">
-        <section class="rounded-xl">
+        <section class="rounded-xl pt-10">
         <span id="next"></span>
         <div class="mb-10 flex justify-end pl-4 pr-4 pt-24">
             <img
