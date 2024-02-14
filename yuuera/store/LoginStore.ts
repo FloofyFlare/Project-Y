@@ -37,7 +37,8 @@ export const useAuthStore = defineStore('auth-store', {
       if (response.ok) {
         const responseData = await response.json();
         console.log('account stored');
-        this.account = responseData;
+        this.account = responseData.user;
+        console.log(this.account);
       } else {
         console.error('account store failed:', response.statusText);
       }

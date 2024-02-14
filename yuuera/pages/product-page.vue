@@ -52,26 +52,7 @@
             </div>
             </div>
             <div class="flex">
-              <div class="justify-content-left">
-                <div class="dropdown justify-left mt-6 mr-4">
-                    <div tabindex="0" role="button" class="btn m- bg-primary text-info left-0 text-xl font-semibold">Colors</div>
-                    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 text-base-100 shadow bg-info rounded-box w-52">
-                      <li><a>Red</a></li>
-                      <li><a>White</a></li>
-                      <li><a>Blue</a></li>
-                      <li><a>Green</a></li>
-                    </ul>
-                    </div>
-                <div class="dropdown justify-left mt-6">
-                <div tabindex="0" role="button" class="btn m-1 bg-primary text-info justify-left text-xl font-semibold">Storage</div>
-                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow text-base-100 bg-info rounded-box w-52">
-                  <li><a>Small</a></li>
-                  <li><a>Medium</a></li>
-                  <li><a>Large</a></li>
-                  <li><a>Extra Large</a></li>
-                </ul>
-              </div>
-            </div>
+              
               <WalletLogin></WalletLogin>
             </div>
             
@@ -129,6 +110,8 @@ async function productCheck() {
 }
 console.log(storeProduct.product);
 const product = ref(storeProduct.product);
+
+
 
 
 

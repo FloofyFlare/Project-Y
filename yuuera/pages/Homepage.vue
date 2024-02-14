@@ -60,7 +60,7 @@
                 </div>
               </div>
             </div>
-            <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
+            <div class="hidden card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
                 <nuxt-img
                   format="webp"

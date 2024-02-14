@@ -1,4 +1,24 @@
 <template>
+              <div class="justify-content-left bg-neutral rounded p-5 mr-5">
+                <h1>size</h1>
+                <div v-for="size in sizes" :key="size" class="form-control">
+                <label class="label cursor-pointer">
+                  <span class="label-text text-info pr-3">{{size}}</span> 
+                  <input type="radio" name="radio-10" class="radio checked:bg-red-500"  />
+                </label>
+                </div>
+              </div>
+
+
+              <div class="justify-content-left bg-neutral rounded p-5">
+                <h1>colors</h1>
+                <div v-for="color in colors" :key="color" class="form-control">
+                <label class="label cursor-pointer">
+                  <span class="label-text text-info pr-3">{{color}}</span> 
+                  <input type="radio" name="radio-11" class="radio checked:bg-red-500"  />
+                </label>
+                </div>
+              </div>
   <div class="dropdown justify-left mt-6">
     <div tabindex="0" role="button" class="btn m-1 bg-primary text-info justify-left">
       <span class=" text-info text-xl font-semibold">Buy Now</span>
@@ -23,8 +43,11 @@
 <script setup>
   const txSuccuess = ref(true)
   const balance = ref('')
-  const color = ref('black')
-  const size = ref('256')
+  const colors = ref([])
+  const sizes = ref([])
+  const finalColor = ref('')
+  const finalSize = ref('')
+  var prices = [];
 
   import { stringToHex } from '../helpers/streingToHex'
   import { convertBalanceToAda } from '../helpers/convertBalanceToAda'
@@ -99,7 +122,7 @@
       txBodyCborHex_signed: "",
       submittedTxHash: "",
 
-      addressBech32SendADA: "addr1qyppldq2cdfr79sv9tckfjvzye0h8f8rrxyhcm3lpfksy36w8w53yhygk2r4jtyakzmh3u47tsev6y9sv2nr9k3rlvxs4dtrw5",
+      addressBech32SendADA: "addr1q937ewsxc200xpsf0qryezjnpg7zpnmn3y475ej87hd53vrn3q6uwfj9mf4xu9gh2ukj524pt2eg647xdwajtv4k56tq3wu4v7",
       lovelaceToSend: 3000000,
       assetNameHex: "446a65644d6963726f555344",
       assetPolicyIdHex: "8db269c3ec630e06ae29f74bc39edd1f87c819f1056206e879a1cd61",
@@ -307,8 +330,8 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
     // this.setState({txBodyCborHex_unsigned, txBody})
   }
   async function makeOrder(txHash) {
-   console.log(store.account.user.address);
-    const data = { address: store.account.user.address, account: productStore.product.account, sale_price: productStore.product.price, transaction: txHash, color: color.value, name_of_item: (productStore.product.product_name + size.value), buyer: store.account.id, product: productStore.product.id };
+   console.log(store.account);
+    const data = { address: store.account.address, account: productStore.product.account, sale_price: productStore.product.price, transaction: txHash, color: finalColor.value, name_of_item: (productStore.product.product_name + finalSize.value), buyer: store.account.id, product: productStore.product.id };
 
     try {
       // Change the URL to your production server
@@ -399,7 +422,16 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
             console.log(err);
         }
   }
+  prices = stringtoArray(productStore.product.price)
+  colors.value = stringtoArray(productStore.product.colors)
+  sizes.value = stringtoArray(productStore.product.size)
+  function stringtoArray(colorString) {
+  // Split the string into an array of colors using commas as separators
+  const colorArray = colorString.split(',');
 
+  // Trim any leading/trailing whitespace from each color
+  return colorArray.map(color => color.trim());
+}
   
 
 </script>
