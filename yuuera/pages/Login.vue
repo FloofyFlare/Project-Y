@@ -9,7 +9,8 @@
             <div class="hero min-h-screen bg-info">
               <div class="hero-content flex-col lg:flex-row-reverse">
                 <div class="text-center lg:text-left">
-                  <h1 class="text-neutral text-5xl font-bold">Login now!</h1>
+                  <h1 class="text-neutral text-5xl font-bold">Login!</h1>
+                  <p class="text-neutral">Or create an account</p>
                   <div class="flex-col justify-center">
                     
                       <NuxtLink to="/signup" class="btn mt-8 btn-primary ">Create an account?</NuxtLink>
