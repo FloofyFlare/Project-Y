@@ -105,7 +105,7 @@ productCheck()
 async function productCheck() {
   if (storeProduct.projectIsNULL()){
     await new Promise(resolve => setTimeout(resolve, 3000));
-    window.location.replace('http://localhost:3001/index');
+    window.location.replace('https://www.yuuera.com/');
   }
 }
 console.log(storeProduct.product);

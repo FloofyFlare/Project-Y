@@ -159,7 +159,7 @@ const store = useAuthStore()
 if(process.client){
   store.refreshAccessToken();
     if (store.accessToken != null){
-      window.location.replace('http://localhost:3001/Homepage')
+      window.location.replace('https://www.yuuera.com/')
     }
 }
 
@@ -205,7 +205,7 @@ async function handleSend() {
 
   try {
     // Change the URL to your production server
-    await fetch('http://127.0.0.1:8000/api/auth/register/', {
+    await fetch('https://api.yuuera.com/api/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -230,7 +230,7 @@ async function logIn(){
 
   try {
     // Change the URL to your production server
-    const response = await fetch('http://127.0.0.1:8000/api/auth/login/', {
+    const response = await fetch('https://api.yuuera.com/api/auth/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -245,7 +245,7 @@ async function logIn(){
       console.log('Login successful:', store.accessToken);
       // Do something with the responseData, such as updating the component state
       await store.getAccount();
-      window.location.replace('http://localhost:3001/index');
+      window.location.replace('https://www.yuuera.com/');
       return responseData;
     } else {
       // Handle errors for non-2xx status codes

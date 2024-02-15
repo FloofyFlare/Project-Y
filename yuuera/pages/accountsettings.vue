@@ -105,7 +105,7 @@ const store = useAuthStore()
 if(process.client){
   store.refreshAccessToken();
     if (store.accessToken === null){
-      window.location.replace('http://localhost:3001/')
+      window.location.replace('https://www.yuuera.com/')
     }
 }
 
@@ -131,7 +131,7 @@ async function handleSend() {
   store.refreshAccessToken();
   console.log(store.accessToken)
   // Change the URL to your production server
-  await fetch('http://127.0.0.1:8000/api/auth/account-settings/', {
+  await fetch('https://api.yuuera.com/api/auth/account-settings/', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ async function handleSend() {
     console.log("account updated");
     // Clear tokens only if the fetch was successful
     store.clearTokens();
-    window.location.replace('http://localhost:3001/Login');
+    window.location.replace('https://www.yuuera.com/Login');
   })
   .catch(error => {
     console.error('Error during PUT request:', error);

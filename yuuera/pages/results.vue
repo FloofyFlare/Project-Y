@@ -117,7 +117,7 @@ getItems()
 
 function searchProduct(object){
   storeProduct.setProduct(object);
-  window.location.replace('http://localhost:3001/product-page')
+  window.location.replace('https://www.yuuera.com/product-page')
 }
 
 function lowHigh(price) {
@@ -138,7 +138,7 @@ getItems()
 }
 
 async function getItems() {
-  const url = new URL('http://127.0.0.1:8000/api/product-filter/');
+  const url = new URL('https://api.yuuera.com/api/product-filter/');
   url.searchParams.append('brand', store.brand);
   url.searchParams.append('product_name', '');
   url.searchParams.append('sort_direction', store.sort_direction);

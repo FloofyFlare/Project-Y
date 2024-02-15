@@ -65,10 +65,10 @@ function logOut() {
 function setBrand(brand){
   console.log(brand);
   filter.setBrand(brand);
-  window.location.replace('http://localhost:3001/results');
+  window.location.replace('https://www.yuuera.com/results');
 }
 function clearFilter() {
   filter.clearFilter();
-  window.location.replace('http://localhost:3001/results');
+  window.location.replace('https://www.yuuera.com/results');
 }
 </script>

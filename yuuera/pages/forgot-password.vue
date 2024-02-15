@@ -62,7 +62,7 @@ const store = useAuthStore()
 if(process.client){
   store.refreshAccessToken();
     if (store.accessToken != null){
-      window.location.replace('http://localhost:3001/')
+      window.location.replace('https://www.yuuera.com/')
     }
 }
 

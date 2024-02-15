@@ -19,20 +19,20 @@
                 </label>
                 </div>
               </div>
-  <div class="hidden dropdown justify-left mt-6">
+  <div class=" dropdown justify-left mt-6">
     <div tabindex="0" role="button" class="btn m-1 bg-primary text-info justify-left">
-      <span class=" text-info text-xl font-semibold">Buy Now</span>
+      <span class=" text-info text-xl font-semibold">Buy Now (disabled)</span>
       <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">failed, Is this wallet connected?</span>
       <span v-if="!txFunds" class=" text-info text-xl font-semibold">failed, Not enough funds</span>
     </div>
     <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow text-base-100 bg-info rounded-box w-52">
-      <li><button  class="m-4 mt-4 btn bg-primary" @click="buyItemNami">
+      <li><button  class=" hidden m-4 mt-4 btn bg-primary" @click="buyItemNami">
         <span class=" text-info text-xl font-semibold">Nami</span>
       </button></li>
-      <li><button  class="m-4 mt-4 btn bg-primary" @click="buyItemEternl">
+      <li><button  class="hidden m-4 mt-4 btn bg-primary" @click="buyItemEternl">
         <span class=" text-info text-xl font-semibold">Eternl</span>
       </button></li>
-      <li><button  class="m-4 mt-4 btn bg-primary" @click="buyItemLace">
+      <li><button  class="hidden m-4 mt-4 btn bg-primary" @click="buyItemLace">
         <span class=" text-info text-xl font-semibold">Lace</span>
       </button></li>
     </ul>
@@ -357,7 +357,7 @@
 
     try {
       // Change the URL to your production server
-      await fetch('http://127.0.0.1:8000/api/auth/orders/', {
+      await fetch('https://api.yuuera.com/api/auth/orders/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
