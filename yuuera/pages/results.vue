@@ -19,7 +19,7 @@
                 <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
                   <li><a @click.prevent="setBrand('Apple')" class="font-bold">Apple</a></li>
                   <li><a @click="setBrand('Samsung')" class="font-bold">Samsung</a></li>
-                  <li><a @click="setBrand('Google')" class="font-bold">Google</a></li>
+                  <li class="hidden"><a @click="setBrand('Google')" class="font-bold">Google</a></li>
                   <li><a @click="clearFilter(Null)" class="font-bold">All Tech</a></li>
                   <li class="hidden"><a @click="setBrand('Merch')" class="font-bold">Merch</a></li>
                 </ul>

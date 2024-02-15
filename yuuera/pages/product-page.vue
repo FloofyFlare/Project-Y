@@ -41,7 +41,7 @@
                     
                   </div>
               </div>
-              <div class="flex justify-center rounded-2xl  h-24">
+              <div class="flex hidden justify-center rounded-2xl  h-24">
               <div class="flex justify-center rounded-2xl w-full h-1/2">
                 <p
                   class="w-2/3 text-neutral hidden sm:inline flex justify-start text-left leading-loose text-l md:text-2xl"
@@ -105,7 +105,7 @@ productCheck()
 async function productCheck() {
   if (storeProduct.projectIsNULL()){
     await new Promise(resolve => setTimeout(resolve, 3000));
-    window.location.replace('http://localhost:3001/Homepage');
+    window.location.replace('http://localhost:3001/index');
   }
 }
 console.log(storeProduct.product);

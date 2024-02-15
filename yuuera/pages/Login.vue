@@ -129,7 +129,7 @@ async function handleSend() {
       console.log('Login successful:', store.accessToken);
       // Do something with the responseData, such as updating the component state
       await store.getAccount();
-      window.location.replace('http://localhost:3001/Homepage');
+      window.location.replace('http://localhost:3001/');
       return responseData;
     } else {
       // Handle errors for non-2xx status codes
