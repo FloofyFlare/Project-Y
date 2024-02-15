@@ -125,7 +125,7 @@
       submittedTxHash: "",
 
       addressBech32SendADA: "addr1q937ewsxc200xpsf0qryezjnpg7zpnmn3y475ej87hd53vrn3q6uwfj9mf4xu9gh2ukj524pt2eg647xdwajtv4k56tq3wu4v7",
-      lovelaceToSend: 3000000,
+      lovelaceToSend: 2000000,
       assetNameHex: "446a65644d6963726f555344",
       assetPolicyIdHex: "8db269c3ec630e06ae29f74bc39edd1f87c819f1056206e879a1cd61",
       assetAmountToSend: 1000000,
@@ -140,10 +140,10 @@
   }
 
   import { Buffer } from 'buffer';
-import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asmjs';
+
   const protocolParams = {
     linearFee: {
-        minFeeA: "44",
+        minFeeA: "444",
         minFeeB: "155381",
     },
     minUtxo: "34482",
@@ -153,7 +153,7 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
     maxTxSize: 16384,
     priceMem: 0.0577,
     priceStep: 0.0000721,
-    coinsPerUtxoWord: "24050",
+    coinsPerUtxoWord: "34482",
   }
   
   var enabledWallet = undefined;
@@ -273,7 +273,12 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
     let txOutputBuilder = TransactionOutputBuilder.new();
     txOutputBuilder = txOutputBuilder.with_address(shelleyOutputAddress);
     txOutputBuilder = txOutputBuilder.next();
-
+    txBuilder.add_output(
+            TransactionOutput.new(
+                shelleyOutputAddress,
+                Value.new(BigNum.from_str(walletTransaction.lovelaceToSend.toString()))
+            ),
+        );
     let multiAsset = MultiAsset.new();
     let assets = Assets.new()
     assets.insert(
@@ -284,8 +289,9 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
         ScriptHash.from_bytes(Buffer.from(walletTransaction.assetPolicyIdHex, "hex")), // PolicyID
         assets
     );
+    txOutputBuilder = txOutputBuilder.with_asset_and_min_required_coin(multiAsset, BigNum.from_str(protocolParams.coinsPerUtxoWord))
     try {
-      txOutputBuilder = txOutputBuilder.with_asset_and_min_required_coin(multiAsset, BigNum.from_str(protocolParams.coinsPerUtxoWord))
+      
       const txOutput = txOutputBuilder.build();
 
       txBuilder.add_output(txOutput)
@@ -301,7 +307,7 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
       // txBuilder.set_ttl(51821456);
 
       // calculate the min fee required and send any change to an address
-      txBuilder.add_change_if_needed(shelleyChangeAddress)
+      
     } catch (error){
         if (error === 'UTxO Balance Insufficient') {
         // Handle insufficient balance error gracefully
@@ -314,11 +320,12 @@ import { CoinSelectionStrategyCIP2 } from '@emurgo/cardano-serialization-lib-asm
         // Handle other unforeseen errors
       }
     }
-      // once the transaction is ready, we build it to get the tx body without witnesses
-      const txBody = txBuilder.build();
+    txBuilder.add_change_if_needed(shelleyChangeAddress)
+    // once the transaction is ready, we build it to get the tx body without witnesses
+    const txBody = txBuilder.build();
 
-      // Tx witness
-      const transactionWitnessSet = TransactionWitnessSet.new();
+    // Tx witness
+    const transactionWitnessSet = TransactionWitnessSet.new();
     
 
     const tx = Transaction.new(
