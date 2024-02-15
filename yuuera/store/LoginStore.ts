@@ -3,12 +3,14 @@ import { defineStore } from 'pinia';
 interface AuthState {
   accessToken: string | null;
   refreshToken: string | null;
+  account: JSON | null;
 }
 
 export const useAuthStore = defineStore('auth-store', {
   state: (): AuthState => ({
     accessToken: null,
     refreshToken: null,
+    account: null,
   }),
   persist: true,
   actions: {
@@ -20,6 +22,26 @@ export const useAuthStore = defineStore('auth-store', {
     clearTokens() {
       this.accessToken = null;
       this.refreshToken = null;
+    },
+
+    async getAccount() {
+      const url = new URL('http://127.0.0.1:8000/api/auth/account-settings/');
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.accessToken}`,
+        },
+      });
+    
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log('account stored');
+        this.account = responseData.user;
+        console.log(this.account);
+      } else {
+        console.error('account store failed:', response.statusText);
+      }
     },
 
     async refreshAccessToken() {
@@ -50,6 +72,7 @@ export const useAuthStore = defineStore('auth-store', {
                 console.log('Token refresh successful:', tokens);
                 this.setTokens(tokens); // Use setTokens instead of login
                 // Do something with the responseData, such as updating the component state
+                await this.getAccount();
                 return responseData;
               } else {
                 // Handle errors for non-2xx status codes
