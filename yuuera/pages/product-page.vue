@@ -6,11 +6,11 @@
       <main class="h-full">
         <section class="rounded-xl pt-10">
         <span id="next"></span>
-        <div class="mb-10 flex justify-end pl-4 pr-4 pt-24">
+        <div class="mb-10 flex flex-wrap justify-end pl-4 pr-4 pt-40 sm:pt-24">
             <img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
                       :src="product.product_image"
-                      class="w-1/3 flex"
+                      class="sm:w-1/4 flex"
                       format="webp"
                 />
             <div
@@ -44,7 +44,7 @@
               <div class="flex justify-center rounded-2xl  h-24">
               <div class="flex justify-center rounded-2xl w-full h-1/2">
                 <p
-                  class="w-2/3 text-neutral flex justify-start text-left leading-loose text-l md:text-2xl"
+                  class="w-2/3 text-neutral hidden sm:inline flex justify-start text-left leading-loose text-l md:text-2xl"
                 >
                 Description: {{ product.description }}
                 </p>

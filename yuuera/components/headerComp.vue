@@ -11,7 +11,7 @@
           />
         </NuxtLink>
       </div>
-      <div class="flex-1  w-full hidden sm:flex ">
+      <div class="flex-1  w-full  sm:flex ">
         <div class="dropdown w-full">
           <div tabindex="0" role="button" class="flex bg-info btn text-neutral m-1">Categories</div>
           <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">

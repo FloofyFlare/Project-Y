@@ -5,13 +5,13 @@
   <body class="bg-info md:w-full">
       <main>
       <section class="rounded-md mbg-info">
-        <div class="pt-20"></div>
-        <div class="hero max-h-[45vh] mt-4 h-screen" :style="backgroundStyle">
+        <div class="hidden sm:block pt-20"></div>
+        <div class="hidden sm:block hero max-h-[45vh] mt-4 h-screen" :style="backgroundStyle">
         </div>
       </section>
 
       <section>
-        <div class="invisible md:visible">
+        <div class=" pt-44 sm:pt-0">
           <h1
                 class="pt-2 lg:pl-2 text-primary text-3xl flex font-semibold md:text-left justify-center"
               >
@@ -76,137 +76,6 @@
             </div>
           </div>
         </div>   
-      
-        <div class="hero min-h-screen bg-info visible md:hidden">
-          <div class="flex w-full">    
-            <div
-            class="flex rounded-3xl w-1/2 bg-info p-4 mb-12 team-member flex-col border-2 border-slate-600"
-            > 
-              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Best Deal:</p>
-              <div class="flex justify-center">
-                <nuxt-img
-                  format="webp"
-                  src="/images/padlock.png"
-                  class="margin-left-24px w-full h-auto justify-contents"
-                />
-            </div>
-            <div>
-            
-              <p class="font-medium text-neutral text-lg md:text-2xl">
-                blah blash exta stuff
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="flex rounded-3xl w-1/2 bg-info p-4 mb-12 team-member flex-col border-2 border-slate-600"
-          > 
-              <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Best Deal:</p>
-              <div class="flex justify-center">
-                <nuxt-img
-                  format="webp"
-                  src="/images/padlock.png"
-                  class="margin-left-24px w-full h-auto justify-contents"
-                />
-              </div>
-              <div>
-              
-                <p class="font-medium text-neutral text-lg md:text-2xl">
-                  blah blash exta stuff
-                </p>
-              </div>
-              </div>
-          </div>
-        </div>
-      </section>
-  <section class="">
-  <div class="hero min-h-screen bg-secondary visible md:hidden">
-      <div class="flex w-full">    
-      <div
-      class="flex rounded-3xl w-1/2 bg-info p-4 mb-12 team-member flex-col border-2 border-slate-600"
-    > 
-      <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Best Deal:</p>
-      <div class="flex justify-center">
-        <nuxt-img
-          format="webp"
-          src="/images/padlock.png"
-          class="margin-left-24px w-full h-auto justify-contents"
-        />
-      </div>
-      <div>
-        
-        <p class="font-medium text-neutral text-lg md:text-2xl">
-          blah blash exta stuff
-        </p>
-      </div>
-    </div>
-
-    <div
-      class="flex rounded-3xl w-1/2 bg-info p-4 mb-12 team-member flex-col border-2 border-slate-600"
-    > 
-    <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Best Deal:</p>
-      <div class="flex justify-center">
-        <nuxt-img
-          format="webp"
-          src="/images/padlock.png"
-          class="margin-left-24px w-full h-auto justify-contents"
-        />
-      </div>
-      <div>
-        
-        <p class="font-medium text-neutral text-lg md:text-2xl">
-          blah blash exta stuff
-        </p>
-      </div>
-    </div>
-    <div class="hero min-h-screen bg-accent">
-        <h1
-              class="pt-20 lg:pl-2 text-info text-6xl lg:text-8xl flex font-semibold md:text-left md:justify-start"
-            >
-              For you
-            </h1>
-        <div class="flex w-full">    
-        <div
-        class="flex rounded-3xl w-1/2 bg-info p-4 mb-12 team-member flex-col border-2 border-slate-600"
-      > 
-        <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Best Deal:</p>
-        <div class="flex justify-center">
-          <nuxt-img
-            format="webp"
-            src="/images/padlock.png"
-            class="margin-left-24px w-full h-auto justify-contents"
-          />
-        </div>
-        <div>
-          
-          <p class="font-medium text-neutral text-lg md:text-2xl">
-            blah blash exta stuff
-          </p>
-        </div>
-      </div>
-
-      <div
-        class="flex rounded-3xl w-1/2 bg-info p-4 mb-12 team-member flex-col border-2 border-slate-600"
-      > 
-      <p class="font-medium p-8 text-2xl md:text-3xl text-primary">Best Deal:</p>
-        <div class="flex justify-center">
-          <nuxt-img
-            format="webp"
-            src="/images/padlock.png"
-            class="margin-left-24px w-full h-auto justify-contents"
-          />
-        </div>
-        <div>
-          
-          <p class="font-medium text-neutral text-lg md:text-2xl">
-            blah blash exta stuff
-          </p>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-  </div>
   </section>
 
   <section class="pb-10 hidden sm:flex justify-center">
@@ -299,6 +168,7 @@
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
       <p>Questions? Contact us at YuueraOffical@gmail.com</p>
+      <NuxtLink to="/privacy">privacy policy</NuxtLink>
       <p><NuxtLink to="/about">about</NuxtLink></p>
     </div>
     <div>

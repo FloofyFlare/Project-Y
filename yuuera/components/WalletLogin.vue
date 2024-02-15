@@ -19,7 +19,7 @@
                 </label>
                 </div>
               </div>
-  <div class="dropdown justify-left mt-6">
+  <div class="hidden dropdown justify-left mt-6">
     <div tabindex="0" role="button" class="btn m-1 bg-primary text-info justify-left">
       <span class=" text-info text-xl font-semibold">Buy Now</span>
       <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">failed, Is this wallet connected?</span>

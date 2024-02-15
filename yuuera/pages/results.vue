@@ -38,7 +38,7 @@
           <div v-if="items.length === 0">
             <p class="text-neutral h-screen font-semibold text-xl">No items matching your request</p>
           </div>
-          <div v-for="item in items" :key="item.id" class="pb-10 hidden sm:flex w-full justify-center">
+          <div v-for="item in items" :key="item.id" class="pb-10 sm:flex w-screen sm:w-full justify-center">
               <NuxtLink class="card lg:card-side border-black border-2 bg-base-100 w-1/2 shadow-xl">
                 <figure><nuxt-img
                         :alt="`a prouct image`"
