@@ -87,7 +87,7 @@
           </div>
         </div>
         <div
-              class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl"
+              class="bg-info  lg:h-1/4 :lgw-2/3 h-60 rounded-3xl"
             >
               <h1 class="text-primary font-bold text-l md:text-5xl p-2 border-double">
 
