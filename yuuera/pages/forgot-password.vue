@@ -8,7 +8,7 @@
           <div class="flex justify-center">
             <div class="hero min-h-screen bg-info">
               <div class="hero-content flex-col lg:flex-row-reverse">
-                <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-24">
+                <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mr-24 md:mr-0 p-24">
                   <h1 class="text-2xl">Forgot your password? Don't worry.</h1>
                   <p class="pt-8">Our support team has your back. 
                     Send an email to yuueraOfficial@gmail.com asking for a password reset. Make sure to attach your accounts phone number and email address so we can verify your identity.</p>

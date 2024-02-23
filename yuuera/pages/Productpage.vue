@@ -39,7 +39,7 @@
       <main class="h-full">
         <section class="rounded-xl">
         <span id="next"></span>
-        <div class="mb-10 flex justify-end pl-4 pr-4 pt-24">
+        <div class="md:mb-10 flex justify-end md:pl-4 md:pr-4 md:pt-24">
             <nuxt-img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
                       src="/images/house.png"
@@ -54,7 +54,7 @@
               </h1>
               <div>
                 <p class="w-full text-left pt-6 text-neutral leading-loose text-md md:text-2xl">
-                  Owned by: htershtre
+                  Owned by: 
                 </p>
               </div>
               <div class="justify-content-left">
