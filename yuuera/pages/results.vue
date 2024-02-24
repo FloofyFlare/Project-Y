@@ -24,7 +24,7 @@
                   <li class="hidden"><a @click="setBrand('Merch')" class="font-bold">Merch</a></li>
                 </ul>
               </div>
-              <div >
+              <div class="hidden">
                 <button @click="highLow('asc')" class="flex-1 btn btn-outline btn-primary btn-md ">Low to High</button> 
                 <button @click="lowHigh('desc')" class="flex-1 btn btn-outline btn-primary btn-md ">High to Low</button>
               </div>
