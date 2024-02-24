@@ -82,12 +82,12 @@
             <p
               class="w-full text-neutral text-left leading-loose text-l md:text-2xl"
             >
-            More info about this product: XZ CBcaxsv bxacsxzdv frbhcxzasvd fbxcsdzEFWVR
+            More info about this product: 
             </p>
           </div>
         </div>
         <div
-              class="bg-info  lg:h-1/4 :lgw-2/3 h-60 rounded-3xl"
+              class="bg-info  lg:h-1/4 lg:w-2/3 h-60 rounded-3xl"
             >
               <h1 class="text-primary font-bold text-l md:text-5xl p-2 border-double">
 
