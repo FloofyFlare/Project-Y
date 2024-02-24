@@ -1,3 +1,3 @@
-I directly cnahged the a file in the node_modules to make this program work
+I directly changed the a file in the node_modules to make this program work
 
 export NODE_OPTIONS=--max_old_space_size=8048; yarn dev

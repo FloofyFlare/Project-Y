@@ -22,7 +22,7 @@
               <figure class="px-10 pt-10">
                 <nuxt-img
                   format="webp"
-                  src="/images/apple.jpeg"
+                  src="https://imagedelivery.net/3WsLYaAM9XxehVL3nn2vjQ/bdf4a9d8-c794-4383-89fd-1d030d26aa00/public"
                 />
               </figure>
               <div class="card-body items-center text-center p-2">
@@ -36,7 +36,7 @@
               <figure class="px-10 pt-10">
                 <nuxt-img
                   format="webp"
-                  src="/images/samsung.jpeg"
+                  src="https://imagedelivery.net/3WsLYaAM9XxehVL3nn2vjQ/282d49cb-08be-455d-5e60-b6d084e3b200/public"
                 />
               </figure>
               <div class="card-body items-center text-center p-2">

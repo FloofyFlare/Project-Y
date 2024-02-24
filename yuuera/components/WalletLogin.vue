@@ -20,19 +20,19 @@
                 </div>
               </div>
   <div class=" dropdown justify-left mt-6">
-    <div tabindex="0" role="button" class="btn m-1 bg-primary text-info justify-left">
-      <span class=" text-info text-xl font-semibold">Buy Now (disabled)</span>
-      <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">failed, Is this wallet connected?</span>
-      <span v-if="!txFunds" class=" text-info text-xl font-semibold">failed, Not enough funds</span>
+    <div tabindex="0" role="button" class="btn m-1 h-full  bg-primary text-info justify-left">
+      <span class=" text-info text-xl font-semibold">Buy Now</span>
+      <span v-if="!txSuccuess" class=" text-info text-xl font-semibold">Failed, is this wallet connected?</span>
+      <span v-if="!txFunds" class=" text-info text-xl font-semibold">Failed, not enough funds</span>
     </div>
     <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow text-base-100 bg-info rounded-box w-52">
-      <li><button  class=" hidden m-4 mt-4 btn bg-primary" @click="buyItemNami">
+      <li><button  class="  m-4 mt-4 btn bg-primary" @click="buyItemNami">
         <span class=" text-info text-xl font-semibold">Nami</span>
       </button></li>
-      <li><button  class="hidden m-4 mt-4 btn bg-primary" @click="buyItemEternl">
+      <li><button  class=" m-4 mt-4 btn bg-primary" @click="buyItemEternl">
         <span class=" text-info text-xl font-semibold">Eternl</span>
       </button></li>
-      <li><button  class="hidden m-4 mt-4 btn bg-primary" @click="buyItemLace">
+      <li><button  class=" m-4 mt-4 btn bg-primary" @click="buyItemLace">
         <span class=" text-info text-xl font-semibold">Lace</span>
       </button></li>
     </ul>
@@ -380,6 +380,9 @@
   }
 
   async function buyItemNami() {
+    if(store.accessToken == null) {
+      window.location.replace('https://www.yuuera.com/Login')
+    }
     try {
             // Try to get the wallet object that the user is selecting
             //const walletObject = await (window.cardano && window.cardano.lace)
@@ -402,6 +405,9 @@
   }
 
   async function buyItemEternl() {
+    if(store.accessToken == null) {
+      window.location.replace('https://www.yuuera.com/Login')
+    }
     try {
             // Try to get the wallet object that the user is selecting
             //const walletObject = await (window.cardano && window.cardano.lace)
@@ -425,6 +431,9 @@
   }
 
   async function buyItemLace() {
+    if(store.accessToken == null) {
+      window.location.replace('https://www.yuuera.com/Login')
+    }
     try {
             // Try to get the wallet object that the user is selecting
             //const walletObject = await (window.cardano && window.cardano.lace)

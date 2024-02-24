@@ -2,11 +2,11 @@
 
 
     <HeaderComp></HeaderComp>
-    <body class="bg-info md:w-full h-screen">
+    <body class="bg-info md:w-full m-h-screen sm:h-screen">
       <main class="h-full">
-        <section class="rounded-xl pt-10">
+        <section class="rounded-xl h-full pt-10">
         <span id="next"></span>
-        <div class="mb-10 flex flex-wrap justify-end pl-4 pr-4 pt-40 sm:pt-24">
+        <div class="mb-10 flex flex-wrap justify-end pl-4 pr-4 pt-40 sm:pt-24 h-full sm:h-auto">
             <img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
                       :src="product.product_image"
@@ -14,7 +14,7 @@
                       format="webp"
                 />
             <div
-              class="h-1/6 w-2/3 h-60 mt-12 rounded-3xl ml-24"
+              class="h-full w-2/3 h-60 mt-12 rounded-3xl ml-24"
             >
               <h1 class="text-primary text-left font-bold text-l md:text-5xl p-2">
                 {{ product.product_name }}
@@ -27,7 +27,7 @@
             <div class="flex">
               
             <div
-                  class="flex bg-info  h-1/4 w-2/3 h-60 rounded-3xl"
+                  class="flex h-1/4 w-2/3 h-60 rounded-3xl"
                 >
                   <h1 class="text-primary font-bold text-l md:text-5xl p-2 border-double">
 
@@ -51,7 +51,7 @@
               </div>
             </div>
             </div>
-            <div class="flex">
+            <div class="flex ">
               
               <WalletLogin></WalletLogin>
             </div>
