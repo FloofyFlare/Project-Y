@@ -49,7 +49,7 @@
             <div
               class="h-1/6 w-2/3 h-60 mt-12 rounded-3xl ml-24"
             >
-              <h1 class="text-primary text-left font-bold text-l md:text-5xl p-2">
+              <h1 class="text-primary text-left font-bold text-l mt-24 md:mt-0 md:text-5xl md:p-2 ">
                 Name of product:
               </h1>
               <div>
