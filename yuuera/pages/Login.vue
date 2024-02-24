@@ -32,7 +32,7 @@
                       </label>
                       <input v-model="pass" type="password" placeholder="password" class="input input-bordered" required />
                       <label class="label">
-                        <NuxtLink href="Productpage" class="label-text-alt link link-hover">Forgot password?</NuxtLink>
+                        <NuxtLink href="forgot-password" class="label-text-alt link link-hover">Forgot password?</NuxtLink>
                       </label>
                     </div>
                     <div class="form-control mt-6">
