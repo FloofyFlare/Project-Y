@@ -25,7 +25,7 @@ export const useAuthStore = defineStore('auth-store', {
     },
 
     async getAccount() {
-      const url = new URL('http://127.0.0.1:8000/api/auth/account-settings/');
+      const url = new URL('https://api.yuuera.com/api/auth/account-settings/');
       const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -58,7 +58,7 @@ export const useAuthStore = defineStore('auth-store', {
           if (this.refreshToken) {
             try {
               // Change the URL to your production server
-              const response = await fetch('http://127.0.0.1:8000/api/token/refresh/', {
+              const response = await fetch('http://api.yuuera.com/api/token/refresh/', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
