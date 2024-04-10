@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
 interface AuthState {
-  product: JSON | null;
+  product: JSON | null
 }
 
 export const useProductStore = defineStore('product-store', {
@@ -11,18 +11,17 @@ export const useProductStore = defineStore('product-store', {
   persist: true,
   actions: {
     setProduct(item: JSON) {
-      this.product = item;   
-      console.log(item);
+      this.product = item
+      console.log(item)
     },
-    projectIsNULL(){
-      if(this.product == null){
-        return true;
+    projectIsNULL() {
+      if (this.product == null) {
+        return true
       }
-      return false;
+      return false
     },
     clearProduct() {
-        this.product = null;
+      this.product = null
     },
-
   },
-});
+})

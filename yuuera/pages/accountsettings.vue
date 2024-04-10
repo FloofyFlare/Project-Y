@@ -1,98 +1,141 @@
 <template>
-  
-  <HeaderComp/>
+  <HeaderComp />
   <body class="bg-base-100">
-      <main>
-        <section class="bg-info w-full flex items-center justify-center">
-          <form @submit.prevent="handleSubmit" class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs">
-            <div class="form-control w-full ">
-              <p class="text-secondary leading-loose tracking-widest text-3xl md:text-3xl p-4 pt-0 font-semibold">
-                Account Settings
-              </p>
-              <label class="label">
-                  <span class="label-text text-primary">First Name</span>
-              </label>
-              <input v-model="firstName" type="text" placeholder="Ada" class="input input-bordered w-full max-w-xs" />
-            </div>
-
-            <div class="form-control mt-12 w-full max-w-xs">
-              <label class="label text-center">
-                  <span class="label-text text-primary text-center">Last Name</span>
-              </label>
-              <input v-model="lastName" type="text" placeholder="Lovelace" class="input input-bordered w-full max-w-xs" />
-            </div>
-
-            <div class="form-control mt-12 w-full max-w-xs">
+    <main>
+      <section class="bg-info w-full flex items-center justify-center">
+        <form
+          class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs"
+          @submit.prevent="handleSubmit"
+        >
+          <div class="form-control w-full">
+            <p
+              class="text-secondary leading-loose tracking-widest text-3xl md:text-3xl p-4 pt-0 font-semibold"
+            >
+              Account Settings
+            </p>
             <label class="label">
-                <span class="label-text text-primary">Street Address</span>
+              <span class="label-text text-primary">First Name</span>
             </label>
-            <input v-model="street" type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
-            </div>
+            <input
+              v-model="firstName"
+              type="text"
+              placeholder="Ada"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
 
-            <div class="form-control mt-12 w-full max-w-xs">
-            <label class="label">
-                <span class="label-text text-primary">City</span>
+          <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label text-center">
+              <span class="label-text text-primary text-center">Last Name</span>
             </label>
-            <input v-model="city" type="text" placeholder="Chicago" class="input input-bordered w-full max-w-xs" />
-            </div>
+            <input
+              v-model="lastName"
+              type="text"
+              placeholder="Lovelace"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
 
-            <div class="form-control mt-12 w-full max-w-xs">
+          <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
-                <span class="label-text text-primary">State</span>
+              <span class="label-text text-primary">Street Address</span>
             </label>
-            <input v-model="state" type="text" placeholder="Ohio" class="input input-bordered w-full max-w-xs" />
-            </div>
+            <input
+              v-model="street"
+              type="text"
+              placeholder="1234 Exmaplestreet"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
 
-            <div class="form-control mt-12 w-full max-w-xs">
-              <span class="text-error pt-8" v-show="badInputPhone">Please check your Input (10 characters)</span>
+          <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
-                <span class="label-text text-primary">Phone Number</span>
+              <span class="label-text text-primary">City</span>
             </label>
-            <input v-model="phoneNumber" type="text" placeholder="123-456-7890" class="input input-bordered w-full max-w-xs" />
-            </div>
-            
-            <div class="form-control mt-12 w-full max-w-xs"></div>
-            <label class="label">
-                <span class="label-text text-lg text-neutral">Email yuueraOfficial@gmail.com for password or email changes. Include your accounts current email and phone number for a quick process.</span>
-            </label> 
+            <input
+              v-model="city"
+              type="text"
+              placeholder="Chicago"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
 
-            <div class="form-control mt-6">
-              <button type="submit" class="btn btn-primary">Update Settings</button>
-            </div>
-          </form>
-        </section>
-      </main>
-      <client-only>
-  <footer class="footer footer-center p-10 bg-primary text-primary-content">
-    <div class="">
-      <p class="font-bold">Yuuera, LLC <br /></p>
-      <p>Questions? Contact us at YuueraOffical@gmail.com</p>
-      <p><NuxtLink to="/about">about</NuxtLink></p>
-    </div>
-    <div>
-      <div class="grid grid-flow-col gap-4">
-        <a href="https://twitter.com/YuueraOfficial"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            class="fill-current"
-          >
-            <path
-              d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-            ></path></svg>
-        </a>
-        <nuxt-img
-            alt="USA flag"
-            src="/images/americanFlag.jpeg"
-            class="w-14 fill-current"
-            format="webp"
-          />
-      </div>
-    </div>
-  </footer>
-  </client-only>
+          <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+              <span class="label-text text-primary">State</span>
+            </label>
+            <input
+              v-model="state"
+              type="text"
+              placeholder="Ohio"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
+
+          <div class="form-control mt-12 w-full max-w-xs">
+            <span v-show="badInputPhone" class="text-error pt-8"
+              >Please check your Input (10 characters)</span
+            >
+            <label class="label">
+              <span class="label-text text-primary">Phone Number</span>
+            </label>
+            <input
+              v-model="phoneNumber"
+              type="text"
+              placeholder="123-456-7890"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
+
+          <div class="form-control mt-12 w-full max-w-xs"></div>
+          <label class="label">
+            <span class="label-text text-lg text-neutral"
+              >Email yuueraOfficial@gmail.com for password or email changes.
+              Include your accounts current email and phone number for a quick
+              process.</span
+            >
+          </label>
+
+          <div class="form-control mt-6">
+            <button type="submit" class="btn btn-primary">
+              Update Settings
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <client-only>
+      <footer class="footer footer-center p-10 bg-primary text-primary-content">
+        <div class="">
+          <p class="font-bold">Yuuera, LLC <br /></p>
+          <p>Questions? Contact us at YuueraOffical@gmail.com</p>
+          <p><NuxtLink to="/about">about</NuxtLink></p>
+        </div>
+        <div>
+          <div class="grid grid-flow-col gap-4">
+            <a href="https://twitter.com/YuueraOfficial"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="fill-current"
+              >
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                ></path>
+              </svg>
+            </a>
+            <nuxt-img
+              alt="USA flag"
+              src="/images/americanFlag.jpeg"
+              class="w-14 fill-current"
+              format="webp"
+            />
+          </div>
+        </div>
+      </footer>
+    </client-only>
   </body>
 </template>
 
@@ -123,7 +166,7 @@ function handleSubmit() {
 }
 
 async function handleSend() {
-  
+
 
   const data = { phone_number: phoneNumber.value, first_name: firstName.value, last_name: lastName.value, address: (street.value + ", " + city.value + ", " + state.value) };
 
@@ -172,7 +215,6 @@ function validatePhoneNumber(phoneNumber) {
     }
 }
 </script>
-
 
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';
