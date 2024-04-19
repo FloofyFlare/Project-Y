@@ -106,7 +106,7 @@
   <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
-      <p>Questions? Contact us at YuueraOffical@gmail.com</p>
+      <p>Questions? Contact us at YuueraOfficial@gmail.com</p>
       <p><NuxtLink to="/about">about</NuxtLink></p>
     </div>
     <div>
@@ -143,7 +143,7 @@ useHead({
     {
       name: 'description',
       content:
-        ' Discover our utting-edge crypto e-commerce platform, enabling cost-effective buying and selling with stable coins as payment.',
+        'Discover a cutting-edge crypto e-commerce platform, enabling cost-effective commerce with stable coins as payment.',
     },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],

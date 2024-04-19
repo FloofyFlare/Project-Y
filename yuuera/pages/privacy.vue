@@ -132,7 +132,7 @@
   <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
-      <p>Questions? Contact us at YuueraOffical@gmail.com</p>
+      <p>Questions? Contact us at YuueraOfficial@gmail.com</p>
       <p><NuxtLink to="/about">about</NuxtLink></p>
     </div>
     <div>
@@ -169,7 +169,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Hello we are Yuuera a Web 3.0 company built for YUU',
+      content: 'Hello, we are Yuuera a Web 3.0 company built for YUU',
     },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
