@@ -21,7 +21,7 @@
                   <li><a @click="setBrand('Samsung')" class="font-bold">Samsung</a></li>
                   <li><a @click="setBrand('GiftCard')" class="font-bold">GiftCards</a></li>
                   <li class="hidden"><a @click="setBrand('Google')" class="font-bold">Google</a></li>
-                  <li><a @click="clearFilter(Null)" class="font-bold">All Tech</a></li>
+                  <li><a @click="clearFilter(Null)" class="font-bold">All Items</a></li>
                   <li class="hidden"><a @click="setBrand('Merch')" class="font-bold">Merch</a></li>
                 </ul>
               </div>
