@@ -6,7 +6,7 @@
       <section class="justify-left h-full fixed hidden sm:block">
         <div class="flex justify-center items-center mb-12">
           <div class="hero-content text-center text-neutral-content">
-            <div class="max-w-4xl sm:text-left">
+            <div class="max-w-4xl pt-24 sm:text-left">
               <h1 class="text-primary font-bold text-4xl md:text-4xl mt-24">
                 Filters:
               </h1>
@@ -34,13 +34,13 @@
           </div>
         </div>
       </section>
-      <section class="pt-24 h-full" id="products">
-        <div class="p-24">
+      <section class="pt-24 w-full h-full" id="products">
+        <div class="p-20">
           <div v-if="items.length === 0">
             <p class="text-neutral h-screen font-semibold text-xl">No items matching your request</p>
           </div>
-          <div v-for="item in items" :key="item.id" class="pb-10 sm:flex w-screen sm:w-full justify-center">
-              <NuxtLink class="card lg:card-side border-black border-2 bg-base-100 w-3/5 sm:w-1/2 shadow-xl">
+          <div v-for="item in items" :key="item.id" class="pb-10 sm:flex w-full justify-center">
+              <NuxtLink class="card lg:card-side border-black border-2 bg-base-100 sm:w-1/2 shadow-xl">
                 <figure><nuxt-img
                         :alt="`a prouct image`"
                         :src="item.product_image"
