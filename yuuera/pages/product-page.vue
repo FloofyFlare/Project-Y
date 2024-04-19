@@ -2,8 +2,8 @@
 
 
     <HeaderComp></HeaderComp>
-    <body class="bg-info md:w-full m-h-screen sm:h-screen">
-      <main class="h-full">
+    <body class="bg-info md:w-full min-h-screen h-full">
+      <main class="h-full min-h-screen">
         <section class="rounded-xl h-full pt-10">
         <span id="next"></span>
         <div class="mb-10 flex flex-wrap justify-end pl-4 pr-4 pt-40 sm:pt-24 h-full sm:h-auto">
@@ -16,7 +16,7 @@
             <div
               class="h-full w-2/3 h-60 mt-12 rounded-3xl ml-24"
             >
-              <h1 class="text-primary text-left font-bold text-l md:text-5xl p-2">
+              <h1 class="text-primary text-left font-bold text-l lg:text-5xl p-2">
                 {{ product.product_name }}
               </h1>
               <div>
@@ -29,11 +29,11 @@
             <div
                   class="flex h-1/4 w-2/3 h-60 rounded-3xl"
                 >
-                  <h1 class="text-primary font-bold text-l md:text-5xl p-2 border-double">
+                  <h1 class="text-primary font-bold text-l lg:text-5xl p-2 border-double">
 
                   </h1>
                   <div>
-                    <p class="w-full text-neutral text-left leading-loose text-3xl md:text-6xl">
+                    <p class="w-full text-neutral text-left leading-loose text-3xl lg:text-6xl">
                     ${{ product.price }} DJED
                     </p>
                   </div>
