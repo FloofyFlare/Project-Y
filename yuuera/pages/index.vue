@@ -46,6 +46,20 @@
                 </div>
               </div>
             </div>
+            <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
+              <figure class="px-10 pt-10">
+                <nuxt-img
+                  format="webp"
+                  src="https://imagedelivery.net/3WsLYaAM9XxehVL3nn2vjQ/0000c90c-980b-41ff-d97b-da0a244d4000/public"
+                />
+              </figure>
+              <div class="card-body items-center text-center p-2">
+                <h2 class="card-title">Gift Cards</h2>
+                <div class="card-actions">
+                  <NuxtLink to='/results'><button @click="setBrand('GiftCard')" class="btn btn-primary">Buy Now</button></NuxtLink>
+                </div>
+              </div>
+            </div>
             <div class="hidden card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
                 <nuxt-img
@@ -206,7 +220,7 @@ const backgroundStyle = {
 };
 
 useHead({
-  title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
+  title: 'Yuuera | Buy and Sell goods online with Cryptocurrency!',
   meta: [
     {
       name: 'description',
