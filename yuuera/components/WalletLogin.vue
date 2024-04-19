@@ -29,20 +29,26 @@
     </div>
   </div>
   <div class="dropdown justify-left mt-6">
+    
     <div
       tabindex="0"
       role="button"
       class="btn m-1 h-full bg-primary text-info justify-left"
     >
-      <span class="text-info text-xl font-semibold">Buy Now</span>
+    <span v-if="paymentMade" class="text-info text-xl font-semibold"
+      >Payment successful! You will get an email from YuueraOfficial@gmail.com within than 24 hours with an update on your purchase</span
+    >
+      <span v-if="!paymentMade" class="text-info text-xl font-semibold">Buy Now</span>
       <span v-if="!txSuccuess" class="text-info text-xl font-semibold"
         >Failed, is this wallet connected?</span
       >
+      
       <span v-if="!txFunds" class="text-info text-xl font-semibold"
         >Failed, not enough funds</span
       >
     </div>
     <ul
+      v-if="!paymentMade"
       tabindex="0"
       class="dropdown-content z-[1] menu p-2 shadow text-base-100 bg-info rounded-box w-52"
     >
@@ -66,6 +72,7 @@
 </template>
 
 <script setup>
+const paymentMade = ref(false)
 const txSuccuess = ref(true)
 const txFunds = ref(true)
 const balance = ref('')
@@ -459,6 +466,7 @@ async function buyItemNami() {
     await getChangeAddress()
     await getUtxos()
     buildSendTokenTransaction()
+    paymentMade.value = true
   } catch (err) {
     txSuccuess.value = false
     console.log(err)
@@ -485,6 +493,7 @@ async function buyItemEternl() {
     await getChangeAddress()
     await getUtxos()
     buildSendTokenTransaction()
+    paymentMade.value = true
   } catch (err) {
     txSuccuess.value = false
     console.log(err)
@@ -510,6 +519,7 @@ async function buyItemLace() {
     await getChangeAddress()
     await getUtxos()
     buildSendTokenTransaction()
+    paymentMade.value = true
   } catch (err) {
     txSuccuess.value = false
     console.log(err)

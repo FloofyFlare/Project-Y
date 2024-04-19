@@ -164,7 +164,7 @@ getItems()
 
 function searchProduct(object){
   storeProduct.setProduct(object);
-  window.location.replace('https://www.yuuera.com/product-page')
+  window.location.replace('http://localhost:3001/product-page')
 }
 
 function lowHigh(price) {

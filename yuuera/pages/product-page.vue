@@ -1,7 +1,7 @@
 <template>
   <HeaderComp></HeaderComp>
-  <body class="bg-info md:w-full m-h-screen sm:h-screen">
-    <main class="h-full">
+  <body class="bg-info md:w-full min-h-screen h-full">
+    <main class="h-full min-h-screen">
       <section class="rounded-xl h-full pt-10">
         <span id="next"></span>
         <div
@@ -10,11 +10,11 @@
           <img
             alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
             :src="product.product_image"
-            class="sm:w-1/4 flex"
+            class="sm:w-1/5 h-full flex"
             format="webp"
           />
           <div class="h-full w-2/3 h-60 mt-12 rounded-3xl ml-24">
-            <h1 class="text-primary text-left font-bold text-l md:text-5xl p-2">
+            <h1 class="text-primary text-left font-bold text-l lg:text-5xl p-2">
               {{ product.product_name }}
             </h1>
             <div>
@@ -25,11 +25,11 @@
             <div class="flex">
               <div class="flex h-1/4 w-2/3 h-60 rounded-3xl">
                 <h1
-                  class="text-primary font-bold text-l md:text-5xl p-2 border-double"
+                  class="text-primary font-bold text-l lg:text-5xl p-2 border-double"
                 ></h1>
                 <div>
                   <p
-                    class="w-full text-neutral text-left leading-loose text-3xl md:text-6xl"
+                    class="w-full text-neutral text-left leading-loose text-3xl lg:text-6xl"
                   >
                     ${{ product.price }} DJED
                   </p>
