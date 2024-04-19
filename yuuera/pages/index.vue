@@ -5,13 +5,13 @@
   <body class="bg-info md:w-full">
       <main>
       <section class="rounded-md mbg-info">
-        <div class="hidden sm:block pt-20"></div>
-        <div class="hidden sm:block hero max-h-[45vh] mt-4 h-screen" :style="backgroundStyle">
+        <div class=" sm:block  pt-20"></div>
+        <div class=" sm:block hero max-h-[19vh] sm:max-h-[45vh] mt-[40px] sm:mt-4 h-screen" :style="backgroundStyle">
         </div>
       </section>
 
       <section>
-        <div class=" pt-44 sm:pt-0">
+        <div class=" pt-30 sm:pt-44 sm:pt-0">
           <h1
                 class="pt-2 lg:pl-2 text-primary text-3xl flex font-semibold md:text-left justify-center"
               >
