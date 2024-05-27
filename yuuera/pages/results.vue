@@ -1,7 +1,7 @@
 <template>
   <HeaderComp></HeaderComp>
- 
-  <body class="bg-info md:w-full min-h-screen ">
+
+  <body class="bg-info md:w-full min-h-screen">
     <main class="min-h-screen">
       <section class="justify-left h-full fixed hidden sm:block">
         <div class="flex justify-center items-center mb-12">
@@ -30,14 +30,15 @@
                 <button @click="lowHigh('desc')" class="flex-1 btn btn-outline btn-primary btn-md ">High to Low</button>
               </div>
             </div>
-            </div>
           </div>
         </div>
       </section>
       <section class="pt-24 w-full h-full" id="products">
         <div class="p-20">
           <div v-if="items.length === 0">
-            <p class="text-neutral h-screen font-semibold text-xl">No items matching your request</p>
+            <p class="text-neutral h-screen font-semibold text-xl">
+              No items matching your request
+            </p>
           </div>
           <div v-for="item in items" :key="item.id" class="pb-10 sm:flex w-full justify-center">
               <NuxtLink class="card lg:card-side border-black border-2 bg-base-100 sm:w-1/2 shadow-xl">
@@ -53,9 +54,9 @@
                     <button @click="searchProduct(item)" class="btn btn-primary">${{ item.price }} DJED</Button>
                   </div>
                 </div>
-              </NuxtLink>
+              </div>
+            </NuxtLink>
           </div>
-
         </div>
       </section>
     </main>
@@ -118,7 +119,7 @@ getItems()
 
 function searchProduct(object){
   storeProduct.setProduct(object);
-  window.location.replace('https://www.yuuera.com/product-page')
+  window.location.replace('http://localhost:3001/product-page')
 }
 
 function lowHigh(price) {

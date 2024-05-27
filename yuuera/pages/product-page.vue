@@ -35,30 +35,25 @@
                   <div>
                     <p class="w-full text-neutral text-left leading-loose text-3xl lg:text-6xl">
                     ${{ product.price }} DJED
-                    </p>
-                  </div>
-                  <div class="mt-12">
-                    
-                  </div>
+                  </p>
+                </div>
+                <div class="mt-12"></div>
               </div>
-              <div class="flex hidden justify-center rounded-2xl  h-24">
-              <div class="flex justify-center rounded-2xl w-full h-1/2">
-                <p
-                  class="w-2/3 text-neutral hidden sm:inline flex justify-start text-left leading-loose text-l md:text-2xl"
-                >
-                Description: {{ product.description }}
-                </p>
+              <div class="flex hidden justify-center rounded-2xl h-24">
+                <div class="flex justify-center rounded-2xl w-full h-1/2">
+                  <p
+                    class="w-2/3 text-neutral hidden sm:inline flex justify-start text-left leading-loose text-l md:text-2xl"
+                  >
+                    Description: {{ product.description }}
+                  </p>
+                </div>
               </div>
             </div>
-            </div>
-            <div class="flex ">
-              
+            <div class="flex">
               <WalletLogin></WalletLogin>
             </div>
-            
-           
-            </div>
-      </div>
+          </div>
+        </div>
       </section>
         </main>
         <client-only>
@@ -95,25 +90,17 @@
     </body>
 </template>
 <script setup lang="ts">
-
-
 import { ref } from 'vue'
 
 import { useProductStore } from '~/store/Product'
 const storeProduct = useProductStore()
 productCheck()
 async function productCheck() {
-  if (storeProduct.projectIsNULL()){
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    window.location.replace('https://www.yuuera.com/');
+  if (storeProduct.projectIsNULL()) {
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    window.location.replace('https://www.yuuera.com/')
   }
 }
-console.log(storeProduct.product);
-const product = ref(storeProduct.product);
-
-
-
-
-
-
+console.log(storeProduct.product)
+const product = ref(storeProduct.product)
 </script>

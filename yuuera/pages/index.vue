@@ -1,9 +1,8 @@
 <template>
-  
   <HeaderComp></HeaderComp>
-    
+
   <body class="bg-info md:w-full">
-      <main>
+    <main>
       <section class="rounded-md mbg-info">
         <div class=" sm:block  pt-20"></div>
         <div class=" sm:block hero max-h-[19vh] sm:max-h-[45vh] mt-[40px] sm:mt-4 h-screen" :style="backgroundStyle">
@@ -13,9 +12,9 @@
       <section>
         <div class=" pt-30 sm:pt-44 sm:pt-0">
           <h1
-                class="pt-2 lg:pl-2 text-primary text-3xl flex font-semibold md:text-left justify-center"
-              >
-                Start shopping Web 3.0!
+            class="pt-2 lg:pl-2 text-primary text-3xl flex font-semibold md:text-left justify-center"
+          >
+            Start shopping Web 3.0!
           </h1>
           <div class="flex flex-wrap justify-center">
             <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
@@ -28,7 +27,11 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Apple</h2>
                 <div class="card-actions">
-                  <NuxtLink to='/results'><button @click="setBrand('Apple')" class="btn btn-primary">Buy Now</button></NuxtLink>
+                  <NuxtLink to="/results"
+                    ><button class="btn btn-primary" @click="setBrand('Apple')">
+                      Buy Now
+                    </button></NuxtLink
+                  >
                 </div>
               </div>
             </div>
@@ -42,7 +45,14 @@
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Samsung</h2>
                 <div class="card-actions">
-                  <NuxtLink to='/results'><button @click="setBrand('Samsung')" class="btn btn-primary">Buy Now</button></NuxtLink>
+                  <NuxtLink to="/results"
+                    ><button
+                      class="btn btn-primary"
+                      @click="setBrand('Samsung')"
+                    >
+                      Buy Now
+                    </button></NuxtLink
+                  >
                 </div>
               </div>
             </div>
@@ -62,112 +72,125 @@
             </div>
             <div class="hidden card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
-                <nuxt-img
-                  format="webp"
-                  src="/images/google.jpeg"
-                />
+                <nuxt-img format="webp" src="/images/google.jpeg" />
               </figure>
-              <div class="card-body  items-center text-center p-2">
+              <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Google</h2>
                 <div class="card-actions">
-                  <NuxtLink to='/results'><button @click="setBrand('Google')" class="btn btn-primary">Buy Now</button></NuxtLink>
+                  <NuxtLink to="/results"
+                    ><button
+                      class="btn btn-primary"
+                      @click="setBrand('Google')"
+                    >
+                      Buy Now
+                    </button></NuxtLink
+                  >
                 </div>
               </div>
             </div>
             <div class="hidden card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
-                <nuxt-img
-                  format="webp"
-                  src="/images/otherPhones.jpeg"
-                />
+                <nuxt-img format="webp" src="/images/otherPhones.jpeg" />
               </figure>
               <div class="card-body items-center text-center p-2">
                 <h2 class="card-title">Merch</h2>
                 <div class="card-actions">
-                  <NuxtLink to='/results'><button @click="setBrand('Merch')" class="btn btn-primary">Buy Now</button></NuxtLink>
+                  <NuxtLink to="/results"
+                    ><button class="btn btn-primary" @click="setBrand('Merch')">
+                      Buy Now
+                    </button></NuxtLink
+                  >
                 </div>
               </div>
             </div>
           </div>
-        </div>   
-  </section>
+        </div>
+      </section>
 
-  <section class="pb-10 hidden sm:flex justify-center">
-    <div class=""> 
-      <h1 class=" flex w-full justify-center text-5xl text-primary font-semibold">Commerce on<nuxt-img
-            format="webp"
-            src="/images/Cardano-RGB_Logo-Full-Blue.png"
-            class="margin-left-24px w-60 h-auto justify-contents"
-          />
-      </h1>
-      <h2
-        class="pt-2 lg:pl-2 text-primary text-3xl flex font-semibold md:text-left justify-center"
-      >
+      <section class="pb-10 hidden sm:flex justify-center">
+        <div class="">
+          <h1
+            class="flex w-full justify-center text-5xl text-primary font-semibold"
+          >
+            Commerce on<nuxt-img
+              format="webp"
+              src="/images/Cardano-RGB_Logo-Full-Blue.png"
+              class="margin-left-24px w-60 h-auto justify-contents"
+            />
+          </h1>
+          <h2
+            class="pt-2 lg:pl-2 text-primary text-3xl flex font-semibold md:text-left justify-center"
+          >
             Here's how it works!
-      </h2>
-      <div class="flex justify-center ">
-        
-        <div class="mt-8">
-          
-          <div class=" mb-10 flex justify-start pl-4 pr-4">
-            <div
-              class="bg-info h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-double border-4 border-sky-500"
-            >
-              <h1 class="text-primary w-full font-bold md:text-5xl p-2">
-                Shop
-              </h1>
-              <div class="flex justify-center">
-                <p class="text-neutral leading-loose text-l md:text-2xl">
-                  Quality first shopping. Made for crypto enthusiasts.
-                </p>
-              </div>
-            </div>
-            <nuxt-img
-                      alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                      src="/images/shopping cart.png"
-                      class="w-60 flex justify-end"
-                      format="webp"
+          </h2>
+          <div class="flex justify-center">
+            <div class="mt-8">
+              <div class="mb-10 flex justify-start pl-4 pr-4">
+                <div
+                  class="bg-info h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-double border-4 border-sky-500"
+                >
+                  <h1 class="text-primary w-full font-bold md:text-5xl p-2">
+                    Shop
+                  </h1>
+                  <div class="flex justify-center">
+                    <p class="text-neutral leading-loose text-l md:text-2xl">
+                      Quality first shopping. Made for crypto enthusiasts.
+                    </p>
+                  </div>
+                </div>
+                <nuxt-img
+                  alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
+                  src="/images/shopping cart.png"
+                  class="w-60 flex justify-end"
+                  format="webp"
                 />
-          </div>
-          
-          <div class="mb-10 flex justify-center pl-4 pr-4">
-            <div
-              class="bg-info h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-double border-4 border-sky-500"
-            >
-              <h1 class="text-primary font-bold text-l md:text-5xl p-2">
-                We find the deals
-              </h1>
-              <div>
-                <p class="text-neutral leading-loose text-l md:text-2xl">
-                  We compare multiple prices to get you the best deals avaliable. When your ready you can pay purely in stablecoins on Cardano. No loopholes. No third party processors. No extra fees.
-                </p>
               </div>
-            </div>
-            <nuxt-img
-                      alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                      src="/images/internet-image.png"
-                      class="w-60 flex justify-end"
-                      format="webp"
-                />
-          </div>
 
-          <div class="mb-10 flex justify-end pl-4 pr-4">
-            <nuxt-img
-                      alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                      src="/images/house.png"
-                      class="w-60 flex "
-                      format="webp"
+              <div class="mb-10 flex justify-center pl-4 pr-4">
+                <div
+                  class="bg-info h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-double border-4 border-sky-500"
+                >
+                  <h1 class="text-primary font-bold text-l md:text-5xl p-2">
+                    We find the deals
+                  </h1>
+                  <div>
+                    <p class="text-neutral leading-loose text-l md:text-2xl">
+                      We compare multiple prices to get you the best deals
+                      avaliable. When your ready you can pay purely in
+                      stablecoins on Cardano. No loopholes. No third party
+                      processors. No extra fees.
+                    </p>
+                  </div>
+                </div>
+                <nuxt-img
+                  alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
+                  src="/images/internet-image.png"
+                  class="w-60 flex justify-end"
+                  format="webp"
                 />
-            <div
-              class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-double border-4 border-sky-500"
-            >
-              <h1 class="text-primary font-bold text-l md:text-5xl p-2">
-                Products straight to you
-              </h1>
-              <div>
-                <p class="w-full text-neutral leading-loose text-l md:text-2xl">
-                  Your goods are shipped straight to your door.
-                </p>
+              </div>
+
+              <div class="mb-10 flex justify-end pl-4 pr-4">
+                <nuxt-img
+                  alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
+                  src="/images/house.png"
+                  class="w-60 flex"
+                  format="webp"
+                />
+                <div
+                  class="bg-info h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-double border-4 border-sky-500"
+                >
+                  <h1 class="text-primary font-bold text-l md:text-5xl p-2">
+                    Products straight to you
+                  </h1>
+                  <div>
+                    <p
+                      class="w-full text-neutral leading-loose text-l md:text-2xl"
+                    >
+                      Your goods are shipped straight to your door.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -231,7 +254,7 @@ useHead({
   ],
   link: [
     { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-  ], 
+  ],
 });
 
 
@@ -249,7 +272,7 @@ handleSubmit();
 async function handleSubmit() {
   const data = await getItems();
   items.value = data;
-  
+
   console.log('Items:', items.value);
 }
 
@@ -280,14 +303,11 @@ async function getItems() {
     console.error('Login failed:', response.statusText);
   }
 }
-
 </script>
-
 
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';
 </style>
-
 
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';

@@ -52,19 +52,14 @@
     </body>
 </template>
 <script setup lang="ts">
-
-
 import { ref } from 'vue'
 import { useAuthStore } from '~/store/LoginStore'
 const store = useAuthStore()
 
-
-if(process.client){
-  store.refreshAccessToken();
-    if (store.accessToken != null){
-      window.location.replace('https://www.yuuera.com/')
-    }
+if (process.client) {
+  store.refreshAccessToken()
+  if (store.accessToken != null) {
+    window.location.replace('https://www.yuuera.com/')
+  }
 }
-
-
 </script>
