@@ -32,6 +32,7 @@
             </div>
           </div>
         </div>
+        </div>
       </section>
       <section class="pt-24 w-full h-full" id="products">
         <div class="p-20">
@@ -54,7 +55,7 @@
                     <button @click="searchProduct(item)" class="btn btn-primary">${{ item.price }} DJED</Button>
                   </div>
                 </div>
-              </div>
+             
             </NuxtLink>
           </div>
         </div>

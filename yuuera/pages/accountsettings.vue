@@ -83,6 +83,7 @@
             <div class="form-control mt-6">
               <button type="submit" class="btn btn-primary">Update Settings</button>
             </div>
+          </div>
           </form>
         </section>
       </main>

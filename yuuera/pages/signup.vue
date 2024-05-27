@@ -173,6 +173,7 @@
                 </div>
               </label>
             </div>
+          </div>
           </form>
         </section>
       </main>
