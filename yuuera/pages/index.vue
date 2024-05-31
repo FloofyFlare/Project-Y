@@ -7,58 +7,7 @@
       <section class="rounded-md mbg-info">
         <div class="hidden sm:block pt-20"></div>
         <div class="hidden sm:block hero max-h-[45vh] mt-4 h-screen" :style="backgroundStyle">
-        </div>
-      </section>
-
-      <section>
-        <div class=" pt-44 sm:pt-0">
-          <h1
-                class="pt-2 lg:pl-2 text-primary text-3xl flex font-semibold md:text-left justify-center"
-              >
-                Start shopping Web 3.0!
-          </h1>
-          <div class="flex flex-wrap justify-center">
-            <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
-              <figure class="px-10 pt-10">
-                <nuxt-img
-                  format="webp"
-                  src="/images/apple.jpeg"
-                />
-              </figure>
-              <div class="card-body items-center text-center p-2">
-                <h2 class="card-title">Apple</h2>
-                <div class="card-actions">
-                  <NuxtLink to='/results'><button @click="setBrand('Apple')" class="btn btn-primary">Buy Now</button></NuxtLink>
-                </div>
-              </div>
-            </div>
-            <div class="card w-96 h-64 bg-base-100 m-8 shadow-xl">
-              <figure class="px-10 pt-10">
-                <nuxt-img
-                  format="webp"
-                  src="/images/samsung.jpeg"
-                />
-              </figure>
-              <div class="card-body items-center text-center p-2">
-                <h2 class="card-title">Samsung</h2>
-                <div class="card-actions">
-                  <NuxtLink to='/results'><button @click="setBrand('Samsung')" class="btn btn-primary">Buy Now</button></NuxtLink>
-                </div>
-              </div>
-            </div>
-            <div class="hidden card w-96 h-64 bg-base-100 m-8 shadow-xl">
-              <figure class="px-10 pt-10">
-                <nuxt-img
-                  format="webp"
-                  src="/images/google.jpeg"
-                />
-              </figure>
-              <div class="card-body  items-center text-center p-2">
-                <h2 class="card-title">Google</h2>
-                <div class="card-actions">
-                  <NuxtLink to='/results'><button @click="setBrand('Google')" class="btn btn-primary">Buy Now</button></NuxtLink>
-                </div>
-              </div>
+        <
             </div>
             <div class="hidden card w-96 h-64 bg-base-100 m-8 shadow-xl">
               <figure class="px-10 pt-10">
@@ -258,15 +207,7 @@ async function getItems() {
     },
   });
 
-  if (response.ok) {
-    const responseData = await response.json();
-    console.log('Login successful');
-    items.value = responseData;
-  } else {
-    console.error('Login failed:', response.statusText);
-  }
-}
-
+ 
 </script>
 
 
