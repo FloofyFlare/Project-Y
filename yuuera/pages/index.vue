@@ -1,117 +1,181 @@
 <template>
-  <HeaderComp></HeaderComp>
-
-  <body class="bg-info md:w-full">
-      <main>
-      <section class="rounded-md mbg-info">
-        <div class="hidden sm:block pt-20"></div>
-        <div class="hidden sm:block hero max-h-[45vh] mt-4 h-screen" :style="backgroundStyle">
-        <
-            </div>
-            <div class="hidden card w-96 h-64 bg-base-100 m-8 shadow-xl">
-              <figure class="px-10 pt-10">
-                <nuxt-img
-                  format="webp"
-                  src="/images/otherPhones.jpeg"
-                />
-              </figure>
-              <div class="card-body items-center text-center p-2">
-                <h2 class="card-title">Merch</h2>
-                <div class="card-actions">
-                  <NuxtLink to='/results'><button @click="setBrand('Merch')" class="btn btn-primary">Buy Now</button></NuxtLink>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>   
-  </section>
-
-  <section class="pb-10 hidden sm:flex justify-center">
-    <div class=""> 
-      <h1 class=" flex w-full justify-center text-5xl text-primary font-semibold">Commerce on<nuxt-img
-            format="webp"
-            src="/images/Cardano-RGB_Logo-Full-Blue.png"
-            class="margin-left-24px w-60 h-auto justify-contents"
-          />
-      </h1>
-      <h2
-        class="pt-2 lg:pl-2 text-primary text-3xl flex font-semibold md:text-left justify-center"
-      >
-            Here's how it works!
-      </h2>
-      <div class="flex justify-center ">
-        
-        <div class="mt-8">
-          
-          <div class=" mb-10 flex justify-start pl-4 pr-4">
-            <div
-              class="bg-info h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-double border-4 border-sky-500"
-            >
-              <h1 class="text-primary w-full font-bold md:text-5xl p-2">
-                Shop
-              </h1>
-              <div class="flex justify-center">
-                <p class="text-neutral leading-loose text-l md:text-2xl">
-                  Quality first shopping. Made for crypto enthusiasts.
-                </p>
-              </div>
-            </div>
-            <nuxt-img
-                      alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                      src="/images/shopping cart.png"
-                      class="w-60 flex justify-end"
-                      format="webp"
-                />
-          </div>
-          
-          <div class="mb-10 flex justify-center pl-4 pr-4">
-            <div
-              class="bg-info h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-double border-4 border-sky-500"
-            >
-              <h1 class="text-primary font-bold text-l md:text-5xl p-2">
-                We find the deals
-              </h1>
-              <div>
-                <p class="text-neutral leading-loose text-l md:text-2xl">
-                  We compare multiple prices to get you the best deals avaliable. When your ready you can pay purely in stablecoins on Cardano. No loopholes. No third party processors. No extra fees.
-                </p>
-              </div>
-            </div>
-            <nuxt-img
-                      alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                      src="/images/internet-image.png"
-                      class="w-60 flex justify-end"
-                      format="webp"
-                />
-          </div>
-
-          <div class="mb-10 flex justify-end pl-4 pr-4">
-            <nuxt-img
-                      alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
-                      src="/images/house.png"
-                      class="w-60 flex "
-                      format="webp"
-                />
-            <div
-              class="bg-info  h-1/4 w-2/3 h-60 rounded-3xl shadow-lg border-double border-4 border-sky-500"
-            >
-              <h1 class="text-primary font-bold text-l md:text-5xl p-2">
-                Products straight to you
-              </h1>
-              <div>
-                <p class="w-full text-neutral leading-loose text-l md:text-2xl">
-                  Your goods are shipped straight to your door.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+  <header>
+    <div class="navbar bg-">
+      <div class="avatar btn btn-outline ">
+      <div class="w-40 pb-28">
+      <img class="" src="/images/logo.png" />
       </div>
     </div>
-  </section>
+
+    <div class="flex-none mr-20 pl-12 ">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <details>
+          <summary>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </summary>
+          <ul class="p-2 text-neutreal rounded-t-none bg-info">
+            <li class="text-neutral"><a>Link 1</a></li>
+            <li class="text-neutral"><a>Link 2</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+  </div>
+  </header>
+  <body class="bg-info md:w-full">
+      <main>
+       <section class="h-full">
+        <div class="text-left justify left">
+          <h1 class="text-4xl text-neutral text-start">
+            Header 1
+          </h1>
+        </div>
+        <div class="text-left mt-4">
+          <p class="text-neutral text-left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          </p>
+        </div>
+
+        <div class="content-left justify-self-start">
+          <button class="bg-warning btn btn-lg ">
+            <p class="text-neutral">
+              Get started
+            </p>
+          </button>
+        </div>
+        <div class="mt-36">
+          <figure><img class="h-96" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+       </div>
+      </section>
+
+       <section>
+        <div class="text-left justify left mt-20">
+          <h2 class="text-4xl text-neutral text-start">
+            Header 2
+          </h2>
+        </div>
+        <div class="mt-20">
+          <p class="text-neutral">
+            Logo of the accelrater program
+          </p>
+        </div>
+        <div class="mt-24">
+            <div class="carousel w-full">
+            <div id="item1" class="carousel-item w-full">
+              <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" class="w-full h-96" />
+            </div> 
+            <div id="item2" class="carousel-item w-full">
+              <img src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" class="w-full h-96" />
+            </div> 
+            <div id="item3" class="carousel-item w-full">
+              <img src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" class="w-full h-96" />
+            </div> 
+            <div id="item4" class="carousel-item w-full">
+              <img src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" class="w-full h-96" />
+            </div>
+          </div> 
+          <div class="flex justify-center w-full py-2 gap-2">
+            <a href="#item1" class="btn btn-xs">1</a> 
+            <a href="#item2" class="btn btn-xs">2</a> 
+            <a href="#item3" class="btn btn-xs">3</a> 
+            <a href="#item4" class="btn btn-xs">4</a>
+          </div>
+        </div>
+       </section>
+
+       <section>
+        <div class="text-left justify left mt-24">
+          <h1 class="text-4xl text-neutral text-start">
+            Header 2
+          </h1>
+        </div>
+        <div class="outline outline-offset-2 outline-1">
+          <div class="mt-6">
+          <figure><img class="h-96" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+       </div>
+        </div>
+       </section>
+
+       <div class="outline outline-offset-2 outline-1">
+       <section class="mt-40">
+        <div class="text-left justify left mt-24">
+          <h2 class="text-4xl text-neutral text-start">
+            Header 2
+          </h2>
+        </div>
+          <div class="mt-6">
+          <figure><img class="h-64" src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" alt="Shoes" /></figure>
+          <div class="jusity-left mt-12">
+            <p class="text-neutral text-left">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+
+       </section>
   
-</main>
-<client-only>
+       <section class="mt-40">
+          <div class="mt-6">
+            <div class="jusity-left mt-12">
+            <p class="text-neutral text-left">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <figure><img class="h-64 mt-20" src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" alt="Shoes" /></figure>
+        </div>
+       </section>
+      </div>
+       <section class="mt-40">
+          <h1 class="text-4xl text-neutral text-start">
+              Header 1:
+          </h1>
+          <div>
+            <h3 class="text-neutral text-left">
+              Header 3:
+            </h3>
+          </div>
+          <div>
+            <p class="text-neutral text-left mt-12">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+          </div>
+          <div class="flex flex w-24 pr-">
+            
+              <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" alt="Pizza" />
+            
+              <img src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg" alt="Pizza" />
+            
+              <img src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg" alt="Pizza" />
+          </div>
+
+          <div>
+            <h3 class="text-neutral text-left mt-12">
+              Header 3:
+            </h3>
+          </div>
+          <div>
+            <p class="text-neutral text-left mt-12">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+          </div>
+
+          <div>
+            <h3 class="text-neutral text-left mt-12">
+              Header 3:
+            </h3>
+          </div>
+          <div>
+            <p class="text-neutral text-left mt-12">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+          </div>
+
+        </section>
+      
+      </main>
+
+      <client-only>
   <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
