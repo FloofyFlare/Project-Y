@@ -1,12 +1,12 @@
 <template>
   <HeaderComp></HeaderComp>
- 
-  <body class="bg-info md:w-full min-h-screen ">
+
+  <body class="bg-info md:w-full min-h-screen">
     <main class="min-h-screen">
       <section class="justify-left h-full fixed hidden sm:block">
         <div class="flex justify-center items-center mb-12">
           <div class="hero-content text-center text-neutral-content">
-            <div class="max-w-4xl sm:text-left">
+            <div class="max-w-4xl pt-24 sm:text-left">
               <h1 class="text-primary font-bold text-4xl md:text-4xl mt-24">
                 Filters:
               </h1>
@@ -19,27 +19,30 @@
                 <ul tabindex="0" class="dropdown-content z-[1] menu p-2 bg-primary shadow bg-base-100 rounded-box w-full">
                   <li><a @click.prevent="setBrand('Apple')" class="font-bold">Apple</a></li>
                   <li><a @click="setBrand('Samsung')" class="font-bold">Samsung</a></li>
+                  <li><a @click="setBrand('GiftCard')" class="font-bold">Gift Cards</a></li>
                   <li class="hidden"><a @click="setBrand('Google')" class="font-bold">Google</a></li>
-                  <li><a @click="clearFilter(Null)" class="font-bold">All Tech</a></li>
+                  <li><a @click="clearFilter(Null)" class="font-bold">All Items</a></li>
                   <li class="hidden"><a @click="setBrand('Merch')" class="font-bold">Merch</a></li>
                 </ul>
               </div>
-              <div >
+              <div class="hidden">
                 <button @click="highLow('asc')" class="flex-1 btn btn-outline btn-primary btn-md ">Low to High</button> 
                 <button @click="lowHigh('desc')" class="flex-1 btn btn-outline btn-primary btn-md ">High to Low</button>
               </div>
             </div>
-            </div>
           </div>
         </div>
+        </div>
       </section>
-      <section class="pt-24 h-full" id="products">
-        <div class="p-24">
+      <section class="pt-24 w-full h-full" id="products">
+        <div class="p-20">
           <div v-if="items.length === 0">
-            <p class="text-neutral h-screen font-semibold text-xl">No items matching your request</p>
+            <p class="text-neutral h-screen font-semibold text-xl">
+              No items matching your request
+            </p>
           </div>
-          <div v-for="item in items" :key="item.id" class="pb-10 sm:flex w-screen sm:w-full justify-center">
-              <NuxtLink class="card lg:card-side border-black border-2 bg-base-100 w-1/2 shadow-xl">
+          <div v-for="item in items" :key="item.id" class="pb-10 sm:flex w-full justify-center">
+              <NuxtLink class="card lg:card-side border-black border-2 bg-base-100 sm:w-1/2 shadow-xl">
                 <figure><nuxt-img
                         :alt="`a prouct image`"
                         :src="item.product_image"
@@ -52,9 +55,9 @@
                     <button @click="searchProduct(item)" class="btn btn-primary">${{ item.price }} DJED</Button>
                   </div>
                 </div>
-              </NuxtLink>
+             
+            </NuxtLink>
           </div>
-
         </div>
       </section>
     </main>
@@ -62,7 +65,7 @@
   <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
-      <p>Questions? Contact us at YuueraOffical@gmail.com</p>
+      <p>Questions? Contact us at YuueraOfficial@gmail.com</p>
       <p><NuxtLink to="/about">about</NuxtLink></p>
     </div>
     <div>
@@ -117,7 +120,7 @@ getItems()
 
 function searchProduct(object){
   storeProduct.setProduct(object);
-  window.location.replace('https://www.yuuera.com/product-page')
+  window.location.replace('http://localhost:3001/product-page')
 }
 
 function lowHigh(price) {

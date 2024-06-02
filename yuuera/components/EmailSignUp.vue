@@ -62,11 +62,11 @@ function handleSubmit() {
 }
 
 async function handleSend() {
-  showButton.value = false;
-  showThanks.value = true;
-  console.log(signUpEmail.value);
+  showButton.value = false
+  showThanks.value = true
+  console.log(signUpEmail.value)
 
-  const data = { email: signUpEmail.value };
+  const data = { email: signUpEmail.value }
 
   try {
     // Change the URL to your production server
@@ -76,9 +76,9 @@ async function handleSend() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    });
+    })
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
 }
 

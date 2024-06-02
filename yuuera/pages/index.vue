@@ -1,7 +1,6 @@
 <template>
-  
   <HeaderComp></HeaderComp>
-    
+
   <body class="bg-info md:w-full">
       <main>
       <section class="rounded-md mbg-info">
@@ -116,7 +115,7 @@
   <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
-      <p>Questions? Contact us at YuueraOffical@gmail.com</p>
+      <p>Questions? Contact us at YuueraOfficial@gmail.com</p>
       <NuxtLink to="/privacy">privacy policy</NuxtLink>
       <p><NuxtLink to="/about">about</NuxtLink></p>
     </div>
@@ -155,18 +154,18 @@ const backgroundStyle = {
 };
 
 useHead({
-  title: 'Yuuera | Buy and Sell goods online with Crypto currency!',
+  title: 'Yuuera | Buy and Sell goods online with Cryptocurrency!',
   meta: [
     {
       name: 'description',
       content:
-        'Buy tech with stable coins as payment. Discover our utting-edge shopping experience, a convinent platform for buying tech with crypto. Built by holder for holders.',
+        'Buy tech with stable coins as payment. Discover a cutting-edge crypto e-commerce platform, a hassle-free platform for buying tech with crypto. Built by holders for holders.',
     },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
   link: [
     { hid: 'favicon', rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-  ], 
+  ],
 });
 
 
@@ -184,7 +183,7 @@ handleSubmit();
 async function handleSubmit() {
   const data = await getItems();
   items.value = data;
-  
+
   console.log('Items:', items.value);
 }
 
@@ -207,14 +206,19 @@ async function getItems() {
     },
   });
 
- 
+  if (response.ok) {
+    const responseData = await response.json();
+    console.log('Login successful');
+    items.value = responseData;
+  } else {
+    console.error('Login failed:', response.statusText);
+  }
+}
 </script>
-
 
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';
 </style>
-
 
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';

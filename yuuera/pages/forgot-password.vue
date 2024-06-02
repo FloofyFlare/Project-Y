@@ -11,7 +11,7 @@
                 <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mr-24 md:mr-0 p-24">
                   <h1 class="text-2xl">Forgot your password? Don't worry.</h1>
                   <p class="pt-8">Our support team has your back. 
-                    Send an email to yuueraOfficial@gmail.com asking for a password reset. Make sure to attach your accounts phone number and email address so we can verify your identity.</p>
+                    Send an email to YuueraOfficial@gmail.com asking for a password reset. Make sure to attach your accounts phone number and email address so we can verify your identity.</p>
                 </div>
               </div>
             </div>
@@ -22,7 +22,7 @@
   <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
-      <p>Questions? Contact us at YuueraOffical@gmail.com</p>
+      <p>Questions? Contact us at YuueraOfficial@gmail.com</p>
       <p><NuxtLink to="/about">about</NuxtLink></p>
     </div>
     <div>
@@ -52,19 +52,14 @@
     </body>
 </template>
 <script setup lang="ts">
-
-
 import { ref } from 'vue'
 import { useAuthStore } from '~/store/LoginStore'
 const store = useAuthStore()
 
-
-if(process.client){
-  store.refreshAccessToken();
-    if (store.accessToken != null){
-      window.location.replace('https://www.yuuera.com/')
-    }
+if (process.client) {
+  store.refreshAccessToken()
+  if (store.accessToken != null) {
+    window.location.replace('https://www.yuuera.com/')
+  }
 }
-
-
 </script>

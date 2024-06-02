@@ -1,57 +1,81 @@
 <template>
-  
-  <HeaderComp/>
+  <HeaderComp />
   <body class="bg-base-100">
-      <main>
-        <section class="bg-info w-full flex items-center justify-center">
-          <form @submit.prevent="handleSubmit" class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs">
-            <div class="form-control w-full ">
-              <p class="text-secondary leading-loose tracking-widest text-3xl md:text-3xl p-4 pt-0 font-semibold">
-                Account Settings
-              </p>
-              <label class="label">
-                  <span class="label-text text-primary">First Name</span>
-              </label>
-              <input v-model="firstName" type="text" placeholder="Ada" class="input input-bordered w-full max-w-xs" />
-            </div>
-
-            <div class="form-control mt-12 w-full max-w-xs">
-              <label class="label text-center">
-                  <span class="label-text text-primary text-center">Last Name</span>
-              </label>
-              <input v-model="lastName" type="text" placeholder="Lovelace" class="input input-bordered w-full max-w-xs" />
-            </div>
-
-            <div class="form-control mt-12 w-full max-w-xs">
+    <main>
+      <section class="bg-info w-full flex items-center justify-center">
+        <form
+          class="flex flex-col w-full justify-center pb-48 pt-48 max-w-xs"
+          @submit.prevent="handleSubmit"
+        >
+          <div class="form-control w-full">
+            <p
+              class="text-secondary leading-loose tracking-widest text-3xl md:text-3xl p-4 pt-0 font-semibold"
+            >
+              Account Settings
+            </p>
             <label class="label">
-                <span class="label-text text-primary">Street Address</span>
+              <span class="label-text text-primary">First Name</span>
             </label>
-            <input v-model="street" type="text" placeholder="1234 Exmaplestreet" class="input input-bordered w-full max-w-xs" />
-            </div>
+            <input
+              v-model="firstName"
+              type="text"
+              placeholder="Ada"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
 
-            <div class="form-control mt-12 w-full max-w-xs">
-            <label class="label">
-                <span class="label-text text-primary">City</span>
+          <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label text-center">
+              <span class="label-text text-primary text-center">Last Name</span>
             </label>
-            <input v-model="city" type="text" placeholder="Chicago" class="input input-bordered w-full max-w-xs" />
-            </div>
+            <input
+              v-model="lastName"
+              type="text"
+              placeholder="Lovelace"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
 
-            <div class="form-control mt-12 w-full max-w-xs">
+          <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
-                <span class="label-text text-primary">State</span>
+              <span class="label-text text-primary">Street Address</span>
             </label>
-            <input v-model="state" type="text" placeholder="Ohio" class="input input-bordered w-full max-w-xs" />
-            </div>
+            <input
+              v-model="street"
+              type="text"
+              placeholder="1234 Exmaplestreet"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
 
-            <div class="form-control mt-12 w-full max-w-xs">
-              <span class="text-error pt-8" v-show="badInputPhone">Please check your Input (10 characters)</span>
+          <div class="form-control mt-12 w-full max-w-xs">
             <label class="label">
-                <span class="label-text text-primary">Phone Number</span>
+              <span class="label-text text-primary">City</span>
             </label>
-            <input v-model="phoneNumber" type="text" placeholder="123-456-7890" class="input input-bordered w-full max-w-xs" />
-            </div>
-            
-            <div class="form-control mt-12 w-full max-w-xs"></div>
+            <input
+              v-model="city"
+              type="text"
+              placeholder="Chicago"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
+
+          <div class="form-control mt-12 w-full max-w-xs">
+            <label class="label">
+              <span class="label-text text-primary">State</span>
+            </label>
+            <input
+              v-model="state"
+              type="text"
+              placeholder="Ohio"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
+
+          <div class="form-control mt-12 w-full max-w-xs">
+            <span v-show="badInputPhone" class="text-error pt-8"
+              >Please check your Input (10 characters)</span
+            >
             <label class="label">
                 <span class="label-text text-lg text-neutral">Email yuueraOfficial@gmail.com for password or email changes. Include your accounts current email and phone number for a quick process.</span>
             </label> 
@@ -59,6 +83,7 @@
             <div class="form-control mt-6">
               <button type="submit" class="btn btn-primary">Update Settings</button>
             </div>
+          </div>
           </form>
         </section>
       </main>
@@ -66,7 +91,7 @@
   <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
-      <p>Questions? Contact us at YuueraOffical@gmail.com</p>
+      <p>Questions? Contact us at YuueraOfficial@gmail.com</p>
       <p><NuxtLink to="/about">about</NuxtLink></p>
     </div>
     <div>
@@ -123,7 +148,7 @@ function handleSubmit() {
 }
 
 async function handleSend() {
-  
+
 
   const data = { phone_number: phoneNumber.value, first_name: firstName.value, last_name: lastName.value, address: (street.value + ", " + city.value + ", " + state.value) };
 
@@ -172,7 +197,6 @@ function validatePhoneNumber(phoneNumber) {
     }
 }
 </script>
-
 
 <style scoped lang="scss">
 @import 'assets/scss/appStyles.scss';

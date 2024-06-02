@@ -2,11 +2,11 @@
 
 
     <HeaderComp></HeaderComp>
-    <body class="bg-info md:w-full h-screen">
-      <main class="h-full">
-        <section class="rounded-xl pt-10">
+    <body class="bg-info md:w-full min-h-screen h-full">
+      <main class="h-full min-h-screen">
+        <section class="rounded-xl h-full pt-10">
         <span id="next"></span>
-        <div class="mb-10 flex flex-wrap justify-end pl-4 pr-4 pt-40 sm:pt-24">
+        <div class="mb-10 flex flex-wrap justify-end pl-4 pr-4 pt-40 sm:pt-24 h-full sm:h-auto">
             <img
                       alt="A shopping cart with a Yuuera logo on it with clothes and games in the shopping cart"
                       :src="product.product_image"
@@ -14,9 +14,9 @@
                       format="webp"
                 />
             <div
-              class="h-1/6 w-2/3 h-60 mt-12 rounded-3xl ml-24"
+              class="h-full w-2/3 h-60 mt-12 rounded-3xl ml-24"
             >
-              <h1 class="text-primary text-left font-bold text-l md:text-5xl p-2">
+              <h1 class="text-primary text-left font-bold text-l lg:text-5xl p-2">
                 {{ product.product_name }}
               </h1>
               <div>
@@ -27,45 +27,40 @@
             <div class="flex">
               
             <div
-                  class="flex bg-info  h-1/4 w-2/3 h-60 rounded-3xl"
+                  class="flex h-1/4 w-2/3 h-60 rounded-3xl"
                 >
-                  <h1 class="text-primary font-bold text-l md:text-5xl p-2 border-double">
+                  <h1 class="text-primary font-bold text-l lg:text-5xl p-2 border-double">
 
                   </h1>
                   <div>
-                    <p class="w-full text-neutral text-left leading-loose text-3xl md:text-6xl">
+                    <p class="w-full text-neutral text-left leading-loose text-3xl lg:text-6xl">
                     ${{ product.price }} DJED
-                    </p>
-                  </div>
-                  <div class="mt-12">
-                    
-                  </div>
+                  </p>
+                </div>
+                <div class="mt-12"></div>
               </div>
-              <div class="flex hidden justify-center rounded-2xl  h-24">
-              <div class="flex justify-center rounded-2xl w-full h-1/2">
-                <p
-                  class="w-2/3 text-neutral hidden sm:inline flex justify-start text-left leading-loose text-l md:text-2xl"
-                >
-                Description: {{ product.description }}
-                </p>
+              <div class="flex hidden justify-center rounded-2xl h-24">
+                <div class="flex justify-center rounded-2xl w-full h-1/2">
+                  <p
+                    class="w-2/3 text-neutral hidden sm:inline flex justify-start text-left leading-loose text-l md:text-2xl"
+                  >
+                    Description: {{ product.description }}
+                  </p>
+                </div>
               </div>
-            </div>
             </div>
             <div class="flex">
-              
               <WalletLogin></WalletLogin>
             </div>
-            
-           
-            </div>
-      </div>
+          </div>
+        </div>
       </section>
         </main>
         <client-only>
   <footer class="footer footer-center p-10 bg-primary text-primary-content">
     <div class="">
       <p class="font-bold">Yuuera, LLC <br /></p>
-      <p>Questions? Contact us at YuueraOffical@gmail.com</p>
+      <p>Questions? Contact us at YuueraOfficial@gmail.com</p>
       <p><NuxtLink to="/about">about</NuxtLink></p>
     </div>
     <div>
@@ -95,25 +90,17 @@
     </body>
 </template>
 <script setup lang="ts">
-
-
 import { ref } from 'vue'
 
 import { useProductStore } from '~/store/Product'
 const storeProduct = useProductStore()
 productCheck()
 async function productCheck() {
-  if (storeProduct.projectIsNULL()){
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    window.location.replace('https://www.yuuera.com/');
+  if (storeProduct.projectIsNULL()) {
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    window.location.replace('https://www.yuuera.com/')
   }
 }
-console.log(storeProduct.product);
-const product = ref(storeProduct.product);
-
-
-
-
-
-
+console.log(storeProduct.product)
+const product = ref(storeProduct.product)
 </script>
