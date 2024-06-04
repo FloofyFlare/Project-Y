@@ -72,7 +72,7 @@
                   </p>
                 </button>
         </div>
-        <div class="mt-48 justify-center">
+        <div class="mt-48 ml-36 justify-center">
           <figure><img class="h-96" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
        </div>
       </section>
@@ -114,6 +114,18 @@
               <a href="#item3" class="btn btn-xs">3</a> 
               <a href="#item4" class="btn btn-xs">4</a>
               </div>
+        </div>
+       </section>
+       <section>
+        <div>
+          <h2 class="text-4xl text-neutral text-start mt-24">
+            Header 2
+          </h2>
+        </div>
+        <div>
+          <div class="ml-24 mt-28 justify-center">
+          <figure><img class="h-96 justify-center" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+       </div>
         </div>
        </section>
 
