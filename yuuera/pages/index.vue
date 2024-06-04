@@ -1,31 +1,65 @@
 <template>
   <header>
-    <div class="navbar bg-">
-      <div class="avatar btn btn-outline ">
-      <div class="w-40 pb-28">
-      <img class="" src="/images/logo.png" />
+    <div class="invisible md:visible">
+      <div class="navbar bg-primary">
+        <div class="avatar btn btn-ghost bg-info ">
+          <div class="w-40 pb-28">
+          <img class="" src="/images/logo.png" />
+          </div>
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1 ml-48">
+            <li class>
+              <details>
+                <summary class="text-info">
+                  Other links
+                </summary>
+                <ul class="p-2 text-neutral bg-info rounded-t-none">
+                  <li><a>Link 1</a></li>
+                  <li><a>Link 2</a></li>
+                </ul>
+              </details>
+            </li>
+           
+          </ul>
+          <ul class="px-1 ml-48"></ul>
+          <li class="btn btn-ghost bg-primary text-info"><a>Sign up</a></li>
+        </div>
+        
       </div>
     </div>
+    <div class="md:invisible">
+      <div class="navbar bg-">
+          <div class="avatar btn btn-outline btn-ghost">
+          <div class="w-40 pb-28">
+          <img class="" src="/images/logo.png" />
+          </div>
+        </div>
 
-    <div class="flex-none mr-20 pl-12 ">
-    <ul class="menu menu-horizontal px-1">
-      <li>
-        <details>
-          <summary>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          </summary>
-          <ul class="p-2 text-neutreal rounded-t-none bg-info">
-            <li class="text-neutral"><a>Link 1</a></li>
-            <li class="text-neutral"><a>Link 2</a></li>
-          </ul>
-        </details>
-      </li>
-    </ul>
-  </div>
+        <div class="flex-none mr-20 pl-2 ">
+        <ul class="menu menu-horizontal px-1">
+          <li>
+            <details>
+              <summary>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+              </summary>
+              <ul class="p-2 text-neutreal rounded-t-none bg-info">
+                <li class="text-neutral"><a>Link 1</a></li>
+                <li class="text-neutral"><a>Link 2</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+      </div> 
   </div>
   </header>
   <body class="bg-info md:w-full">
       <main>
+        <div class="invisible md:visible">
+
+        </div>
+        <div class="md:invisible">
        <section class="h-full">
         <div class="text-left justify left">
           <h1 class="text-4xl text-neutral text-start">
@@ -170,9 +204,31 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
           </div>
-
         </section>
-      
+
+        <section>
+          <div>
+            <h1 class="text-4xl text-neutral text-start">
+              Header 1:
+          </h1>
+            <p class="text-neutral text-left mt-12">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div class="flex">
+            <div class="content-left justify-self-start">
+              <button class="bg-warning btn btn-lg ">
+                <p class="text-neutral">
+                  Get started
+                </p>
+              </button>
+            </div>
+            <div class="ml-2">
+                <figure><img class="h-48" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+            </div>
+          </div>
+        </section>
+      </div>
       </main>
 
       <client-only>
