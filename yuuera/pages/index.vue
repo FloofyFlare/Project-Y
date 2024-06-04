@@ -57,6 +57,65 @@
   <body class="bg-info md:w-full">
       <main>
         <div class="invisible md:visible">
+          <section class="h-full">
+        <div class="text-left justify left">
+          <h1 class="text-4xl text-neutral text-start">
+            Header 1
+          </h1>
+        </div>
+        <div class="text-left mt-4">
+          <p class="text-neutral text-left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          </p>
+              <button class="bg-warning btn btn-lg ">
+                  <p class="text-neutral">
+                    Get started
+                  </p>
+                </button>
+        </div>
+        <div class="mt-48 justify-center">
+          <figure><img class="h-96" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+       </div>
+      </section>
+      <section>
+        <div class="text-left justify left mt-20">
+          <h2 class="text-4xl text-neutral text-start">
+            Header 2
+          </h2>
+        </div>
+        <div class="mt-20">
+          <p class="text-neutral">
+            Logo of the accelrater program
+          </p>
+        </div>
+        <div>
+          <h2 class="text-4xl text-neutral text-start mt-24">
+            Header 2
+          </h2>
+        </div>
+        <div class="mt-8">
+            <div class="carousel w-full">
+            <div id="item1" class="carousel-item w-full">
+              
+              <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" class="w-full h-96" />
+            </div> 
+            <div id="item2" class="carousel-item w-full">
+              <img src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" class="w-full h-96" />
+            </div> 
+            <div id="item3" class="carousel-item w-full">
+              <img src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" class="w-full h-96" />
+            </div> 
+            <div id="item4" class="carousel-item w-full">
+              <img src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" class="w-full h-96" />
+            </div>
+          </div> 
+              <div class="flex justify-center w-full py-2 gap-2">
+              <a href="#item1" class="btn btn-xs">1</a> 
+              <a href="#item2" class="btn btn-xs">2</a> 
+              <a href="#item3" class="btn btn-xs">3</a> 
+              <a href="#item4" class="btn btn-xs">4</a>
+              </div>
+        </div>
+       </section>
 
         </div>
         <div class="md:invisible">
